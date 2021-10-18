@@ -1,10 +1,3 @@
-# uniswap-org
+# nerveglobal-org
 
-Contains the source code for the [uniswap.org](https://uniswap.org) homepage.
-
-## Development
-
-To start the dev server, pull the code down and run:
-
-1. `yarn install`
-1. `yarn start`
+Contains the source code for the [nerveglobal.org](https://nerveglobal.org) website.
