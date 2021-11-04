@@ -2,6 +2,9 @@ import React, { useState, useCallback } from 'react'
 
 import styled from 'styled-components'
 
+import { Link } from 'gatsby'
+import Uni from '../images/uni.inline.svg'
+
 export function useToggle(initialState = false) {
   const [state, setState] = useState(initialState)
   const toggle = useCallback(() => setState(state => !state), [])
@@ -54,9 +57,8 @@ const MenuFlyout = styled.nav`
   display: flex;
   flex-direction: column;
   position: absolute;
-  top: 2.2rem;
-  left: -1rem;
-  min-width: 256px;
+  top: 2.5rem;
+  min-width: 200px;
   width: 100%;
   width: fit-content;
   border-radius: 8px;
@@ -194,9 +196,48 @@ const StyledDescription = styled.p`
   }
 `
 
+const StyledHomeLink = styled(Link)`
+  max-height: 48px;
+  display: flex;
+  align-items: center;
+`
+
+const StyledUni = styled(Uni)`
+  path {
+    fill: ${({ theme }) => theme.textColor};
+  }
+  margin: 0;
+  width: 32px;
+  height: 32px;
+  margin-left: 2rem;
+  margin-top: -4px;
+  transform: rotate(0deg);
+  transition: transform 0.2s linear;
+  :hover {
+    transform: rotate(-10deg);
+  }
+
+  @media (max-width: 960px) {
+    width: 25px;
+    height: 25px;
+    margin-left: 0rem;
+  }
+`
+
+const StyledBodySubText = styled.h3`
+  color: ${({ theme }) => theme.textColor};
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 1rem 1rem 1rem 1rem;
+  @media (max-width: 640px) {
+    text-align: left;
+  }
+`
+
 export default function Menu(props) {
   return (
     <StyledMenu tabIndex={0}>
+      
       <StyledMenuTitle>
         <span style={{ marginRight: '0.25rem' }}>{props.data.name} </span>
         <MenuFlyout>

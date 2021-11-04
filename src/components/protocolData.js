@@ -1,11 +1,14 @@
 import React from 'react'
 import styled from 'styled-components'
-import gql from 'graphql-tag'
-import { useQuery } from '@apollo/react-hooks'
-import { client } from '../apollo/client'
-import { GLOBAL_QUERY } from '../apollo/queries'
 import Glimmer from '../images/glimmer_center.svg'
 import GlimmerGray from '../images/glimmer_gray.svg'
+
+import ZUsers from '../ZUsers'
+import ZTCount from '../ZTCount'
+import TEarn from '../TEarn'
+import ZBCount from '../ZBCount'
+import BEarn from '../BEarn'
+
 
 const StyledSectionFlex = styled.div`
   display: flex;
@@ -105,83 +108,41 @@ export const SparkleTopRight = styled.div`
   right: -30px;
 `
 
-export const GET_BLOCK = gql`
-  query blocks($timestamp: Int!) {
-    blocks(first: 1, orderBy: timestamp, orderDirection: asc, where: { timestamp_gt: $timestamp }) {
-      id
-      number
-      timestamp
-    }
-  }
-`
-
-export const ETH_PRICE = block => {
-  const queryString = block
-    ? `
-    query bundles {
-      bundles(where: { id: ${1} } block: {number: ${block}}) {
-        id
-        ethPrice
-      }
-    }
-  `
-    : ` query bundles {
-      bundles(where: { id: ${1} }) {
-        id
-        ethPrice
-      }
-    }
-  `
-  return gql(queryString)
-}
 
 const ProtocolData = () => {
-  const { data: globalData } = useQuery(GLOBAL_QUERY, { pollInterval: 10000, client: client })
 
-  // hardcode at 1B in case of data failure
-  // const volume = globalData ? globalData?.uniswapFactory?.totalVolumeUSD : 100000000000
-  const transactions = globalData ? globalData?.uniswapFactory?.txCount : 29000000
-
-  // const formattedVol = new Intl.NumberFormat('en-US', {
-  //   style: 'currency',
-  //   currency: 'USD',
-  //   notation: 'compact',
-  //   compactDisplay: 'short'
-  //   // maximumSignificantDigits: 5
-  // }).format(volume)
-
-  const formattedTransactions = new Intl.NumberFormat('en-US', {
-    notation: 'compact',
-    compactDisplay: 'short'
-    // maximumSignificantDigits: 5
-  }).format(transactions)
 
   return (
     <Numbers id="about" style={{ flexDirection: 'column' }}>
       <div style={{ display: 'flex', width: '100%', justifyContent: 'space-between', alignItems: 'center', margin: 0 }}>
         <BigNumbers>
           <Sparkle />
-          <span>$386B</span>
-          <p style={{ fontSize: '14px' }}>Trade Volume</p>
+          <span><ZUsers /></span>
+          <p style={{ fontSize: '14px' }}>Unique Users</p>
           <SparkleGray />
         </BigNumbers>
         <BigNumbers>
           <SparkleTopRight />
-
           <SparkleGray />
-          <span>1.5M+</span>
-          <p style={{ fontSize: '14px' }}>All Time Users</p>
+          <span><ZTCount /></span>
+          <p style={{ fontSize: '14px' }}>Tasks</p>
         </BigNumbers>
         <BigNumbers>
-          <span>{formattedTransactions}</span>
-          <p style={{ fontSize: '14px' }}>All Time Trades</p>
+          <SparkleTopRight />
+          <SparkleGray />
+          <span><TEarn /></span>
+          <p style={{ fontSize: '14px' }}>Task Earnings</p>
           <SparkleGray />
         </BigNumbers>
-
+        <BigNumbers>
+          <span><ZBCount /></span>
+          <p style={{ fontSize: '14px' }}>Bets</p>
+          <SparkleGray />
+        </BigNumbers>
         <BigNumbers>
           <SparkleBottom />
-          <span>8,400+</span>
-          <p style={{ fontSize: '14px' }}>Community Delegates</p>
+          <span><BEarn /></span>
+          <p style={{ fontSize: '14px' }}>Bet Earnings</p>
         </BigNumbers>
       </div>
     </Numbers>

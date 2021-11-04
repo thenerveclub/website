@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-// import uImage from '../images/big_unicorn_fade.png'
 import uBanner from '../images/unicorn_banner.png'
 
 import gImage from '../images/glimmer_bg.svg'
@@ -8,7 +7,7 @@ import { Link } from 'gatsby'
 
 export const CardBGImage = styled.span`
   mix-blend-mode: ${({ isDark }) => (isDark ? 'overlay' : 'lighten')};
-  background: url(${uBanner});
+  /* background: url(${uBanner}); */
   width: 55vw;
   max-width: 480px;
   height: 100%;

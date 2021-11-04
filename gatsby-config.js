@@ -39,27 +39,6 @@ module.exports = {
     },
     `re-slug`,
     {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `blog`,
-        path: `${__dirname}/src/pages/blog/`
-      }
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `docs`,
-        path: `${__dirname}/src/pages/docs/`
-      }
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `faq`,
-        path: `${__dirname}/src/pages/faq/`
-      }
-    },
-    {
       resolve: `gatsby-plugin-page-creator`,
       options: {
         path: `${__dirname}/src/pages`
@@ -93,10 +72,7 @@ module.exports = {
       options: {
         extensions: [`.mdx`, `.md`],
         defaultLayouts: {
-          default: require.resolve('./src/layouts'),
-          docs: require.resolve(`./src/layouts/docs`),
-          blog: require.resolve(`./src/layouts/blogPost`),
-          faq: require.resolve(`./src/layouts/faq`)
+          default: require.resolve('./src/layouts')
         },
         remarkPlugins: [require(`remark-math`)],
         rehypePlugins: [require(`rehype-katex`)],
@@ -143,102 +119,6 @@ module.exports = {
         icon: `src/images/favicon.png` // This path is relative to the root of the site.
       }
     },
-    {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        // The property ID; the tracking code won't be generated without it
-        trackingId: 'UA-128182339-3',
-        // Defines where to place the tracking script - `true` in the head and `false` in the body
-        head: true,
-        // Setting this parameter is optional
-        anonymize: true,
-        // Setting this parameter is also optional
-        respectDNT: true,
-        // Delays sending pageview hits on route update (in milliseconds)
-        pageTransitionDelay: 0,
-        // Defers execution of google analytics script after page load
-        defer: false
-      }
-    },
-    {
-      resolve: `gatsby-plugin-google-gtag`,
-      options: {
-        // You can add multiple tracking ids and a pageview event will be fired for all of them.
-        trackingIds: [
-          'UA-128182339-3' // Google Analytics / GA
-        ],
-        gtagConfig: {
-          anonymize_ip: true,
-          cookie_expires: 0
-        }
-      }
-    },
-    {
-      resolve: `gatsby-plugin-feed`,
-      options: {
-        query: `
-          {
-            site {
-              siteMetadata {
-                title
-                description
-                siteUrl
-                site_url: siteUrl
-              }
-            }
-          }
-        `,
-        feeds: [
-          {
-            serialize: ({ query: { site, allMdx } }) => {
-              return allMdx.edges.map(edge => {
-                return {
-                  description: edge.node.frontmatter.previewText,
-                  title: edge.node.frontmatter.title,
-                  date: edge.node.frontmatter.date,
-                  url: site.siteMetadata.siteUrl + edge.node.fields.slug,
-                  guid: site.siteMetadata.siteUrl + edge.node.fields.slug
-                }
-              })
-            },
-            query: `
-            {
-              allMdx(filter: {fileAbsolutePath: {regex: "/blog/"}}, sort: {order: DESC, fields: frontmatter___date}) {
-                edges {
-                  node {
-                    id
-                    frontmatter {
-                      date
-                      title
-                      previewText
-                    }
-                    fields {
-                      slug
-                    }
-                    rawBody
-                  }
-                }
-              }
-            }
-            `,
-            output: '/rss.xml',
-            title: 'Uniswap Blog RSS Feed'
-          }
-        ]
-      }
-    },
     'gatsby-plugin-eslint',
-    {
-      resolve: `gatsby-plugin-algolia-docsearch-appid`,
-      options: {
-        apiKey: '8962240e69e6d23a88432f501c115470',
-        indexName: 'uniswap_v2_docs',
-        appId: 'VZ0CVS8XCW',
-        inputSelector: 'blank' // use dummy selector to avoid double render
-      }
-    }
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
   ]
 }

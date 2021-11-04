@@ -1,5 +1,4 @@
 import React, { useState, useLayoutEffect, useEffect } from 'react'
-import gql from 'graphql-tag'
 import dayjs from 'dayjs'
 import utc from 'dayjs/plugin/utc'
 import { useQuery } from '@apollo/react-hooks'
@@ -55,63 +54,6 @@ const AnimatingEl = props => {
       {props.stat && props.stat[1]}
     </Stats>
   )
-}
-
-export const GET_BLOCK = gql`
-  query blocks($timestamp: Int!) {
-    blocks(first: 1, orderBy: timestamp, orderDirection: asc, where: { timestamp_gt: $timestamp }) {
-      id
-      number
-      timestamp
-    }
-  }
-`
-
-export const ETH_PRICE = block => {
-  const queryString = block
-    ? `
-    query bundles {
-      bundles(where: { id: ${1} } block: {number: ${block}}) {
-        id
-        ethPrice
-      }
-    }
-  `
-    : ` query bundles {
-      bundles(where: { id: ${1} }) {
-        id
-        ethPrice
-      }
-    }
-  `
-  return gql(queryString)
-}
-
-const APOLLO_QUERY = gql`
-  {
-    uniswapFactory(id: "0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f") {
-      totalVolumeUSD
-      totalLiquidityUSD
-      pairCount
-    }
-    bundle(id: 1) {
-      ethPrice
-    }
-  }
-`
-
-export const UNISWAP_GLOBALS_24HOURS_AGO_QUERY = block => {
-  let queryString = `
-  query uniswapFactory {
-    uniswapFactory(id: "0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f", block: { number: ${block} }) {
-      totalVolumeUSD
-      totalLiquidityUSD
-      pairCount
-    
-    }
-  }
-  `
-  return gql(queryString)
 }
 
 export default function Ticker() {

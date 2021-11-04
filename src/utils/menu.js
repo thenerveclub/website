@@ -1,27 +1,18 @@
 const menu = [
   {
-    name: 'Developers',
+    name: 'App',
     sublinks: [
-      {
-        name: 'V3 Documentation',
-        link: 'https://docs.uniswap.org/'
-      },
-      { name: 'V3 Whitepaper', link: '/whitepaper-v3.pdf' },
-      { name: 'GitHub', link: 'https://github.com/Uniswap' },
-      { name: 'Bug Bounty', link: '/bug-bounty' }
+      { name: 'App Store', link: 'https://discord.gg/FCfyBSbCU5' },
+      { name: 'Play Store', link: 'https://twitter.com/Uniswap' },
     ]
   },
   {
-    name: 'Governance',
+    name: 'Docs',
     sublinks: [
-      {
-        name: 'UNI Token ',
-        link: '/blog/uni'
-      },
-      { name: 'Governance Forum', link: 'https://gov.uniswap.org/' },
-      { name: 'Sybil (Delegates)', link: 'https://sybil.org/' },
-      { name: 'Voting Portal', link: 'https://app.uniswap.org/#/vote' },
-      { name: 'Documentation', link: '/docs/v2/governance/overview' }
+      { name: 'Discord', link: 'https://discord.gg/FCfyBSbCU5' },
+      { name: 'Twitter', link: 'https://twitter.com/Uniswap' },
+      { name: 'Telegram', link: 'https://www.reddit.com/r/Uniswap' },
+      { name: 'LinkedIn', link: 'https://www.reddit.com/r/Uniswap' }
     ]
   },
   {
@@ -29,32 +20,17 @@ const menu = [
     sublinks: [
       { name: 'Discord', link: 'https://discord.gg/FCfyBSbCU5' },
       { name: 'Twitter', link: 'https://twitter.com/Uniswap' },
-      { name: 'Reddit', link: 'https://www.reddit.com/r/Uniswap' }
+      { name: 'Telegram', link: 'https://www.reddit.com/r/Uniswap' },
+      { name: 'LinkedIn', link: 'https://www.reddit.com/r/Uniswap' }
     ]
   },
   {
     name: 'More',
     sublinks: [
       {
-        name: 'Blog',
-        link: '/blog'
-      },
-      {
         name: 'About',
         link: '/about'
       },
-      {
-        name: 'FAQ',
-        link: '/faq'
-      },
-      {
-        name: 'Help & Tutorials',
-        link: 'https://help.uniswap.org/'
-      },
-      {
-        name: 'Logo & Brand',
-        link: '/about#brand'
-      }
     ]
   }
 ]

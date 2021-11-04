@@ -27,7 +27,24 @@ const StyledHeader = styled.header`
   position: sticky;
   top: -1px;
   background: ${({ theme, open, showBG }) => (showBG && !open ? theme.backgroundColor : 'none')};
-  border-bottom: 1px solid ${({ theme, open, showBG }) => (showBG && !open ? theme.concreteGray : 'none')};
+  border-bottom: 1px solid;
+  border-image: linear-gradient(var(--angle), aqua, aqua, magenta, magenta) 1;
+	
+	animation: 15s rotate linear infinite;
+}
+
+@keyframes rotate {
+	to {
+		--angle: 360deg;
+	}
+}
+
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
   transition: background-color 0.25s ease;
   @media (max-width: 960px) {
     padding: 1rem 1.25rem;
@@ -75,27 +92,6 @@ const StyledNavTitleWrapper = styled.nav`
   width: 100%;
 `
 
-const StyledTradeLink = styled.a`
-  padding: 0.25rem 0.75rem;
-  background-color: ${({ theme }) => theme.textColor};
-  text-decoration: none;
-  color: ${({ theme }) => theme.invertedTextColor};
-  border-radius: 12px;
-  display: inline-block;
-  font-weight: 500;
-  width: 100%;
-  width: min-content;
-  white-space: nowrap;
-  margin-left: 1rem;
-  border: 1px solid transparent;
-  box-shadow: ${({ theme }) => theme.shadows.small};
-
-  :hover,
-  :focus {
-    border: 1px solid white;
-  }
-`
-
 const StyledButton = styled.button`
   border: none;
   background-color: rgba(0, 0, 0, 0);
@@ -108,6 +104,7 @@ const StyledButton = styled.button`
   }
   display: flex;
   align-items: center;
+  margin-right: 2rem;
   justify-content: center;
   :hover {
     cursor: pointer;
@@ -148,12 +145,16 @@ const StyledUni = styled(Uni)`
   margin: 0;
   width: 32px;
   height: 32px;
-  margin-right: 0.35rem;
+  margin-left: 2rem;
   margin-top: -4px;
   transform: rotate(0deg);
   transition: transform 0.2s linear;
   :hover {
     transform: rotate(-10deg);
+  }
+
+  @media (max-width: 960px) {
+    margin-left: 0rem;
   }
 `
 
@@ -172,6 +173,15 @@ const StyledMenuIcon = styled(MenuIcon)`
 const HideSmall = styled.span`
   @media (max-width: 960px) {
     display: none;
+  }
+`
+
+const StyledBodySubText = styled.h3`
+  color: ${({ theme }) => theme.textColor};
+  font-weight: 600;
+  margin: 1rem 1rem 1rem 1rem;
+  @media (max-width: 640px) {
+    text-align: left;
   }
 `
 
@@ -250,6 +260,9 @@ const Header = props => {
           }}
         >
           <StyledUni />
+          <StyledBodySubText>
+            Nerve Global
+          </StyledBodySubText>
         </StyledHomeLink>
       </StyledNavTitleWrapper>
       <MenuToggle ref={button} open={isMenuOpen} onClick={() => updateIsMenuOpen(!isMenuOpen)}>
@@ -260,23 +273,10 @@ const Header = props => {
           return <Menu key={item.name} data={item} />
         })}
 
-        <HideSmall>
           <StyledButton type="button" onClick={toggleDarkMode}>
             {darkMode ? <Sun size={20} /> : <Moon size={20} />}
           </StyledButton>
-        </HideSmall>
-        {props.path !== undefined && (
-          <StyledTradeLink
-            style={{
-              background: `linear-gradient(128.17deg, #BD00FF -14.78%, #FF1F8A 110.05%)`,
-              color: 'white'
-            }}
-            target="_blank"
-            href="https://app.uniswap.org/"
-          >
-            Launch App
-          </StyledTradeLink>
-        )}
+          
       </StyledNav>
     </StyledHeader>
   )

@@ -5,13 +5,15 @@ import Twitter from '../images/twitter.inline.svg'
 import Github from '../images/github.inline.svg'
 import Discord from '../images/discord.inline.svg'
 
+
+
 const StyledFooter = styled.footer`
+  max-width: auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
   color: ${({ theme }) => theme.textColor};
-  position: relative;
-  padding: 2rem;
+  padding:30px 50px 25px 50px;
 
   @media (max-width: 1155px) {
     display: block;
@@ -21,6 +23,8 @@ const StyledFooter = styled.footer`
     padding: 1rem;
   }
 `
+
+
 
 const StyledFooterLinkSection = styled.ul`
   display: flex;
@@ -63,7 +67,7 @@ const StyledGithub = styled(Github)`
 const Footer = () => {
   return (
     <StyledFooter>
-      <p style={{ margin: 0 }}>© {new Date().getFullYear()} Uniswap</p>
+      <p style={{ margin: 0 }}> {new Date().getFullYear()} Nerve Global</p>
       <StyledFooterLinkSection>
         <StyledFooterLink to="/about">About</StyledFooterLink>
         <StyledFooterLink to="/disclaimer" style={{ marginRight: '12px' }}>
@@ -71,7 +75,7 @@ const Footer = () => {
         </StyledFooterLink>
         <StyledFooterLink to="/trademarks">Trademarks</StyledFooterLink>
         <StyledFooterLink to="/about#brand">Brand</StyledFooterLink>
-        <a href="https://twitter.com/Uniswap" rel="noopener noreferrer" target="_blank">
+        <a style={{ marginLeft: '30px' }} href="https://twitter.com/Uniswap" rel="noopener noreferrer" target="_blank">
           <StyledTwitter />
         </a>
         <a href="https://github.com/Uniswap" rel="noopener noreferrer" target="_blank">

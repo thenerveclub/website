@@ -78,7 +78,7 @@ export const theme = darkMode => ({
     grey8: darkMode ? '#EDEEF2' : '#2C2F36',
     grey9: darkMode ? '#F7F8FA' : '#191B1F',
 
-    grey1: darkMode ? '#212429' : '#FFFFFF',
+    grey1: darkMode ? '#191b1f' : '#FFFFFF',
     grey2: darkMode ? '#2C2F36' : '#F7F8FA',
     grey3: darkMode ? '#40444F' : '#EDEEF2',
     grey4: darkMode ? '#565A69' : '#CED0D9',
@@ -140,7 +140,7 @@ export const GlobalStyle = createGlobalStyle`
     background-size: contain;
     background-repeat: no-repeat;
     overflow-y: scroll;
-    width: 100%;
+    max-width: auto;
     box-sizing: border-box;
     font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   }
@@ -153,7 +153,7 @@ export const GlobalStyle = createGlobalStyle`
     width: 100%;
     font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     line-height: 1.55;
-    max-width: 1440px;
+    max-width: auto;
     width: 100%;
     margin: 0px auto;
     font-weight: 400 !important;

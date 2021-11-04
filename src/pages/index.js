@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 import { useStaticQuery, graphql } from 'gatsby'
-import Img from 'gatsby-image'
 import Layout from '../layouts'
 import SEO from '../components/seo'
 import BG from '../components/bg'
@@ -17,6 +16,44 @@ import Discord from '../images/discord.inline.svg'
 import DevImage from '../images/developer.png'
 import GovImage from '../images/governance.png'
 import AppsImage from '../images/apps.png'
+import mockup from '../images/mockup.png'
+
+import ZTask from '../ZTask'
+import ZBet from '../ZBet'
+
+
+const StyledAbout = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 200px;
+  justify-content: space-between;
+  padding: 0 2rem;
+  padding-bottom: 4rem;
+  margin-bottom: 4rem;
+  padding-top: 2rem;
+
+
+  @media (max-width: 960px) {
+    flex-direction: column;
+    grid-template-columns: 1fr;
+    margin-top: 0rem;
+    padding-top: 1rem;
+  }
+`
+
+const Title = styled.h1`
+  /* font-size: 3rem; */
+  margin-bottom: 4rem;
+  font-size: 72px;
+
+  pointer-events: none;
+  white-space: wrap;
+  overflow-wrap: normal;
+  max-width: 1200px;
+  /* text-align: center; */
+  @media (max-width: 960px) {
+    font-size: 2rem;
+  }
+`
 
 const BGCard = styled.span`
   width: 100vw;
@@ -41,6 +78,24 @@ const StyledBody = styled.div`
   justify-content: flex-start;
   padding: 3rem;
   border-bottom: 1px solid ${({ theme }) => theme.buttonBorder};
+  border-bottom: 1px solid;
+  border-image: linear-gradient(var(--angle), aqua, aqua, magenta, magenta) 1;
+	
+	animation: 15s rotate linear infinite;
+}
+
+@keyframes rotate {
+	to {
+		--angle: 360deg;
+	}
+}
+
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
   @media (max-width: 960px) {
     margin-bottom: 0;
     padding: 1rem;
@@ -54,14 +109,27 @@ const StyledTitle = styled.div`
   justify-content: flex-end;
   will-change: transform;
   align-items: flex-start;
-  height: 80vh;
+  height: 15vh;
   margin-bottom: 4rem;
+
+  @media (max-width: 1024px) {
+    height: 50vh;
+  }
+
+  @media (max-width: 640px) {
+    height: 50vh;
+  }
+
+  @media (max-width: 440px) {
+    height: 50vh;
+  }
 `
 
 const StyledBodyTitle = styled.h1`
   font-size: 56px;
   white-space: wrap;
   overflow-wrap: normal;
+  
   @media (max-width: 1024px) {
     margin: 2rem 0 0rem 0;
   }
@@ -82,7 +150,7 @@ const StyledBodyTitle = styled.h1`
 `
 const StyledBodySubTitle = styled.h2`
   max-width: 720px;
-  line-height: 125%;
+  line-height: 150%;
   font-weight: 400;
   text-align: left;
 
@@ -93,7 +161,7 @@ const StyledBodySubTitle = styled.h2`
 
 const StyledBodySubText = styled.h3`
   max-width: 960px;
-  line-height: 140%;
+  line-height: 150%;
   opacity: 0.8;
   @media (max-width: 640px) {
     text-align: left;
@@ -109,18 +177,11 @@ const StyledSectionTitle = styled.h3`
   }
 `
 
-const StyledProductImage = styled(Img)`
-  width: 100%;
-  max-width: 120px;
-  margin-bottom: 2rem;
-  background-color: none;
-  border-radius: 12px;
-`
-
 const StyledSocialRow = styled.nav`
   display: flex;
   flex-direction: row;
-  margin-top: 2rem;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
   & > *:not(:first-of-type) {
     margin-top: 0;
     margin-left: 16px;
@@ -297,8 +358,7 @@ const IndexPage = props => {
     <Layout path={props.location.pathname}>
       <BGCard>
         {/* <CardNoise /> */}
-        <CardGlimmerImage isDark={isDark} />
-        <CardBGImage isDark={isDark} />
+        
         {/* <CardFade /> */}
       </BGCard>
       <SEO
@@ -306,11 +366,22 @@ const IndexPage = props => {
         path={props.location.pathname}
         description={'Swap, earn, and build on the leading decentralized crypto trading protocol.'}
       />
+      
+      <StyledAbout>
+        <span style={{ marginTop: '5rem' }}>
+        <HideSmall>
+          <Title style={{ paddingBottom: '4rem' }}>
+            Discover, fund, and be part of projects you care about.
+          </Title>
+        </HideSmall>
+        </span> 
+      </StyledAbout>
+          
       <StyledBody>
         <StyledTitle>
           <StyledBodyTitle>
-            <span style={{ fontWeight: 200 }}>UNISWAP</span>
-            <StyledPinkGlimmer /> PROTOCOL
+            <span style={{ fontWeight: 200 }}>NERVE</span>
+            <StyledPinkGlimmer /> GLOBAL
           </StyledBodyTitle>
           <StyledBodySubTitle>
             {'Swap, earn, and build on the leading decentralized crypto trading protocol.'}
@@ -338,10 +409,12 @@ const IndexPage = props => {
             </a>
           </StyledSocialRow>
         </StyledTitle>
+
         <EcosystemSection data={data} props={props} />
+        
         <HideSmall>
           <StyledSectionHeader>
-            <a href="https://info.uniswap.org/">{'PROTOCOL ANALYTICS →'}</a>
+            <a href="https://info.uniswap.org/">{'DATA ANALYTICS →'}</a>
           </StyledSectionHeader>
           <div
             style={{
@@ -355,6 +428,24 @@ const IndexPage = props => {
             <ProtocolData />
           </div>
         </HideSmall>
+
+        <HideSmall>
+        <StyledSectionHeader>
+            <a>{'SHOWCASE →'}</a>
+          </StyledSectionHeader>
+          <div
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              width: '100%',
+              padding: '5rem 0 3rem 0'
+            }}
+          >
+           <img style={{ margin: "-10rem" }} src={mockup} width="70%" />
+          </div>
+        </HideSmall>
+
         <DeveloperSection data={data} props={props} />
       </StyledBody>
       <BG />
@@ -370,6 +461,7 @@ const StyledSectionHeader = styled.h1`
   overflow-wrap: normal;
   max-width: 900px;
   font-weight: 500;
+  margin-top: 5rem;
 
   a {
     color: ${({ theme }) => theme.textColor};
@@ -414,6 +506,30 @@ export const GovernanceCard = styled(StyledCard)`
   background-size: cover;
   background-repeat: no-repeat;
   margin-right: 12px;
+
+  border-image: linear-gradient(var(--angle), aqua, aqua, magenta, magenta) 1;
+	
+	animation: 15s rotate linear infinite;
+}
+
+@keyframes rotate {
+	to {
+		--angle: 360deg;
+	}
+}
+
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+  transition: background-color 0.25s ease;
+  @media (max-width: 960px) {
+    padding: 1rem 1.25rem;
+    height: ${({ open }) => (open ? '100vh' : '100%')};
+  }
+
   @media (max-width: 960px) {
     margin-bottom: 12px;
     margin-right: 0px;
@@ -443,6 +559,7 @@ export const AppsCard = styled(StyledCard)`
   }
 
   @media (max-width: 960px) {
+    margin-top: -80px;
     margin-bottom: 12px;
     margin-right: 0px;
     max-width: unset;
@@ -450,9 +567,12 @@ export const AppsCard = styled(StyledCard)`
 `
 
 export const GrantsCard = styled(StyledCard)`
-  max-width: 375px;
+  width: 600px;
+  alignItems: center;
+  justifyContent: center;
+  
   @media (max-width: 960px) {
-    max-width: unset;
+    width: 325px;
   }
 `
 
@@ -460,109 +580,55 @@ const EcosystemSection = () => {
   return (
     <StyledSection>
       <StyledItemRow>
-        <span>
-          <StyledSectionHeader>{'UNISWAP ECOSYSTEM →'}</StyledSectionHeader>
-          <StyledSectionTitle>A growing network of DeFi Apps.</StyledSectionTitle>
+        <span style={{ marginTop: '-60px', marginBottom: '80px' }}>
+          <StyledSectionHeader>{'NERVE ECOSYSTEM →'}</StyledSectionHeader>
+          <StyledSectionTitle>Suitable for any other social media platform.</StyledSectionTitle>
           <StyledBodySubText style={{ marginRight: '48px' }}>
-            Developers, traders, and liquidity providers participate together in a financial marketplace that is open
+            Content creators, virtual communities, and its users participate together in a place that is open
             and accessible to all.
           </StyledBodySubText>
         </span>
         <AppsCard>
-          <h1>200+</h1>
-          <p>DeFi Integrations</p>
+          <h1>∞</h1>
+          <p>Opportunities</p>
         </AppsCard>
       </StyledItemRow>
     </StyledSection>
   )
 }
 
+
 const DeveloperSection = props => {
   return (
     <>
       <StyledSection>
-        <StyledSectionHeader>{'DEVELOPERS →'}</StyledSectionHeader>
-        <StyledItemRow>
-          <DeveloperCard
-            style={{ display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', width: '100%' }}
-          >
-            <StyledSectionTitle>Superpowers for DeFi developers.</StyledSectionTitle>
-            <StyledBodySubTitle style={{ fontSize: '20px' }}>
-              Build DApps and tools on the largest crypto project on Ethereum. Get started with quick start guides,
-              protocol documentation, a Javascript SDK, and fully open source code.
-            </StyledBodySubTitle>
-
-            <Button href="https://docs.uniswap.org/">
-              <p style={{ margin: 0 }}>
-                {' '}
-                <HideSmall>Developer</HideSmall> Documentation ↗
-              </p>
-            </Button>
-          </DeveloperCard>
-          <GrantsCard>
-            <StyledProductImage fadeIn={false} fluid={props.data.grants.childImageSharp.fluid} />
-            <StyledBodySubTitle>Apply for the Uniswap Developer Grants Program</StyledBodySubTitle>
-            <p>
-              Get paid to build the future of finance. Uniswap Governance offers grant funding for people building apps,
-              tools, and activities on the Uniswap Protocol.
+        <StyledSectionHeader>{'SPOTLIGHT →'}</StyledSectionHeader>
+        <StyledItemRow style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              padding: '2rem 10rem 2rem 10rem'
+            }}>
+        <GrantsCard>
+            <StyledBodySubTitle style={{ fontSize: '20px' }}>Latest Task</StyledBodySubTitle>
+            <p style={{ fontSize: '30px' }}>
+            <ZTask />
             </p>
             <Button href="https://unigrants.org/" outlined>
-              <p style={{ margin: 0 }}>Learn more ↗</p>
+              <p style={{ margin: 0 }}>Fund now ↗</p>
             </Button>
           </GrantsCard>
-        </StyledItemRow>
-      </StyledSection>
 
-      <StyledSection>
-        <StyledSectionHeader>{'GOVERNANCE →'}</StyledSectionHeader>
-        <StyledItemRow>
-          <GovernanceCard style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
-            <span>
-              <StyledSectionTitle>Governed by the community.</StyledSectionTitle>
-              <StyledBodySubTitle style={{ fontSize: '20px' }}>
-                The Uniswap Protocol is governed by a decentralized community of UNI token holders and their delegates
-                who propose and vote on upgrades to the protocol.
-              </StyledBodySubTitle>
-            </span>
-
-            <Button href="https://docs.uniswap.org/protocol/concepts/governance/guide-to-voting" outlined>
-              <p style={{ margin: 0 }}>Read more </p>
+          <GrantsCard>
+            <StyledBodySubTitle style={{ fontSize: '20px' }}>Latest Bet</StyledBodySubTitle>
+            <p style={{ fontSize: '30px' }}>
+            <ZBet />
+            </p>
+            <Button href="https://unigrants.org/" outlined>
+              <p style={{ margin: 0 }}>Bet Now ↗</p>
             </Button>
-          </GovernanceCard>
-          <StyledItemColumn style={{ display: 'flex', flexDirection: 'column' }}>
-            <Button style={{ borderRadius: '20px' }} href="https://gov.uniswap.org" outlined>
-              <div style={{ padding: '1rem' }}>
-                <StyledBodySubTitle style={{ marginBottom: '0.25rem' }}>
-                  Governance Forum <span style={{ fontSize: '16px' }}>↗</span>
-                </StyledBodySubTitle>
-                <p style={{ textAlign: 'left', margin: '0', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
-                  Participate by proposing upgrades and discussing the future of the protocol with the Uniswap
-                  community.
-                </p>
-              </div>
-            </Button>
-            <Button style={{ borderRadius: '20px' }} href="https://sybil.org/" outlined>
-              <div style={{ padding: '1rem' }}>
-                <StyledBodySubTitle style={{ marginBottom: '0.25rem' }}>
-                  Sybil <span style={{ fontSize: '16px' }}>↗</span>
-                </StyledBodySubTitle>
-                <p style={{ textAlign: 'left', margin: '0', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
-                  Vote on offchain proposals with the Snapshot interface. Votes are weighted by the number of UNI
-                  delegates.
-                </p>
-              </div>
-            </Button>
-            <Button style={{ width: '100%', borderRadius: '20px' }} href="https://app.uniswap.org/#/vote" outlined>
-              <div style={{ padding: '1rem' }}>
-                <StyledBodySubTitle style={{ marginBottom: '0.25rem' }}>
-                  Governance Portal <span style={{ fontSize: '16px' }}>↗</span>
-                </StyledBodySubTitle>
-                <p style={{ textAlign: 'left', margin: '0', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
-                  Vote on official Uniswap governance proposals and view past proposals.{' '}
-                </p>
-              </div>
-            </Button>
-          </StyledItemColumn>
+          </GrantsCard>
+          
         </StyledItemRow>
       </StyledSection>
     </>

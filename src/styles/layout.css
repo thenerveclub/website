@@ -326,7 +326,7 @@ hgroup {
   margin-bottom: 1.45rem;
 }
 ul {
-  margin-left: 1.45rem;
+  margin-left: 0;
   margin-right: 0;
   margin-top: 0;
   padding-bottom: 0;
@@ -334,6 +334,7 @@ ul {
   padding-right: 0;
   padding-top: 0;
   margin-bottom: 1.45rem;
+  list-style-type: none;
   list-style-position: outside;
   list-style-image: none;
 }
