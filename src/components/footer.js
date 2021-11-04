@@ -69,12 +69,11 @@ const Footer = () => {
     <StyledFooter>
       <p style={{ margin: 0 }}> {new Date().getFullYear()} Nerve Global</p>
       <StyledFooterLinkSection>
-        <StyledFooterLink to="/about">About</StyledFooterLink>
+        <StyledFooterLink to="/privacy-policy">Privacy Policy</StyledFooterLink>
         <StyledFooterLink to="/disclaimer" style={{ marginRight: '12px' }}>
           Disclaimer
         </StyledFooterLink>
-        <StyledFooterLink to="/trademarks">Trademarks</StyledFooterLink>
-        <StyledFooterLink to="/about#brand">Brand</StyledFooterLink>
+        <StyledFooterLink to="/terms-of-service">Terms of Service</StyledFooterLink>
         <a style={{ marginLeft: '30px' }} href="https://twitter.com/Uniswap" rel="noopener noreferrer" target="_blank">
           <StyledTwitter />
         </a>

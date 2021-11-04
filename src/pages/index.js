@@ -6,6 +6,8 @@ import SEO from '../components/seo'
 import BG from '../components/bg'
 import { Button } from '../components/button'
 import ProtocolData from '../components/protocolData'
+import Future from '../components/timeline'
+
 import { useDarkMode } from '../contexts/Application'
 import { CardBGImage, CardGlimmerImage } from '../components/utils'
 
@@ -282,7 +284,6 @@ const StyledTradeLink = styled.a`
   white-space: nowrap;
   border: 1px solid transparent;
   box-shadow: ${({ theme }) => theme.shadows.small};
-  display: none;
 
   :hover,
   :focus {
@@ -384,9 +385,9 @@ const IndexPage = props => {
             <StyledPinkGlimmer /> GLOBAL
           </StyledBodyTitle>
           <StyledBodySubTitle>
-            {'Swap, earn, and build on the leading decentralized crypto trading protocol.'}
+            {'Discover, fund, and be part of projects you care about.'}
           </StyledBodySubTitle>
-
+          <StyledSocialRow>
           <StyledTradeLink
             style={{
               background: `linear-gradient(128.17deg, #BD00FF -14.78%, #FF1F8A 110.05%)`,
@@ -395,8 +396,19 @@ const IndexPage = props => {
             target="_blank"
             href="https://app.uniswap.org/"
           >
-            Launch App
+            App Store
           </StyledTradeLink>
+          <StyledTradeLink
+            style={{
+              background: `linear-gradient(128.17deg, #BD00FF -14.78%, #FF1F8A 110.05%)`,
+              color: 'white'
+            }}
+            target="_blank"
+            href="https://app.uniswap.org/"
+          >
+            Play Store
+          </StyledTradeLink>
+          </StyledSocialRow>
           <StyledSocialRow>
             <a href="https://twitter.com/uniswap/">
               <StyledTwitter />
@@ -411,6 +423,9 @@ const IndexPage = props => {
         </StyledTitle>
 
         <EcosystemSection data={data} props={props} />
+
+        <StyledSectionHeader>{'TIMELINE →'}</StyledSectionHeader>
+          <Future />
         
         <HideSmall>
           <StyledSectionHeader>

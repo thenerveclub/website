@@ -9,10 +9,8 @@ const menu = [
   {
     name: 'Docs',
     sublinks: [
-      { name: 'Discord', link: 'https://discord.gg/FCfyBSbCU5' },
-      { name: 'Twitter', link: 'https://twitter.com/Uniswap' },
-      { name: 'Telegram', link: 'https://www.reddit.com/r/Uniswap' },
-      { name: 'LinkedIn', link: 'https://www.reddit.com/r/Uniswap' }
+      { name: 'Documentation', link: 'https://discord.gg/FCfyBSbCU5' },
+      { name: 'GitHub', link: 'https://twitter.com/Uniswap' }
     ]
   },
   {
@@ -20,6 +18,7 @@ const menu = [
     sublinks: [
       { name: 'Discord', link: 'https://discord.gg/FCfyBSbCU5' },
       { name: 'Twitter', link: 'https://twitter.com/Uniswap' },
+      { name: 'Instagram', link: 'https://twitter.com/Uniswap' },
       { name: 'Telegram', link: 'https://www.reddit.com/r/Uniswap' },
       { name: 'LinkedIn', link: 'https://www.reddit.com/r/Uniswap' }
     ]
@@ -30,6 +29,10 @@ const menu = [
       {
         name: 'About',
         link: '/about'
+      },
+      {
+        name: 'Philosophy',
+        link: '/philosophy'
       },
     ]
   }
