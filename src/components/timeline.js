@@ -1,5 +1,30 @@
 import React from 'react'
 import '../styles/future.css'
+import styled from 'styled-components'
+
+
+const StyledSectionFlex = styled.div`
+  flex-wrap: wrap;
+  max-width: 1440px;
+
+  @media (max-width: 960px) {
+    padding: 1rem;
+    margin-left: 0;
+    margin-top: 0rem;
+    width: 100%;
+    flex-direction: column;
+  }
+  @media (max-width: 640px) {
+    display: none;
+  }
+  h1,
+  h2 {
+    max-width: 650px;
+  }
+  p {
+    max-width: 650px;
+  }
+`
 
 
 
@@ -7,42 +32,44 @@ const Future = () => {
 
 
   return (
-    <converted>
+    <StyledSectionFlex>
 <ul className="timeline-events">
-	<li className="timeline-event-years-6-5 timeline-event-legend">
-	</li>
 	<li className="timeline-event-years-2">
-		<h2>2004-2006</h2>
-		<h3>Ideaworks Advertising</h3>
-		<h4>Interactive Designer</h4>
+		<h2>2017-2018</h2>
+		<h3>Proof of Concept</h3>
+		<h4>Start of development</h4>
 	</li>
-	<li className="timeline-event-years-2">
-		<h2>2006-2008</h2>
-		<h3>Pint, Inc</h3>
-		<h4>Associate Creative Director</h4>
+	<li className="timeline-event-years-4">
+		<h2>2018-2021</h2>
+		<h3>Research & Development</h3>
+		<h4>Prototype with +1,000 Testers</h4>
 	</li>
 	<li className="timeline-event-years-3">
-		<h2>2008-2011</h2>
-		<h3>Cuker Interactive</h3>
-		<h4>Creative</h4>
+		<h2>2021-2022</h2>
+		<h3>The Graph Integration</h3>
+		<h4>Establishment Nerve Global GmbH</h4>
 	</li>
-	<li className="timeline-event-years-7">
-		<h2>2011-Present</h2>
-		<h3>Independent</h3>
-		<h4>Interactive Art Director</h4>
+	<li className="timeline-event-years-3">
+		<h2>2022-2023</h2>
+		<h3>Mainnet, NFT´s, Google Maps</h3>
+		<h4>Establishment Foundation, Web3</h4>
+	</li>
+	<li className="timeline-event-years-3">
+		<h2>2023 +</h2>
+		<h3>Metaverse & AR</h3>
+		<h4>Metaverse & AR</h4>
 	</li>
 </ul>
 <ul className="timelines-years">
-	<li>2016</li>
 	<li>2018</li>
+	<li>2019</li>
 	<li>2020</li>
+	<li>2021</li>
 	<li>2022</li>
+	<li>2023</li>
 	<li>2024</li>
-	<li>2026</li>
-	<li>2028</li>
-	<li>2030</li>
 </ul>
-  </converted>
+  </StyledSectionFlex>
 )
 }
 

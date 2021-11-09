@@ -1,9 +1,13 @@
 import * as React from "react";
 
 const Bearn = `
+{
+  bets(orderBy:endBet, orderDirection:desc, first: 1) 
   {
-    globalStats {
-        betWinnings
+      endBet
+      initiatorAddress
+      initiatorName
+      description
   }
 }
 `;
@@ -15,7 +19,7 @@ export default function BEarn() {
     <div>
       <ul>
         {bearn.map((bearn) => (
-          <li key={bearn.id}>{bearn.betWinnings}</li>
+          <li key={bearn.id}>{bearn.initiatorName}</li>
         ))}
       </ul>
     </div>
@@ -32,7 +36,7 @@ function useBearn() {
       body: JSON.stringify({ query: Bearn })
     })
       .then((response) => response.json())
-      .then((data) => setBearn(data.data.globalStats));
+      .then((data) => setBearn(data.data.bets));
   }, []);
 
   return bearn;

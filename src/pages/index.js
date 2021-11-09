@@ -5,8 +5,8 @@ import Layout from '../layouts'
 import SEO from '../components/seo'
 import BG from '../components/bg'
 import { Button } from '../components/button'
+import { Butt } from '../components/butt'
 import ProtocolData from '../components/protocolData'
-import Future from '../components/timeline'
 
 import { useDarkMode } from '../contexts/Application'
 import { CardBGImage, CardGlimmerImage } from '../components/utils'
@@ -19,9 +19,14 @@ import DevImage from '../images/developer.png'
 import GovImage from '../images/governance.png'
 import AppsImage from '../images/apps.png'
 import mockup from '../images/mockup.png'
+import graph from '../images/graph.png'
+
 
 import ZTask from '../ZTask'
 import ZBet from '../ZBet'
+import TEarn from '../TEarn'
+import BEarn from '../BEarn'
+import { center } from 'underscore'
 
 
 const StyledAbout = styled.div`
@@ -112,7 +117,6 @@ const StyledTitle = styled.div`
   will-change: transform;
   align-items: flex-start;
   height: 15vh;
-  margin-bottom: 4rem;
 
   @media (max-width: 1024px) {
     height: 50vh;
@@ -120,6 +124,8 @@ const StyledTitle = styled.div`
 
   @media (max-width: 640px) {
     height: 50vh;
+    margin-top: -8rem;
+    margin-bottom: 15rem;
   }
 
   @media (max-width: 440px) {
@@ -150,6 +156,7 @@ const StyledBodyTitle = styled.h1`
     font-size: 52px;
   }
 `
+
 const StyledBodySubTitle = styled.h2`
   max-width: 720px;
   line-height: 150%;
@@ -157,6 +164,21 @@ const StyledBodySubTitle = styled.h2`
   text-align: left;
 
   @media (max-width: 640px) {
+    text-align: left;
+  }
+`
+
+const StyledBodySubT = styled.h2`
+  display: none;
+  visibility: hidden;
+
+  @media (max-width: 640px) {
+  display: block;
+  visibility: visible;
+  max-width: 720px;
+  line-height: 150%;
+  font-weight: 400;
+  text-align: left;
     text-align: left;
   }
 `
@@ -265,6 +287,10 @@ const StyledCard = styled.div`
   box-shadow: ${({ theme }) => theme.shadows.huge};
 `
 
+const StyledC = styled.div`
+  border-radius: 24px;
+`
+
 const HideSmall = styled.span`
   @media (max-width: 960px) {
     display: none;
@@ -365,7 +391,7 @@ const IndexPage = props => {
       <SEO
         title="Home"
         path={props.location.pathname}
-        description={'Swap, earn, and build on the leading decentralized crypto trading protocol.'}
+        description={'Discover, fund, and be part of projects you care about.'}
       />
       
       <StyledAbout>
@@ -384,9 +410,9 @@ const IndexPage = props => {
             <span style={{ fontWeight: 200 }}>NERVE</span>
             <StyledPinkGlimmer /> GLOBAL
           </StyledBodyTitle>
-          <StyledBodySubTitle>
+          <StyledBodySubT>
             {'Discover, fund, and be part of projects you care about.'}
-          </StyledBodySubTitle>
+          </StyledBodySubT>
           <StyledSocialRow>
           <StyledTradeLink
             style={{
@@ -394,7 +420,7 @@ const IndexPage = props => {
               color: 'white'
             }}
             target="_blank"
-            href="https://app.uniswap.org/"
+            href="https://apps.apple.com/de/app/nerve-global/id1500517863"
           >
             App Store
           </StyledTradeLink>
@@ -404,7 +430,7 @@ const IndexPage = props => {
               color: 'white'
             }}
             target="_blank"
-            href="https://app.uniswap.org/"
+            href="https://play.google.com/store/apps/details?id=com.academy.nerve&hl=en&gl=US"
           >
             Play Store
           </StyledTradeLink>
@@ -420,14 +446,13 @@ const IndexPage = props => {
               <StyledDiscord />
             </a>
           </StyledSocialRow>
+          
         </StyledTitle>
+        <GrantCard>
+            <img style={{ marginLeft: "5rem" }} src={graph} width="35%" />
+            <StyledBodySubTitle style={{ textAlign: "center", fontSize: "20px" }}>Backed by <br /> The Graph Foundation</StyledBodySubTitle>
+        </GrantCard>
 
-        <EcosystemSection data={data} props={props} />
-
-        <StyledSectionHeader>{'TIMELINE →'}</StyledSectionHeader>
-          <Future />
-        
-        <HideSmall>
           <StyledSectionHeader>
             <a href="https://info.uniswap.org/">{'DATA ANALYTICS →'}</a>
           </StyledSectionHeader>
@@ -437,12 +462,14 @@ const IndexPage = props => {
               alignItems: 'center',
               justifyContent: 'center',
               width: '100%',
-              padding: '4rem 0 3rem 0'
+              padding: '2rem 0 10rem 0'
             }}
           >
             <ProtocolData />
           </div>
-        </HideSmall>
+
+        <EcosystemSection data={data} props={props} />
+        
 
         <HideSmall>
         <StyledSectionHeader>
@@ -476,7 +503,7 @@ const StyledSectionHeader = styled.h1`
   overflow-wrap: normal;
   max-width: 900px;
   font-weight: 500;
-  margin-top: 5rem;
+  margin-top: 10rem;
 
   a {
     color: ${({ theme }) => theme.textColor};
@@ -487,12 +514,12 @@ const StyledSectionHeader = styled.h1`
     /* font-size: 2rem; */
     line-height: 2.5rem;
     max-width: 600px;
-    margin-top: 4rem;
+    margin-top: 5rem;
   }
   @media (max-width: 640px) {
     width: 100%;
     font-weight: 400;
-    margin-top: 4rem;
+    margin-top: 5rem;
     text-align: left;
   }
 `
@@ -591,12 +618,25 @@ export const GrantsCard = styled(StyledCard)`
   }
 `
 
+export const GrantCard = styled(StyledC)`
+  width: 250px;
+  position: absolute; 
+  top: -1rem;
+  right: 10rem;
+  
+  @media (max-width: 960px) {
+    width: 250px;
+    top: 23rem;
+    right: 5rem;
+  }
+`
+
 const EcosystemSection = () => {
   return (
     <StyledSection>
       <StyledItemRow>
         <span style={{ marginTop: '-60px', marginBottom: '80px' }}>
-          <StyledSectionHeader>{'NERVE ECOSYSTEM →'}</StyledSectionHeader>
+          <StyledSectionHeader style={{ marginTop: '5rem' }}>{'NERVE ECOSYSTEM →'}</StyledSectionHeader>
           <StyledSectionTitle>Suitable for any other social media platform.</StyledSectionTitle>
           <StyledBodySubText style={{ marginRight: '48px' }}>
             Content creators, virtual communities, and its users participate together in a place that is open
@@ -625,23 +665,27 @@ const DeveloperSection = props => {
               padding: '2rem 10rem 2rem 10rem'
             }}>
         <GrantsCard>
-            <StyledBodySubTitle style={{ fontSize: '20px' }}>Latest Task</StyledBodySubTitle>
-            <p style={{ fontSize: '30px' }}>
+            <StyledBodySubTitle style={{ fontSize: '1.125rem' }}>Latest Task</StyledBodySubTitle>
+            <p style={{ fontSize: '25px' }}>
             <ZTask />
             </p>
-            <Button href="https://unigrants.org/" outlined>
-              <p style={{ margin: 0 }}>Fund now ↗</p>
-            </Button>
+            <p style={{ fontSize: '1.125rem' }}>For 
+            <Butt href="https://unigrants.org/" outlined>
+              <p><TEarn /></p>
+            </Butt>
+            </p>
           </GrantsCard>
 
           <GrantsCard>
-            <StyledBodySubTitle style={{ fontSize: '20px' }}>Latest Bet</StyledBodySubTitle>
-            <p style={{ fontSize: '30px' }}>
+            <StyledBodySubTitle style={{ fontSize: '1.125rem' }}>Latest Bet</StyledBodySubTitle>
+            <p style={{ fontSize: '25px' }}>
             <ZBet />
             </p>
-            <Button href="https://unigrants.org/" outlined>
-              <p style={{ margin: 0 }}>Bet Now ↗</p>
-            </Button>
+            <p style={{ fontSize: '1.125rem' }}>By
+            <Butt href="https://unigrants.org/" outlined>
+              <p><BEarn /></p>
+            </Butt>
+            </p>
           </GrantsCard>
           
         </StyledItemRow>

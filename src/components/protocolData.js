@@ -32,7 +32,12 @@ const StyledSectionFlex = styled.div`
     flex-direction: column;
   }
   @media (max-width: 640px) {
-    display: none;
+    padding: 1rem;
+    margin-left: 0;
+    margin-top: -1rem;
+    margin-bottom: -2rem;
+    width: 100%;
+    flex-direction: column;
   }
   h1,
   h2 {
@@ -118,7 +123,7 @@ const ProtocolData = () => {
         <BigNumbers>
           <Sparkle />
           <span><ZUsers /></span>
-          <p style={{ fontSize: '14px' }}>Unique Users</p>
+          <p style={{ fontSize: '14px' }}>Users</p>
           <SparkleGray />
         </BigNumbers>
         <BigNumbers>
@@ -128,21 +133,9 @@ const ProtocolData = () => {
           <p style={{ fontSize: '14px' }}>Tasks</p>
         </BigNumbers>
         <BigNumbers>
-          <SparkleTopRight />
-          <SparkleGray />
-          <span><TEarn /></span>
-          <p style={{ fontSize: '14px' }}>Task Earnings</p>
-          <SparkleGray />
-        </BigNumbers>
-        <BigNumbers>
           <span><ZBCount /></span>
           <p style={{ fontSize: '14px' }}>Bets</p>
           <SparkleGray />
-        </BigNumbers>
-        <BigNumbers>
-          <SparkleBottom />
-          <span><BEarn /></span>
-          <p style={{ fontSize: '14px' }}>Bet Earnings</p>
         </BigNumbers>
       </div>
     </Numbers>

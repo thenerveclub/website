@@ -28,7 +28,6 @@ const StyledHeader = styled.header`
   top: -1px;
   background: ${({ theme, open, showBG }) => (showBG && !open ? theme.backgroundColor : 'none')};
 	border-bottom: 1px solid ${({ theme }) => theme.buttonBorder};
-  border-bottom: 1px solid;
   border-image: linear-gradient(var(--angle), aqua, aqua, magenta, magenta) 1;
 	
 	animation: 15s rotate linear infinite;

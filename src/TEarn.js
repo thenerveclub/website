@@ -1,9 +1,14 @@
 import * as React from "react";
 
 const Tearn = `
+{
+  tasks(orderBy:endTask, orderDirection:desc, first: 1) 
   {
-    globalStats {
-        taskEarnings
+      endTask
+      initiatorAddress
+      initiatorName
+      recipientName
+      description
   }
 }
 `;
@@ -15,7 +20,7 @@ export default function TEarn() {
     <div>
       <ul>
         {tearn.map((tearn) => (
-          <li key={tearn.id}>{tearn.taskEarnings}</li>
+          <li key={tearn.id}>{tearn.recipientName}</li>
         ))}
       </ul>
     </div>
@@ -32,7 +37,7 @@ function useTearn() {
       body: JSON.stringify({ query: Tearn })
     })
       .then((response) => response.json())
-      .then((data) => setTearn(data.data.globalStats));
+      .then((data) => setTearn(data.data.tasks));
   }, []);
 
   return tearn;

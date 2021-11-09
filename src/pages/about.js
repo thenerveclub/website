@@ -2,6 +2,9 @@ import React, { useState, useEffect } from 'react'
 
 import styled from 'styled-components'
 
+import Future from '../components/timeline'
+
+
 import gql from 'graphql-tag'
 import dayjs from 'dayjs'
 import utc from 'dayjs/plugin/utc'
@@ -103,6 +106,12 @@ const InternalLink = styled(Link)`
   }
 `
 
+const HideSmall = styled.span`
+  @media (max-width: 960px) {
+    display: none;
+  }
+`
+
 const ExternalLink = styled.a`
   border-radius: 8px;
   color: ${({ theme }) => theme.textColor};
@@ -119,6 +128,17 @@ const ExternalLink = styled.a`
   transition: transform 0.45s cubic-bezier(0.19, 1, 0.22, 1);
   :hover {
     transform: translate3d(2px, 2px, 10px);
+  }
+`
+
+const StyledBodySubTitle = styled.h2`
+  max-width: 800px;
+  line-height: 150%;
+  font-weight: 400;
+  text-align: left;
+
+  @media (max-width: 640px) {
+    text-align: left;
   }
 `
 
@@ -163,6 +183,33 @@ const APOLLO_QUERY = gql`
     bundle(id: 1) {
       ethPrice
     }
+  }
+`
+
+const StyledSectionHeader = styled.h1`
+  font-size: 20px;
+  white-space: wrap;
+  overflow-wrap: normal;
+  max-width: 900px;
+  font-weight: 500;
+  margin-top: 10rem;
+
+  a {
+    color: ${({ theme }) => theme.textColor};
+  }
+
+  @media (max-width: 960px) {
+    width: 100%;
+    /* font-size: 2rem; */
+    line-height: 2.5rem;
+    max-width: 600px;
+    margin-top: 5rem;
+  }
+  @media (max-width: 640px) {
+    width: 100%;
+    font-weight: 400;
+    margin-top: 5rem;
+    text-align: left;
   }
 `
 
@@ -260,89 +307,63 @@ const About = props => {
       <StyledAbout>
         <span style={{ marginTop: '5rem' }}>
           <Title style={{ paddingBottom: '4rem' }}>
-            Swap, earn, and build on the largest crypto trading protocol on Ethereum.
+            The first P2P crowdfunding and betting platform that lets you decide.
           </Title>
 
-          <Numbers id="about" style={{ flexDirection: 'column' }}>
-            <div style={{ display: 'flex', width: '100%', justifyContent: 'space-between', margin: 0 }}>
-              <h2 style={{ fontSize: '32px' }}>
-                {UniStats.exchanges}
-                <p style={{ fontSize: '14px' }}>Token Pairs </p>
-              </h2>
-              <h2 style={{ fontSize: '32px' }}>
-                {UniStats.volume}
-                <p style={{ fontSize: '14px' }}>24H Volume</p>
-              </h2>
-              <h2 style={{ fontSize: '32px' }}>
-                {UniStats.liquidity}
-                <p style={{ fontSize: '14px' }}>Total Liquidity</p>
-              </h2>
-              <h2 style={{ fontSize: '32px' }}>
-                {'> 200'}
-                <p style={{ fontSize: '14px' }}>DeFi Integrations</p>
-              </h2>
-            </div>
-          </Numbers>
+          <StyledBodySubTitle>
+            {'No limits on who you can challenge or what you can bet on.'}
+          </StyledBodySubTitle>
+
+          <StyledBodySubTitle>
+            {'Nerve Global is universally accessible, censorship-resistant and allows everyone to participate, even without access to a bank account.'}
+          </StyledBodySubTitle>
+
+          
           <StyledSectionFlex id="about" style={{ flexDirection: 'column' }}>
-            <p>
-              Uniswap empowers developers, liquidity providers and traders to participate in a financial marketplace
-              that is open and accessible to all.
-            </p>
-            <p>We are committed to open source software and building on the decentralized web.</p>
-
-            <div style={{ display: 'flex', width: '100%', margin: 0 }}>
-              <InternalLink to="/blog/uni">UNI token</InternalLink>
-              <InternalLink to="/whitepaper.pdf">
-                V2 Whitepaper <span style={{ fontSize: '11px' }}>↗</span>
-              </InternalLink>
-              <InternalLink to="/whitepaper-v3.pdf">
-                V3 Whitepaper <span style={{ fontSize: '11px' }}>↗</span>
-              </InternalLink>
-              <InternalLink to="/faq">FAQ</InternalLink>
+            <div style={{ display: 'flex', width: '100%', marginTop: "5rem" }}>
+            <ExternalLink href={'https://docs.nerveglobal.com'}>Docs <span style={{ fontSize: '15px' }}>↗</span></ExternalLink>
+              <InternalLink to="/whitepaper.pdf">Whitepaper <span style={{ fontSize: '15px' }}>↗</span></InternalLink>
             </div>
           </StyledSectionFlex>
 
-          <StyledSectionFlex id="jobs" style={{ flexDirection: 'column' }}>
-            <h2 style={{ width: '100%' }}>Jobs</h2>
-            <p>We are looking for talented people to join our team!</p>
+          <HideSmall>
+        <StyledSectionHeader>{'TIMELINE →'}</StyledSectionHeader>
+          <Future />
+          </HideSmall>
 
-            <span>
-              <a href="https://jobs.lever.co/Uniswap">
-                {' '}
-                <h3>Full list of roles available at Uniswap Labs</h3>
-              </a>
-            </span>
-          </StyledSectionFlex>
+          <StyledSectionHeader>{'CONTACT →'}</StyledSectionHeader>
 
           <StyledSectionFlex id="contact" style={{ flexDirection: 'column' }}>
-            <h2 style={{ width: '100%' }}>Contact</h2>
             <p>
-              To get in touch, please email <a href="mailto:contact@uniswap.org">contact@uniswap.org</a>
+              To get in touch, please email <a href="mailto:business@uniswap.com">business@nerveglobal.com</a>
             </p>
 
             <p>
-              We encourage anyone facing issues with their wallet, transaction or Uniswap related question to join our
-              active community discord or explore the{' '}
-              <ExternalLink href={'https://help.uniswap.org'}>help & tutorial</ExternalLink> site.
+              We encourage anyone facing issues with their wallet, transaction or Nerve related question to join our
+              active community and explore the <a href="https://docs.nerveglobal.com">documentation</a> site.
             </p>
 
             <div style={{ display: 'flex', width: '100%', margin: 0 }}>
-              <ExternalLink href={'https://discord.gg/FCfyBSbCU5'}>
+            <ExternalLink href={'https://t.me/nerveglobal'}>
+                Telegram <span style={{ fontSize: '11px' }}>↗</span>
+              </ExternalLink>
+              <ExternalLink href={'https://discord.gg/VHZCy5Dx'}>
                 Discord <span style={{ fontSize: '11px' }}>↗</span>
               </ExternalLink>
-              <ExternalLink href={'https://twitter.com/Uniswap'}>
+              <ExternalLink href={'https://twitter.com/nerveglobal_'}>
                 Twitter <span style={{ fontSize: '11px' }}>↗</span>
               </ExternalLink>
-              <ExternalLink href={'https://www.reddit.com/r/Uniswap'}>
-                Reddit <span style={{ fontSize: '11px' }}>↗</span>
+              <ExternalLink href={'https://www.linkedin.com/company/nerveglobal/'}>
+                LinkedIn <span style={{ fontSize: '11px' }}>↗</span>
               </ExternalLink>
             </div>
           </StyledSectionFlex>
 
+          <StyledSectionHeader>{'BRAND ASSETS →'}</StyledSectionHeader>
+
           <StyledSectionFlex id="brand" style={{ flexDirection: 'column' }}>
-            <h2 style={{ width: '100%' }}>Brand Assets</h2>
             <p>
-              Download the logo and other brand assets samples <a href="/Uniswap_brand_assets.zip">here</a>.
+              Download the logo and other brand assets <a href="https://github.com/nerveglobal/brand-assets">here</a>.
             </p>
           </StyledSectionFlex>
         </span>

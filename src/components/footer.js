@@ -1,10 +1,6 @@
 import { Link } from 'gatsby'
 import React from 'react'
 import styled from 'styled-components'
-import Twitter from '../images/twitter.inline.svg'
-import Github from '../images/github.inline.svg'
-import Discord from '../images/discord.inline.svg'
-
 
 
 const StyledFooter = styled.footer`
@@ -24,8 +20,6 @@ const StyledFooter = styled.footer`
   }
 `
 
-
-
 const StyledFooterLinkSection = styled.ul`
   display: flex;
   flex-direction: row;
@@ -38,32 +32,6 @@ const StyledFooterLink = styled(Link)`
   color: ${({ theme }) => theme.textColor};
 `
 
-const StyledTwitter = styled(Twitter)`
-  path {
-    fill: ${({ theme }) => theme.textColor};
-  }
-  width: 16px;
-  height: 16px;
-  margin-right: 12px;
-`
-
-const StyledDiscord = styled(Discord)`
-  path {
-    fill: ${({ theme }) => theme.textColor};
-  }
-  width: 16px;
-  height: 16px;
-`
-
-const StyledGithub = styled(Github)`
-  path {
-    fill: ${({ theme }) => theme.textColor};
-  }
-  width: 16px;
-  height: 16px;
-  margin-right: 12px;
-`
-
 const Footer = () => {
   return (
     <StyledFooter>
@@ -74,15 +42,6 @@ const Footer = () => {
           Disclaimer
         </StyledFooterLink>
         <StyledFooterLink to="/terms-of-service">Terms of Service</StyledFooterLink>
-        <a style={{ marginLeft: '30px' }} href="https://twitter.com/Uniswap" rel="noopener noreferrer" target="_blank">
-          <StyledTwitter />
-        </a>
-        <a href="https://github.com/Uniswap" rel="noopener noreferrer" target="_blank">
-          <StyledGithub />
-        </a>
-        <a href="https://discord.gg/FCfyBSbCU5" rel="noopener noreferrer" target="_blank">
-          <StyledDiscord />
-        </a>
       </StyledFooterLinkSection>
     </StyledFooter>
   )
