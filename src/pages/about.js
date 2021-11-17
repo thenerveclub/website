@@ -3,8 +3,10 @@ import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 
 import Future from '../components/timeline'
+import graph from '../images/graph.png'
 
 
+import { Button } from '../components/button'
 import gql from 'graphql-tag'
 import dayjs from 'dayjs'
 import utc from 'dayjs/plugin/utc'
@@ -139,6 +141,44 @@ const StyledBodySubTitle = styled.h2`
 
   @media (max-width: 640px) {
     text-align: left;
+  }
+`
+
+const StyledCard = styled.div`
+  background-color: ${({ theme }) => theme.cardBG};
+  border: 1px solid ${({ theme }) => theme.buttonBorder};
+  padding: 2rem;
+  border-radius: 24px;
+  box-shadow: ${({ theme }) => theme.shadows.huge};
+`
+
+  const GrantsCard = styled(StyledCard)`
+  width: 600px;
+  alignItems: center;
+  justifyContent: center;
+  
+  @media (max-width: 960px) {
+    width: 325px;
+  }
+`
+
+const StyledItemRow = styled.nav`
+  display: flex;
+  flex-direction: column;
+
+  margin: 0rem;
+  & > *:not(:first-of-type) {
+    margin-top: 12px;
+  }
+  @media (min-width: 960px) {
+    flex-direction: row;
+    & > * {
+      margin-bottom: 12px;
+    }
+    & > *:not(:first-of-type) {
+      margin-top: 0;
+      margin-left: 12px;
+    }
   }
 `
 
@@ -325,6 +365,38 @@ const About = props => {
               <InternalLink to="/whitepaper.pdf">Whitepaper <span style={{ fontSize: '15px' }}>↗</span></InternalLink>
             </div>
           </StyledSectionFlex>
+
+          <StyledSectionHeader>{'RECOGNITION →'}</StyledSectionHeader>
+          <StyledItemRow style={{ alignItems: 'center', justifyContent: 'center', padding: '2rem 10rem 2rem 10rem' }}>
+          <GrantsCard style={{ minHeight: "35rem", maxWidth: "20rem" }}>
+          <img style={{ marginLeft: "5rem" }} src={graph} width="35%" />
+            <StyledBodySubTitle>The Graph Foundation</StyledBodySubTitle>
+            <p>
+            Dapps & Subgraphs - $7.5K Grant
+            </p>
+            <p>
+            Grant applicants came from Portugal, Canada, Japan, Korea, Poland, the US and more.
+            Each applicant was assessed based on the project’s expected impact, community feedback, relative significance and urgency in the ecosystem.
+            </p>
+            <Button href="https://unigrants.org/" outlined>
+              <p style={{ margin: 0 }}>Learn more ↗</p>
+            </Button>
+          </GrantsCard>
+          <GrantsCard style={{ minHeight: "35rem", maxWidth: "20rem" }}>
+          <img style={{ marginLeft: "5rem" }} src={graph} width="35%" />
+            <StyledBodySubTitle>Blockland Solutions</StyledBodySubTitle>
+            <p>
+            Pitch Competition - $4K
+            </p>
+            <p>
+            3rd out of 47 international teams.
+            Prizes awarded by Jon Pinney, Kohrman Jackson & Krantz LLP, and Bob Sopko (Launchnet at Case Western Reserve University)
+            </p>
+            <Button style={{ marginTop: "3rem" }} href="https://unigrants.org/" outlined>
+              <p style={{ margin: 0 }}>Learn more ↗</p>
+            </Button>
+          </GrantsCard>
+        </StyledItemRow>
 
           <HideSmall>
         <StyledSectionHeader>{'TIMELINE →'}</StyledSectionHeader>

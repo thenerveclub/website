@@ -237,19 +237,18 @@ const StyledBodySubText = styled.h3`
 export default function Menu(props) {
   return (
     <StyledMenu tabIndex={0}>
-      
       <StyledMenuTitle>
         <span style={{ marginRight: '0.25rem' }}>{props.data.name} </span>
         <MenuFlyout>
           {props.data.sublinks.map((item, index) => {
             return (
               <StyledMenuItem tabindex={index} key={index}>
-                {item.link.split('.').slice(-1)[0] === 'pdf' ? (
-                  <StyledExternalLink href={item.link} target="_blank" rel="noopener noreferrer">
+                {item.link.split('/').slice(-1)[0] === 'about' && 'philosophy' ? (
+                  <StyledExternalLink href={item.link}>
                     <StyledTitle>{item.name}</StyledTitle>
                   </StyledExternalLink>
                 ) : (
-                  <StyledExternalLink href={item.link}>
+                  <StyledExternalLink href={item.link} target="_blank" rel="noopener noreferrer">
                     <StyledTitle>{item.name}</StyledTitle>
                     {item.description && <StyledDescription>{item.description}</StyledDescription>}
                   </StyledExternalLink>

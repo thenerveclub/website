@@ -8,7 +8,6 @@ const ButtStyles = css`
   box-sizing: border-box;
   font-weight: 500;
   font-size: 1.125rem;
-  cursor: pointer;
   width: fit-content;
   @media (max-width: 960px) {
     margin-left: 10px;
@@ -18,7 +17,6 @@ const ButtStyles = css`
   box-sizing: border-box;
   font-weight: 500;
   font-size: 1.125rem;
-  cursor: pointer;
   width: fit-content;
   }
   @media (max-width: 640px) {
@@ -29,7 +27,6 @@ const ButtStyles = css`
   box-sizing: border-box;
   font-weight: 500;
   font-size: 1.125rem;
-  cursor: pointer;
   width: fit-content;
   }
   :hover {
