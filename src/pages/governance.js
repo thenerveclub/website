@@ -4,6 +4,8 @@ import styled from 'styled-components'
 
 import Future from '../components/timeline'
 import graph from '../images/graph.png'
+import uni from '../images/uni.svg'
+
 
 
 import { Button } from '../components/button'
@@ -39,10 +41,13 @@ const StyledAbout = styled.div`
 `
 
 const StyledSectionFlex = styled.div`
+  padding: 0 0 4rem 0;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: space-between;
+  max-width: 960px;
+  margin-left: 5rem;
   @media (max-width: 1024px) {
     padding: 1rem;
     margin-top: 0rem;
@@ -61,7 +66,7 @@ const StyledSectionFlex = styled.div`
   }
   p {
     /* margin-bottom: 0.5rem; */
-    max-width: 700px;
+    max-width: 650px;
   }
 `
 
@@ -131,13 +136,57 @@ const ExternalLink = styled.a`
 `
 
 const StyledBodySubTitle = styled.h2`
-  max-width: 900px;
+  max-width: 800px;
   line-height: 150%;
   font-weight: 400;
   text-align: left;
 
   @media (max-width: 640px) {
     text-align: left;
+  }
+`
+
+const SubTitle = styled.div`
+  max-width: 650px;
+  font-size: 20px;
+  font-weight: 400;
+  @media (max-width: 640px) {
+    font-size: 14px;
+  }
+`
+
+const UniMobileImage = styled.div`
+  display: none;
+  position: absolute;
+  top: 0;
+  @media (max-width: 640px) {
+    display: initial;
+  }
+`
+
+const TokenSection = styled.div`
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  margin: 80px 0;
+  position: relative;
+  @media (max-width: 640px) {
+    padding-top: 220px;
+    margin: 60px 0;
+  }
+`
+
+const Tit = styled.div`
+color: inherit;
+font-weight: 500;
+text-rendering: optimizeLegibility;
+font-size: 32px;
+line-height: 1.1;
+  @media (max-width: 640px) {
+    font-size: 20px;
   }
 `
 
@@ -177,6 +226,13 @@ const StyledItemRow = styled.nav`
       margin-left: 12px;
     }
   }
+`
+
+const AutoColumn = styled.div`
+  display: grid;
+  grid-auto-rows: auto;
+  grid-row-gap: ${({ gap }) => (gap === 'sm' && '8px') || (gap === 'md' && '12px') || (gap === 'lg' && '24px') || gap};
+  justify-items: ${({ justify }) => justify && justify};
 `
 
 export const GET_BLOCK = gql`
@@ -221,6 +277,12 @@ const APOLLO_QUERY = gql`
       ethPrice
     }
   }
+`
+
+const PageTitle = styled.div`
+  font-size: 18px;
+  font-weight: 200;
+  color: rgba(255, 255, 255, 0.6);
 `
 
 const StyledSectionHeader = styled.h1`
@@ -340,63 +402,33 @@ const About = props => {
     <Layout path={props.location.pathname}>
       <BG />
 
-      <SEO title="About" path={props.location.pathname} />
+      <SEO title="Token" path={props.location.pathname} />
       <StyledAbout>
         <span style={{ marginTop: '5rem' }}>
           <Title style={{ paddingBottom: '4rem' }}>
-            ABOUT
+          GOVERNANCE
           </Title>
 
-          <StyledBodySubTitle>
-            {'The system for social media puts algorithms over ideas. Quantity over quality. These systems have a tendency to self-examination and creators try to follow the next trend to be as close as possible to the resonance pattern, which ends in continuously lower quality content.'}
-          </StyledBodySubTitle>
+          <TokenSection>
+          <HideSmall>
+          <img style={{ maxWidth: "15rem", marginRight: "3rem" }} src={uni} width="100%" />
+          </HideSmall>
+          <UniMobileImage>
+          <img style={{ maxWidth: "15rem" }} src={uni} width="100%" />
+          </UniMobileImage>
+          <AutoColumn gap="20px">
+            <Tit>The Nerve Token & NFT</Tit>
+            <SubTitle style={{ textAlign: 'left', margin: '0', opacity: '0.6' }}>
+              Get paid to build the future of social media. Nerve Governance offers grant funding for people building apps,
+              tools, and activities in the Nerve ecosystem.
+            </SubTitle>
+            <Button href="https://unigrants.org/" outlined>
+              <p style={{ margin: 0 }}>Learn more ↗</p>
+            </Button>
+            </AutoColumn>
+        </TokenSection>
 
-          <StyledBodySubTitle>
-            {'We see a strong need for a fundamental shift of power from creator to consumer.'}
-          </StyledBodySubTitle>
-
-          
-          <StyledSectionFlex id="about" style={{ flexDirection: 'column' }}>
-            <div style={{ display: 'flex', width: '100%', marginTop: "5rem" }}>
-            <ExternalLink href={'https://docs.nerveglobal.com'}>Docs <span style={{ fontSize: '15px' }}>↗</span></ExternalLink>
-              <InternalLink to="/whitepaper.pdf">Whitepaper <span style={{ fontSize: '15px' }}>↗</span></InternalLink>
-            </div>
-          </StyledSectionFlex>
-
-          <StyledSectionHeader>{'INNOVATIONS AT A GLANCE →'}</StyledSectionHeader>
-          <StyledSectionFlex id="contact" style={{ flexDirection: 'column' }}>
-            <StyledItemRow style={{ alignItems: 'center', justifyContent: 'center', padding: '2rem 10rem 2rem 10rem' }}>
-          <GrantsCard style={{ minHeight: "22rem", maxWidth: "18rem" }}>
-            <StyledBodySubTitle>BaaS</StyledBodySubTitle>
-            <p style={{ textAlign: 'left', margin: '0', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
-             Blockchain as a service for access to direct reward channels between content creators and consumers. It is globally accessible, censorship resistant 
-             and allows people to participate without access to banking services. 
-            </p>
-          </GrantsCard>
-          <GrantsCard style={{ minHeight: "22rem", maxWidth: "18rem" }}>
-            <StyledBodySubTitle>Wallet Solution</StyledBodySubTitle>
-            <p style={{ textAlign: 'left', margin: '0', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
-             We establish easy access to the Ethereum blockchain and help to introduce entry-level users through our own wallet solution.
-            </p>
-          </GrantsCard>
-          <GrantsCard style={{ minHeight: "22rem", maxWidth: "18rem" }}>
-            <StyledBodySubTitle>Consumer power</StyledBodySubTitle>
-            <p style={{ textAlign: 'left', margin: '0', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
-            In our crowdfunding system, the donors have to approve before funds get disbursed. That means, funding will only
-            be provided after a request has been delivered.
-            </p>
-          </GrantsCard>
-          <GrantsCard style={{ minHeight: "22rem", maxWidth: "18rem" }}>
-            <StyledBodySubTitle>Democratic system</StyledBodySubTitle>
-            <p style={{ textAlign: 'left', margin: '0', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
-            We are able to connect the very progressive sub-culture of digital natives with the real world. The focus is not solely set on entertainment purposes, 
-            but rather on the financial compensation for political and societal actions proposed by our underlying democratic system.
-            </p>
-          </GrantsCard>
-        </StyledItemRow>
-          </StyledSectionFlex>
-
-          <StyledSectionHeader>{'RECOGNITION →'}</StyledSectionHeader>
+          <StyledSectionHeader>{'INTRODUCING NERVE →'}</StyledSectionHeader>
           <StyledItemRow style={{ alignItems: 'center', justifyContent: 'center', padding: '2rem 10rem 2rem 10rem' }}>
           <GrantsCard style={{ minHeight: "35rem", maxWidth: "20rem" }}>
           <img style={{ marginLeft: "5rem" }} src={graph} width="35%" />
@@ -416,7 +448,7 @@ const About = props => {
           <img style={{ marginLeft: "5rem" }} src={graph} width="35%" />
             <StyledBodySubTitle>Blockland Solutions</StyledBodySubTitle>
             <p>
-            Pitch Competition - $4K Grant
+            Pitch Competition - $4K
             </p>
             <p>
             3rd out of 47 international teams.
@@ -428,13 +460,11 @@ const About = props => {
           </GrantsCard>
         </StyledItemRow>
 
-          {/*
           <HideSmall>
         <StyledSectionHeader>{'TIMELINE →'}</StyledSectionHeader>
           <Future />
           </HideSmall>
-          */}
-          
+
           <StyledSectionHeader>{'CONTACT →'}</StyledSectionHeader>
 
           <StyledSectionFlex id="contact" style={{ flexDirection: 'column' }}>

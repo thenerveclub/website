@@ -1,15 +1,14 @@
-import BG from '../components/bg'
-import styled from 'styled-components'
-
-<BG />
-
-<div style={{maxWidth: '800px', margin: '5rem auto 15rem auto'}}>
-<Title>Philosophy</Title>
-
+---
+title: 'Our Philosophy'
+date: '2020-08-06'
+author: 'Nerve'
+featuredImage: ./banner.png
+previewText: 'We believe in the sovereignty of the individual. Change is not made from the top down, but from the bottom up.'
+---
 
 # The freedom of each individual is our top priority
 
-At NERVE we firmly believe in the sovereignty of the individual. Change is not made from the top down, but from the bottom up. We see people as free agents 
+At Nerve we firmly believe in the sovereignty of the individual. Change is not made from the top down, but from the bottom up. We see people as free agents 
 who in their sum define the societal structure and bring forth shifts in paradigms. We will never enforce something on our users, but instead encourage 
 independent thinking and action.
 
@@ -61,5 +60,3 @@ to take on personal risks to bring forth new developments, while operating on th
 
 People learn best from their mistakes. Instead of discouraging people from making mistakes, we encourage people to make mistakes and learn from them. 
 The more the better – feel free to explore and advance.
-
-</div>

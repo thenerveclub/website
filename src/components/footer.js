@@ -35,7 +35,7 @@ const StyledFooterLink = styled(Link)`
 const Footer = () => {
   return (
     <StyledFooter>
-      <p style={{ margin: 0 }}> {new Date().getFullYear()} Nerve Global</p>
+      <p style={{ margin: 0 }}> {new Date().getFullYear()} Nerve Foundation & Community</p>
       <StyledFooterLinkSection>
         <StyledFooterLink to="/privacy-policy">Privacy Policy</StyledFooterLink>
         <StyledFooterLink to="/disclaimer" style={{ marginRight: '12px' }}>

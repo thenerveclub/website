@@ -39,6 +39,13 @@ module.exports = {
     },
     `re-slug`,
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `blog`,
+        path: `${__dirname}/src/pages/blog/`
+      }
+    },
+    {
       resolve: `gatsby-plugin-page-creator`,
       options: {
         path: `${__dirname}/src/pages`
@@ -72,7 +79,8 @@ module.exports = {
       options: {
         extensions: [`.mdx`, `.md`],
         defaultLayouts: {
-          default: require.resolve('./src/layouts')
+          default: require.resolve('./src/layouts'),
+          blog: require.resolve(`./src/layouts/blogPost`)
         },
         remarkPlugins: [require(`remark-math`)],
         rehypePlugins: [require(`rehype-katex`)],
@@ -117,6 +125,60 @@ module.exports = {
         theme_color: `#663399`,
         display: `minimal-ui`,
         icon: `src/images/favicon.png` // This path is relative to the root of the site.
+      }
+    },
+    {
+      resolve: `gatsby-plugin-feed`,
+      options: {
+        query: `
+          {
+            site {
+              siteMetadata {
+                title
+                description
+                siteUrl
+                site_url: siteUrl
+              }
+            }
+          }
+        `,
+        feeds: [
+          {
+            serialize: ({ query: { site, allMdx } }) => {
+              return allMdx.edges.map(edge => {
+                return {
+                  description: edge.node.frontmatter.previewText,
+                  title: edge.node.frontmatter.title,
+                  date: edge.node.frontmatter.date,
+                  url: site.siteMetadata.siteUrl + edge.node.fields.slug,
+                  guid: site.siteMetadata.siteUrl + edge.node.fields.slug
+                }
+              })
+            },
+            query: `
+            {
+              allMdx(filter: {fileAbsolutePath: {regex: "/blog/"}}, sort: {order: DESC, fields: frontmatter___date}) {
+                edges {
+                  node {
+                    id
+                    frontmatter {
+                      date
+                      title
+                      previewText
+                    }
+                    fields {
+                      slug
+                    }
+                    rawBody
+                  }
+                }
+              }
+            }
+            `,
+            output: '/rss.xml',
+            title: 'Uniswap Blog RSS Feed'
+          }
+        ]
       }
     },
     'gatsby-plugin-eslint',

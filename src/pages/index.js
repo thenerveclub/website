@@ -697,7 +697,7 @@ const KeyAdvantages = () => {
                 </StyledBodySubTitle>
                 <p style={{ textAlign: 'left', margin: '0', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
                 All Funds will be transferred within Seconds or Minutes,
-                rather than the usual Days
+                rather than the usual Days.
                 </p>
               </div>
             </Tab>

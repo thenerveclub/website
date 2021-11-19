@@ -21,7 +21,7 @@ const StyledHeader = styled.header`
   justify-content: space-between;
   align-items: center;
   box-sizing: border-box;
-  padding: 1rem 1.25rem;
+  padding: 1rem;
   width: 100%;
   z-index: 3;
   position: sticky;
@@ -178,7 +178,7 @@ const HideSmall = styled.span`
 
 const StyledBodySubText = styled.h3`
   color: ${({ theme }) => theme.textColor};
-  font-weight: 600;
+  font-weight: 500;
   margin: 1rem 1rem 1rem 1rem;
   @media (max-width: 640px) {
     text-align: left;

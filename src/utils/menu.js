@@ -30,12 +30,16 @@ const menu = [
         link: '/about'
       },
       {
-        name: 'Philosophy',
-        link: '/philosophy'
+        name: 'Governance',
+        link: '/governance'
       },
       {
         name: 'People',
         link: '/people'
+      },
+      {
+        name: 'Blog',
+        link: '/blog'
       },
     ]
   }

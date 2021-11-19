@@ -57,7 +57,7 @@ const MenuFlyout = styled.nav`
   display: flex;
   flex-direction: column;
   position: absolute;
-  top: 2.5rem;
+  top: 2rem;
   min-width: 200px;
   width: 100%;
   width: fit-content;
