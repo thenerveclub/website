@@ -4,6 +4,7 @@ import styled from 'styled-components'
 
 import Future from '../components/timeline'
 import graph from '../images/graph.png'
+import blockland from '../images/blockland.png'
 
 
 import { Button } from '../components/button'
@@ -363,7 +364,7 @@ const About = props => {
             </div>
           </StyledSectionFlex>
 
-          <StyledSectionHeader>{'INNOVATIONS AT A GLANCE →'}</StyledSectionHeader>
+          <StyledSectionHeader>{'KEY ADVANTAGES →'}</StyledSectionHeader>
           <StyledSectionFlex id="contact" style={{ flexDirection: 'column' }}>
             <StyledItemRow style={{ alignItems: 'center', justifyContent: 'center', padding: '2rem 10rem 2rem 10rem' }}>
           <GrantsCard style={{ minHeight: "22rem", maxWidth: "18rem" }}>
@@ -413,7 +414,7 @@ const About = props => {
             </Button>
           </GrantsCard>
           <GrantsCard style={{ minHeight: "35rem", maxWidth: "20rem" }}>
-          <img style={{ marginLeft: "5rem" }} src={graph} width="35%" />
+          <img style={{ marginLeft: "5rem" }} src={blockland} width="80%" />
             <StyledBodySubTitle>Blockland Solutions</StyledBodySubTitle>
             <p>
             Pitch Competition - $4K Grant

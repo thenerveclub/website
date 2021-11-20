@@ -422,7 +422,7 @@ const About = props => {
               Get paid to build the future of social media. Nerve Governance offers grant funding for people building apps,
               tools, and activities in the Nerve ecosystem.
             </SubTitle>
-            <Button href="https://unigrants.org/" outlined>
+            <Button target="_blank" rel="noreferrer" href="/blog/uni" outlined>
               <p style={{ margin: 0 }}>Learn more ↗</p>
             </Button>
             </AutoColumn>

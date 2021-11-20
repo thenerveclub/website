@@ -1,9 +1,9 @@
 ---
-title: 'A short history of Uniswap'
+title: 'A short history of Nerve'
 date: '2019-11-02'
-author: 'Hayden Adams'
-featuredImage: ./featured.jpg
-previewText: 'Uniswap changed my life and today is its birthday. To celebrate this, I want to tell its story from the beginning.'
+author: 'Nerve Global'
+featuredImage: ./nerve.png
+previewText: 'Nerve changed my life and today is its birthday. To celebrate this, I want to tell its story from the beginning.'
 ---
 
 # V0 — Uniswap is Born

@@ -170,6 +170,15 @@ const StyledBodySubTitle = styled.h2`
   }
 `
 
+const SubTitle = styled.div`
+  max-width: 930px;
+  font-size: 20px;
+  font-weight: 400;
+  @media (max-width: 640px) {
+    font-size: 14px;
+  }
+`
+
 const StyledBodySubT = styled.h2`
   display: none;
   visibility: hidden;
@@ -420,7 +429,7 @@ const IndexPage = props => {
             target="_blank"
             href="https://apps.apple.com/de/app/nerve-global/id1500517863"
           >
-            <img style={{ maxWidth: "20rem" }} src={appstore} width="140%" />
+            <img style={{ maxWidth: "20rem" }} src={appstore} width="143%" />
           </StyledTradeLink>
           <StyledTradeLink
             target="_blank"
@@ -451,6 +460,8 @@ const IndexPage = props => {
             <StyledBodySubTitle style={{ textAlign: "center", fontSize: "20px" }}>Backed by <br /> The Graph Foundation</StyledBodySubTitle>
         </GrantCard> */}
 
+          <EcosystemSection data={data} props={props} />
+          
           <StyledSectionHeader>
             <a href="https://info.uniswap.org/">{'DATA ANALYTICS →'}</a>
           </StyledSectionHeader>
@@ -460,49 +471,37 @@ const IndexPage = props => {
               alignItems: 'center',
               justifyContent: 'center',
               width: '100%',
-              padding: '2rem 0 10rem 0'
+              padding: '2rem 0 5rem 0'
             }}
           >
             <ProtocolData />
           </div>
 
-        <EcosystemSection data={data} props={props} />
 
         <DeveloperSection data={data} props={props} />
 
         < KeyAdvantages data={data} props={props} />
         
 
-        <HideSmall>
-        <StyledSectionHeader>
-            <a>{'SHOWCASE →'}</a>
-          </StyledSectionHeader>
-          <div
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              width: '100%',
-              padding: '5rem 0 3rem 0'
-            }}
-          >
-           <img style={{ margin: "-10rem" }} src={mockup} width="70%" />
-          </div>
-        </HideSmall>
+        <StyledSection>
+        <StyledItemRow style={{ alignItems: 'center', justifyContent: 'center', padding: '15rem 10rem 10rem 5rem' }}>
+        <StyledSectionTitle>A system for completely new forms of entertainment, investigation and exploration.</StyledSectionTitle>
         <StyledSocialRow>
           <StyledTradeLink
             target="_blank"
             href="https://apps.apple.com/de/app/nerve-global/id1500517863"
           >
-            <img style={{ maxWidth: "15rem" }} src={appstore} width="140%" />
+            <img style={{ maxWidth: "20rem" }} src={appstore} width="143%" />
           </StyledTradeLink>
           <StyledTradeLink
             target="_blank"
             href="https://play.google.com/store/apps/details?id=com.academy.nerve&hl=en&gl=US"
           >
-            <img style={{ maxWidth: "15rem" }} src={google} width="140%" />
+            <img style={{ maxWidth: "20rem" }} src={google} width="140%" />
           </StyledTradeLink>
-          </StyledSocialRow>
+          </StyledSocialRow>          
+        </StyledItemRow>
+      </StyledSection>
 
         <Spotlight data={data} props={props} />
       </StyledBody>
@@ -519,7 +518,7 @@ const StyledSectionHeader = styled.h1`
   overflow-wrap: normal;
   max-width: 900px;
   font-weight: 500;
-  margin-top: 10rem;
+  margin-top: 5rem;
 
   a {
     color: ${({ theme }) => theme.textColor};
@@ -649,15 +648,15 @@ export const GrantCard = styled(StyledC)`
 
 const EcosystemSection = () => {
   return (
-    <StyledSection>
+    <StyledSection style={{ marginTop: '15rem' }}>
       <StyledItemRow>
         <span style={{ marginTop: '-60px', marginBottom: '80px' }}>
           <StyledSectionHeader style={{ marginTop: '5rem' }}>{'NERVE ECOSYSTEM →'}</StyledSectionHeader>
-          <StyledSectionTitle>Suitable for any other social media platform.</StyledSectionTitle>
-          <StyledBodySubText style={{ marginRight: '48px' }}>
-            Content creators, virtual communities, and its users participate together in a place that is open
-            and accessible to all.
-          </StyledBodySubText>
+          <StyledSectionTitle>We contribute to an open, inclusive and creative society.</StyledSectionTitle>
+          <SubTitle style={{ opacity: '0.6', textAlign: 'left', marginRight: '48px' }}>
+          People share unique adventures, experiences, educational content and much more with the world. In contrast to other platforms, 
+          content creators and consumers continue to use their existing social media channels.
+          </SubTitle>
         </span>
         <AppsCard>
           <h1>∞</h1>
@@ -673,17 +672,17 @@ const KeyAdvantages = () => {
     <StyledSection>
       <StyledItemRow>
         <span style={{ marginTop: '60px', marginBottom: '80px' }}>
-          <StyledSectionHeader style={{ marginTop: '5rem' }}>{'KEY ADVANTAGES →'}</StyledSectionHeader>
+          <StyledSectionHeader style={{ marginTop: '5rem' }}>{'4 SIMPLE STEPS TO START →'}</StyledSectionHeader>
 
           <StyledItemColumn style={{ display: 'flex', flexDirection: 'column' }}>
             <Tab style={{ zIndex: "1", borderRadius: '20px' }} outlined>
               <div style={{ padding: '1rem' }}>
                 <StyledBodySubTitle style={{ marginBottom: '0.25rem' }}>
-                Directly earn crypto
+                1. Receive a Task
                 </StyledBodySubTitle>
                 <p style={{ textAlign: 'left', margin: '0', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
-                There is no need for a Bank Account or any KYC Process. Anyone can join a Challenge and pool Money that gets
-                rewarded on Completion.
+                Get paid to build the future of finance. Uniswap Governance offers grant funding for people building apps,
+              tools, and activities on the Uniswap Protocol.
                 </p>
               </div>
             </Tab>
@@ -693,11 +692,10 @@ const KeyAdvantages = () => {
             <Tab style={{ zIndex: "1", borderRadius: '20px' }} outlined>
               <div style={{ padding: '1rem' }}>
                 <StyledBodySubTitle style={{ marginBottom: '0.25rem' }}>
-                Routed through Blockchain
+                2. Submit a proof
                 </StyledBodySubTitle>
                 <p style={{ textAlign: 'left', margin: '0', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
-                All Funds will be transferred within Seconds or Minutes,
-                rather than the usual Days.
+                Provide a video proof and link it to your task. Our system is suitable for any other social media platform.
                 </p>
               </div>
             </Tab>
@@ -707,10 +705,11 @@ const KeyAdvantages = () => {
             <Tab style={{ zIndex: "1", borderRadius: '20px' }} outlined>
               <div style={{ padding: '1rem' }}>
                 <StyledBodySubTitle style={{ marginBottom: '0.25rem' }}>
-                Donors have to approve before Funds get disbursed
+                3. Get approved
                 </StyledBodySubTitle>
                 <p style={{ textAlign: 'left', margin: '0', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
-                Funding will only be provided AFTER a Request has been delivered
+                In our crowdfunding system, the donors have to approve before funds get disbursed. That means, funding will only
+            be provided after a request has been delivered.
                 </p>
               </div>
             </Tab>
@@ -720,10 +719,10 @@ const KeyAdvantages = () => {
             <Tab style={{ zIndex: "1", borderRadius: '20px' }} outlined>
               <div style={{ padding: '1rem' }}>
                 <StyledBodySubTitle style={{ marginBottom: '0.25rem' }}>
-                 More Protection to Projects
+                4. Claim funds
                 </StyledBodySubTitle>
                 <p style={{ textAlign: 'left', margin: '0', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
-                Use our System for a step-by-step Funding Process, where each achieved Milestone gets rewarded individually
+                All funds are routed through blockchain - that means that all funds will be transferred within seconds or minutes.
                 </p>
               </div>
             </Tab>
@@ -782,7 +781,7 @@ const Spotlight = () => {
 const DeveloperSection = () => {
   return (
       <StyledSection>
-        <StyledSectionHeader>{'4 SIMPLE STEPS TO START EARNING CRYPTO →'}</StyledSectionHeader>
+        <StyledSectionHeader>{'INNOVATIONS AT A GLANCE →'}</StyledSectionHeader>
         <StyledItemRow style={{ alignItems: 'center', justifyContent: 'center', padding: '2rem 10rem 2rem 10rem' }}>
           <GrantsCard style={{ minHeight: "20rem", maxWidth: "18rem" }}>
             <StyledBodySubTitle>1. Receive a Task</StyledBodySubTitle>

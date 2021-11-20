@@ -199,9 +199,11 @@ const StyledLink = styled(Link)`
 `
 
 const WrappedHeroImage = styled(Img)`
+  margin-top: 50px;
   width: 100vw;
-  height: 550px;
+  height: 450px;
   max-width: 1440px;
+  border-radius: 24px;
   @media (max-width: 960px) {
     width: 100vw;
     height: 360px;
