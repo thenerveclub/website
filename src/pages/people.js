@@ -13,6 +13,10 @@ import { Link } from 'gatsby'
 import Layout from '../layouts'
 import SEO from '../components/seo'
 import BG from '../components/bg'
+import { Button } from '../components/button'
+
+import graph from '../images/graph.png'
+import blockland from '../images/blockland.png'
 
 import jan from '../images/jan.png'
 import tim from '../images/tim.png'
@@ -448,6 +452,38 @@ const StyledGithub = styled(Github)`
               <StyledDiscord />
             </a>
           </StyledSocialRow>
+          </GrantsCard>
+        </StyledItemRow>
+
+        <StyledSectionHeader style={{ marginTop: '15rem' }}>{'RECOGNITION →'}</StyledSectionHeader>
+          <StyledItemRow style={{ alignItems: 'center', justifyContent: 'center', padding: '2rem 10rem 2rem 10rem' }}>
+          <GrantsCard style={{ minHeight: "35rem", maxWidth: "20rem" }}>
+          <img style={{ marginLeft: "5rem" }} src={graph} width="35%" />
+            <StyledBodySubTitle>The Graph Foundation</StyledBodySubTitle>
+            <p>
+            Dapps & Subgraphs - $7.5K Grant
+            </p>
+            <p>
+            Grant applicants came from Portugal, Canada, Japan, Korea, Poland, the US and more.
+            Each applicant was assessed based on the project’s expected impact, community feedback, relative significance and urgency in the ecosystem.
+            </p>
+            <Button target="_blank" rel="noreferrer" href="/blog" outlined>
+              <p style={{ margin: 0 }}>Learn more ↗</p>
+            </Button>
+          </GrantsCard>
+          <GrantsCard style={{ minHeight: "35rem", maxWidth: "20rem" }}>
+          <img style={{ marginLeft: "2rem" }} src={blockland} width="75%" />
+            <StyledBodySubTitle>Blockland Solutions</StyledBodySubTitle>
+            <p>
+            Pitch Competition - $4K Grant
+            </p>
+            <p>
+            3rd out of 47 international teams.
+            Prizes awarded by Jon Pinney, Kohrman Jackson & Krantz LLP, and Bob Sopko (Launchnet at Case Western Reserve University)
+            </p>
+            <Button style={{ marginTop: "3rem" }} target="_blank" rel="noreferrer" href="/blog" outlined>
+              <p style={{ margin: 0 }}>Learn more ↗</p>
+            </Button>
           </GrantsCard>
         </StyledItemRow>
         

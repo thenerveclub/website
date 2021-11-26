@@ -5,6 +5,7 @@ import styled from 'styled-components'
 import Future from '../components/timeline'
 import graph from '../images/graph.png'
 import uni from '../images/uni.svg'
+import mockup from '../images/mockup.png'
 
 
 
@@ -14,6 +15,7 @@ import dayjs from 'dayjs'
 import utc from 'dayjs/plugin/utc'
 import { useQuery } from '@apollo/react-hooks'
 import { client, blockClient } from '../apollo/client'
+import AppsImage from '../images/apps.png'
 
 import { Link } from 'gatsby'
 
@@ -146,6 +148,15 @@ const StyledBodySubTitle = styled.h2`
   }
 `
 
+const StyledSection = styled.section`
+  display: flex;
+  flex-direction: column;
+
+  @media (max-width: 640px) {
+    margin: 0;
+  }
+`
+
 const SubTitle = styled.div`
   max-width: 650px;
   font-size: 20px;
@@ -242,6 +253,36 @@ const AutoColumn = styled.div`
   grid-auto-rows: auto;
   grid-row-gap: ${({ gap }) => (gap === 'sm' && '8px') || (gap === 'md' && '12px') || (gap === 'lg' && '24px') || gap};
   justify-items: ${({ justify }) => justify && justify};
+`
+
+export const AppsCard = styled(StyledCard)`
+  background: url(${AppsImage});
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-right: 12px;
+  width: 100%;
+  min-height: 290px;
+  max-width: 590px;
+
+  h1 {
+    font-size: 48px;
+    font-weight: 700;
+    margin: 0;
+    margin-bottom: 0.25rem;
+  }
+
+  p {
+    opacity: 0.6;
+    font-size: 20px;
+    font-weight: 300;
+  }
+
+  @media (max-width: 960px) {
+    margin-top: -80px;
+    margin-bottom: 12px;
+    margin-right: 0px;
+    max-width: unset;
+  }
 `
 
 export const GET_BLOCK = gql`
@@ -438,15 +479,68 @@ const About = props => {
 
           <StyledItemRow style={{ marginTop: '15rem' }}>
         <span style={{ marginTop: '-60px', marginBottom: '80px' }}>
-          <StyledSectionHeader style={{ marginTop: '5rem' }}>{'INTRODUCING NERVE →'}</StyledSectionHeader>
-          <StyledSectionTitle>An incentivized open ecosystem.</StyledSectionTitle>
-          <SubTitle style={{ opacity: '0.6', textAlign: 'left', marginRight: '48px' }}>
-          People share unique adventures, experiences, educational content and much more with the world, which unlock a massively larger creative economy 
-          than the one constrained by today’s platforms and their policies.
-          This ecosystem will be built - by you.
-          </SubTitle>
+
+        
+          <StyledSectionHeader style={{ marginTop: '5rem' }}>{'INTRODUCING NERVE TOKEN →'}</StyledSectionHeader>
+          <StyledItemRow style={{ minWidth: "1630px", alignItems: 'center', justifyContent: 'center', padding: '2rem 10rem 2rem 10rem' }}>
+          <GrantsCard style={{ minHeight: "16rem", maxWidth: "25rem" }}>
+            <StyledBodySubTitle>Governance</StyledBodySubTitle>
+            <p style={{ textAlign: 'left', margin: '0', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
+            Use your NERVE to vote on the future of the ecosystem. Proposals will be published on Snapshot, and will relate to the future development and expansion.
+            </p>
+          </GrantsCard>
+          <GrantsCard style={{ minHeight: "16rem", maxWidth: "25rem" }}>
+            <StyledBodySubTitle>Revenue staking</StyledBodySubTitle>
+            <p style={{ textAlign: 'left', margin: '0', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
+            All fees paid in IMX are sent to the  “staking reward pool”. Users can earn a proportional share of this rewards pool by staking their IMX.
+            </p>
+          </GrantsCard>
+          <GrantsCard style={{ minHeight: "16rem", maxWidth: "25rem" }}>
+            <StyledBodySubTitle>More coming...</StyledBodySubTitle>
+            <p style={{ textAlign: 'left', margin: '0', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
+            Nerve is the first peer-to-peer crowdfunding application that lets you decide on content. No limits on who you can challenge or what you can bet on - anywhere, anytime.
+            </p>
+          </GrantsCard>
+        </StyledItemRow>
         </span>
       </StyledItemRow>
+
+      <StyledSection style={{ marginTop: '5rem' }}>
+      <StyledItemRow>
+        <span style={{ marginTop: '-60px', marginBottom: '80px' }}>
+          <StyledSectionHeader style={{ marginTop: '5rem' }}>{'REVENUE STAKING →'}</StyledSectionHeader>
+          <StyledSectionTitle>Tokens are automatically staked if you have participated in the ecosystem.</StyledSectionTitle>
+        </span>
+      </StyledItemRow>
+    </StyledSection>
+
+    <img style={{ maxWidth: "100%", alignItems: 'center', justifyContent: 'center' }} src={mockup} width="20%" />
+
+
+    <StyledSection style={{ marginTop: '5rem' }}>
+      <StyledItemRow>
+        <span style={{ marginTop: '-60px', marginBottom: '80px' }}>
+          <StyledSectionHeader style={{ marginTop: '5rem' }}>{'PLAY TO EARN →'}</StyledSectionHeader>
+          <StyledSectionTitle>To ensure NERVE is held by those who are committed to the ecosystem.</StyledSectionTitle>
+          <StyledItemRow style={{ minWidth: "1630px", alignItems: 'center', justifyContent: 'center', padding: '2rem 10rem 2rem 10rem' }}>
+          <GrantsCard style={{ minHeight: "30rem", maxWidth: "25rem" }}>
+            <StyledBodySubTitle>Player</StyledBodySubTitle>
+            <p style={{ textAlign: 'left', margin: '0', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
+            Use your NERVE to vote on the future of the ecosystem. Proposals will be published on Snapshot, and will relate to the future development and expansion.
+            </p>
+          </GrantsCard>
+          <GrantsCard style={{ minHeight: "30rem", maxWidth: "25rem" }}>
+            <StyledBodySubTitle>Watcher</StyledBodySubTitle>
+            <p style={{ textAlign: 'left', margin: '0', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
+            All fees paid in IMX are sent to the  “staking reward pool”. Users can earn a proportional share of this rewards pool by staking their IMX.
+            </p>
+          </GrantsCard>
+        </StyledItemRow>
+        </span>
+      </StyledItemRow>
+    </StyledSection>
+
+
         </span>
       </StyledAbout>
     </Layout>
