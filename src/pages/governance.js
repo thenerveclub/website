@@ -208,6 +208,15 @@ const StyledCard = styled.div`
   }
 `
 
+const StyledSectionTitle = styled.h3`
+  max-width: 960px;
+  line-height: 140%;
+  font-size: 32px;
+  @media (max-width: 640px) {
+    text-align: left;
+  }
+`
+
 const StyledItemRow = styled.nav`
   display: flex;
   flex-direction: column;
@@ -417,10 +426,9 @@ const About = props => {
           <img style={{ maxWidth: "15rem" }} src={uni} width="100%" />
           </UniMobileImage>
           <AutoColumn gap="20px">
-            <Tit>The Nerve Token & NFT</Tit>
+            <Tit>The Nerve Token</Tit>
             <SubTitle style={{ textAlign: 'left', margin: '0', opacity: '0.6' }}>
-              Get paid to build the future of social media. Nerve Governance offers grant funding for people building apps,
-              tools, and activities in the Nerve ecosystem.
+              Contribute to Nerve, an incentivized open ecosystem, and get rewarded with NRV tokens. In the near future, NRV holders will govern the ecosystem through an on-chain governance process.
             </SubTitle>
             <Button target="_blank" rel="noreferrer" href="/blog/uni" outlined>
               <p style={{ margin: 0 }}>Learn more ↗</p>
@@ -428,78 +436,17 @@ const About = props => {
             </AutoColumn>
         </TokenSection>
 
-          <StyledSectionHeader>{'INTRODUCING NERVE →'}</StyledSectionHeader>
-          <StyledItemRow style={{ alignItems: 'center', justifyContent: 'center', padding: '2rem 10rem 2rem 10rem' }}>
-          <GrantsCard style={{ minHeight: "35rem", maxWidth: "20rem" }}>
-          <img style={{ marginLeft: "5rem" }} src={graph} width="35%" />
-            <StyledBodySubTitle>The Graph Foundation</StyledBodySubTitle>
-            <p>
-            Dapps & Subgraphs - $7.5K Grant
-            </p>
-            <p>
-            Grant applicants came from Portugal, Canada, Japan, Korea, Poland, the US and more.
-            Each applicant was assessed based on the project’s expected impact, community feedback, relative significance and urgency in the ecosystem.
-            </p>
-            <Button href="https://unigrants.org/" outlined>
-              <p style={{ margin: 0 }}>Learn more ↗</p>
-            </Button>
-          </GrantsCard>
-          <GrantsCard style={{ minHeight: "35rem", maxWidth: "20rem" }}>
-          <img style={{ marginLeft: "5rem" }} src={graph} width="35%" />
-            <StyledBodySubTitle>Blockland Solutions</StyledBodySubTitle>
-            <p>
-            Pitch Competition - $4K
-            </p>
-            <p>
-            3rd out of 47 international teams.
-            Prizes awarded by Jon Pinney, Kohrman Jackson & Krantz LLP, and Bob Sopko (Launchnet at Case Western Reserve University)
-            </p>
-            <Button style={{ marginTop: "3rem" }} href="https://unigrants.org/" outlined>
-              <p style={{ margin: 0 }}>Learn more ↗</p>
-            </Button>
-          </GrantsCard>
-        </StyledItemRow>
-
-          <HideSmall>
-        <StyledSectionHeader>{'TIMELINE →'}</StyledSectionHeader>
-          <Future />
-          </HideSmall>
-
-          <StyledSectionHeader>{'CONTACT →'}</StyledSectionHeader>
-
-          <StyledSectionFlex id="contact" style={{ flexDirection: 'column' }}>
-            <p>
-              To get in touch, please email <a href="mailto:business@uniswap.com">business@nerveglobal.com</a>
-            </p>
-
-            <p>
-              We encourage anyone facing issues with their wallet, transaction or Nerve related question to join our
-              active community and explore the <a href="https://docs.nerveglobal.com">documentation</a> site.
-            </p>
-
-            <div style={{ display: 'flex', width: '100%', margin: 0 }}>
-            <ExternalLink href={'https://t.me/nerveglobal'}>
-                Telegram <span style={{ fontSize: '11px' }}>↗</span>
-              </ExternalLink>
-              <ExternalLink href={'https://discord.gg/VHZCy5Dx'}>
-                Discord <span style={{ fontSize: '11px' }}>↗</span>
-              </ExternalLink>
-              <ExternalLink href={'https://twitter.com/nerveglobal_'}>
-                Twitter <span style={{ fontSize: '11px' }}>↗</span>
-              </ExternalLink>
-              <ExternalLink href={'https://www.linkedin.com/company/nerveglobal/'}>
-                LinkedIn <span style={{ fontSize: '11px' }}>↗</span>
-              </ExternalLink>
-            </div>
-          </StyledSectionFlex>
-
-          <StyledSectionHeader>{'BRAND ASSETS →'}</StyledSectionHeader>
-
-          <StyledSectionFlex id="brand" style={{ flexDirection: 'column' }}>
-            <p>
-              Download the logo and other brand assets <a href="https://github.com/nerveglobal/brand-assets">here</a>.
-            </p>
-          </StyledSectionFlex>
+          <StyledItemRow style={{ marginTop: '15rem' }}>
+        <span style={{ marginTop: '-60px', marginBottom: '80px' }}>
+          <StyledSectionHeader style={{ marginTop: '5rem' }}>{'INTRODUCING NERVE →'}</StyledSectionHeader>
+          <StyledSectionTitle>An incentivized open ecosystem.</StyledSectionTitle>
+          <SubTitle style={{ opacity: '0.6', textAlign: 'left', marginRight: '48px' }}>
+          People share unique adventures, experiences, educational content and much more with the world, which unlock a massively larger creative economy 
+          than the one constrained by today’s platforms and their policies.
+          This ecosystem will be built - by you.
+          </SubTitle>
+        </span>
+      </StyledItemRow>
         </span>
       </StyledAbout>
     </Layout>

@@ -485,7 +485,7 @@ const IndexPage = props => {
 
         <StyledSection>
         <StyledItemRow style={{ alignItems: 'center', justifyContent: 'center', padding: '15rem 10rem 10rem 5rem' }}>
-        <StyledSectionTitle>A system for completely new forms of entertainment, investigation and exploration.</StyledSectionTitle>
+        <StyledSectionTitle>A system for completely new forms of entertainment, investigation and exploration - by you.</StyledSectionTitle>
         <StyledSocialRow>
           <StyledTradeLink
             target="_blank"
@@ -654,8 +654,9 @@ const EcosystemSection = () => {
           <StyledSectionHeader style={{ marginTop: '5rem' }}>{'NERVE ECOSYSTEM →'}</StyledSectionHeader>
           <StyledSectionTitle>We contribute to an open, inclusive and creative society.</StyledSectionTitle>
           <SubTitle style={{ opacity: '0.6', textAlign: 'left', marginRight: '48px' }}>
-          People share unique adventures, experiences, educational content and much more with the world. In contrast to other platforms, 
-          content creators and consumers continue to use their existing social media channels.
+          People share unique adventures, experiences, educational content and much more with the world, which unlock a massively larger creative economy 
+          than the one constrained by today’s platforms and their policies.
+          This ecosystem will be built - by you.
           </SubTitle>
         </span>
         <AppsCard>
@@ -784,29 +785,27 @@ const DeveloperSection = () => {
         <StyledSectionHeader>{'INNOVATIONS AT A GLANCE →'}</StyledSectionHeader>
         <StyledItemRow style={{ alignItems: 'center', justifyContent: 'center', padding: '2rem 10rem 2rem 10rem' }}>
           <GrantsCard style={{ minHeight: "20rem", maxWidth: "18rem" }}>
-            <StyledBodySubTitle>1. Receive a Task</StyledBodySubTitle>
+            <StyledBodySubTitle>Blockchain</StyledBodySubTitle>
             <p style={{ textAlign: 'left', margin: '0', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
-              Get paid to build the future of finance. Uniswap Governance offers grant funding for people building apps,
-              tools, and activities on the Uniswap Protocol.
+              at your fingertips. Nerve is universally accessible, censorship-resistant and allows everyone to participate, even without access to a bank account.
             </p>
           </GrantsCard>
           <GrantsCard style={{ minHeight: "20rem", maxWidth: "18rem" }}>
-            <StyledBodySubTitle>2. Submit a proof</StyledBodySubTitle>
+            <StyledBodySubTitle>Earn Crypto</StyledBodySubTitle>
             <p style={{ textAlign: 'left', margin: '0', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
-              Provide a video proof and link it to your task. Our system is suitable for any other social media platform.
+            Nerve is powered by Ethereum, Polygon and other chains, allowing you to receive instant guaranteed payouts with full transparency.
             </p>
           </GrantsCard>
           <GrantsCard style={{ minHeight: "20rem", maxWidth: "18rem" }}>
-            <StyledBodySubTitle>3. Get approved</StyledBodySubTitle>
+            <StyledBodySubTitle>No limits</StyledBodySubTitle>
             <p style={{ textAlign: 'left', margin: '0', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
-            In our crowdfunding system, the donors have to approve before funds get disbursed. That means, funding will only
-            be provided after a request has been delivered.
+            Nerve is the first peer-to-peer crowdfunding application that lets you decide on content. No limits on who you can challenge or what you can bet on - anywhere, anytime.
             </p>
           </GrantsCard>
           <GrantsCard style={{ minHeight: "20rem", maxWidth: "18rem" }}>
-            <StyledBodySubTitle>4. Claim funds</StyledBodySubTitle>
+            <StyledBodySubTitle>Digital reality</StyledBodySubTitle>
             <p style={{ textAlign: 'left', margin: '0', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
-            All funds are routed through blockchain - that means that all funds will be transferred within seconds or minutes.
+            We are able to connect the very progressive sub-culture of digital natives with the real world. Share immersive experiences with other people, even if you can`t be together.
             </p>
           </GrantsCard>
         </StyledItemRow>

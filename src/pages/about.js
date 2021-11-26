@@ -19,6 +19,7 @@ import { Link } from 'gatsby'
 import Layout from '../layouts'
 import SEO from '../components/seo'
 import BG from '../components/bg'
+import AppsImage from '../images/apps.png'
 
 const StyledAbout = styled.div`
   display: grid;
@@ -66,12 +67,6 @@ const StyledSectionFlex = styled.div`
   }
 `
 
-const Numbers = styled(StyledSectionFlex)`
-  @media (max-width: 960px) {
-    display: none;
-  }
-`
-
 const Title = styled.h1`
   /* font-size: 3rem; */
   margin-bottom: 4rem;
@@ -84,6 +79,15 @@ const Title = styled.h1`
   /* text-align: center; */
   @media (max-width: 960px) {
     font-size: 2rem;
+  }
+`
+
+const StyledSection = styled.section`
+  display: flex;
+  flex-direction: column;
+
+  @media (max-width: 640px) {
+    margin: 0;
   }
 `
 
@@ -132,13 +136,31 @@ const ExternalLink = styled.a`
 `
 
 const StyledBodySubTitle = styled.h2`
-  max-width: 900px;
+  max-width: 975px;
   line-height: 150%;
   font-weight: 400;
   text-align: left;
 
   @media (max-width: 640px) {
     text-align: left;
+  }
+`
+
+const StyledSectionTitle = styled.h3`
+  max-width: 960px;
+  line-height: 140%;
+  font-size: 32px;
+  @media (max-width: 640px) {
+    text-align: left;
+  }
+`
+
+const SubTitle = styled.div`
+  max-width: 930px;
+  font-size: 20px;
+  font-weight: 400;
+  @media (max-width: 640px) {
+    font-size: 14px;
   }
 `
 
@@ -162,8 +184,8 @@ const StyledCard = styled.div`
 
 const StyledItemRow = styled.nav`
   display: flex;
-  flex-direction: column;
-
+  justifyContent: column;
+  
   margin: 0rem;
   & > *:not(:first-of-type) {
     margin-top: 12px;
@@ -230,7 +252,7 @@ const StyledSectionHeader = styled.h1`
   overflow-wrap: normal;
   max-width: 900px;
   font-weight: 500;
-  margin-top: 10rem;
+  margin-top: 8rem;
 
   a {
     color: ${({ theme }) => theme.textColor};
@@ -248,6 +270,35 @@ const StyledSectionHeader = styled.h1`
     font-weight: 400;
     margin-top: 5rem;
     text-align: left;
+  }
+`
+
+export const AppsCard = styled(StyledCard)`
+  background: url(${AppsImage});
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  max-height: 300px;
+  max-width: 600px;
+
+  h1 {
+    font-size: 48px;
+    font-weight: 700;
+    margin: 0;
+    margin-bottom: 0.25rem;
+  }
+
+  p {
+    opacity: 0.6;
+    font-size: 20px;
+    font-weight: 300;
+  }
+
+  @media (max-width: 960px) {
+    margin-top: -80px;
+    margin-bottom: 12px;
+    margin-right: 0px;
+    max-width: unset;
   }
 `
 
@@ -348,14 +399,11 @@ const About = props => {
             ABOUT
           </Title>
 
-          <StyledBodySubTitle>
-            {'The system for social media puts algorithms over ideas. Quantity over quality. These systems have a tendency to self-examination and creators try to follow the next trend to be as close as possible to the resonance pattern, which ends in continuously lower quality content.'}
-          </StyledBodySubTitle>
-
-          <StyledBodySubTitle>
-            {'We see a strong need for a fundamental shift of power from creator to consumer.'}
-          </StyledBodySubTitle>
-
+          <StyledSectionTitle>A sustainable and engaging future that is controlled and driven - by the people.</StyledSectionTitle>
+          <SubTitle style={{ opacity: '0.6', textAlign: 'left', marginRight: '48px' }}>
+          We create global markets that allow the exchange of value between advanced and emerging economies, redistributing value and accelerating global digitalization. 
+          We firmly believe in money as a language for the communication of values and therefore think free access to sound digital money is part of the right to free speech.
+          </SubTitle>
           
           <StyledSectionFlex id="about" style={{ flexDirection: 'column' }}>
             <div style={{ display: 'flex', width: '100%', marginTop: "5rem" }}>
@@ -364,40 +412,47 @@ const About = props => {
             </div>
           </StyledSectionFlex>
 
-          <StyledSectionHeader>{'KEY ADVANTAGES →'}</StyledSectionHeader>
-          <StyledSectionFlex id="contact" style={{ flexDirection: 'column' }}>
-            <StyledItemRow style={{ alignItems: 'center', justifyContent: 'center', padding: '2rem 10rem 2rem 10rem' }}>
-          <GrantsCard style={{ minHeight: "22rem", maxWidth: "18rem" }}>
-            <StyledBodySubTitle>BaaS</StyledBodySubTitle>
-            <p style={{ textAlign: 'left', margin: '0', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
-             Blockchain as a service for access to direct reward channels between content creators and consumers. It is globally accessible, censorship resistant 
-             and allows people to participate without access to banking services. 
-            </p>
-          </GrantsCard>
-          <GrantsCard style={{ minHeight: "22rem", maxWidth: "18rem" }}>
-            <StyledBodySubTitle>Wallet Solution</StyledBodySubTitle>
-            <p style={{ textAlign: 'left', margin: '0', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
-             We establish easy access to the Ethereum blockchain and help to introduce entry-level users through our own wallet solution.
-            </p>
-          </GrantsCard>
-          <GrantsCard style={{ minHeight: "22rem", maxWidth: "18rem" }}>
-            <StyledBodySubTitle>Consumer power</StyledBodySubTitle>
-            <p style={{ textAlign: 'left', margin: '0', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
-            In our crowdfunding system, the donors have to approve before funds get disbursed. That means, funding will only
-            be provided after a request has been delivered.
-            </p>
-          </GrantsCard>
-          <GrantsCard style={{ minHeight: "22rem", maxWidth: "18rem" }}>
-            <StyledBodySubTitle>Democratic system</StyledBodySubTitle>
-            <p style={{ textAlign: 'left', margin: '0', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
-            We are able to connect the very progressive sub-culture of digital natives with the real world. The focus is not solely set on entertainment purposes, 
-            but rather on the financial compensation for political and societal actions proposed by our underlying democratic system.
-            </p>
-          </GrantsCard>
-        </StyledItemRow>
-          </StyledSectionFlex>
 
-          <StyledSectionHeader>{'RECOGNITION →'}</StyledSectionHeader>
+
+          <StyledSection style={{ marginTop: '15rem' }}>
+      <StyledItemRow>
+        <span style={{ marginTop: '-60px', marginBottom: '80px' }}>
+          <StyledSectionHeader style={{ marginTop: '5rem' }}></StyledSectionHeader>
+          <StyledSectionTitle>Everything we do is designed to help people succeed.</StyledSectionTitle>
+          <SubTitle style={{ opacity: '0.6', textAlign: 'left', marginRight: '48px' }}>
+          We believe that sharing experiences inclusively is more meaningful, 
+            in particular if you can give something to people who may not be able to experience it themselves. By overcoming social and economic inequalities, 
+            geographic distance, language barriers, age and physical disabilities, we make it possible.
+          </SubTitle>
+        </span>
+        <AppsCard>
+          <h1>∞</h1>
+          <p>Opportunities</p>
+        </AppsCard>
+      </StyledItemRow>
+    </StyledSection>
+
+    <StyledSection style={{ marginTop: '15rem' }}>
+      <StyledItemRow>
+      <AppsCard>
+          <h1>∞</h1>
+          <p>Opportunities</p>
+        </AppsCard>
+        <span style={{ marginLeft: "2rem", marginTop: '-60px', marginBottom: '80px' }}>
+          <StyledSectionHeader style={{ marginTop: '5rem' }}></StyledSectionHeader>
+          <StyledSectionTitle>A decentralized application with a task and betting system.</StyledSectionTitle>
+          <SubTitle style={{ opacity: '0.6', textAlign: 'left', marginRight: '48px' }}>
+          For all kinds of content creators, it constitutes a service 
+            to fund content which is in demand by consumers. From a financial point of view, our solution offers an alternative source of income. 
+            Our model is sustainable and highly scalable with a possibility to support millions of users and thousands of creators around the world.
+          </SubTitle>
+        </span>
+        
+      </StyledItemRow>
+    </StyledSection>
+
+
+          <StyledSectionHeader style={{ marginTop: '15rem' }}>{'RECOGNITION →'}</StyledSectionHeader>
           <StyledItemRow style={{ alignItems: 'center', justifyContent: 'center', padding: '2rem 10rem 2rem 10rem' }}>
           <GrantsCard style={{ minHeight: "35rem", maxWidth: "20rem" }}>
           <img style={{ marginLeft: "5rem" }} src={graph} width="35%" />
@@ -409,12 +464,12 @@ const About = props => {
             Grant applicants came from Portugal, Canada, Japan, Korea, Poland, the US and more.
             Each applicant was assessed based on the project’s expected impact, community feedback, relative significance and urgency in the ecosystem.
             </p>
-            <Button href="https://unigrants.org/" outlined>
+            <Button target="_blank" rel="noreferrer" href="/blog" outlined>
               <p style={{ margin: 0 }}>Learn more ↗</p>
             </Button>
           </GrantsCard>
           <GrantsCard style={{ minHeight: "35rem", maxWidth: "20rem" }}>
-          <img style={{ marginLeft: "5rem" }} src={blockland} width="80%" />
+          <img style={{ marginLeft: "2rem" }} src={blockland} width="75%" />
             <StyledBodySubTitle>Blockland Solutions</StyledBodySubTitle>
             <p>
             Pitch Competition - $4K Grant
@@ -423,7 +478,7 @@ const About = props => {
             3rd out of 47 international teams.
             Prizes awarded by Jon Pinney, Kohrman Jackson & Krantz LLP, and Bob Sopko (Launchnet at Case Western Reserve University)
             </p>
-            <Button style={{ marginTop: "3rem" }} href="https://unigrants.org/" outlined>
+            <Button style={{ marginTop: "3rem" }} target="_blank" rel="noreferrer" href="/blog" outlined>
               <p style={{ margin: 0 }}>Learn more ↗</p>
             </Button>
           </GrantsCard>
