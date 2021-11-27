@@ -210,22 +210,22 @@ const StyledCard = styled.div`
 
 const StyledItemRow = styled.nav`
 display: flex;
-flex-direction: column;
+  flex-direction: column;
 
-margin: 0rem;
-& > *:not(:first-of-type) {
-  margin-top: 12px;
-}
-@media (min-width: 960px) {
-  flex-direction: row;
-  & > * {
-    margin-bottom: 12px;
-  }
+  margin: 0rem;
   & > *:not(:first-of-type) {
-    margin-top: 0;
-    margin-left: 12px;
+    margin-top: 12px;
   }
-}
+  @media (min-width: 960px) {
+    flex-direction: row;
+    & > * {
+      margin-bottom: 12px;
+    }
+    & > *:not(:first-of-type) {
+      margin-top: 0;
+      margin-left: 12px;
+    }
+  }
 `
 
 export const GET_BLOCK = gql`
@@ -273,30 +273,30 @@ const APOLLO_QUERY = gql`
 `
 
 const StyledSectionHeader = styled.h1`
-  font-size: 20px;
-  white-space: wrap;
-  overflow-wrap: normal;
-  max-width: 900px;
-  font-weight: 500;
-  margin-top: 8rem;
+font-size: 20px;
+white-space: wrap;
+overflow-wrap: normal;
+max-width: 900px;
+font-weight: 500;
+margin-top: 5rem;
 
-  a {
-    color: ${({ theme }) => theme.textColor};
-  }
+a {
+  color: ${({ theme }) => theme.textColor};
+}
 
-  @media (max-width: 960px) {
-    width: 100%;
-    /* font-size: 2rem; */
-    line-height: 2.5rem;
-    max-width: 600px;
-    margin-top: 5rem;
-  }
-  @media (max-width: 640px) {
-    width: 100%;
-    font-weight: 400;
-    margin-top: 5rem;
-    text-align: left;
-  }
+@media (max-width: 960px) {
+  width: 100%;
+  /* font-size: 2rem; */
+  line-height: 2.5rem;
+  max-width: 600px;
+  margin-top: 5rem;
+}
+@media (max-width: 640px) {
+  width: 100%;
+  font-weight: 400;
+  margin-top: 5rem;
+  text-align: left;
+}
 `
 
 export const AppsCard = styled(StyledCard)`
@@ -419,7 +419,6 @@ const About = props => {
     <Layout path={props.location.pathname}>
 
       <SEO title="About" path={props.location.pathname} />
-      <StyledBody>
       <StyledAbout>
         <span style={{ marginTop: '5rem' }}>
           <Title style={{ paddingBottom: '4rem' }}>
@@ -438,34 +437,22 @@ const About = props => {
               <InternalLink to="/whitepaper.pdf">Whitepaper <span style={{ fontSize: '15px' }}>↗</span></InternalLink>
             </div>
           </StyledSectionFlex>
-
+          </span>
+      </StyledAbout>
+          
+          <StyledBody>
           <Pillars data={data} props={props} />
+          <EcosystemSection data={data} props={props} />
+          
+          
 
           <StyledSection style={{ marginTop: '15rem' }}>
-      <StyledItemRow>
-        <span style={{ marginTop: '-60px', marginBottom: '80px' }}>
-          <StyledSectionHeader style={{ marginTop: '5rem' }}></StyledSectionHeader>
-          <StyledSectionTitle>Everything we do is designed to help people succeed.</StyledSectionTitle>
-          <SubTitle style={{ opacity: '0.6', textAlign: 'left', marginRight: '48px' }}>
-          We believe that sharing experiences inclusively is more meaningful, 
-            in particular if you can give something to people who may not be able to experience it themselves. By overcoming social and economic inequalities, 
-            geographic distance, language barriers, age and physical disabilities, we make it possible.
-          </SubTitle>
-        </span>
-        <AppsCard>
+          <StyledItemRow>
+          <AppsCard>
           <h1>∞</h1>
           <p>Opportunities</p>
-        </AppsCard>
-      </StyledItemRow>
-    </StyledSection>
-
-    <StyledSection style={{ marginTop: '15rem' }}>
-      <StyledItemRow>
-      <AppsCard>
-          <h1>∞</h1>
-          <p>Opportunities</p>
-        </AppsCard>
-        <span style={{ marginLeft: "2rem", marginTop: '-60px', marginBottom: '80px' }}>
+          </AppsCard>
+          <span style={{ marginLeft: "2rem", marginTop: '-60px', marginBottom: '80px' }}>
           <StyledSectionHeader style={{ marginTop: '5rem' }}></StyledSectionHeader>
           <StyledSectionTitle>A decentralized application with a task and betting system.</StyledSectionTitle>
           <SubTitle style={{ opacity: '0.6', textAlign: 'left', marginRight: '48px' }}>
@@ -473,23 +460,16 @@ const About = props => {
             to fund content which is in demand by consumers. From a financial point of view, our solution offers an alternative source of income. 
             Our model is sustainable and highly scalable with a possibility to support millions of users and thousands of creators around the world.
           </SubTitle>
-        </span>
-      </StyledItemRow>
-    </StyledSection>
+          </span>
+          </StyledItemRow>
+          </StyledSection>
 
-    <StyledSection>
-        <StyledItemRow style={{ alignItems: 'center', justifyContent: 'center', margin: '10rem 0 5rem 0' }}>
-        <StyledSectionTitle> A comprehensive, global discussion about blockchain technology is desperately needed - we`ll be the initiating factor.</StyledSectionTitle>
-        </StyledItemRow>
-      </StyledSection>
-
-          {/*
-          <HideSmall>
-        <StyledSectionHeader>{'TIMELINE →'}</StyledSectionHeader>
-          <Future />
-          </HideSmall>
-          */}
-          
+          <StyledSection>
+          <StyledItemRow style={{ alignItems: 'center', justifyContent: 'center', margin: '10rem 0 5rem 0' }}>
+          <StyledSectionTitle> A comprehensive, global discussion about blockchain technology is desperately needed - we`ll be the initiating factor.</StyledSectionTitle>
+          </StyledItemRow>
+          </StyledSection>
+    
           <StyledSectionHeader>{'CONTACT →'}</StyledSectionHeader>
 
           <StyledSectionFlex id="contact" style={{ flexDirection: 'column' }}>
@@ -520,13 +500,12 @@ const About = props => {
 
           <StyledSectionHeader>{'BRAND ASSETS →'}</StyledSectionHeader>
 
-          <StyledSectionFlex id="brand" style={{ flexDirection: 'column' }}>
-            <p>
-              Download the logo and other brand assets <a href="https://github.com/nerveglobal/brand-assets">here</a>.
-            </p>
-          </StyledSectionFlex>
-        </span>
-      </StyledAbout>
+      <StyledSectionFlex id="brand" style={{ flexDirection: 'column' }}>
+        <p>
+          Download the logo and other brand assets <a href="https://github.com/nerveglobal/brand-assets">here</a>.
+        </p>
+      </StyledSectionFlex>
+        
       </StyledBody>
       <BG />
     </Layout>
@@ -542,23 +521,46 @@ const Pillars = () => {
   return (
     <StyledSection>
       <StyledSectionHeader>{'Our pillars →'}</StyledSectionHeader>
-      <StyledItemRow style={{ alignItems: 'center', justifyContent: 'center', margin: '2rem 0 2rem 0' }}>
-        <GrantsCard style={{ minHeight: "10rem", maxWidth: "20rem" }}>
+      <StyledItemRow style={{ alignItems: 'center', justifyContent: 'center', padding: '2rem 10rem 2rem 10rem' }}>
+        <GrantsCard style={{ minHeight: "10rem", maxWidth: "16rem" }}>
           <StyledBodySubTitle>Neutral</StyledBodySubTitle>
           
         </GrantsCard>
-        <GrantsCard style={{ minHeight: "10rem", maxWidth: "20rem" }}>
+        <GrantsCard style={{ minHeight: "10rem", maxWidth: "16rem" }}>
           <StyledBodySubTitle>Decentralized</StyledBodySubTitle>
           
         </GrantsCard>
-        <GrantsCard style={{ minHeight: "10rem", maxWidth: "20rem" }}>
+        <GrantsCard style={{ minHeight: "10rem", maxWidth: "16rem" }}>
           <StyledBodySubTitle>Open</StyledBodySubTitle>
           
         </GrantsCard>
-        <GrantsCard style={{ minHeight: "10rem", maxWidth: "20rem" }}>
+        <GrantsCard style={{ minHeight: "10rem", maxWidth: "16rem" }}>
         <StyledBodySubTitle>Borderless</StyledBodySubTitle>
         </GrantsCard>
   </StyledItemRow>
   </StyledSection>
       )
 }
+
+
+const EcosystemSection = () => {
+  return (
+      <StyledSection style={{ marginTop: '15rem' }}>
+        <StyledItemRow>
+          <span style={{ marginTop: '-60px', marginBottom: '80px' }}>
+            <StyledSectionHeader style={{ marginTop: '5rem' }}>{'NERVE ECOSYSTEM →'}</StyledSectionHeader>
+            <StyledSectionTitle>We contribute to an open, inclusive and creative society.</StyledSectionTitle>
+            <SubTitle style={{ opacity: '0.6', textAlign: 'left', marginRight: '48px' }}>
+            People share unique adventures, experiences, educational content and much more with the world, which unlock a massively larger creative economy 
+            than the one constrained by today’s platforms and their policies.
+            This ecosystem will be built - by you.
+            </SubTitle>
+          </span>
+          <AppsCard>
+            <h1>∞</h1>
+            <p>Opportunities</p>
+          </AppsCard>
+        </StyledItemRow>
+      </StyledSection>
+    )
+  }

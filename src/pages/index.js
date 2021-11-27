@@ -731,7 +731,7 @@ const KeyAdvantages = () => {
         </span>
         
         </StyledItemRow>
-        <img style={{ position: "absolute", margin: "0 0 0 35rem", width: "75%" }} src={phone} />
+        <img style={{ position: "absolute", margin: "0 0 0 35rem", maxWidth: "65%" }} src={phone} />
     </StyledSection>
   )
 }
