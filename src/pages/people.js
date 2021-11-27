@@ -38,13 +38,43 @@ const StyledAbout = styled.div`
   margin-bottom: 4rem;
   padding-top: 2rem;
 
-  border-bottom: 1px solid ${({ theme }) => theme.colors.grey2};
-
   @media (max-width: 960px) {
     flex-direction: column;
     grid-template-columns: 1fr;
     margin-top: 0rem;
     padding-top: 1rem;
+  }
+`
+
+const StyledBody = styled.div`
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 2.5rem;
+  border-bottom: 1px solid ${({ theme }) => theme.buttonBorder};
+  border-bottom: 1px solid;
+  border-image: linear-gradient(var(--angle), aqua, aqua, magenta, magenta) 1;
+	
+	animation: 15s rotate linear infinite;
+}
+
+@keyframes rotate {
+	to {
+		--angle: 360deg;
+	}
+}
+
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+  @media (max-width: 960px) {
+    margin-bottom: 0;
+    padding: 1rem;
+    padding-bottom: 8rem;
   }
 `
 
@@ -394,7 +424,7 @@ const StyledGithub = styled(Github)`
 
   return (
     <Layout path={props.location.pathname}>
-      <BG />
+      <StyledBody>
 
       <SEO title="People" path={props.location.pathname} />
       <StyledAbout>
@@ -491,6 +521,8 @@ const StyledGithub = styled(Github)`
          
         </span>
       </StyledAbout>
+      </StyledBody>
+      <BG />
     </Layout>
   )
 }

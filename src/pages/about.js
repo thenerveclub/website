@@ -2,12 +2,6 @@ import React, { useState, useEffect } from 'react'
 
 import styled from 'styled-components'
 
-import Future from '../components/timeline'
-import graph from '../images/graph.png'
-import blockland from '../images/blockland.png'
-
-
-import { Button } from '../components/button'
 import gql from 'graphql-tag'
 import dayjs from 'dayjs'
 import utc from 'dayjs/plugin/utc'
@@ -30,13 +24,44 @@ const StyledAbout = styled.div`
   margin-bottom: 4rem;
   padding-top: 2rem;
 
-  border-bottom: 1px solid ${({ theme }) => theme.colors.grey2};
 
   @media (max-width: 960px) {
     flex-direction: column;
     grid-template-columns: 1fr;
     margin-top: 0rem;
     padding-top: 1rem;
+  }
+`
+
+const StyledBody = styled.div`
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 2.5rem;
+  border-bottom: 1px solid ${({ theme }) => theme.buttonBorder};
+  border-bottom: 1px solid;
+  border-image: linear-gradient(var(--angle), aqua, aqua, magenta, magenta) 1;
+	
+	animation: 15s rotate linear infinite;
+}
+
+@keyframes rotate {
+	to {
+		--angle: 360deg;
+	}
+}
+
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+  @media (max-width: 960px) {
+    margin-bottom: 0;
+    padding: 1rem;
+    padding-bottom: 8rem;
   }
 `
 
@@ -83,12 +108,13 @@ const Title = styled.h1`
 `
 
 const StyledSection = styled.section`
-  display: flex;
-  flex-direction: column;
+display: flex;
+flex-direction: column;
+margin: 2rem 0;
 
-  @media (max-width: 640px) {
-    margin: 0;
-  }
+@media (max-width: 640px) {
+  margin: 0;
+}
 `
 
 const InternalLink = styled(Link)`
@@ -136,7 +162,7 @@ const ExternalLink = styled.a`
 `
 
 const StyledBodySubTitle = styled.h2`
-  max-width: 975px;
+  max-width: 720px;
   line-height: 150%;
   font-weight: 400;
   text-align: left;
@@ -183,23 +209,23 @@ const StyledCard = styled.div`
 `
 
 const StyledItemRow = styled.nav`
-  display: flex;
-  justifyContent: column;
-  
-  margin: 0rem;
+display: flex;
+flex-direction: column;
+
+margin: 0rem;
+& > *:not(:first-of-type) {
+  margin-top: 12px;
+}
+@media (min-width: 960px) {
+  flex-direction: row;
+  & > * {
+    margin-bottom: 12px;
+  }
   & > *:not(:first-of-type) {
-    margin-top: 12px;
+    margin-top: 0;
+    margin-left: 12px;
   }
-  @media (min-width: 960px) {
-    flex-direction: row;
-    & > * {
-      margin-bottom: 12px;
-    }
-    & > *:not(:first-of-type) {
-      margin-top: 0;
-      margin-left: 12px;
-    }
-  }
+}
 `
 
 export const GET_BLOCK = gql`
@@ -277,9 +303,10 @@ export const AppsCard = styled(StyledCard)`
   background: url(${AppsImage});
   background-size: cover;
   background-repeat: no-repeat;
+  margin-right: 12px;
   width: 100%;
-  max-height: 300px;
-  max-width: 600px;
+  max-height: 290px;
+  max-width: 590px;
 
   h1 {
     font-size: 48px;
@@ -390,9 +417,9 @@ const About = props => {
 
   return (
     <Layout path={props.location.pathname}>
-      <BG />
 
       <SEO title="About" path={props.location.pathname} />
+      <StyledBody>
       <StyledAbout>
         <span style={{ marginTop: '5rem' }}>
           <Title style={{ paddingBottom: '4rem' }}>
@@ -412,31 +439,7 @@ const About = props => {
             </div>
           </StyledSectionFlex>
 
-
-          <StyledSectionHeader style={{ marginTop: '15rem' }}>{'Our pillars →'}</StyledSectionHeader>
-          <StyledItemRow style={{ alignItems: 'center', justifyContent: 'center', padding: '2rem 10rem 2rem 10rem' }}>
-          <GrantsCard style={{ minHeight: "10rem", maxWidth: "20rem" }}>
-          {/*<img style={{ marginLeft: "5rem" }} src={phil} width="35%" />*/}
-            <StyledBodySubTitle>Neutral</StyledBodySubTitle>
-            
-          </GrantsCard>
-          <GrantsCard style={{ minHeight: "10rem", maxWidth: "20rem" }}>
-          {/*<img style={{ marginLeft: "5rem" }} src={christoph} width="35%" />*/}
-            <StyledBodySubTitle>Decentralized</StyledBodySubTitle>
-            
-          </GrantsCard>
-          <GrantsCard style={{ minHeight: "10rem", maxWidth: "20rem" }}>
-          {/*<img style={{ marginLeft: "5rem" }} src={tim} width="35%" />*/}
-            <StyledBodySubTitle>Open</StyledBodySubTitle>
-            
-          </GrantsCard>
-          <GrantsCard style={{ minHeight: "10rem", maxWidth: "20rem" }}>
-          {/*<img style={{ marginLeft: "5rem" }} src={jan} width="35%" />*/}
-          <StyledBodySubTitle>Borderless</StyledBodySubTitle>
-          
-          </GrantsCard>
-          
-        </StyledItemRow>
+          <Pillars data={data} props={props} />
 
           <StyledSection style={{ marginTop: '15rem' }}>
       <StyledItemRow>
@@ -475,7 +478,7 @@ const About = props => {
     </StyledSection>
 
     <StyledSection>
-        <StyledItemRow style={{ alignItems: 'center', justifyContent: 'center', padding: '15rem 10rem 10rem 5rem' }}>
+        <StyledItemRow style={{ alignItems: 'center', justifyContent: 'center', margin: '10rem 0 5rem 0' }}>
         <StyledSectionTitle> A comprehensive, global discussion about blockchain technology is desperately needed - we`ll be the initiating factor.</StyledSectionTitle>
         </StyledItemRow>
       </StyledSection>
@@ -524,8 +527,38 @@ const About = props => {
           </StyledSectionFlex>
         </span>
       </StyledAbout>
+      </StyledBody>
+      <BG />
     </Layout>
   )
 }
 
 export default About
+
+
+
+
+const Pillars = () => {
+  return (
+    <StyledSection>
+      <StyledSectionHeader>{'Our pillars →'}</StyledSectionHeader>
+      <StyledItemRow style={{ alignItems: 'center', justifyContent: 'center', margin: '2rem 0 2rem 0' }}>
+        <GrantsCard style={{ minHeight: "10rem", maxWidth: "20rem" }}>
+          <StyledBodySubTitle>Neutral</StyledBodySubTitle>
+          
+        </GrantsCard>
+        <GrantsCard style={{ minHeight: "10rem", maxWidth: "20rem" }}>
+          <StyledBodySubTitle>Decentralized</StyledBodySubTitle>
+          
+        </GrantsCard>
+        <GrantsCard style={{ minHeight: "10rem", maxWidth: "20rem" }}>
+          <StyledBodySubTitle>Open</StyledBodySubTitle>
+          
+        </GrantsCard>
+        <GrantsCard style={{ minHeight: "10rem", maxWidth: "20rem" }}>
+        <StyledBodySubTitle>Borderless</StyledBodySubTitle>
+        </GrantsCard>
+  </StyledItemRow>
+  </StyledSection>
+      )
+}

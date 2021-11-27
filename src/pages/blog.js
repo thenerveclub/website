@@ -7,12 +7,43 @@ import Layout from '../layouts'
 import BG from '../components/bg'
 import SEO from '../components/seo'
 
+const StyledBody = styled.div`
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 2.5rem;
+  border-bottom: 1px solid ${({ theme }) => theme.buttonBorder};
+  border-bottom: 1px solid;
+  border-image: linear-gradient(var(--angle), aqua, aqua, magenta, magenta) 1;
+	
+	animation: 15s rotate linear infinite;
+}
+
+@keyframes rotate {
+	to {
+		--angle: 360deg;
+	}
+}
+
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+  @media (max-width: 960px) {
+    margin-bottom: 0;
+    padding: 1rem;
+    padding-bottom: 8rem;
+  }
+`
+
 const StyledBlog = styled.div`
   padding: 0 2rem;
   padding-bottom: 4rem;
   margin-bottom: 4rem;
   padding-top: 2rem;
-  border-bottom: 1px solid ${({ theme }) => theme.colors.grey2};
   @media (max-width: 960px) {
     flex-direction: column;
     grid-template-columns: 1fr;
@@ -244,7 +275,7 @@ const Blog = props => {
 
   return (
     <Layout path={props.location.pathname}>
-      <BG />
+      <StyledBody>
       <SEO title="Uniswap Blog" path={props.location.pathname} />
       <StyledBlog>
       <StyledAbout>
@@ -278,6 +309,8 @@ const Blog = props => {
           })}
         </PostsWrapper>
       </StyledBlog>
+      </StyledBody>
+      <BG />
     </Layout>
   )
 }
