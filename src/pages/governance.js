@@ -480,7 +480,7 @@ const About = props => {
 
   return (
     <Layout path={props.location.pathname}>
-      <StyledBody>
+      
 
       <SEO title="Token" path={props.location.pathname} />
       <StyledAbout>
@@ -488,7 +488,11 @@ const About = props => {
           <Title style={{ paddingBottom: '4rem' }}>
           GOVERNANCE
           </Title>
+          </span>
+      </StyledAbout>
 
+
+          
           <TokenSection>
           <HideSmall>
           <img style={{ maxWidth: "15rem", marginRight: "3rem" }} src={uni} width="100%" />
@@ -507,12 +511,10 @@ const About = props => {
             </AutoColumn>
         </TokenSection>
 
-          <StyledItemRow style={{ marginTop: '15rem' }}>
-        <span style={{ marginTop: '-60px', marginBottom: '80px' }}>
 
-        
+        <StyledBody>        
           <StyledSectionHeader style={{ marginTop: '5rem' }}>{'INTRODUCING NERVE TOKEN →'}</StyledSectionHeader>
-          <StyledItemRow style={{ minWidth: "1630px", alignItems: 'center', justifyContent: 'center', padding: '2rem 10rem 2rem 10rem' }}>
+          <StyledItemRow style={{ alignItems: 'center', justifyContent: 'center', padding: '2rem 10rem 2rem 10rem' }}>
           <GrantsCard style={{ minHeight: "16rem", maxWidth: "25rem" }}>
             <StyledBodySubTitle>Governance</StyledBodySubTitle>
             <p style={{ textAlign: 'left', margin: '0', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
@@ -532,8 +534,6 @@ const About = props => {
             </p>
           </GrantsCard>
         </StyledItemRow>
-        </span>
-      </StyledItemRow>
 
       <StyledSection style={{ marginTop: '5rem' }}>
       <StyledItemRow>
@@ -547,12 +547,10 @@ const About = props => {
     <img style={{ maxWidth: "100%", alignItems: 'center', justifyContent: 'center' }} src={mockup} width="20%" />
 
 
-    <StyledSection style={{ marginTop: '5rem' }}>
-      <StyledItemRow>
-        <span style={{ marginTop: '-60px', marginBottom: '80px' }}>
+        <StyledSection style={{ marginTop: '5rem' }}>
           <StyledSectionHeader style={{ marginTop: '5rem' }}>{'PLAY TO EARN →'}</StyledSectionHeader>
           <StyledSectionTitle>To ensure NERVE is held by those who are committed to the ecosystem.</StyledSectionTitle>
-          <StyledItemRow style={{ minWidth: "1630px", alignItems: 'center', justifyContent: 'center', padding: '2rem 10rem 2rem 10rem' }}>
+          <StyledItemRow style={{ alignItems: 'center', justifyContent: 'center', padding: '2rem 10rem 2rem 10rem' }}>
           <GrantsCard style={{ minHeight: "30rem", maxWidth: "25rem" }}>
             <StyledBodySubTitle>Player</StyledBodySubTitle>
             <p style={{ textAlign: 'left', margin: '0', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
@@ -566,13 +564,8 @@ const About = props => {
             </p>
           </GrantsCard>
         </StyledItemRow>
-        </span>
-      </StyledItemRow>
     </StyledSection>
 
-
-        </span>
-      </StyledAbout>
       </StyledBody>
       <BG />
     </Layout>

@@ -446,7 +446,7 @@ const About = props => {
           
           
 
-          <StyledSection style={{ marginTop: '15rem' }}>
+          <StyledSection style={{ marginTop: '10rem' }}>
           <StyledItemRow>
           <AppsCard>
           <h1>∞</h1>
@@ -545,7 +545,7 @@ const Pillars = () => {
 
 const EcosystemSection = () => {
   return (
-      <StyledSection style={{ marginTop: '15rem' }}>
+      <StyledSection style={{ marginTop: '10rem' }}>
         <StyledItemRow>
           <span style={{ marginTop: '-60px', marginBottom: '80px' }}>
             <StyledSectionHeader style={{ marginTop: '5rem' }}>{'NERVE ECOSYSTEM →'}</StyledSectionHeader>

@@ -424,18 +424,21 @@ const StyledGithub = styled(Github)`
 
   return (
     <Layout path={props.location.pathname}>
-      <StyledBody>
-
+      
       <SEO title="People" path={props.location.pathname} />
       <StyledAbout>
         <span style={{ marginTop: '5rem' }}>
-          <Title style={{ paddingBottom: '1rem' }}>
+          <Title>
             Meet our people.
           </Title>
+          </span>
+      </StyledAbout>
 
+
+          <StyledBody>
         <StyledSectionHeader>{'TEAM →'}</StyledSectionHeader>
         <StyledItemRow style={{ alignItems: 'center', justifyContent: 'center', padding: '2rem 10rem 2rem 10rem' }}>
-          <GrantsCard style={{ minHeight: "10rem", maxWidth: "20rem" }}>
+          <GrantsCard style={{ minHeight: "10rem", minWidth: "20rem" }}>
           {/*<img style={{ marginLeft: "5rem" }} src={phil} width="35%" />*/}
             <StyledBodySubTitle>Philip Georg</StyledBodySubTitle>
             <StyledSocialRow>
@@ -447,7 +450,7 @@ const StyledGithub = styled(Github)`
             </a>
           </StyledSocialRow>
           </GrantsCard>
-          <GrantsCard style={{ minHeight: "10rem", maxWidth: "20rem" }}>
+          <GrantsCard style={{ minHeight: "10rem", minWidth: "20rem" }}>
           {/*<img style={{ marginLeft: "5rem" }} src={christoph} width="35%" />*/}
             <StyledBodySubTitle>Christoph Könekamp</StyledBodySubTitle>
             <StyledSocialRow>
@@ -459,7 +462,7 @@ const StyledGithub = styled(Github)`
             </a>
           </StyledSocialRow>
           </GrantsCard>
-          <GrantsCard style={{ minHeight: "10rem", maxWidth: "20rem" }}>
+          <GrantsCard style={{ minHeight: "10rem", minWidth: "20rem" }}>
           {/*<img style={{ marginLeft: "5rem" }} src={tim} width="35%" />*/}
             <StyledBodySubTitle>Tim Lauterbach</StyledBodySubTitle>
             <StyledSocialRow>
@@ -471,7 +474,7 @@ const StyledGithub = styled(Github)`
             </a>
           </StyledSocialRow>
           </GrantsCard>
-          <GrantsCard style={{ minHeight: "10rem", maxWidth: "20rem" }}>
+          <GrantsCard style={{ minHeight: "10rem", minWidth: "20rem" }}>
           {/*<img style={{ marginLeft: "5rem" }} src={jan} width="35%" />*/}
           <StyledBodySubTitle>Jan Ostertag</StyledBodySubTitle>
           <StyledSocialRow>
@@ -485,7 +488,7 @@ const StyledGithub = styled(Github)`
           </GrantsCard>
         </StyledItemRow>
 
-        <StyledSectionHeader style={{ marginTop: '15rem' }}>{'RECOGNITION →'}</StyledSectionHeader>
+        <StyledSectionHeader style={{ marginTop: '10rem' }}>{'RECOGNITION →'}</StyledSectionHeader>
           <StyledItemRow style={{ alignItems: 'center', justifyContent: 'center', padding: '2rem 10rem 2rem 10rem' }}>
           <GrantsCard style={{ minHeight: "35rem", maxWidth: "20rem" }}>
           <img style={{ marginLeft: "5rem" }} src={graph} width="35%" />
@@ -517,10 +520,6 @@ const StyledGithub = styled(Github)`
           </GrantsCard>
         </StyledItemRow>
         
-
-         
-        </span>
-      </StyledAbout>
       </StyledBody>
       <BG />
     </Layout>
