@@ -522,19 +522,19 @@ const Pillars = () => {
     <StyledSection>
       <StyledSectionHeader>{'Our pillars →'}</StyledSectionHeader>
       <StyledItemRow style={{ alignItems: 'center', justifyContent: 'center', padding: '2rem 10rem 2rem 10rem' }}>
-        <GrantsCard style={{ minHeight: "10rem", maxWidth: "16rem" }}>
+        <GrantsCard style={{ minHeight: "10rem", minWidth: "18rem" }}>
           <StyledBodySubTitle>Neutral</StyledBodySubTitle>
           
         </GrantsCard>
-        <GrantsCard style={{ minHeight: "10rem", maxWidth: "16rem" }}>
+        <GrantsCard style={{ minHeight: "10rem", minWidth: "18rem" }}>
           <StyledBodySubTitle>Decentralized</StyledBodySubTitle>
           
         </GrantsCard>
-        <GrantsCard style={{ minHeight: "10rem", maxWidth: "16rem" }}>
+        <GrantsCard style={{ minHeight: "10rem", minWidth: "18rem" }}>
           <StyledBodySubTitle>Open</StyledBodySubTitle>
           
         </GrantsCard>
-        <GrantsCard style={{ minHeight: "10rem", maxWidth: "16rem" }}>
+        <GrantsCard style={{ minHeight: "10rem", minWidth: "18rem" }}>
         <StyledBodySubTitle>Borderless</StyledBodySubTitle>
         </GrantsCard>
   </StyledItemRow>

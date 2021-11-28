@@ -203,7 +203,7 @@ const StyledBodySubText = styled.h3`
 `
 
 const StyledSectionTitle = styled.h3`
-  max-width: 960px;
+  max-width: 975px;
   line-height: 140%;
   font-size: 32px;
   @media (max-width: 640px) {
@@ -461,7 +461,8 @@ const IndexPage = props => {
 
           <EcosystemSection data={data} props={props} />
           
-          <StyledSectionHeader>
+          
+          <StyledSectionHeader style={{ marginTop: '10rem' }}>
             <a href="https://info.uniswap.org/">{'DATA ANALYTICS →'}</a>
           </StyledSectionHeader>
           <div

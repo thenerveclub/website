@@ -43,7 +43,6 @@ const StyledBlog = styled.div`
   padding: 0 2rem;
   padding-bottom: 4rem;
   margin-bottom: 4rem;
-  padding-top: 2rem;
   @media (max-width: 960px) {
     flex-direction: column;
     grid-template-columns: 1fr;
@@ -87,8 +86,6 @@ const StyledAbout = styled.div`
   grid-template-columns: 1fr 200px;
   justify-content: space-between;
   padding: 0 2rem;
-  padding-bottom: 4rem;
-  margin-bottom: 4rem;
   padding-top: 2rem;
 
   border-bottom: 1px solid ${({ theme }) => theme.colors.grey2};
@@ -103,7 +100,6 @@ const StyledAbout = styled.div`
 
 const Title = styled.h1`
   /* font-size: 3rem; */
-  margin-bottom: 4rem;
   font-size: 72px;
 
   pointer-events: none;
@@ -275,11 +271,11 @@ const Blog = props => {
 
   return (
     <Layout path={props.location.pathname}>
-      <StyledBody>
+      
       <SEO title="Uniswap Blog" path={props.location.pathname} />
-      <StyledBlog>
+      
       <StyledAbout>
-        <span style={{ marginTop: '3rem', marginLeft: "-2rem" }}>
+        <span style={{ marginTop: '5rem' }}>
           <Title>
             BLOG
           </Title>
@@ -289,6 +285,8 @@ const Blog = props => {
           </span>
           </StyledAbout>
           
+          <StyledBody>
+          <StyledBlog>
         <PostsWrapper>
           {data.allMdx.edges.map(({ node }, index) => {
             return (

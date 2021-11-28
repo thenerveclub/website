@@ -28,8 +28,6 @@ const StyledAbout = styled.div`
   grid-template-columns: 1fr 200px;
   justify-content: space-between;
   padding: 0 2rem;
-  padding-bottom: 4rem;
-  margin-bottom: 4rem;
   padding-top: 2rem;
 
   @media (max-width: 960px) {
