@@ -6,6 +6,7 @@ import Future from '../components/timeline'
 import graph from '../images/graph.png'
 import uni from '../images/uni.svg'
 import mockup from '../images/mockup.png'
+import Grafik from '../images/Grafik.svg'
 
 
 
@@ -186,7 +187,7 @@ const StyledSection = styled.section`
 `
 
 const SubTitle = styled.div`
-  max-width: 650px;
+  max-width: 725px;
   font-size: 20px;
   font-weight: 400;
   @media (max-width: 640px) {
@@ -500,7 +501,7 @@ const About = props => {
           </UniMobileImage>
           <AutoColumn gap="20px">
             <Tit>The Nerve Token</Tit>
-            <SubTitle style={{ textAlign: 'left', margin: '0', opacity: '0.6' }}>
+            <SubTitle style={{ maxWidth: "700px", textAlign: 'left', margin: '0', opacity: '0.6' }}>
               Contribute to Nerve, an incentivized open ecosystem, and get rewarded with NRV tokens. In the near future, NRV holders will govern the ecosystem through an on-chain governance process.
             </SubTitle>
             <Button target="_blank" rel="noreferrer" href="/blog/uni" outlined>
@@ -533,21 +534,27 @@ const About = props => {
           </GrantsCard>
         </StyledItemRow>
 
-      <StyledSection style={{ marginTop: '5rem' }}>
+      <StyledSection style={{ marginTop: '10rem' }}>
       <StyledItemRow>
         <span style={{ marginTop: '-60px', marginBottom: '80px' }}>
           <StyledSectionHeader style={{ marginTop: '5rem' }}>{'REVENUE STAKING →'}</StyledSectionHeader>
-          <StyledSectionTitle>Tokens are automatically staked if you have participated in the ecosystem.</StyledSectionTitle>
+          <SubTitle style={{ opacity: '0.6', textAlign: 'left', marginRight: '48px' }}>
+          Tokens are automatically staked if you have participated in the ecosystem.
+          </SubTitle>
         </span>
       </StyledItemRow>
+
+
     </StyledSection>
 
-    <img style={{ maxWidth: "100%", alignItems: 'center', justifyContent: 'center' }} src={mockup} width="20%" />
+    <img style={{ marginTop: "-3rem", maxWidth: "100%", alignItems: 'center', justifyContent: 'center' }} src={Grafik} width="100%" />
 
 
-        <StyledSection style={{ marginTop: '5rem' }}>
+        <StyledSection>
           <StyledSectionHeader style={{ marginTop: '5rem' }}>{'PLAY TO EARN →'}</StyledSectionHeader>
-          <StyledSectionTitle>To ensure NERVE is held by those who are committed to the ecosystem.</StyledSectionTitle>
+          <SubTitle style={{ opacity: '0.6', textAlign: 'left', marginRight: '48px' }}>
+          To ensure NERVE is held by those who are committed to the ecosystem.
+          </SubTitle>
           <StyledItemRow style={{ alignItems: 'center', justifyContent: 'center', padding: '2rem 10rem 2rem 10rem' }}>
           <GrantsCard style={{ minHeight: "30rem", maxWidth: "25rem" }}>
             <StyledBodySubTitle>Player</StyledBodySubTitle>

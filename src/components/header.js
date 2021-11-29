@@ -260,7 +260,7 @@ const Header = props => {
           }}
         >
           <StyledUni />
-          <StyledBodySubText>
+          <StyledBodySubText style={{ fontFamily: "True", fontWeight: 200 }}>
             Nerve Global
           </StyledBodySubText>
         </StyledHomeLink>

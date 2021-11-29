@@ -184,6 +184,7 @@ export const GlobalStyle = createGlobalStyle`
     margin-top: 1.75rem ;
     font-size: 1.875rem;
     font-weight: 600;
+}
   }
 
   h2 {

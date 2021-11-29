@@ -8,6 +8,8 @@ import { Butt } from '../components/butt'
 import { Tab } from '../components/tab'
 import ProtocolData from '../components/protocolData'
 
+import True from '../styles/true.css'
+
 import { useDarkMode } from '../contexts/Application'
 
 import PinkGlimmer from '../images/pink_glimmer.inline.svg'
@@ -53,7 +55,13 @@ const StyledAbout = styled.div`
 const Title = styled.h1`
   /* font-size: 3rem; */
   margin-bottom: 4rem;
-  font-size: 72px;
+  font-size: 65px;
+  text-transform: uppercase;
+  background: -webkit-linear-gradient(to right, #DE0CCF 0%, #00F2FC 100%);
+  background: -moz-linear-gradient(to right, #DE0CCF 0%, #00F2FC 100%);
+	background: linear-gradient(to right, #DE0CCF 0%, #00F2FC 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
 
   pointer-events: none;
   white-space: wrap;
@@ -183,6 +191,12 @@ const SubTitle = styled.div`
 const StyledBodySubT = styled.h2`
   display: none;
   visibility: hidden;
+  text-transform: uppercase;
+  background: -webkit-linear-gradient(to right, #DE0CCF 0%, #00F2FC 100%);
+  background: -moz-linear-gradient(to right, #DE0CCF 0%, #00F2FC 100%);
+	background: linear-gradient(to right, #DE0CCF 0%, #00F2FC 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
 
   @media (max-width: 640px) {
   display: block;
@@ -419,8 +433,7 @@ const IndexPage = props => {
       <StyledBody>
         <StyledTitle>
           <StyledBodyTitle>
-            <span style={{ fontWeight: 200 }}>NERVE</span>
-            <StyledPinkGlimmer /> GLOBAL
+            <span style={{ fontFamily: "True", fontWeight: 200 }}>NERVE GLOBAL</span>
           </StyledBodyTitle>
           <StyledBodySubT>
             {'Discover, fund, and be part of projects you care about.'}
@@ -482,6 +495,8 @@ const IndexPage = props => {
         <DeveloperSection data={data} props={props} />
 
         <KeyAdvantages data={data} props={props} />
+
+        <Ranking data={data} props={props} />
         
         <Spotlight data={data} props={props} />
 
@@ -771,6 +786,33 @@ const Spotlight = () => {
             <ZBet />
             </p>
             <p style={{ fontSize: '1.125rem', opacity: '0.6' }}>By
+            <Butt outlined>
+              <p style={{ fontSize: '1.125rem' }}><BEarn /></p>
+            </Butt>
+            </p>
+          </GrantsCard>
+          
+        </StyledItemRow>
+      </StyledSection>
+    </>
+  )
+}
+
+const Ranking = () => {
+  return (
+    <>
+      <StyledSection style={{ marginTop: '15rem' }}>
+        <StyledSectionHeader>{'RANKING →'}</StyledSectionHeader>
+        <StyledItemRow style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              padding: '2rem 10rem 2rem 10rem'
+            }}>
+
+          <GrantsCard style={{ minHeight: "16rem", maxWidth: "50rem" }}>
+            <StyledBodySubTitle style={{ fontSize: '1.125rem' }}>TOP 10</StyledBodySubTitle>
+            <p style={{ fontSize: '1.125rem', opacity: '0.6' }}>1.
             <Butt outlined>
               <p style={{ fontSize: '1.125rem' }}><BEarn /></p>
             </Butt>
