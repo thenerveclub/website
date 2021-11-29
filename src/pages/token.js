@@ -484,7 +484,7 @@ const About = props => {
       <StyledAbout>
         <span style={{ marginTop: '5rem' }}>
           <Title style={{ paddingBottom: '4rem' }}>
-          GOVERNANCE
+          TOKEN
           </Title>
           </span>
       </StyledAbout>

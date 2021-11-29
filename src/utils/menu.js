@@ -30,8 +30,8 @@ const menu = [
         link: '/about'
       },
       {
-        name: 'Governance',
-        link: '/governance'
+        name: 'Token',
+        link: '/token'
       },
       {
         name: 'People',

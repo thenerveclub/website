@@ -21,12 +21,14 @@ import AppsImage from '../images/apps.png'
 import phone from '../images/phone.png'
 import appstore from '../images/appstore.svg'
 import google from '../images/google.svg'
+import kitty from '../images/kitty.gif'
 
 
 
 import ZTask from '../ZTask'
 import ZBet from '../ZBet'
 import TEarn from '../TEarn'
+import Tmoney from '../Tmoney'
 import BEarn from '../BEarn'
 
 
@@ -135,7 +137,7 @@ const StyledTitle = styled.div`
 `
 
 const StyledBodyTitle = styled.h1`
-  font-size: 56px;
+  font-size: 48px;
   white-space: wrap;
   overflow-wrap: normal;
   
@@ -454,15 +456,14 @@ const IndexPage = props => {
           
         </StyledTitle>
         
-         {/* <GrantCard>
-            <img style={{ marginLeft: "5rem" }} src={graph} width="35%" />
-            <StyledBodySubTitle style={{ textAlign: "center", fontSize: "20px" }}>Backed by <br /> The Graph Foundation</StyledBodySubTitle>
-        </GrantCard> */}
+        <GrantCard>
+            <img style={{ margin: "-3rem 0 0 0" }} src={kitty} width="100%" />
+        </GrantCard>
 
           <EcosystemSection data={data} props={props} />
           
           
-          <StyledSectionHeader style={{ marginTop: '10rem' }}>
+          <StyledSectionHeader style={{ marginTop: '15rem' }}>
             <a href="https://info.uniswap.org/">{'DATA ANALYTICS →'}</a>
           </StyledSectionHeader>
           <div
@@ -480,8 +481,9 @@ const IndexPage = props => {
 
         <DeveloperSection data={data} props={props} />
 
-        < KeyAdvantages data={data} props={props} />
+        <KeyAdvantages data={data} props={props} />
         
+        <Spotlight data={data} props={props} />
 
         <StyledSection>
         <StyledItemRow style={{ alignItems: 'center', justifyContent: 'center', padding: '15rem 10rem 10rem 5rem' }}>
@@ -503,7 +505,6 @@ const IndexPage = props => {
         </StyledItemRow>
       </StyledSection>
 
-        <Spotlight data={data} props={props} />
       </StyledBody>
       <BG />
     </Layout>
@@ -670,7 +671,7 @@ const EcosystemSection = () => {
 
 const KeyAdvantages = () => {
   return (
-    <StyledSection>
+    <StyledSection style={{ marginTop: '15rem' }}>
       <StyledItemRow>
         <span style={{ marginTop: '60px', marginBottom: '80px' }}>
           <StyledSectionHeader style={{ marginTop: '5rem' }}>{'4 SIMPLE STEPS TO START →'}</StyledSectionHeader>
@@ -741,7 +742,7 @@ const KeyAdvantages = () => {
 const Spotlight = () => {
   return (
     <>
-      <StyledSection>
+      <StyledSection style={{ marginTop: '15rem' }}>
         <StyledSectionHeader>{'SPOTLIGHT →'}</StyledSectionHeader>
         <StyledItemRow style={{
               display: 'flex',
@@ -757,6 +758,9 @@ const Spotlight = () => {
             <p style={{ fontSize: '1.125rem', opacity: '0.6' }}>For 
             <Butt outlined>
               <p style={{ fontSize: '1.125rem' }}><TEarn /></p>
+            </Butt>
+            <Butt outlined>
+              <p style={{ fontSize: '1.125rem' }}><Tmoney /></p>
             </Butt>
             </p>
           </GrantsCard>
@@ -781,7 +785,7 @@ const Spotlight = () => {
 
 const DeveloperSection = () => {
   return (
-      <StyledSection>
+      <StyledSection style={{ marginTop: '15rem' }}>
         <StyledSectionHeader>{'INNOVATIONS AT A GLANCE →'}</StyledSectionHeader>
         <StyledItemRow style={{ alignItems: 'center', justifyContent: 'center', padding: '2rem 10rem 2rem 10rem' }}>
           <GrantsCard style={{ minHeight: "20rem", maxWidth: "18rem" }}>

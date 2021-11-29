@@ -25,7 +25,7 @@ const StyledHeader = styled.header`
   width: 100%;
   z-index: 3;
   position: sticky;
-  top: -1px;
+  top: 0;
   background: ${({ theme, open, showBG }) => (showBG && !open ? theme.backgroundColor : 'none')};
 	border-bottom: 1px solid ${({ theme }) => theme.buttonBorder};
   border-image: linear-gradient(var(--angle), aqua, aqua, magenta, magenta) 1;

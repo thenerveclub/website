@@ -441,35 +441,6 @@ const About = props => {
       </StyledAbout>
           
           <StyledBody>
-          <Pillars data={data} props={props} />
-          <EcosystemSection data={data} props={props} />
-          
-          
-
-          <StyledSection style={{ marginTop: '10rem' }}>
-          <StyledItemRow>
-          <AppsCard>
-          <h1>∞</h1>
-          <p>Opportunities</p>
-          </AppsCard>
-          <span style={{ marginLeft: "2rem", marginTop: '-60px', marginBottom: '80px' }}>
-          <StyledSectionHeader style={{ marginTop: '5rem' }}></StyledSectionHeader>
-          <StyledSectionTitle>A decentralized application with a task and betting system.</StyledSectionTitle>
-          <SubTitle style={{ opacity: '0.6', textAlign: 'left', marginRight: '48px' }}>
-          For all kinds of content creators, it constitutes a service 
-            to fund content which is in demand by consumers. From a financial point of view, our solution offers an alternative source of income. 
-            Our model is sustainable and highly scalable with a possibility to support millions of users and thousands of creators around the world.
-          </SubTitle>
-          </span>
-          </StyledItemRow>
-          </StyledSection>
-
-          <StyledSection>
-          <StyledItemRow style={{ alignItems: 'center', justifyContent: 'center', margin: '10rem 0 5rem 0' }}>
-          <StyledSectionTitle> A comprehensive, global discussion about blockchain technology is desperately needed - we`ll be the initiating factor.</StyledSectionTitle>
-          </StyledItemRow>
-          </StyledSection>
-    
           <StyledSectionHeader>{'CONTACT →'}</StyledSectionHeader>
 
           <StyledSectionFlex id="contact" style={{ flexDirection: 'column' }}>

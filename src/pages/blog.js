@@ -272,7 +272,7 @@ const Blog = props => {
   return (
     <Layout path={props.location.pathname}>
       
-      <SEO title="Uniswap Blog" path={props.location.pathname} />
+      <SEO title="Blog" path={props.location.pathname} />
       
       <StyledAbout>
         <span style={{ marginTop: '5rem' }}>
