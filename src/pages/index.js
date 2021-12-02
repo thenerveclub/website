@@ -811,7 +811,16 @@ const Ranking = () => {
             }}>
 
           <GrantsCard style={{ minHeight: "16rem", maxWidth: "50rem" }}>
-            <StyledBodySubTitle style={{ fontSize: '1.125rem' }}>TOP 10</StyledBodySubTitle>
+            <StyledBodySubTitle style={{ fontSize: '1.125rem' }}>TOP 10 EARNERS</StyledBodySubTitle>
+            <p style={{ fontSize: '1.125rem', opacity: '0.6' }}>1.
+            <Butt outlined>
+              <p style={{ fontSize: '1.125rem' }}><BEarn /></p>
+            </Butt>
+            </p>
+          </GrantsCard>
+
+          <GrantsCard style={{ minHeight: "16rem", maxWidth: "50rem" }}>
+            <StyledBodySubTitle style={{ fontSize: '1.125rem' }}>TOP 10 SPENDERS</StyledBodySubTitle>
             <p style={{ fontSize: '1.125rem', opacity: '0.6' }}>1.
             <Butt outlined>
               <p style={{ fontSize: '1.125rem' }}><BEarn /></p>

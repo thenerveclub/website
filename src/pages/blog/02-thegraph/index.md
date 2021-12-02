@@ -3,7 +3,7 @@ title: 'The Graph x Nerve'
 date: '2021-11-05'
 author: 'Nerve Global'
 featuredImage: ./graph.png
-previewText: 'We are super excited that we´ve received a $7.5K grant from The Graph & The Graph Grants.'
+previewText: 'We are super excited that we´ve received a $7.5K grant from The Graph.'
 ---
 
 # The Graph - A decentralized indexing protocol for Web3
