@@ -32,6 +32,8 @@ import ZBet from '../ZBet'
 import TEarn from '../TEarn'
 import Tmoney from '../Tmoney'
 import BEarn from '../BEarn'
+import ZTopspent from '../ZTopspent'
+import ZTopearn from '../ZTopearn'
 
 
 const StyledAbout = styled.div`
@@ -812,18 +814,18 @@ const Ranking = () => {
 
           <GrantsCard style={{ minHeight: "16rem", maxWidth: "50rem" }}>
             <StyledBodySubTitle style={{ fontSize: '1.125rem' }}>TOP 10 EARNERS</StyledBodySubTitle>
-            <p style={{ fontSize: '1.125rem', opacity: '0.6' }}>1.
+            <p style={{ fontSize: '1.125rem', opacity: '0.6' }}>
             <Butt outlined>
-              <p style={{ fontSize: '1.125rem' }}><BEarn /></p>
+              <p style={{ fontSize: '1.125rem' }}><ZTopearn /></p>
             </Butt>
             </p>
           </GrantsCard>
 
           <GrantsCard style={{ minHeight: "16rem", maxWidth: "50rem" }}>
             <StyledBodySubTitle style={{ fontSize: '1.125rem' }}>TOP 10 SPENDERS</StyledBodySubTitle>
-            <p style={{ fontSize: '1.125rem', opacity: '0.6' }}>1.
+            <p style={{ fontSize: '1.125rem', opacity: '0.6' }}>
             <Butt outlined>
-              <p style={{ fontSize: '1.125rem' }}><BEarn /></p>
+              <p style={{ fontSize: '1.125rem' }}><ZTopspent /></p>
             </Butt>
             </p>
           </GrantsCard>
