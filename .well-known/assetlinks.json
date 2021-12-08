@@ -1,0 +1,8 @@
+[{
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+        "namespace": "android_app",
+        "package_name": "com.academy.nerve",
+        "sha256_cert_fingerprints": ["6A:BD:A9:B4:9D:09:05:D5:41:94:CD:0D:D2:F2:1A:DE:4D:6D:C0:5C:A5:4E:48:7C:C9:B1:F0:17:0B:05:4B:E3"]
+    }
+}]
