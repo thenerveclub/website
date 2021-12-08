@@ -18,11 +18,6 @@ import { Button } from '../components/button'
 import graph from '../images/graph.png'
 import blockland from '../images/blockland.png'
 
-import jan from '../images/jan.png'
-import tim from '../images/tim.png'
-import phil from '../images/phil.png'
-import christoph from '../images/christoph.png'
-
 import Twitter from '../images/twitter.inline.svg'
 import Github from '../images/github.inline.svg'
 import Discord from '../images/discord.inline.svg'
@@ -488,7 +483,7 @@ const StyledGithub = styled(Github)`
 
         <StyledSectionHeader style={{ marginTop: '10rem' }}>{'RECOGNITION →'}</StyledSectionHeader>
           <StyledItemRow style={{ alignItems: 'center', justifyContent: 'center', padding: '2rem 10rem 2rem 10rem' }}>
-          <GrantsCard style={{ minHeight: "35rem", maxWidth: "20rem" }}>
+          <GrantsCard style={{ minHeight: "37rem", maxWidth: "20rem" }}>
           <img style={{ marginLeft: "5rem" }} src={graph} width="35%" />
             <StyledBodySubTitle>The Graph Foundation</StyledBodySubTitle>
             <p>
@@ -502,7 +497,7 @@ const StyledGithub = styled(Github)`
               <p style={{ margin: 0 }}>Learn more ↗</p>
             </Button>
           </GrantsCard>
-          <GrantsCard style={{ minHeight: "35rem", maxWidth: "20rem" }}>
+          <GrantsCard style={{ minHeight: "37rem", maxWidth: "20rem" }}>
           <img style={{ marginLeft: "2rem" }} src={blockland} width="75%" />
             <StyledBodySubTitle>Blockland Solutions</StyledBodySubTitle>
             <p>
@@ -512,7 +507,7 @@ const StyledGithub = styled(Github)`
             3rd out of 47 international teams.
             Prizes awarded by Jon Pinney, Kohrman Jackson & Krantz LLP, and Bob Sopko (Launchnet at Case Western Reserve University)
             </p>
-            <Button style={{ marginTop: "3rem" }} target="_blank" rel="noreferrer" href="/blog" outlined>
+            <Button style={{ marginTop: "4.5rem" }} target="_blank" rel="noreferrer" href="/blog" outlined>
               <p style={{ margin: 0 }}>Learn more ↗</p>
             </Button>
           </GrantsCard>

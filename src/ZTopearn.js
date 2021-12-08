@@ -15,7 +15,7 @@ export default function ZSpent() {
 
   return (
     <div>
-      <ul>
+      <ul style={{ listStyle: "decimal" }}>
         {tope.map((tope) => (
           <li key={tope.id}>{tope.userName}</li>
         ))}

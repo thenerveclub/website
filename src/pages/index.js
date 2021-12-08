@@ -17,15 +17,11 @@ import Twitter from '../images/twitter.inline.svg'
 import Github from '../images/github.inline.svg'
 import Discord from '../images/discord.inline.svg'
 import Linkedin from '../images/linkedin.inline.svg'
-import DevImage from '../images/developer.png'
-import GovImage from '../images/governance.png'
 import AppsImage from '../images/apps.png'
 import phone from '../images/phone.png'
 import appstore from '../images/appstore.svg'
 import google from '../images/google.svg'
 import kitty from '../images/kitty.gif'
-
-
 
 import ZTask from '../ZTask'
 import ZBet from '../ZBet'
@@ -569,7 +565,6 @@ const StyledSection = styled.section`
 
 export const DeveloperCard = styled(StyledCard)`
   mix-blend-mode: ${({ isDark }) => (isDark ? 'overlay' : 'lighten')};
-  background: url(${DevImage});
   color: white;
   background-size: cover;
   background-repeat: no-repeat;
@@ -577,7 +572,6 @@ export const DeveloperCard = styled(StyledCard)`
 
 export const GovernanceCard = styled(StyledCard)`
   mix-blend-mode: ${({ isDark }) => (isDark ? 'overlay' : 'lighten')};
-  background: url(${GovImage});
   background-size: cover;
   background-repeat: no-repeat;
   margin-right: 12px;
@@ -776,9 +770,6 @@ const Spotlight = () => {
             <Butt outlined>
               <p style={{ fontSize: '1.125rem' }}><TEarn /></p>
             </Butt>
-            <Butt outlined>
-              <p style={{ fontSize: '1.125rem' }}><Tmoney /></p>
-            </Butt>
             </p>
           </GrantsCard>
 
@@ -814,19 +805,15 @@ const Ranking = () => {
 
           <GrantsCard style={{ minHeight: "16rem", maxWidth: "50rem" }}>
             <StyledBodySubTitle style={{ fontSize: '1.125rem' }}>TOP 10 EARNERS</StyledBodySubTitle>
-            <p style={{ fontSize: '1.125rem', opacity: '0.6' }}>
-            <Butt outlined>
-              <p style={{ fontSize: '1.125rem' }}><ZTopearn /></p>
-            </Butt>
+            <p style={{ marginLeft: "2rem", fontSize: '20px', fontWeight: "600" }}>
+            <ZTopearn />
             </p>
           </GrantsCard>
 
           <GrantsCard style={{ minHeight: "16rem", maxWidth: "50rem" }}>
             <StyledBodySubTitle style={{ fontSize: '1.125rem' }}>TOP 10 SPENDERS</StyledBodySubTitle>
-            <p style={{ fontSize: '1.125rem', opacity: '0.6' }}>
-            <Butt outlined>
-              <p style={{ fontSize: '1.125rem' }}><ZTopspent /></p>
-            </Butt>
+            <p style={{ marginLeft: "2rem", fontSize: '20px', fontWeight: "600" }}>
+            <ZTopspent />
             </p>
           </GrantsCard>
           

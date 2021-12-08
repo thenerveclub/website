@@ -2,13 +2,8 @@ import React, { useState, useEffect } from 'react'
 
 import styled from 'styled-components'
 
-import Future from '../components/timeline'
-import graph from '../images/graph.png'
 import uni from '../images/uni.svg'
-import mockup from '../images/mockup.png'
 import Grafik from '../images/Grafik.svg'
-
-
 
 import { Button } from '../components/button'
 import gql from 'graphql-tag'

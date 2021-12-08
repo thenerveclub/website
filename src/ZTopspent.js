@@ -15,7 +15,7 @@ export default function ZEarnt() {
 
   return (
     <div>
-      <ul>
+      <ul style={{ listStyle: "decimal" }}>
         {top.map((top) => (
           <li key={top.id}>{top.userName}</li>
         ))}
