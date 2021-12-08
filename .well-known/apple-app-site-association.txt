@@ -1,0 +1,11 @@
+{
+    "applinks": {
+        "apps": [],
+        "details": [
+            {
+                "appID": "WFBNFB8AYN.com.YourCompany.NERVE",
+                "paths": [ "*" ],
+            }
+        ]
+    }
+}
