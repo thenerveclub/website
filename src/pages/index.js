@@ -8,8 +8,6 @@ import { Butt } from '../components/butt'
 import { Tab } from '../components/tab'
 import ProtocolData from '../components/protocolData'
 
-import True from '../styles/true.css'
-
 import { useDarkMode } from '../contexts/Application'
 
 import PinkGlimmer from '../images/pink_glimmer.inline.svg'
@@ -430,7 +428,7 @@ const IndexPage = props => {
       <StyledBody>
         <StyledTitle>
           <StyledBodyTitle>
-            <span style={{ fontFamily: (True), fontWeight: 200 }}>NERVE GLOBAL</span>
+            <span style={{ fontFamily: "True", fontWeight: 200 }}>NERVE GLOBAL</span>
           </StyledBodyTitle>
           <StyledBodySubT>
             {'Discover, fund, and be part of projects you care about.'}
