@@ -430,7 +430,7 @@ const IndexPage = props => {
       <StyledBody>
         <StyledTitle>
           <StyledBodyTitle>
-            <span style={{ fontFamily: "True", fontWeight: 200 }}>NERVE GLOBAL</span>
+            <span style={{ fontFamily: (True), fontWeight: 200 }}>NERVE GLOBAL</span>
           </StyledBodyTitle>
           <StyledBodySubT>
             {'Discover, fund, and be part of projects you care about.'}
