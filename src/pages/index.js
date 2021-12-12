@@ -16,7 +16,7 @@ import Github from '../images/github.inline.svg'
 import Discord from '../images/discord.inline.svg'
 import Linkedin from '../images/linkedin.inline.svg'
 import AppsImage from '../images/apps.png'
-import PhoneImage from '../images/phone.png'
+import phone from '../images/phone.svg'
 import appstore from '../images/appstore.svg'
 import google from '../images/google.svg'
 import kitty from '../images/kitty.gif'
@@ -741,7 +741,7 @@ const KeyAdvantages = () => {
         </span>
         
         </StyledItemRow>
-        <img style={{ position: "absolute", margin: "0 0 0 35rem", maxWidth: "65%" }} src={PhoneImage} />
+        <img style={{ position: "absolute", margin: "0 0 0 35rem", maxWidth: "5%" }} src={phone} />
     </StyledSection>
   )
 }
