@@ -231,6 +231,19 @@ const StyledSocialRow = styled.nav`
     margin-top: 0;
     margin-left: 16px;
   }
+  `
+
+const StyledSocialRowL = styled.nav`
+  display: none;
+  
+    @media (max-width: 960px) {
+      display: flex;
+  flex-direction: row;
+  margin-top: -3rem;
+  & > *:not(:first-of-type) {
+    margin-top: 0;
+    margin-left: 16px;
+    }
 `
 
 const StyledItemRow = styled.nav`
@@ -244,7 +257,8 @@ const StyledItemRow = styled.nav`
   @media (min-width: 960px) {
     flex-direction: row;
     & > * {
-      margin-bottom: 12px;
+      margin-top: 1px;
+      margin-bottom: 1px;
     }
     & > *:not(:first-of-type) {
       margin-top: 0;
@@ -447,7 +461,7 @@ const IndexPage = props => {
             <img style={{ maxWidth: "20rem" }} src={google} width="140%" />
           </StyledTradeLink>
           </StyledSocialRow>
-          <StyledSocialRow>
+          <StyledSocialRow style={{ marginTop: "1rem" }}>
             <a target="_blank" rel="noreferrer" href="https://twitter.com/nerveglobal_">
               <StyledTwitter />
             </a>
@@ -464,14 +478,16 @@ const IndexPage = props => {
           
         </StyledTitle>
         
+        <HideSmall>
         <GrantCard>
             <img style={{ margin: "-3rem 0 0 0" }} src={kitty} width="100%" />
         </GrantCard>
+        </HideSmall>
 
           <EcosystemSection data={data} props={props} />
           
           
-          <StyledSectionHeader style={{ marginTop: '15rem' }}>
+          <StyledSectionHeader>
             <a href="https://info.uniswap.org/">{'DATA ANALYTICS →'}</a>
           </StyledSectionHeader>
           <div
@@ -496,8 +512,9 @@ const IndexPage = props => {
         <Spotlight data={data} props={props} />
 
         <StyledSection>
-        <StyledItemRow style={{ alignItems: 'center', justifyContent: 'center', padding: '15rem 10rem 10rem 5rem' }}>
+        <StyledItemRow style={{ alignItems: 'center', justifyContent: 'center', padding: '5rem 10rem 10rem 5rem' }}>
         <StyledSectionTitle>A system for completely new forms of entertainment, investigation and exploration - by you.</StyledSectionTitle>
+        <HideSmall>
         <StyledSocialRow>
           <StyledTradeLink
             target="_blank"
@@ -511,9 +528,25 @@ const IndexPage = props => {
           >
             <img style={{ maxWidth: "20rem" }} src={google} width="140%" />
           </StyledTradeLink>
-          </StyledSocialRow>          
+          </StyledSocialRow>   
+          </HideSmall>   
         </StyledItemRow>
       </StyledSection>
+
+      <StyledSocialRowL>
+          <StyledTradeLink
+            target="_blank"
+            href="https://apps.apple.com/de/app/nerve-global/id1500517863"
+          >
+            <img style={{ maxWidth: "20rem" }} src={appstore} width="143%" />
+          </StyledTradeLink>
+          <StyledTradeLink
+            target="_blank"
+            href="https://play.google.com/store/apps/details?id=com.academy.nerve&hl=en&gl=US"
+          >
+            <img style={{ maxWidth: "20rem" }} src={google} width="140%" />
+          </StyledTradeLink>
+          </StyledSocialRowL>
 
       </StyledBody>
       <BG />
@@ -553,10 +586,10 @@ const StyledSectionHeader = styled.h1`
 const StyledSection = styled.section`
   display: flex;
   flex-direction: column;
-  margin: 2rem 0;
+  margin: 12rem 0;
 
   @media (max-width: 640px) {
-    margin: 0;
+    margin-top: 3rem;
   }
 `
 
@@ -657,12 +690,12 @@ export const GrantCard = styled(StyledC)`
 
 const EcosystemSection = () => {
   return (
-    <StyledSection style={{ marginTop: '15rem' }}>
+    <StyledSection>
       <StyledItemRow>
         <span style={{ marginTop: '-60px', marginBottom: '80px' }}>
           <StyledSectionHeader style={{ marginTop: '5rem' }}>{'NERVE ECOSYSTEM →'}</StyledSectionHeader>
           <StyledSectionTitle>We contribute to an open, inclusive and creative society.</StyledSectionTitle>
-          <SubTitle style={{ opacity: '0.6', textAlign: 'left', marginRight: '48px' }}>
+          <SubTitle style={{ opacity: '0.6', textAlign: 'left', marginRight: '48px', marginBottom: '48px' }}>
           People share unique adventures, experiences, educational content and much more with the world, which unlock a massively larger creative economy 
           than the one constrained by today’s platforms and their policies.
           This ecosystem will be built - by you.
@@ -679,10 +712,10 @@ const EcosystemSection = () => {
 
 const KeyAdvantages = () => {
   return (
-    <StyledSection style={{ marginTop: '15rem' }}>
+    <StyledSection>
       <StyledItemRow>
-        <span style={{ marginTop: '60px', marginBottom: '80px' }}>
-          <StyledSectionHeader style={{ marginTop: '5rem' }}>{'4 SIMPLE STEPS TO START →'}</StyledSectionHeader>
+        <span>
+          <StyledSectionHeader>{'4 SIMPLE STEPS TO START →'}</StyledSectionHeader>
 
           <StyledItemColumn style={{ display: 'flex', flexDirection: 'column' }}>
             <Tab style={{ zIndex: "1", borderRadius: '20px' }} outlined>
@@ -750,7 +783,7 @@ const KeyAdvantages = () => {
 const Spotlight = () => {
   return (
     <>
-      <StyledSection style={{ marginTop: '15rem' }}>
+      <StyledSection>
         <StyledSectionHeader>{'SPOTLIGHT →'}</StyledSectionHeader>
         <StyledItemRow style={{
               display: 'flex',
@@ -791,7 +824,7 @@ const Spotlight = () => {
 const Ranking = () => {
   return (
     <>
-      <StyledSection style={{ marginTop: '15rem' }}>
+      <StyledSection>
         <StyledSectionHeader>{'RANKING →'}</StyledSectionHeader>
         <StyledItemRow style={{
               display: 'flex',
@@ -822,7 +855,7 @@ const Ranking = () => {
 
 const DeveloperSection = () => {
   return (
-      <StyledSection style={{ marginTop: '15rem' }}>
+      <StyledSection>
         <StyledSectionHeader>{'INNOVATIONS AT A GLANCE →'}</StyledSectionHeader>
         <StyledItemRow style={{ alignItems: 'center', justifyContent: 'center', padding: '2rem 10rem 2rem 10rem' }}>
           <GrantsCard style={{ minHeight: "20rem", maxWidth: "18rem" }}>
