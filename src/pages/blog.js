@@ -126,7 +126,7 @@ const StyledBodySubTitle = styled.h2`
 export const Posts = styled.div`
   position: relative;
   width: auto;
-  height: 420px;
+  height: 475px;
   text-decoration: none;
   border-radius: 20px 20px 50px 0;
   background-color: ${({ theme }) => theme.cardBG};
@@ -150,6 +150,9 @@ export const Posts = styled.div`
   }
   @media (max-width: 960px) {
     width: 100%;
+    height: 475px;
+    margin-bottom: 3rem;
+
   }
 `
 
