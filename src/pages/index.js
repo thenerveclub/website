@@ -496,7 +496,7 @@ const IndexPage = props => {
               alignItems: 'center',
               justifyContent: 'center',
               width: '100%',
-              padding: '2rem 0 5rem 0'
+              padding: '2rem 0 12rem 0'
             }}
           >
             <ProtocolData />
