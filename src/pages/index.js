@@ -461,7 +461,7 @@ const IndexPage = props => {
             <img style={{ maxWidth: "20rem" }} src={google} width="140%" />
           </StyledTradeLink>
           </StyledSocialRow>
-          <StyledSocialRow style={{ marginTop: "5rem" }}>
+          <StyledSocialRow style={{ marginTop: "3rem" }}>
             <a target="_blank" rel="noreferrer" href="https://twitter.com/nerveglobal_">
               <StyledTwitter />
             </a>
@@ -512,7 +512,7 @@ const IndexPage = props => {
         <Spotlight data={data} props={props} />
 
         <StyledSection>
-        <StyledItemRow style={{ alignItems: 'center', justifyContent: 'center', padding: '5rem 10rem 10rem 5rem' }}>
+        <StyledItemRow style={{ alignItems: 'center', justifyContent: 'center', padding: '5rem 10rem 0 5rem' }}>
         <StyledSectionTitle>A system for completely new forms of entertainment, investigation and exploration - by you.</StyledSectionTitle>
         <HideSmall>
         <StyledSocialRow>
@@ -573,12 +573,12 @@ const StyledSectionHeader = styled.h1`
     /* font-size: 2rem; */
     line-height: 2.5rem;
     max-width: 600px;
-    margin-top: 5rem;
+    margin-top: 2rem;
   }
   @media (max-width: 640px) {
     width: 100%;
     font-weight: 400;
-    margin-top: 5rem;
+    margin-top: 2rem;
     text-align: left;
   }
 `
@@ -586,10 +586,14 @@ const StyledSectionHeader = styled.h1`
 const StyledSection = styled.section`
   display: flex;
   flex-direction: column;
-  margin: 12rem 0;
+  margin: 10rem 0;
+
+  @media (max-width: 960px) {
+    margin-top: 1rem;
+  }
 
   @media (max-width: 640px) {
-    margin-top: 3rem;
+    margin-top: 1rem;
   }
 `
 
