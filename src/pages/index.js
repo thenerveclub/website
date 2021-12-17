@@ -461,7 +461,7 @@ const IndexPage = props => {
             <img style={{ maxWidth: "20rem" }} src={google} width="140%" />
           </StyledTradeLink>
           </StyledSocialRow>
-          <StyledSocialRow style={{ marginTop: "1rem" }}>
+          <StyledSocialRow style={{ marginTop: "5rem" }}>
             <a target="_blank" rel="noreferrer" href="https://twitter.com/nerveglobal_">
               <StyledTwitter />
             </a>
@@ -630,7 +630,7 @@ export const GovernanceCard = styled(StyledCard)`
   }
 
   @media (max-width: 960px) {
-    margin-bottom: 12px;
+    margin-bottom: 10px;
     margin-right: 0px;
   }
 `
@@ -659,7 +659,7 @@ export const AppsCard = styled(StyledCard)`
 
   @media (max-width: 960px) {
     margin-top: -80px;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
     margin-right: 0px;
     max-width: unset;
   }
