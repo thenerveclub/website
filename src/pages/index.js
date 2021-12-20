@@ -488,7 +488,7 @@ const IndexPage = props => {
           
           
           <StyledSectionHeader>
-            <a href="https://info.uniswap.org/">{'DATA ANALYTICS →'}</a>
+          <a /*href="https://info.uniswap.org/"*/>{'DATA ANALYTICS →'}</a>
           </StyledSectionHeader>
           <div
             style={{
