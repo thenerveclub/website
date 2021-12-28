@@ -6,7 +6,6 @@ import Info from './info'
 import Iframe from './iframe'
 import Github from './github'
 import Title from './title'
-import Code from './code'
 import InlineCode from './inlineCode'
 import InlineCard from '../inlineCard'
 import InlineBoxLink from '../inlineBoxLink'
@@ -23,7 +22,6 @@ const components = {
   Title,
   InlineCard,
   InlineBoxLink,
-  code: Code,
   inlineCode: InlineCode
 }
 
