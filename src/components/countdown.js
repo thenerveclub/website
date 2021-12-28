@@ -56,10 +56,10 @@ const Countdown = () => {
 <div className="container">
   <div id="countdown">
     <ul>
-      <li><span id="days"></span>days</li>
-      <li><span id="hours"></span>Hours</li>
-      <li><span id="minutes"></span>Minutes</li>
-      <li><span id="seconds"></span>Seconds</li>
+      <lp><span id="days"></span>days</lp>
+      <lp><span id="hours"></span>Hours</lp>
+      <lp><span id="minutes"></span>Minutes</lp>
+      <lp><span id="seconds"></span>Seconds</lp>
     </ul>
   </div>
 </div>

@@ -13,7 +13,7 @@
     font-weight: normal;
   }
   
-  li {
+  lp {
     margin: 0 1.5rem 0 1.5rem;
     display: inline-block;
     font-size: 1em;
@@ -21,17 +21,17 @@
     text-transform: uppercase;
   }
   
-  li span {
+  lp span {
     display: block;
     font-size: 3.5rem;
   }
 
   @media (max-width: 960px) {
-    li {
+    lp {
       font-size: calc(1.5rem * var(--smaller));
     }
     
-    li span {
-      font-size: calc(3rem * var(--smaller));
+    lp span {
+      font-size: calc(3.5rem * var(--smaller));
     }
   }
