@@ -8,6 +8,8 @@ import { Butt } from '../components/butt'
 import { Tab } from '../components/tab'
 import ProtocolData from '../components/protocolData'
 
+import { True } from '../styles/true.css'
+
 import { useDarkMode } from '../contexts/Application'
 
 import PinkGlimmer from '../images/pink_glimmer.inline.svg'
@@ -485,9 +487,9 @@ const IndexPage = props => {
         </GrantCard>
         </HideSmall>
 
-        <StyledSectionHeader style={{ marginTop: "5rem" }}>
+        <StyledSectionHeaderr>
           <a /*href="https://info.uniswap.org/"*/>{'MAINNET LAUNCH →'}</a>
-          </StyledSectionHeader>
+          </StyledSectionHeaderr>
           <div
             style={{
               display: 'flex',
@@ -594,6 +596,33 @@ const StyledSectionHeader = styled.h1`
     width: 100%;
     font-weight: 400;
     margin-top: 2rem;
+    text-align: left;
+  }
+`
+
+const StyledSectionHeaderr = styled.h1`
+  font-size: 20px;
+  white-space: wrap;
+  overflow-wrap: normal;
+  max-width: 900px;
+  font-weight: 500;
+  margin-top: 10rem;
+
+  a {
+    color: ${({ theme }) => theme.textColor};
+  }
+
+  @media (max-width: 960px) {
+    width: 100%;
+    /* font-size: 2rem; */
+    line-height: 2.5rem;
+    margin-top: -5rem;
+    max-width: 600px;
+  }
+  @media (max-width: 640px) {
+    width: 100%;
+    font-weight: 400;
+    margin-top: -5rem;
     text-align: left;
   }
 `
