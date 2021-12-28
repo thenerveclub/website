@@ -26,12 +26,12 @@
     font-size: 3.5rem;
   }
 
-  @media all and (max-width: 960px) {
+  @media (max-width: 960px) {
     li {
-      font-size: calc(1.125rem * var(--smaller));
+      font-size: calc(1.5rem * var(--smaller));
     }
     
     li span {
-      font-size: calc(3.375rem * var(--smaller));
+      font-size: calc(3rem * var(--smaller));
     }
   }
