@@ -26,21 +26,7 @@
     font-size: 3.5rem;
   }
 
-  .emoji {
-    display: none;
-    padding: 1rem;
-  }
-  
-  .emoji span {
-    font-size: 4rem;
-    padding: 0 .5rem;
-  }
-  
   @media all and (max-width: 960px) {
-    h1 {
-      font-size: calc(1.5rem * var(--smaller));
-    }
-    
     li {
       font-size: calc(1.125rem * var(--smaller));
     }
