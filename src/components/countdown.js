@@ -28,9 +28,8 @@ display: flex;
 
 const Countdown = () => {
 
-  document.addEventListener("DOMContentLoaded",
-
 	(function () {
+    React.useEffect(() => {
 		const second = 1000,
 		minute = second * 60,
 		hour = minute * 60,
@@ -45,17 +44,10 @@ const Countdown = () => {
 				document.getElementById("days").innerText = Math.floor(distance / (day)),
 				document.getElementById("hours").innerText = Math.floor((distance % (day)) / (hour)),
 				document.getElementById("minutes").innerText = Math.floor((distance % (hour)) / (minute)),
-				document.getElementById("seconds").innerText = Math.floor((distance % (minute)) / second);
-				
-
-        if (distance < 0) {
-          document.getElementById("headline").innerText = "It's my birthday!";
-          document.getElementById("countdown").style.display = "none";
-          document.getElementById("content").style.display = "block";
-          clearInterval(x);
-        }
+				document.getElementById("seconds").innerText = Math.floor((distance % (minute)) / second);				
 			}, 0)
-		}()));
+    }, [])
+		}());
 
 
   return (
@@ -69,11 +61,6 @@ const Countdown = () => {
       <li><span id="minutes"></span>Minutes</li>
       <li><span id="seconds"></span>Seconds</li>
     </ul>
-  </div>
-  <div id="content" className="emoji">
-    <span>🥳</span>
-    <span>🎉</span>
-    <span>🎂</span>
   </div>
 </div>
   </StyledItemRow>
