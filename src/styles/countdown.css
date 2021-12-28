@@ -1,0 +1,23 @@
+/* general styling */  
+  .container {
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  h1 {
+    font-size: 1rem;
+    font-weight: normal;
+  }
+  
+  li {
+    margin: 0 1.5rem 0 1.5rem;
+    display: inline-block;
+    font-size: 1em;
+    list-style-type: none;
+    text-transform: uppercase;
+  }
+  
+  li span {
+    display: block;
+    font-size: 3.5rem;
+  }

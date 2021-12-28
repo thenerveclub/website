@@ -27,6 +27,7 @@ import TEarn from '../TEarn'
 import BEarn from '../BEarn'
 import ZTopspent from '../ZTopspent'
 import ZTopearn from '../ZTopearn'
+import Countdown from '../components/countdown'
 
 
 const StyledAbout = styled.div`
@@ -480,10 +481,24 @@ const IndexPage = props => {
         
         <HideSmall>
         <GrantCard>
-            <img style={{ margin: "-3rem 0 0 0" }} src={kitty} width="100%" />
+            <img style={{ margin: "-5rem 0 0 0" }} src={kitty} width="100%" />
         </GrantCard>
         </HideSmall>
 
+        <StyledSectionHeader style={{ marginTop: "5rem" }}>
+          <a /*href="https://info.uniswap.org/"*/>{'MAINNET LAUNCH →'}</a>
+          </StyledSectionHeader>
+          <div
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              width: '100%',
+              padding: '2rem 0 8rem 0'
+            }}
+          >
+            <Countdown />
+            </div>
           <EcosystemSection data={data} props={props} />
           
           
@@ -562,7 +577,7 @@ const StyledSectionHeader = styled.h1`
   overflow-wrap: normal;
   max-width: 900px;
   font-weight: 500;
-  margin-top: 5rem;
+  margin-top: 6rem;
 
   a {
     color: ${({ theme }) => theme.textColor};
