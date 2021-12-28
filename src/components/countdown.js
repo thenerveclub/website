@@ -28,7 +28,7 @@ display: flex;
 
 const Countdown = () => {
 
-  window.addEventListener('load', Countdown, false);
+  document.addEventListener("DOMContentLoaded",
 
 	(function () {
 		const second = 1000,
@@ -55,7 +55,7 @@ const Countdown = () => {
           clearInterval(x);
         }
 			}, 0)
-		}());
+		}()));
 
 
   return (
