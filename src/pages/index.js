@@ -8,7 +8,7 @@ import { Butt } from '../components/butt'
 import { Tab } from '../components/tab'
 import ProtocolData from '../components/protocolData'
 
-import { True } from '../styles/true.css'
+import True from '../styles/fontTrue.css'
 
 import { useDarkMode } from '../contexts/Application'
 
