@@ -18,7 +18,7 @@ import Github from '../images/github.inline.svg'
 import Discord from '../images/discord.inline.svg'
 import Linkedin from '../images/linkedin.inline.svg'
 import AppsImage from '../images/apps.png'
-{/*import phone from '../images/phone.png' */}
+import Phone from '../images/imagePhone.png'
 import appstore from '../images/appstore.svg'
 import google from '../images/google.svg'
 import kitty from '../images/kitty.gif'
@@ -151,18 +151,26 @@ const StyledBodyTitle = styled.h1`
     margin: 2rem 0 0rem 0;
   }
 
+  @media (max-width: 960px) {
+    width: 100%;
+    margin: 2rem 0 2rem 0;
+    font-weight: 500;
+    text-align: left;
+    font-size: 32px;
+  }
+
   @media (max-width: 640px) {
     width: 100%;
     margin: 2rem 0 2rem 0;
     font-weight: 500;
     text-align: left;
-    font-size: 58px;
+    font-size: 32px;
   }
 
   @media (max-width: 440px) {
     font-weight: 500;
     text-align: left;
-    font-size: 52px;
+    font-size: 37px;
   }
 `
 
@@ -820,9 +828,10 @@ const KeyAdvantages = () => {
           </StyledItemColumn>
 
         </span>
-        
+        <HideSmall>
+        <img style={{ position: "absolute", margin: "0 0 0 -20rem", maxWidth: "65%" }} src={Phone} />
+        </HideSmall>
         </StyledItemRow>
-        {/*<img style={{ position: "absolute", margin: "0 0 0 35rem", maxWidth: "5%" }} src={phone} /> */}
     </StyledSection>
   )
 }
