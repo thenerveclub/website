@@ -499,7 +499,7 @@ const About = props => {
             <SubTitle style={{ maxWidth: "700px", textAlign: 'left', margin: '0', opacity: '0.6' }}>
               Contribute to Nerve, an incentivized open ecosystem, and get rewarded with NRV tokens. In the near future, NRV holders will govern the ecosystem through an on-chain governance process.
             </SubTitle>
-            <Button target="_blank" rel="noreferrer" href="/blog/uni" outlined>
+            <Button target="_blank" rel="noreferrer" href="/blog/nerve-token" outlined>
               <p style={{ margin: 0 }}>Learn more ↗</p>
             </Button>
             </AutoColumn>
@@ -518,13 +518,13 @@ const About = props => {
           <GrantsCard style={{ minHeight: "16rem", maxWidth: "25rem" }}>
             <StyledBodySubTitle>Revenue staking</StyledBodySubTitle>
             <p style={{ textAlign: 'left', margin: '0', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
-            All fees paid in IMX are sent to the  “staking reward pool”. Users can earn a proportional share of this rewards pool by staking their IMX.
+            All fees paid are sent to the staking reward pool. Users can earn a proportional share of this rewards pool by staking their NRV.
             </p>
           </GrantsCard>
           <GrantsCard style={{ minHeight: "16rem", maxWidth: "25rem" }}>
-            <StyledBodySubTitle>More coming...</StyledBodySubTitle>
+            <StyledBodySubTitle>Play to Earn</StyledBodySubTitle>
             <p style={{ textAlign: 'left', margin: '0', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
-            Nerve is the first peer-to-peer crowdfunding application that lets you decide on content. No limits on who you can challenge or what you can bet on - anywhere, anytime.
+            To reward those who help Nerve Global grow, we have incorporated a Play to Earn system.
             </p>
           </GrantsCard>
         </StyledItemRow>
@@ -552,15 +552,42 @@ const About = props => {
           </SubTitle>
           <StyledItemRow style={{ alignItems: 'center', justifyContent: 'center', padding: '2rem 10rem 2rem 10rem' }}>
           <GrantsCard style={{ minHeight: "30rem", maxWidth: "25rem" }}>
-            <StyledBodySubTitle>Player</StyledBodySubTitle>
+            <StyledBodySubTitle>Task creator</StyledBodySubTitle>
             <p style={{ textAlign: 'left', margin: '0', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
-            Use your NERVE to vote on the future of the ecosystem. Proposals will be published on Snapshot, and will relate to the future development and expansion.
+            <p style={{fontWeight: "bold"}}> Example</p>
+            Payable amount Matic = 1
+
+            Fee = 5% - 0.05
+
+            You receive = xxx NRV
             </p>
           </GrantsCard>
           <GrantsCard style={{ minHeight: "30rem", maxWidth: "25rem" }}>
-            <StyledBodySubTitle>Watcher</StyledBodySubTitle>
+            <StyledBodySubTitle>Bet creator</StyledBodySubTitle>
             <p style={{ textAlign: 'left', margin: '0', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
-            All fees paid in IMX are sent to the  “staking reward pool”. Users can earn a proportional share of this rewards pool by staking their IMX.
+            <p style={{fontWeight: "bold"}}> Example</p> 
+            Payable amount Matic = 1
+
+            Fee = 5% - 0.05
+
+            You receive = xxx NRV
+            </p>
+          </GrantsCard>
+          <GrantsCard style={{ minHeight: "30rem", maxWidth: "25rem" }}>
+            <StyledBodySubTitle>Participants</StyledBodySubTitle>
+            <p style={{ textAlign: 'left', margin: '0', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
+            <p style={{fontWeight: "bold"}}> Example join task</p> 
+            Payable amount Matic = 1
+
+            Fee = 5% - 0.05
+
+            You receive = xxx NRV
+            <p style={{fontWeight: "bold"}}> Example join bet</p> 
+            Payable amount Matic = 1
+
+            Fee = 5% - 0.05
+
+            You receive = xxx NRV
             </p>
           </GrantsCard>
         </StyledItemRow>
