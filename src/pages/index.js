@@ -27,9 +27,14 @@ import ZTask from '../ZTask'
 import ZBet from '../ZBet'
 import TEarn from '../TEarn'
 import BEarn from '../BEarn'
+import BEarnTotal from '../BEarnTotal'
 import ZTopspent from '../ZTopspent'
+import ZTopspent1 from '../ZTopspent1'
 import ZTopearn from '../ZTopearn'
+import ZTopearn1 from '../ZTopearn1'
+
 import Countdown from '../components/countdown'
+import TMoney from '../TMoney'
 
 
 const StyledAbout = styled.div`
@@ -853,11 +858,17 @@ const Spotlight = () => {
             <p style={{ fontSize: '20px', fontWeight: "600" }}>
             <ZTask />
             </p>
-            <p style={{ fontSize: '1.125rem', opacity: '0.6' }}>For 
+            <StyledItemRow>
             <Butt outlined>
-              <p style={{ fontSize: '1.125rem' }}><TEarn /></p>
+              <p style={{ fontSize: '1.125rem' }}>For<TEarn /></p>
             </Butt>
-            </p>
+            <p style={{ fontSize: '1.125rem', textAlign: "right", flex: "1" }}>USD</p>
+            <Butt outlined>
+              <p style={{ fontSize: '1.125rem' }}><TMoney/></p>
+            </Butt>
+            </StyledItemRow>
+            
+            
           </GrantsCard>
 
           <GrantsCard style={{ minHeight: "16rem", maxWidth: "50rem" }}>
@@ -865,11 +876,15 @@ const Spotlight = () => {
             <p style={{ fontSize: '20px', fontWeight: "600" }}>
             <ZBet />
             </p>
-            <p style={{ fontSize: '1.125rem', opacity: '0.6' }}>By
+            <StyledItemRow>
             <Butt outlined>
-              <p style={{ fontSize: '1.125rem' }}><BEarn /></p>
+              <p style={{ fontSize: '1.125rem' }}>By<BEarn /></p>
             </Butt>
-            </p>
+            <p style={{ fontSize: '1.125rem', textAlign: "right", flex: "1" }}>USD</p>
+            <Butt outlined>
+              <p style={{ fontSize: '1.125rem' }}><BEarnTotal/></p>
+            </Butt>
+            </StyledItemRow>
           </GrantsCard>
           
         </StyledItemRow>
@@ -892,15 +907,25 @@ const Ranking = () => {
 
           <GrantsCard style={{ minHeight: "16rem", maxWidth: "50rem" }}>
             <StyledBodySubTitle style={{ fontSize: '1.125rem' }}>TOP EARNERS</StyledBodySubTitle>
-            <p style={{ marginLeft: "2rem", fontSize: '20px', fontWeight: "600" }}>
+            <p style={{ marginLeft: "2rem", fontSize: '18px', fontWeight: "600" }}>
+            <StyledItemRow>
             <ZTopearn />
+            <p style={{ textAlign: "right", flex: "1" }}>
+            <ZTopearn1 />
+            </p>
+            </StyledItemRow>
             </p>
           </GrantsCard>
 
           <GrantsCard style={{ minHeight: "16rem", maxWidth: "50rem" }}>
             <StyledBodySubTitle style={{ fontSize: '1.125rem' }}>TOP SPENDERS</StyledBodySubTitle>
-            <p style={{ marginLeft: "2rem", fontSize: '20px', fontWeight: "600" }}>
-            <ZTopspent />
+            <p style={{ marginLeft: "2rem", fontSize: '18px', fontWeight: "600" }}>
+            <StyledItemRow>
+              <ZTopspent />
+              <p style={{ textAlign: "right", flex: "1" }}>
+            <ZTopspent1 />
+            </p>
+            </StyledItemRow>
             </p>
           </GrantsCard>
           

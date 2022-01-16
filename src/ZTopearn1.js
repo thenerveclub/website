@@ -16,9 +16,9 @@ export default function ZSpent() {
 
   return (
     <div>
-      <ul style={{ listStyle: "decimal" }}>
+      <ul style={{ listStyle: "none" }}>
         {tope.map((tope) => (
-          <li key={tope.id}>{tope.userName}</li>
+          <li key={tope.id}>USD {tope.earned/1.e+18}</li>
         ))}
       </ul>
 </div>

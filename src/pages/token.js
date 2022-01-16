@@ -554,40 +554,49 @@ const About = props => {
           <GrantsCard style={{ minHeight: "30rem", maxWidth: "25rem" }}>
             <StyledBodySubTitle>Task creator</StyledBodySubTitle>
             <p style={{ textAlign: 'left', margin: '0', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
-            <p style={{fontWeight: "bold"}}> Example</p>
-            Payable amount Matic = 1
-
-            Fee = 5% - 0.05
-
-            You receive = xxx NRV
-            </p>
+            In the process of creating a task, 5.00% fee is deducted from the initial stake. 
+            The initial stake of the task creator is obligatory for all further participants as a minimum stake.</p>
+            <p style={{ textAlign: 'left', marginTop: '1rem', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
+            At the same time, new NERVE tokens are created, the quantity of which is derived from the current market price and the amount of the fee paid.
+            The participant receives 75.00% of newly created NERVE tokens according to the fee paid.
+            25.00% will accrue to NexusShares.</p>
           </GrantsCard>
           <GrantsCard style={{ minHeight: "30rem", maxWidth: "25rem" }}>
             <StyledBodySubTitle>Bet creator</StyledBodySubTitle>
             <p style={{ textAlign: 'left', margin: '0', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
-            <p style={{fontWeight: "bold"}}> Example</p> 
-            Payable amount Matic = 1
-
-            Fee = 5% - 0.05
-
-            You receive = xxx NRV
+            The bet creator receives NERVE tokens when the bet is closed, calculated based 
+            on the current market price and the fee paid. Thereby 75.00% of the newly created tokens go to the bet creator and 25.00% to NexusShares.
             </p>
           </GrantsCard>
           <GrantsCard style={{ minHeight: "30rem", maxWidth: "25rem" }}>
             <StyledBodySubTitle>Participants</StyledBodySubTitle>
+            <p style={{ textAlign: 'left', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
+            <p style={{fontWeight: "bold", marginBottom: '0'}}>Join task</p> 
+            5.00% fee is deducted from the stake. 
+            <p style={{fontWeight: "bold", marginTop: '1rem'}}>Join bet</p> 
+            No minimum stake is set for the bets. As soon as the bet is closed and finished, the winners can pay out their stake + winnings. 
+            10.00% of the winnings go to the NexusBurn Contract. 
+            </p>
+          </GrantsCard>
+        </StyledItemRow>
+          <StyledItemRow style={{ alignItems: 'center', justifyContent: 'center', padding: '2rem 10rem 2rem 10rem' }}>
+          <GrantsCard style={{ maxHeight: "6rem", minWidth: "50rem" }}>
+            <StyledBodySubTitle style={{ textAlign: 'center'}}>Two possible outcomes will occur in the tasks.</StyledBodySubTitle>
+            </GrantsCard>
+        </StyledItemRow>
+          <StyledItemRow style={{ alignItems: 'center', justifyContent: 'center', padding: '2rem 10rem 2rem 10rem' }}>
+          <GrantsCard style={{ minHeight: "20rem", maxWidth: "25rem" }}>
+            <StyledBodySubTitle>Positive</StyledBodySubTitle>
             <p style={{ textAlign: 'left', margin: '0', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
-            <p style={{fontWeight: "bold"}}> Example join task</p> 
-            Payable amount Matic = 1
-
-            Fee = 5% - 0.05
-
-            You receive = xxx NRV
-            <p style={{fontWeight: "bold"}}> Example join bet</p> 
-            Payable amount Matic = 1
-
-            Fee = 5% - 0.05
-
-            You receive = xxx NRV
+            The task is evaluated positively by the majority. In this outcome, the creator of the task receives 95.00% of the total stake. 
+            5.00% will go to NexusBurn.
+            </p>
+          </GrantsCard>
+          <GrantsCard style={{ minHeight: "20rem", maxWidth: "25rem" }}>
+            <StyledBodySubTitle>Negative</StyledBodySubTitle>
+            <p style={{ textAlign: 'left', margin: '0', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
+            The task is rated negative by the majority. In this case, all participants, as well as the creator of the task, 
+            will receive their stake back. The previously collected fee will not be returned.
             </p>
           </GrantsCard>
         </StyledItemRow>

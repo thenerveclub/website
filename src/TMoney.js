@@ -14,6 +14,7 @@ const Tmoney = `
 }
 `;
 
+
 export default function TMoney() {
   const tmoney = useTmoney();
 
@@ -21,7 +22,7 @@ export default function TMoney() {
     <div>
       <ul>
         {tmoney.map((tmoney) => (
-          <li key={tmoney.id}>{tmoney.amount}</li>
+          <li key={tmoney.id}>{(tmoney.amount/1.e+18)}</li>
         ))}
       </ul>
     </div>

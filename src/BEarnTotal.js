@@ -20,7 +20,7 @@ export default function BEarn() {
     <div>
       <ul>
         {bearn.map((bearn) => (
-          <li key={bearn.id}>{bearn.initiatorName}</li>
+          <li key={bearn.id}>{bearn.stakeTotal/1.e+18}</li>
         ))}
       </ul>
     </div>
