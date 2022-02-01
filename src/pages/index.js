@@ -880,9 +880,10 @@ const Spotlight = () => {
             <Butt outlined>
               <p style={{ fontSize: '1.125rem' }}>By<BEarn /></p>
             </Butt>
-            <p style={{ fontSize: '1.125rem', textAlign: "right", flex: "1" }}>USD</p>
             <Butt outlined>
-              <p style={{ fontSize: '1.125rem' }}><BEarnTotal/></p>
+              <p style={{ fontSize: '1.125rem', textAlign: "right", flex: "1" }}>
+                <BEarnTotal/>
+                </p>
             </Butt>
             </StyledItemRow>
           </GrantsCard>
