@@ -500,7 +500,7 @@ const IndexPage = props => {
         </GrantCard>
         </HideSmall>
 
-        <StyledSectionHeaderr>
+        <StyledSectionHeaderr style={{ fontFamily: "True"}}>
           <a /*href="https://info.uniswap.org/"*/>{'MAINNET LAUNCH →'}</a>
           </StyledSectionHeaderr>
           <div
@@ -514,11 +514,12 @@ const IndexPage = props => {
           >
             <Countdown />
             </div>
+            {/*}
           <EcosystemSection data={data} props={props} />
+          */}
           
-          
-          <StyledSectionHeader>
-          <a /*href="https://info.uniswap.org/"*/>{'DATA ANALYTICS →'}</a>
+          {/*<StyledSectionHeader>
+          <a href="https://info.uniswap.org/">{'DATA ANALYTICS →'}</a>
           </StyledSectionHeader>
           <div
             style={{
@@ -530,16 +531,16 @@ const IndexPage = props => {
             }}
           >
             <ProtocolData />
-          </div>
-
+          </div>*/}
 
         <DeveloperSection data={data} props={props} />
 
         <KeyAdvantages data={data} props={props} />
 
+        {/*
         <Ranking data={data} props={props} />
-        
         <Spotlight data={data} props={props} />
+        */}
 
         <StyledSection>
         <StyledItemRow style={{ alignItems: 'center', justifyContent: 'center', padding: '5rem 10rem 0 5rem' }}>
@@ -749,12 +750,13 @@ export const GrantCard = styled(StyledC)`
   }
 `
 
+{/*
 const EcosystemSection = () => {
   return (
     <StyledSection>
       <StyledItemRow>
         <span style={{ marginTop: '-60px', marginBottom: '80px' }}>
-          <StyledSectionHeader style={{ marginTop: '5rem' }}>{'NERVE ECOSYSTEM →'}</StyledSectionHeader>
+          <StyledSectionHeader style={{ fontFamily: "True", marginTop: '5rem' }}>{'NERVE ECOSYSTEM →'}</StyledSectionHeader>
           <StyledSectionTitle>We contribute to an open, inclusive and creative society.</StyledSectionTitle>
           <SubTitle style={{ opacity: '0.6', textAlign: 'left', marginRight: '48px', marginBottom: '48px' }}>
           People share unique adventures, experiences, educational content and much more with the world, which unlock a massively larger creative economy 
@@ -770,13 +772,14 @@ const EcosystemSection = () => {
     </StyledSection>
   )
 }
+*/}
 
 const KeyAdvantages = () => {
   return (
     <StyledSection>
       <StyledItemRow>
         <span>
-          <StyledSectionHeader>{'4 SIMPLE STEPS TO START →'}</StyledSectionHeader>
+          <StyledSectionHeader style={{ fontFamily: "True"}}>{'4 SIMPLE STEPS TO START →'}</StyledSectionHeader>
 
           <StyledItemColumn style={{ display: 'flex', flexDirection: 'column' }}>
             <Tab style={{ zIndex: "1", borderRadius: '20px' }} outlined>
@@ -842,7 +845,7 @@ const KeyAdvantages = () => {
 }
 
 
-const Spotlight = () => {
+{/*const Spotlight = () => {
   return (
     <>
       <StyledSection>
@@ -935,11 +938,12 @@ const Ranking = () => {
     </>
   )
 }
+*/}
 
 const DeveloperSection = () => {
   return (
       <StyledSection>
-        <StyledSectionHeader>{'INNOVATIONS AT A GLANCE →'}</StyledSectionHeader>
+        <StyledSectionHeader style={{ fontFamily: "True"}}>{'INNOVATIONS AT A GLANCE →'}</StyledSectionHeader>
         <StyledItemRow style={{ alignItems: 'center', justifyContent: 'center', padding: '2rem 10rem 2rem 10rem' }}>
           <GrantsCard style={{ minHeight: "20rem", maxWidth: "18rem" }}>
             <StyledBodySubTitle>Blockchain</StyledBodySubTitle>
