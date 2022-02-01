@@ -34,8 +34,8 @@ const menu = [
         link: '/token'
       },
       {
-        name: 'People',
-        link: '/people'
+        name: 'Team',
+        link: '/team'
       },
       {
         name: 'Blog',

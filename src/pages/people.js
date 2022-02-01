@@ -15,9 +15,6 @@ import SEO from '../components/seo'
 import BG from '../components/bg'
 import { Button } from '../components/button'
 
-import graph from '../images/graph.png'
-import blockland from '../images/blockland.png'
-
 import Twitter from '../images/twitter.inline.svg'
 import Github from '../images/github.inline.svg'
 import Discord from '../images/discord.inline.svg'
@@ -418,11 +415,11 @@ const StyledGithub = styled(Github)`
   return (
     <Layout path={props.location.pathname}>
       
-      <SEO title="People" path={props.location.pathname} />
+      <SEO title="Team" path={props.location.pathname} />
       <StyledAbout>
         <span style={{ marginTop: '5rem' }}>
           <Title style={{ fontFamily: "True"}}>
-            Meet our people
+            Meet our Team
           </Title>
           </span>
       </StyledAbout>
@@ -430,7 +427,7 @@ const StyledGithub = styled(Github)`
 
           <StyledBody>
         {/*<StyledSectionHeader style={{ fontFamily: "True"}}>{'TEAM →'}</StyledSectionHeader>*/}
-        <StyledItemRow style={{ alignItems: 'center', justifyContent: 'center', padding: '2rem 10rem 2rem 10rem' }}>
+        <StyledItemRow style={{ alignItems: 'center', justifyContent: 'center', padding: '2rem 10rem 10rem 10rem' }}>
           <GrantsCard style={{ minHeight: "10rem", minWidth: "20rem" }}>
           {/*<img style={{ marginLeft: "5rem" }} src={phil} width="35%" />*/}
             <StyledBodySubTitle>Philip Georg</StyledBodySubTitle>

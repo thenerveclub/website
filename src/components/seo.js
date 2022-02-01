@@ -27,7 +27,7 @@ function SEO({ description, lang, title, path }) {
   )
 
   const metaDescription = description || site.siteMetadata.description
-  const uniTitle = 'Uniswap'
+  const uniTitle = 'Nerve Global'
 
   return (
     <Helmet
