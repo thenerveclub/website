@@ -504,7 +504,7 @@ const IndexPage = props => {
               alignItems: 'center',
               justifyContent: 'center',
               width: '100%',
-              padding: '2rem 0 8rem 0',
+              padding: '2rem 0 2rem 0',
               fontFamily: "True"}}>
           <a /*href="https://info.uniswap.org/"*/>{'MAINNET LAUNCH'}</a>
           </StyledSectionHeaderr>
@@ -620,7 +620,7 @@ const StyledSectionHeader = styled.h1`
 `
 
 const StyledSectionHeaderr = styled.h1`
-  font-size: 2em;
+  font-size: 3em;
   white-space: wrap;
   overflow-wrap: normal;
   font-weight: 500;
