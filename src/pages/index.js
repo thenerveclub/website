@@ -448,7 +448,7 @@ const IndexPage = props => {
       <StyledAbout>
         <span style={{ marginTop: '5rem' }}>
         <HideSmall>
-          <Title style={{ paddingBottom: '4rem' }}>
+          <Title style={{ fontWeight: "600", paddingBottom: '4rem' }}>
             Discover, fund, and be part of projects you care about.
           </Title>
         </HideSmall>
