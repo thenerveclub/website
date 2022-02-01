@@ -444,6 +444,8 @@ const About = props => {
           </span>
       </StyledAbout>
 
+      <DeveloperSection data={data} props={props} />
+
       <StyledSectionHeader style={{ fontFamily: "True", marginTop: '10rem' }}>{'RECOGNITION →'}</StyledSectionHeader>
           <StyledItemRow style={{ alignItems: 'center', justifyContent: 'center', padding: '2rem 10rem 2rem 10rem' }}>
           <GrantsCard style={{ minHeight: "37rem", maxWidth: "20rem" }}>
@@ -475,8 +477,6 @@ const About = props => {
             </Button>
           </GrantsCard>
         </StyledItemRow>
-
-      <DeveloperSection data={data} props={props} />
           
           <StyledBody>
           <StyledSectionHeader style={{ fontFamily: "True"}}>{'CONTACT →'}</StyledSectionHeader>

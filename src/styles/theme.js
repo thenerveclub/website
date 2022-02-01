@@ -183,7 +183,7 @@ export const GlobalStyle = createGlobalStyle`
     font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     margin-top: 1.75rem ;
     font-size: 1.875rem;
-    font-weight: 600;
+    font-weight: 400;
 }
   }
 
