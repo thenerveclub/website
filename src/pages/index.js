@@ -620,15 +620,15 @@ const StyledSectionHeader = styled.h1`
 `
 
 const StyledSectionHeaderr = styled.h1`
-  font-size: 3em;
+  font-size: 5em;
   white-space: wrap;
   overflow-wrap: normal;
   font-weight: 500;
   margin-top: 10rem;
 
-  background: -webkit-linear-gradient(to right, #DE0CCF 30%, #00F2FC 100%);
-  background: -moz-linear-gradient(to right, #DE0CCF 30%, #00F2FC 100%);
-	background: linear-gradient(to right, #DE0CCF 30%, #00F2FC 100%);
+  background: -webkit-linear-gradient(to right, #DE0CCF 30%, #00F2FC 70%);
+  background: -moz-linear-gradient(to right, #DE0CCF 30%, #00F2FC 70%);
+	background: linear-gradient(to right, #DE0CCF 30%, #00F2FC 70%);
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 
