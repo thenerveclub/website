@@ -216,7 +216,7 @@ const TokenSection = styled.div`
 
 const Tit = styled.div`
 color: inherit;
-font-weight: 500;
+{/*font-weight: 500;*/}
 text-rendering: optimizeLegibility;
 font-size: 32px;
 line-height: 1.1;
@@ -495,7 +495,7 @@ const About = props => {
           <img style={{ maxWidth: "15rem" }} src={uni} width="100%" />
           </UniMobileImage>
           <AutoColumn gap="20px">
-            <Tit>The Nerve Token</Tit>
+            <Tit style={{ fontFamily: "True"}}>The Nerve Token</Tit>
             <SubTitle style={{ maxWidth: "700px", textAlign: 'left', margin: '0', opacity: '0.6' }}>
               Contribute to Nerve, an incentivized open ecosystem, and get rewarded with NRV tokens. In the near future, NRV holders will govern the ecosystem through an on-chain governance process.
             </SubTitle>

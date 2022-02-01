@@ -224,7 +224,7 @@ h1 {
   color: inherit;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans,
     Helvetica Neue, sans-serif;
-  font-weight: bold;
+  {/*font-weight: bold;*/}
   text-rendering: optimizeLegibility;
   font-size: 2.25rem;
   /* letter-spacing: -0.07rem; */
