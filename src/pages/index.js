@@ -620,7 +620,7 @@ const StyledSectionHeader = styled.h1`
 `
 
 const StyledSectionHeaderr = styled.h1`
-  font-size: 2.5em;
+  font-size: 3em;
   white-space: wrap;
   overflow-wrap: normal;
   font-weight: 500;
@@ -635,6 +635,7 @@ const StyledSectionHeaderr = styled.h1`
   pointer-events: none;
   white-space: wrap;
   overflow-wrap: normal;
+  max-width: 1200px;
 
   a {
     color: ${({ theme }) => theme.textColor};
