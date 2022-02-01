@@ -620,10 +620,9 @@ const StyledSectionHeader = styled.h1`
 `
 
 const StyledSectionHeaderr = styled.h1`
-  font-size: 20px;
+  font-size: 2em;
   white-space: wrap;
   overflow-wrap: normal;
-  max-width: 900px;
   font-weight: 500;
   margin-top: 10rem;
 
