@@ -239,16 +239,17 @@ export default function Menu(props) {
     <StyledMenu tabIndex={0}>
       <StyledMenuTitle>
         <span style={{ marginRight: '0.25rem' }}>{props.data.name} </span>
+
         <MenuFlyout>
           {props.data.sublinks.map((item, index) => {
             return (
               <StyledMenuItem tabindex={index} key={index}>
-                {item.link.split('app/').slice(-1)[0] = "" ? (
-                  <StyledExternalLink href={item.link}>
+                {item.link.split('app/').slice(-1)[0] = "x" ? (
+                  <StyledExternalLink href={item.link} target="_blank" rel="noopener noreferrer">
                     <StyledTitle>{item.name}</StyledTitle>
                   </StyledExternalLink>
                 ) : (
-                  <StyledExternalLink href={item.link} target="_blank" rel="noopener noreferrer">
+                  <StyledExternalLink href={item.link}>
                     <StyledTitle>{item.name}</StyledTitle>
                     {item.description && <StyledDescription>{item.description}</StyledDescription>}
                   </StyledExternalLink>
