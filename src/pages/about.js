@@ -10,6 +10,7 @@ import { client, blockClient } from '../apollo/client'
 
 import graph from '../images/graph.png'
 import blockland from '../images/blockland.png'
+import { Button } from '../components/button'
 
 import { Link } from 'gatsby'
 
