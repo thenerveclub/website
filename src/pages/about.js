@@ -439,9 +439,11 @@ const About = props => {
           </StyledSectionFlex>
           </span>
       </StyledAbout>
+
+      <DeveloperSection data={data} props={props} />
           
           <StyledBody>
-          <StyledSectionHeader>{'CONTACT →'}</StyledSectionHeader>
+          <StyledSectionHeader style={{ fontFamily: "True"}}>{'CONTACT →'}</StyledSectionHeader>
 
           <StyledSectionFlex id="contact" style={{ flexDirection: 'column' }}>
             <p>
@@ -469,7 +471,7 @@ const About = props => {
             </div>
           </StyledSectionFlex>
 
-          <StyledSectionHeader>{'BRAND ASSETS →'}</StyledSectionHeader>
+          <StyledSectionHeader style={{ fontFamily: "True"}}>{'BRAND ASSETS →'}</StyledSectionHeader>
 
       <StyledSectionFlex id="brand" style={{ flexDirection: 'column' }}>
         <p>
@@ -491,7 +493,7 @@ export default About
 const Pillars = () => {
   return (
     <StyledSection>
-      <StyledSectionHeader>{'Our pillars →'}</StyledSectionHeader>
+      <StyledSectionHeader style={{ fontFamily: "True"}}>{'Our pillars →'}</StyledSectionHeader>
       <StyledItemRow style={{ alignItems: 'center', justifyContent: 'center', padding: '2rem 10rem 2rem 10rem' }}>
         <GrantsCard style={{ minHeight: "10rem", minWidth: "18rem" }}>
           <StyledBodySubTitle>Neutral</StyledBodySubTitle>
@@ -514,24 +516,36 @@ const Pillars = () => {
 }
 
 
-const EcosystemSection = () => {
+const DeveloperSection = () => {
   return (
-      <StyledSection style={{ marginTop: '10rem' }}>
-        <StyledItemRow>
-          <span style={{ marginTop: '-60px', marginBottom: '80px' }}>
-            <StyledSectionHeader style={{ marginTop: '5rem' }}>{'NERVE ECOSYSTEM →'}</StyledSectionHeader>
-            <StyledSectionTitle>We contribute to an open, inclusive and creative society.</StyledSectionTitle>
-            <SubTitle style={{ opacity: '0.6', textAlign: 'left', marginRight: '48px' }}>
-            People share unique adventures, experiences, educational content and much more with the world, which unlock a massively larger creative economy 
-            than the one constrained by today’s platforms and their policies.
-            This ecosystem will be built - by you.
-            </SubTitle>
-          </span>
-          <AppsCard>
-            <h1>∞</h1>
-            <p>Opportunities</p>
-          </AppsCard>
+      <StyledSection>
+        <StyledSectionHeader style={{ fontFamily: "True"}}>{'INNOVATIONS AT A GLANCE →'}</StyledSectionHeader>
+        <StyledItemRow style={{ alignItems: 'center', justifyContent: 'center', padding: '2rem 10rem 2rem 10rem' }}>
+          <GrantsCard style={{ minHeight: "20rem", maxWidth: "18rem" }}>
+            <StyledBodySubTitle>Blockchain</StyledBodySubTitle>
+            <p style={{ textAlign: 'left', margin: '0', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
+              at your fingertips. Nerve is universally accessible, censorship-resistant and allows everyone to participate, even without access to a bank account.
+            </p>
+          </GrantsCard>
+          <GrantsCard style={{ minHeight: "20rem", maxWidth: "18rem" }}>
+            <StyledBodySubTitle>Earn Crypto</StyledBodySubTitle>
+            <p style={{ textAlign: 'left', margin: '0', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
+            Nerve is powered by Ethereum, Polygon and other chains, allowing you to receive instant guaranteed payouts with full transparency.
+            </p>
+          </GrantsCard>
+          <GrantsCard style={{ minHeight: "20rem", maxWidth: "18rem" }}>
+            <StyledBodySubTitle>No limits</StyledBodySubTitle>
+            <p style={{ textAlign: 'left', margin: '0', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
+            Nerve is the first peer-to-peer crowdfunding application that lets you decide on content. No limits on who you can challenge or what you can bet on - anywhere, anytime.
+            </p>
+          </GrantsCard>
+          <GrantsCard style={{ minHeight: "20rem", maxWidth: "18rem" }}>
+            <StyledBodySubTitle>Digital reality</StyledBodySubTitle>
+            <p style={{ textAlign: 'left', margin: '0', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
+            We are able to connect the very progressive sub-culture of digital natives with the real world. Share immersive experiences with other people, even if you can`t be together.
+            </p>
+          </GrantsCard>
         </StyledItemRow>
       </StyledSection>
-    )
-  }
+      )
+}

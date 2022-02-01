@@ -421,15 +421,15 @@ const StyledGithub = styled(Github)`
       <SEO title="People" path={props.location.pathname} />
       <StyledAbout>
         <span style={{ marginTop: '5rem' }}>
-          <Title>
-            Meet our people.
+          <Title style={{ fontFamily: "True"}}>
+            Meet our people
           </Title>
           </span>
       </StyledAbout>
 
 
           <StyledBody>
-        <StyledSectionHeader>{'TEAM →'}</StyledSectionHeader>
+        <StyledSectionHeader style={{ fontFamily: "True"}}>{'TEAM →'}</StyledSectionHeader>
         <StyledItemRow style={{ alignItems: 'center', justifyContent: 'center', padding: '2rem 10rem 2rem 10rem' }}>
           <GrantsCard style={{ minHeight: "10rem", minWidth: "20rem" }}>
           {/*<img style={{ marginLeft: "5rem" }} src={phil} width="35%" />*/}
@@ -481,7 +481,7 @@ const StyledGithub = styled(Github)`
           </GrantsCard>
         </StyledItemRow>
 
-        <StyledSectionHeader style={{ marginTop: '10rem' }}>{'RECOGNITION →'}</StyledSectionHeader>
+        <StyledSectionHeader style={{ fontFamily: "True", marginTop: '10rem' }}>{'RECOGNITION →'}</StyledSectionHeader>
           <StyledItemRow style={{ alignItems: 'center', justifyContent: 'center', padding: '2rem 10rem 2rem 10rem' }}>
           <GrantsCard style={{ minHeight: "37rem", maxWidth: "20rem" }}>
           <img style={{ marginLeft: "5rem" }} src={graph} width="35%" />

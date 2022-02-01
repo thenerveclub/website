@@ -279,7 +279,7 @@ const Blog = props => {
       
       <StyledAbout>
         <span style={{ marginTop: '5rem' }}>
-          <Title>
+          <Title style={{ fontFamily: "True"}}>
             BLOG
           </Title>
           <StyledBodySubTitle>

@@ -540,7 +540,6 @@ const IndexPage = props => {
 
         <KeyAdvantagesTask data={data} props={props} />
         <KeyAdvantagesBet data={data} props={props} />
-        <DeveloperSection data={data} props={props} />
 
         {/*
         <Ranking data={data} props={props} />
@@ -1024,37 +1023,3 @@ const Ranking = () => {
   )
 }
 */}
-
-const DeveloperSection = () => {
-  return (
-      <StyledSection>
-        <StyledSectionHeader style={{ fontFamily: "True"}}>{'INNOVATIONS AT A GLANCE →'}</StyledSectionHeader>
-        <StyledItemRow style={{ alignItems: 'center', justifyContent: 'center', padding: '2rem 10rem 2rem 10rem' }}>
-          <GrantsCard style={{ minHeight: "20rem", maxWidth: "18rem" }}>
-            <StyledBodySubTitle>Blockchain</StyledBodySubTitle>
-            <p style={{ textAlign: 'left', margin: '0', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
-              at your fingertips. Nerve is universally accessible, censorship-resistant and allows everyone to participate, even without access to a bank account.
-            </p>
-          </GrantsCard>
-          <GrantsCard style={{ minHeight: "20rem", maxWidth: "18rem" }}>
-            <StyledBodySubTitle>Earn Crypto</StyledBodySubTitle>
-            <p style={{ textAlign: 'left', margin: '0', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
-            Nerve is powered by Ethereum, Polygon and other chains, allowing you to receive instant guaranteed payouts with full transparency.
-            </p>
-          </GrantsCard>
-          <GrantsCard style={{ minHeight: "20rem", maxWidth: "18rem" }}>
-            <StyledBodySubTitle>No limits</StyledBodySubTitle>
-            <p style={{ textAlign: 'left', margin: '0', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
-            Nerve is the first peer-to-peer crowdfunding application that lets you decide on content. No limits on who you can challenge or what you can bet on - anywhere, anytime.
-            </p>
-          </GrantsCard>
-          <GrantsCard style={{ minHeight: "20rem", maxWidth: "18rem" }}>
-            <StyledBodySubTitle>Digital reality</StyledBodySubTitle>
-            <p style={{ textAlign: 'left', margin: '0', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
-            We are able to connect the very progressive sub-culture of digital natives with the real world. Share immersive experiences with other people, even if you can`t be together.
-            </p>
-          </GrantsCard>
-        </StyledItemRow>
-      </StyledSection>
-      )
-}

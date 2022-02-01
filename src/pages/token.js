@@ -479,7 +479,7 @@ const About = props => {
       <SEO title="Token" path={props.location.pathname} />
       <StyledAbout>
         <span style={{ marginTop: '5rem' }}>
-          <Title style={{ paddingBottom: '4rem' }}>
+          <Title style={{ fontFamily: "True", paddingBottom: '4rem' }}>
           TOKEN
           </Title>
           </span>
@@ -507,7 +507,7 @@ const About = props => {
 
 
         <StyledBody>        
-          <StyledSectionHeader style={{ marginTop: '5rem' }}>{'INTRODUCING NERVE TOKEN →'}</StyledSectionHeader>
+          <StyledSectionHeader style={{ fontFamily: "True", marginTop: '5rem' }}>{'INTRODUCING NERVE TOKEN →'}</StyledSectionHeader>
           <StyledItemRow style={{ alignItems: 'center', justifyContent: 'center', padding: '2rem 10rem 2rem 10rem' }}>
           <GrantsCard style={{ minHeight: "16rem", maxWidth: "25rem" }}>
             <StyledBodySubTitle>Governance</StyledBodySubTitle>
@@ -532,7 +532,7 @@ const About = props => {
       <StyledSection style={{ marginTop: '10rem' }}>
       <StyledItemRow>
         <span style={{ marginTop: '-60px', marginBottom: '80px' }}>
-          <StyledSectionHeader style={{ marginTop: '5rem' }}>{'REVENUE STAKING →'}</StyledSectionHeader>
+          <StyledSectionHeader style={{ fontFamily: "True", marginTop: '5rem' }}>{'REVENUE STAKING →'}</StyledSectionHeader>
           <SubTitle style={{ opacity: '0.6', textAlign: 'left', marginRight: '48px' }}>
           Tokens are automatically staked if you have participated in the ecosystem.
           </SubTitle>
@@ -546,7 +546,7 @@ const About = props => {
 
 
         <StyledSection>
-          <StyledSectionHeader style={{ marginTop: '5rem' }}>{'PLAY TO EARN →'}</StyledSectionHeader>
+          <StyledSectionHeader style={{ fontFamily: "True", marginTop: '5rem' }}>{'PLAY TO EARN →'}</StyledSectionHeader>
           <SubTitle style={{ opacity: '0.6', textAlign: 'left', marginRight: '48px' }}>
           To ensure NERVE is held by those who are committed to the ecosystem.
           </SubTitle>
