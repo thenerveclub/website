@@ -500,8 +500,13 @@ const IndexPage = props => {
         </GrantCard>
         </HideSmall>
 
-        <StyledSectionHeaderr style={{ fontFamily: "True"}}>
-          <a /*href="https://info.uniswap.org/"*/>{'MAINNET LAUNCH →'}</a>
+        <StyledSectionHeaderr style={{ display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              width: '100%',
+              padding: '2rem 0 8rem 0',
+              fontFamily: "True"}}>
+          <a /*href="https://info.uniswap.org/"*/>{'MAINNET LAUNCH'}</a>
           </StyledSectionHeaderr>
           <div
             style={{
@@ -533,7 +538,8 @@ const IndexPage = props => {
             <ProtocolData />
           </div>*/}
 
-        <KeyAdvantages data={data} props={props} />
+        <KeyAdvantagesTask data={data} props={props} />
+        <KeyAdvantagesBet data={data} props={props} />
         <DeveloperSection data={data} props={props} />
 
         {/*
@@ -543,7 +549,7 @@ const IndexPage = props => {
 
         <StyledSection>
         <StyledItemRow style={{ alignItems: 'center', justifyContent: 'center', padding: '5rem 10rem 0 5rem' }}>
-        <StyledSectionTitle style={{ fontFamily: "True"}}>A system for completely new forms of entertainment, investigation and exploration - by you.</StyledSectionTitle>
+        <StyledSectionTitle>A system for completely new forms of entertainment, investigation and exploration - by you.</StyledSectionTitle>
         <HideSmall>
         <StyledSocialRow>
           <StyledTradeLink
@@ -773,7 +779,7 @@ const EcosystemSection = () => {
 }
 */}
 
-const KeyAdvantages = () => {
+const KeyAdvantagesTask = () => {
   return (
     <StyledSection>
       <StyledItemRow>
@@ -785,6 +791,77 @@ const KeyAdvantages = () => {
               <div style={{ padding: '1rem' }}>
                 <StyledBodySubTitle style={{ marginBottom: '0.25rem' }}>
                 1. Receive a Task
+                </StyledBodySubTitle>
+                <p style={{ textAlign: 'left', margin: '0', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
+                Get paid to build the future of finance. Uniswap Governance offers grant funding for people building apps,
+              tools, and activities on the Uniswap Protocol.
+                </p>
+              </div>
+            </Tab>
+          </StyledItemColumn>
+
+          <StyledItemColumn style={{ display: 'flex', flexDirection: 'column' }}>
+            <Tab style={{ zIndex: "1", borderRadius: '20px' }} outlined>
+              <div style={{ padding: '1rem' }}>
+                <StyledBodySubTitle style={{ marginBottom: '0.25rem' }}>
+                2. Submit a proof
+                </StyledBodySubTitle>
+                <p style={{ textAlign: 'left', margin: '0', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
+                Provide a video proof and link it to your task. Our system is suitable for any other social media platform.
+                </p>
+              </div>
+            </Tab>
+          </StyledItemColumn>
+
+          <StyledItemColumn style={{ display: 'flex', flexDirection: 'column' }}>
+            <Tab style={{ zIndex: "1", borderRadius: '20px' }} outlined>
+              <div style={{ padding: '1rem' }}>
+                <StyledBodySubTitle style={{ marginBottom: '0.25rem' }}>
+                3. Get approved
+                </StyledBodySubTitle>
+                <p style={{ textAlign: 'left', margin: '0', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
+                In our crowdfunding system, the donors have to approve before funds get disbursed. That means, funding will only
+            be provided after a request has been delivered.
+                </p>
+              </div>
+            </Tab>
+          </StyledItemColumn>
+
+          <StyledItemColumn style={{ display: 'flex', flexDirection: 'column' }}>
+            <Tab style={{ zIndex: "1", borderRadius: '20px' }} outlined>
+              <div style={{ padding: '1rem' }}>
+                <StyledBodySubTitle style={{ marginBottom: '0.25rem' }}>
+                4. Claim funds
+                </StyledBodySubTitle>
+                <p style={{ textAlign: 'left', margin: '0', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
+                All funds are routed through blockchain - that means that all funds will be transferred within seconds or minutes.
+                </p>
+              </div>
+            </Tab>
+          </StyledItemColumn>
+
+        </span>
+        <HideSmall>
+        <img style={{ position: "absolute", margin: "0 0 0 -20rem", maxWidth: "65%" }} src={Phone} />
+        </HideSmall>
+        </StyledItemRow>
+    </StyledSection>
+  )
+}
+
+
+const KeyAdvantagesBet = () => {
+  return (
+    <StyledSection>
+      <StyledItemRow>
+        <span>
+          <StyledSectionHeader style={{ fontFamily: "True"}}>{'4 SIMPLE STEPS TO START →'}</StyledSectionHeader>
+
+          <StyledItemColumn style={{ display: 'flex', flexDirection: 'column' }}>
+            <Tab style={{ zIndex: "1", borderRadius: '20px' }} outlined>
+              <div style={{ padding: '1rem' }}>
+                <StyledBodySubTitle style={{ marginBottom: '0.25rem' }}>
+                1. Create a Bet
                 </StyledBodySubTitle>
                 <p style={{ textAlign: 'left', margin: '0', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
                 Get paid to build the future of finance. Uniswap Governance offers grant funding for people building apps,
