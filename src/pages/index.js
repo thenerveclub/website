@@ -533,9 +533,8 @@ const IndexPage = props => {
             <ProtocolData />
           </div>*/}
 
-        <DeveloperSection data={data} props={props} />
-
         <KeyAdvantages data={data} props={props} />
+        <DeveloperSection data={data} props={props} />
 
         {/*
         <Ranking data={data} props={props} />
@@ -544,7 +543,7 @@ const IndexPage = props => {
 
         <StyledSection>
         <StyledItemRow style={{ alignItems: 'center', justifyContent: 'center', padding: '5rem 10rem 0 5rem' }}>
-        <StyledSectionTitle>A system for completely new forms of entertainment, investigation and exploration - by you.</StyledSectionTitle>
+        <StyledSectionTitle style={{ fontFamily: "True"}}>A system for completely new forms of entertainment, investigation and exploration - by you.</StyledSectionTitle>
         <HideSmall>
         <StyledSocialRow>
           <StyledTradeLink
