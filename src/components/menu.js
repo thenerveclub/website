@@ -243,7 +243,7 @@ export default function Menu(props) {
           {props.data.sublinks.map((item, index) => {
             return (
               <StyledMenuItem tabindex={index} key={index}>
-                {item.link.split('/').slice(-1)[0] === "about" ? (
+                {item.link.split('/').slice(-1)[0] = !about && !token && !team && !blog ? (
                   <StyledExternalLink href={item.link}>
                     <StyledTitle>{item.name}</StyledTitle>
                   </StyledExternalLink>

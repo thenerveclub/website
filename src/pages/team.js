@@ -427,7 +427,7 @@ const StyledGithub = styled(Github)`
 
           <StyledBody>
         {/*<StyledSectionHeader style={{ fontFamily: "True"}}>{'TEAM →'}</StyledSectionHeader>*/}
-        <StyledItemRow style={{ alignItems: 'center', justifyContent: 'center', padding: '2rem 10rem 10rem 10rem' }}>
+        <StyledItemRow style={{ alignItems: 'center', justifyContent: 'center', padding: '2rem 10rem 12rem 10rem' }}>
           <GrantsCard style={{ minHeight: "10rem", minWidth: "20rem" }}>
           {/*<img style={{ marginLeft: "5rem" }} src={phil} width="35%" />*/}
             <StyledBodySubTitle>Philip Georg</StyledBodySubTitle>
