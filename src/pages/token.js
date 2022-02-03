@@ -69,11 +69,7 @@ const StyledTradeLink = styled.a`
 
   transition: background-color 0.25s ease;
   }
-  @media (max-width: 960px) {
-    align-item: center;
-    align-text: center;
-  }
-`
+  `
 
 const StyledBody = styled.div`
   position: relative;
@@ -268,7 +264,7 @@ text-rendering: optimizeLegibility;
 font-size: 32px;
 line-height: 1.1;
   @media (max-width: 640px) {
-    font-size: 25px;
+    font-size: 30px;
     text-align: center;
     margin-top: -5rem;
   }

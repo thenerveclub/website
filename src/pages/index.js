@@ -501,7 +501,7 @@ const IndexPage = props => {
             <img style={{ margin: "-5rem 0 0 0" }} src={kitty} width="100%" />
         </GrantCard>
         </HideSmall>
-
+        <HideSmall>
         <StyledSectionHeaderr style={{ display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
@@ -510,6 +510,15 @@ const IndexPage = props => {
               fontFamily: "True"}}>
           <a /*href="https://info.uniswap.org/"*/>{'POLYGON LAUNCH'}</a>
           </StyledSectionHeaderr>
+          </HideSmall>
+          <StyledSectionHeaderrr style={{ display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              width: '100%',
+              padding: '2rem 0 2rem 0',
+              fontFamily: "True"}}>
+          <a /*href="https://info.uniswap.org/"*/>{'POLYGON LAUNCH'}</a>
+          </StyledSectionHeaderrr>
           <div
             style={{
               display: 'flex',
@@ -637,6 +646,35 @@ const StyledSectionHeaderr = styled.h1`
   pointer-events: none;
   white-space: wrap;
   overflow-wrap: normal;
+
+  a {
+    color: ${({ theme }) => theme.textColor};
+  }
+
+  @media (max-width: 960px) {
+    font-size: 2rem;
+    margin-top: -5rem;
+    color: white;
+    a {
+      color: white;
+  }
+  @media (max-width: 640px) {
+    font-size: 2rem;
+    margin-top: -5rem;
+    color: white;
+    a {
+      color: white;
+  }
+`
+
+const StyledSectionHeaderrr = styled.h1`
+  display: none;
+  font-size: 5em;
+  white-space: wrap;
+  overflow-wrap: normal;
+  font-weight: 500;
+  margin-top: 10rem;
+  margin-bottom: -2rem;
 
   a {
     color: ${({ theme }) => theme.textColor};

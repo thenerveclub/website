@@ -269,9 +269,9 @@ const StyledTradeLink = styled.a`
   transition: background-color 0.25s ease;
   }
   @media (max-width: 960px) {
-    display: none;
+
   @media (max-width: 640px) {
-    display: none;
+
   }
 `
 
@@ -337,12 +337,14 @@ a {
   line-height: 2.5rem;
   max-width: 600px;
   margin-top: 5rem;
+  text-align: center;
 }
 @media (max-width: 640px) {
   width: 100%;
   font-weight: 400;
   margin-top: 5rem;
   text-align: left;
+  text-align: center;
 }
 `
 
@@ -572,7 +574,7 @@ const About = props => {
               We encourage anyone facing issues with their wallet, transaction or Nerve related question to join our
               active community and explore the <a target="_blank" rel="noreferrer" href={'https://docs.nerveglobal.com'}>documentation</a> site.
             </p>
-
+            <HideSmall>
             <div style={{ display: 'flex', width: '100%', margin: 0 }}>
             <StyledTradeLink
             style={{
@@ -611,6 +613,7 @@ const About = props => {
             LinkedIn
           </StyledTradeLink>
             </div>
+            </HideSmall>
           </StyledSectionFlex>
 
           <StyledSectionHeader style={{ fontFamily: "True"}}>{'BRAND ASSETS'}</StyledSectionHeader>
