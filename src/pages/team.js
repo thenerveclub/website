@@ -452,8 +452,8 @@ const StyledGithub = styled(Github)`
             </a>
           </StyledSocialRow>
           </GrantsCard>
-          <GrantsCard style={{ minHeight: "10rem", minWidth: "20rem" }}>
-          {/*<img style={{ marginLeft: "5rem" }} src={tim} width="35%" />*/}
+          {/*<GrantsCard style={{ minHeight: "10rem", minWidth: "20rem" }}>
+          <img style={{ marginLeft: "5rem" }} src={tim} width="35%" />
             <StyledBodySubTitle>Tim Lauterbach</StyledBodySubTitle>
             <StyledSocialRow>
             <a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/tim-lauterbach-b747a191/">
@@ -463,7 +463,7 @@ const StyledGithub = styled(Github)`
               <StyledDiscord />
             </a>
           </StyledSocialRow>
-          </GrantsCard>
+          </GrantsCard>*/}
           <GrantsCard style={{ minHeight: "10rem", minWidth: "20rem" }}>
           {/*<img style={{ marginLeft: "5rem" }} src={jan} width="35%" />*/}
           <StyledBodySubTitle>Jan Ostertag</StyledBodySubTitle>

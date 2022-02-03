@@ -6,6 +6,7 @@ import SEO from '../components/seo'
 import BG from '../components/bg'
 import { Butt } from '../components/butt'
 import { Tab } from '../components/tab'
+import { TabRight } from '../components/tabRight'
 import ProtocolData from '../components/protocolData'
 
 import True from '../styles/fontTrue.css'
@@ -18,10 +19,11 @@ import Github from '../images/github.inline.svg'
 import Discord from '../images/discord.inline.svg'
 import Linkedin from '../images/linkedin.inline.svg'
 import AppsImage from '../images/apps.png'
-import Phone from '../images/imagePhone.png'
 import appstore from '../images/appstore.svg'
 import google from '../images/google.svg'
 import kitty from '../images/kitty.gif'
+import Mockup from '../images/Mockup.png'
+import Mockup1 from '../images/Mockup1.png'
 
 import ZTask from '../ZTask'
 import ZBet from '../ZBet'
@@ -230,9 +232,9 @@ const StyledBodySubText = styled.h3`
 `
 
 const StyledSectionTitle = styled.h3`
-  max-width: 975px;
+  max-width: 900px;
   line-height: 140%;
-  font-size: 32px;
+  font-size: 28px;
   @media (max-width: 640px) {
     text-align: left;
   }
@@ -449,7 +451,7 @@ const IndexPage = props => {
         <span style={{ marginTop: '5rem' }}>
         <HideSmall>
           <Title style={{ fontWeight: "600", paddingBottom: '4rem' }}>
-            Discover, fund, and be part of projects you care about.
+          Crowdfunding for content chosen by the people.
           </Title>
         </HideSmall>
         </span> 
@@ -506,7 +508,7 @@ const IndexPage = props => {
               width: '100%',
               padding: '2rem 0 2rem 0',
               fontFamily: "True"}}>
-          <a /*href="https://info.uniswap.org/"*/>{'MAINNET LAUNCH'}</a>
+          <a /*href="https://info.uniswap.org/"*/>{'POLYGON LAUNCH'}</a>
           </StyledSectionHeaderr>
           <div
             style={{
@@ -547,8 +549,8 @@ const IndexPage = props => {
         */}
 
         <StyledSection>
-        <StyledItemRow style={{ alignItems: 'center', justifyContent: 'center', padding: '5rem 10rem 0 5rem' }}>
-        <StyledSectionTitle>A system for completely new forms of entertainment, investigation and exploration - by you.</StyledSectionTitle>
+        <StyledItemRow style={{ alignItems: 'center', justifyContent: 'center', padding: '10rem 10rem 0 5rem' }}>
+        <StyledSectionTitle>Discover a new form of crowdfunding, live streaming and interacting with your community - download now.</StyledSectionTitle>
         <HideSmall>
         <StyledSocialRow>
           <StyledTradeLink
@@ -592,7 +594,7 @@ const IndexPage = props => {
 export default IndexPage
 
 const StyledSectionHeader = styled.h1`
-  font-size: 20px;
+  font-size: 30px;
   white-space: wrap;
   overflow-wrap: normal;
   max-width: 900px;
@@ -624,6 +626,7 @@ const StyledSectionHeaderr = styled.h1`
   overflow-wrap: normal;
   font-weight: 500;
   margin-top: 10rem;
+  margin-bottom: -2rem;
 
   background: -webkit-linear-gradient(to right, #DE0CCF 30%, #00F2FC 70%);
   background: -moz-linear-gradient(to right, #DE0CCF 30%, #00F2FC 70%);
@@ -657,7 +660,21 @@ const StyledSectionHeaderr = styled.h1`
 const StyledSection = styled.section`
   display: flex;
   flex-direction: column;
-  margin: 10rem 0;
+  margin: 5rem 0;
+
+  @media (max-width: 960px) {
+    margin-top: 1rem;
+  }
+
+  @media (max-width: 640px) {
+    margin-top: 1rem;
+  }
+`
+
+const StyledSectionr = styled.section`
+  display: flex;
+  flex-direction: right;
+  margin: 5rem 50rem;
 
   @media (max-width: 960px) {
     margin-top: 1rem;
@@ -792,17 +809,16 @@ const KeyAdvantagesTask = () => {
     <StyledSection>
       <StyledItemRow>
         <span>
-          <StyledSectionHeader style={{ fontFamily: "True"}}>{'4 SIMPLE STEPS TO START →'}</StyledSectionHeader>
+          <StyledSectionHeader style={{ fontFamily: "True"}}>{'TASKS'}</StyledSectionHeader>
 
           <StyledItemColumn style={{ display: 'flex', flexDirection: 'column' }}>
             <Tab style={{ zIndex: "1", borderRadius: '20px' }} outlined>
               <div style={{ padding: '1rem' }}>
                 <StyledBodySubTitle style={{ marginBottom: '0.25rem' }}>
-                1. Receive a Task
+                1. Receive a task
                 </StyledBodySubTitle>
                 <p style={{ textAlign: 'left', margin: '0', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
-                Get paid to build the future of finance. Uniswap Governance offers grant funding for people building apps,
-              tools, and activities on the Uniswap Protocol.
+                Link your social media accounts to Nerve Global and receive personalized tasks directly from your community.
                 </p>
               </div>
             </Tab>
@@ -815,7 +831,7 @@ const KeyAdvantagesTask = () => {
                 2. Submit a proof
                 </StyledBodySubTitle>
                 <p style={{ textAlign: 'left', margin: '0', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
-                Provide a video proof and link it to your task. Our system is suitable for any other social media platform.
+                Perform your task and upload a proof to your favorite social media platform.
                 </p>
               </div>
             </Tab>
@@ -828,8 +844,7 @@ const KeyAdvantagesTask = () => {
                 3. Get approved
                 </StyledBodySubTitle>
                 <p style={{ textAlign: 'left', margin: '0', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
-                In our crowdfunding system, the donors have to approve before funds get disbursed. That means, funding will only
-            be provided after a request has been delivered.
+                Every contributor is eligible to cast a vote on the completion of your task and decides on the disbursement of attached funds.
                 </p>
               </div>
             </Tab>
@@ -839,10 +854,10 @@ const KeyAdvantagesTask = () => {
             <Tab style={{ zIndex: "1", borderRadius: '20px' }} outlined>
               <div style={{ padding: '1rem' }}>
                 <StyledBodySubTitle style={{ marginBottom: '0.25rem' }}>
-                4. Claim funds
+                4. Claim your funds
                 </StyledBodySubTitle>
                 <p style={{ textAlign: 'left', margin: '0', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
-                All funds are routed through blockchain - that means that all funds will be transferred within seconds or minutes.
+                All collected funds will be directly disbursed to your account - fully decentralized and routed through the blockchain.
                 </p>
               </div>
             </Tab>
@@ -850,7 +865,7 @@ const KeyAdvantagesTask = () => {
 
         </span>
         <HideSmall>
-        <img style={{ position: "absolute", margin: "0 0 0 -20rem", maxWidth: "65%" }} src={Phone} />
+        <img style={{ position: "absolute", margin: "11rem 0 0 5rem", maxWidth: "35%" }} src={Mockup} />
         </HideSmall>
         </StyledItemRow>
     </StyledSection>
@@ -860,71 +875,68 @@ const KeyAdvantagesTask = () => {
 
 const KeyAdvantagesBet = () => {
   return (
-    <StyledSection>
+    <StyledSectionr>
+            <HideSmall>
+        <img style={{ position: "absolute", margin: "13.5rem 0 0 -45rem", maxWidth: "35%" }} src={Mockup1} />
+        </HideSmall>
       <StyledItemRow>
         <span>
-          <StyledSectionHeader style={{ fontFamily: "True"}}>{'4 SIMPLE STEPS TO START →'}</StyledSectionHeader>
+          <StyledSectionHeader style={{ fontFamily: "True"}}>{'BETS'}</StyledSectionHeader>
 
           <StyledItemColumn style={{ display: 'flex', flexDirection: 'column' }}>
-            <Tab style={{ zIndex: "1", borderRadius: '20px' }} outlined>
+            <TabRight style={{ zIndex: "1", borderRadius: '20px' }} outlined>
               <div style={{ padding: '1rem' }}>
                 <StyledBodySubTitle style={{ marginBottom: '0.25rem' }}>
-                1. Create a Bet
+                1. Host a bet
                 </StyledBodySubTitle>
                 <p style={{ textAlign: 'left', margin: '0', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
-                Get paid to build the future of finance. Uniswap Governance offers grant funding for people building apps,
-              tools, and activities on the Uniswap Protocol.
+                Enter a description and define two possible outcomes. You will receive a share of the total winnings as a remuneration for your betting service.
                 </p>
               </div>
-            </Tab>
+            </TabRight>
           </StyledItemColumn>
 
           <StyledItemColumn style={{ display: 'flex', flexDirection: 'column' }}>
-            <Tab style={{ zIndex: "1", borderRadius: '20px' }} outlined>
+            <TabRight style={{ zIndex: "1", borderRadius: '20px' }} outlined>
               <div style={{ padding: '1rem' }}>
                 <StyledBodySubTitle style={{ marginBottom: '0.25rem' }}>
-                2. Submit a proof
+                2. Raise the stakes
                 </StyledBodySubTitle>
                 <p style={{ textAlign: 'left', margin: '0', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
-                Provide a video proof and link it to your task. Our system is suitable for any other social media platform.
+                Anyone can join your bet with no limits. 
                 </p>
               </div>
-            </Tab>
+            </TabRight>
           </StyledItemColumn>
 
           <StyledItemColumn style={{ display: 'flex', flexDirection: 'column' }}>
-            <Tab style={{ zIndex: "1", borderRadius: '20px' }} outlined>
+            <TabRight style={{ zIndex: "1", borderRadius: '20px' }} outlined>
               <div style={{ padding: '1rem' }}>
                 <StyledBodySubTitle style={{ marginBottom: '0.25rem' }}>
-                3. Get approved
+                3. Present the result
                 </StyledBodySubTitle>
                 <p style={{ textAlign: 'left', margin: '0', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
-                In our crowdfunding system, the donors have to approve before funds get disbursed. That means, funding will only
-            be provided after a request has been delivered.
+                You are in total control of your bet. Present the correct result and build up your reputation. All funds are automatically transferred to the winning party.
                 </p>
               </div>
-            </Tab>
+            </TabRight>
           </StyledItemColumn>
 
           <StyledItemColumn style={{ display: 'flex', flexDirection: 'column' }}>
-            <Tab style={{ zIndex: "1", borderRadius: '20px' }} outlined>
+            <TabRight style={{ zIndex: "1", borderRadius: '20px' }} outlined>
               <div style={{ padding: '1rem' }}>
                 <StyledBodySubTitle style={{ marginBottom: '0.25rem' }}>
-                4. Claim funds
+                4. Submit a proof
                 </StyledBodySubTitle>
                 <p style={{ textAlign: 'left', margin: '0', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
-                All funds are routed through blockchain - that means that all funds will be transferred within seconds or minutes.
+                Underpin your result with a proof uploaded to your favorite social media platform.
                 </p>
               </div>
-            </Tab>
+            </TabRight>
           </StyledItemColumn>
-
         </span>
-        <HideSmall>
-        <img style={{ position: "absolute", margin: "0 0 0 -20rem", maxWidth: "65%" }} src={Phone} />
-        </HideSmall>
         </StyledItemRow>
-    </StyledSection>
+    </StyledSectionr>
   )
 }
 

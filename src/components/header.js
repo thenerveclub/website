@@ -92,6 +92,26 @@ const StyledNavTitleWrapper = styled.nav`
   width: 100%;
 `
 
+const StyledTradeLink = styled.a`
+  padding: 0.25rem 0.75rem;
+  background-color: ${({ theme }) => theme.textColor};
+  text-decoration: none;
+  color: ${({ theme }) => theme.invertedTextColor};
+  border-radius: 12px;
+  display: inline-block;
+  font-weight: 500;
+  width: 100%;
+  width: min-content;
+  white-space: nowrap;
+  margin-left: 1rem;
+  border: 1px solid transparent;
+  box-shadow: ${({ theme }) => theme.shadows.small};
+  :hover,
+  :focus {
+    border: 1px solid white;
+  }
+`
+
 const StyledButton = styled.button`
   border: none;
   background-color: rgba(0, 0, 0, 0);
@@ -276,7 +296,18 @@ const Header = props => {
           <StyledButton type="button" onClick={toggleDarkMode}>
             {darkMode ? <Sun size={20} /> : <Moon size={20} />}
           </StyledButton>
-          
+          {/*{props.path !== undefined && (
+          <StyledTradeLink
+            style={{
+              background: `linear-gradient(128.17deg, #BD00FF -14.78%, #FF1F8A 110.05%)`,
+              color: 'white'
+            }}
+            target="_blank"
+            href="https://app.nerveglobal.com/"
+          >
+            Launch App
+          </StyledTradeLink>
+          )}*/}
       </StyledNav>
     </StyledHeader>
   )

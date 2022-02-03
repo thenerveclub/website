@@ -38,8 +38,8 @@ const TabStyles = css`
   border: ${({ outlined, theme }) => (outlined ? `1px solid ${theme.buttonBorder}` : 'initial')};
 `
 
-export const Tab = styled.a`
+export const TabRight = styled.a`
   ${TabStyles};
 `
 
-export default Tab
+export default TabRight

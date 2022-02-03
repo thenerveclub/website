@@ -35,9 +35,3 @@ previewText: '3rd out of 47 international teams at Blockland Solutions Conferenc
 - Jon Pinney
 - Kohrman Jackson & Krantz LLP
 - Bob Sopko (Launchnet at Case Western Reserve University)
-
----
-
-# Happy Holidays from the Nerve team!
-
-**❤**

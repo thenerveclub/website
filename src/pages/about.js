@@ -277,7 +277,7 @@ const APOLLO_QUERY = gql`
 `
 
 const StyledSectionHeader = styled.h1`
-font-size: 20px;
+font-size: 25px;
 white-space: wrap;
 overflow-wrap: normal;
 max-width: 900px;
@@ -431,14 +431,15 @@ const About = props => {
 
           <StyledSectionTitle>A sustainable and engaging future that is controlled and driven - by the people.</StyledSectionTitle>
           <SubTitle style={{ opacity: '0.6', textAlign: 'left', marginRight: '48px' }}>
-          We create global markets that allow the exchange of value between advanced and emerging economies, redistributing value and accelerating global digitalization. 
-          We firmly believe in money as a language for the communication of values and therefore think free access to sound digital money is part of the right to free speech.
+          We envision new global markets that allow the exchange of value between advanced and emerging economies, redistributing value in the exchange 
+          for novel kinds of services and accelerating global digitalization. We firmly believe in money as a language for the communication of values and 
+          therefore think universal access to sound digital money is a right to free speech. It is our goal to demonstrate and instantiate trust between people.
           </SubTitle>
           
           <StyledSectionFlex id="about" style={{ flexDirection: 'column' }}>
             <div style={{ display: 'flex', width: '100%', marginTop: "5rem" }}>
-            <ExternalLink href={'https://docs.nerveglobal.com'}>Docs <span style={{ fontSize: '15px' }}>↗</span></ExternalLink>
-              <InternalLink to="/whitepaper.pdf">Whitepaper <span style={{ fontSize: '15px' }}>↗</span></InternalLink>
+            <ExternalLink target="_blank" rel="noreferrer" href={'https://docs.nerveglobal.com'}>Docs <span style={{ fontSize: '15px' }}>↗</span></ExternalLink>
+              <InternalLink target="_blank" rel="noreferrer" href={'https://docs.nerveglobal.com'}>Whitepaper <span style={{ fontSize: '15px' }}>↗</span></InternalLink>
             </div>
           </StyledSectionFlex>
           </span>
@@ -446,7 +447,7 @@ const About = props => {
 
       <DeveloperSection data={data} props={props} />
 
-      <StyledSectionHeader style={{ fontFamily: "True", marginTop: '10rem' }}>{'RECOGNITION →'}</StyledSectionHeader>
+      <StyledSectionHeader style={{ fontFamily: "True", marginTop: '10rem' }}>{'RECOGNITION'}</StyledSectionHeader>
           <StyledItemRow style={{ alignItems: 'center', justifyContent: 'center', padding: '2rem 10rem 2rem 10rem' }}>
           <GrantsCard style={{ minHeight: "37rem", maxWidth: "20rem" }}>
           <img style={{ marginLeft: "5rem" }} src={graph} width="35%" />
@@ -458,7 +459,7 @@ const About = props => {
             Grant applicants came from Portugal, Canada, Japan, Korea, Poland, the US and more.
             Each applicant was assessed based on the project’s expected impact, community feedback, relative significance and urgency in the ecosystem.
             </p>
-            <Button target="_blank" rel="noreferrer" href="/blog" outlined>
+            <Button target="_blank" rel="noreferrer" href="/blog/thegraph/" outlined>
               <p style={{ margin: 0 }}>Learn more ↗</p>
             </Button>
           </GrantsCard>
@@ -472,46 +473,43 @@ const About = props => {
             3rd out of 47 international teams.
             Prizes awarded by Jon Pinney, Kohrman Jackson & Krantz LLP, and Bob Sopko (Launchnet at Case Western Reserve University)
             </p>
-            <Button style={{ marginTop: "4.5rem" }} target="_blank" rel="noreferrer" href="/blog" outlined>
+            <Button style={{ marginTop: "4.5rem" }} target="_blank" rel="noreferrer" href="/blog/blockland-solutions/" outlined>
               <p style={{ margin: 0 }}>Learn more ↗</p>
             </Button>
           </GrantsCard>
         </StyledItemRow>
           
           <StyledBody>
-          <StyledSectionHeader style={{ fontFamily: "True"}}>{'CONTACT →'}</StyledSectionHeader>
+          <StyledSectionHeader style={{ fontFamily: "True"}}>{'CONTACT'}</StyledSectionHeader>
 
           <StyledSectionFlex id="contact" style={{ flexDirection: 'column' }}>
             <p>
-              To get in touch, please email <a href="mailto:business@uniswap.com">business@nerveglobal.com</a>
+              To get in touch, please email <a target="_blank" rel="noreferrer" href={'mailto:business@nerveglobal.com'}>business@nerveglobal.com</a>
             </p>
 
             <p>
               We encourage anyone facing issues with their wallet, transaction or Nerve related question to join our
-              active community and explore the <a href="https://docs.nerveglobal.com">documentation</a> site.
+              active community and explore the <a target="_blank" rel="noreferrer" href={'https://docs.nerveglobal.com'}>documentation</a> site.
             </p>
 
             <div style={{ display: 'flex', width: '100%', margin: 0 }}>
-            <ExternalLink href={'https://t.me/nerveglobal'}>
-                Telegram <span style={{ fontSize: '11px' }}>↗</span>
-              </ExternalLink>
-              <ExternalLink href={'https://discord.gg/VHZCy5Dx'}>
+              <ExternalLink target="_blank" rel="noreferrer" href={'https://discord.gg/VHZCy5Dx'}>
                 Discord <span style={{ fontSize: '11px' }}>↗</span>
               </ExternalLink>
-              <ExternalLink href={'https://twitter.com/nerveglobal_'}>
+              <ExternalLink target="_blank" rel="noreferrer" href={'https://twitter.com/nerveglobal_'}>
                 Twitter <span style={{ fontSize: '11px' }}>↗</span>
               </ExternalLink>
-              <ExternalLink href={'https://www.linkedin.com/company/nerveglobal/'}>
+              <ExternalLink target="_blank" rel="noreferrer" href={'https://www.linkedin.com/company/nerveglobal/'}>
                 LinkedIn <span style={{ fontSize: '11px' }}>↗</span>
               </ExternalLink>
             </div>
           </StyledSectionFlex>
 
-          <StyledSectionHeader style={{ fontFamily: "True"}}>{'BRAND ASSETS →'}</StyledSectionHeader>
+          <StyledSectionHeader style={{ fontFamily: "True"}}>{'BRAND ASSETS'}</StyledSectionHeader>
 
       <StyledSectionFlex id="brand" style={{ flexDirection: 'column' }}>
         <p>
-          Download the logo and other brand assets <a href="https://github.com/nerveglobal/brand-assets">here</a>.
+          Download the logo and other brand assets <a target="_blank" rel="noreferrer" href={'https://github.com/nerveglobal/brand-assets'}>here</a>.
         </p>
       </StyledSectionFlex>
         
@@ -529,7 +527,7 @@ export default About
 const Pillars = () => {
   return (
     <StyledSection>
-      <StyledSectionHeader style={{ fontFamily: "True"}}>{'Our pillars →'}</StyledSectionHeader>
+      <StyledSectionHeader style={{ fontFamily: "True"}}>{'Our pillars'}</StyledSectionHeader>
       <StyledItemRow style={{ alignItems: 'center', justifyContent: 'center', padding: '2rem 10rem 2rem 10rem' }}>
         <GrantsCard style={{ minHeight: "10rem", minWidth: "18rem" }}>
           <StyledBodySubTitle>Neutral</StyledBodySubTitle>
@@ -555,30 +553,36 @@ const Pillars = () => {
 const DeveloperSection = () => {
   return (
       <StyledSection>
-        <StyledSectionHeader style={{ fontFamily: "True"}}>{'INNOVATIONS AT A GLANCE →'}</StyledSectionHeader>
+        <StyledSectionHeader style={{ fontFamily: "True"}}>{'INNOVATIONS'}</StyledSectionHeader>
         <StyledItemRow style={{ alignItems: 'center', justifyContent: 'center', padding: '2rem 10rem 2rem 10rem' }}>
-          <GrantsCard style={{ minHeight: "20rem", maxWidth: "18rem" }}>
-            <StyledBodySubTitle>Blockchain</StyledBodySubTitle>
+          <GrantsCard style={{ minHeight: "16rem", maxWidth: "20rem" }}>
+            <StyledBodySubTitle>EARN CRYPTO</StyledBodySubTitle>
             <p style={{ textAlign: 'left', margin: '0', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
-              at your fingertips. Nerve is universally accessible, censorship-resistant and allows everyone to participate, even without access to a bank account.
+            Global access to crowdfunding without a bank account
             </p>
           </GrantsCard>
-          <GrantsCard style={{ minHeight: "20rem", maxWidth: "18rem" }}>
-            <StyledBodySubTitle>Earn Crypto</StyledBodySubTitle>
+          <GrantsCard style={{ minHeight: "16rem", maxWidth: "20rem" }}>
+            <StyledBodySubTitle>EASE OF USE</StyledBodySubTitle>
             <p style={{ textAlign: 'left', margin: '0', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
-            Nerve is powered by Ethereum, Polygon and other chains, allowing you to receive instant guaranteed payouts with full transparency.
+            Receive a task, submit a proof, get approved, claim funds
             </p>
           </GrantsCard>
-          <GrantsCard style={{ minHeight: "20rem", maxWidth: "18rem" }}>
-            <StyledBodySubTitle>No limits</StyledBodySubTitle>
+          <GrantsCard style={{ minHeight: "16rem", maxWidth: "20rem" }}>
+            <StyledBodySubTitle>INSTANT FUNDING</StyledBodySubTitle>
             <p style={{ textAlign: 'left', margin: '0', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
-            Nerve is the first peer-to-peer crowdfunding application that lets you decide on content. No limits on who you can challenge or what you can bet on - anywhere, anytime.
+            Funds are transferred within minutes, rather than days
             </p>
           </GrantsCard>
-          <GrantsCard style={{ minHeight: "20rem", maxWidth: "18rem" }}>
-            <StyledBodySubTitle>Digital reality</StyledBodySubTitle>
+          <GrantsCard style={{ minHeight: "16rem", maxWidth: "20rem" }}>
+            <StyledBodySubTitle>ON DELIVERY</StyledBodySubTitle>
             <p style={{ textAlign: 'left', margin: '0', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
-            We are able to connect the very progressive sub-culture of digital natives with the real world. Share immersive experiences with other people, even if you can`t be together.
+            Donors approve task completion before disbursement of funds
+            </p>
+          </GrantsCard>
+          <GrantsCard style={{ minHeight: "16rem", maxWidth: "20rem" }}>
+            <StyledBodySubTitle>SMALL PROJECTS</StyledBodySubTitle>
+            <p style={{ textAlign: 'left', margin: '0', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
+            Step-by-step funding for specific tasks - no minimum amount
             </p>
           </GrantsCard>
         </StyledItemRow>

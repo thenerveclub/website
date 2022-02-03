@@ -9,14 +9,13 @@ const menu = [
   {
     name: 'Docs',
     sublinks: [
-      { name: 'Documentation ↗', link: 'https://github.com/nerveglobal' },
+      { name: 'Documentation ↗', link: 'https://docs.nerveglobal.com' },
       { name: 'GitHub ↗', link: 'https://github.com/nerveglobal' }
     ]
   },
   {
     name: 'Community',
     sublinks: [
-      { name: 'Telegram ↗', link: 'https://t.me/nerveglobal' },
       { name: 'Discord ↗', link: 'https://discord.gg/Xuh5enTNB6' },
       { name: 'Twitter ↗', link: 'https://twitter.com/nerveglobal_' },
       { name: 'LinkedIn ↗', link: 'https://www.linkedin.com/company/nerveglobal/' }

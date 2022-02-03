@@ -1,6 +1,6 @@
 ---
 title: 'Our Philosophy'
-date: '2020-08-06'
+date: '2020-06-10'
 author: 'Nerve'
 featuredImage: ./banner.png
 previewText: 'We believe in the sovereignty of the individual. Change is not made from the top down, but from the bottom up.'

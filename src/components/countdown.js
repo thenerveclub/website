@@ -4,10 +4,10 @@ import styled from 'styled-components'
 
 
 const StyledItemRow = styled.div`
-display: flex;
+  display: flex;
   flex-direction: column;
+  margin-bottom: -3rem;
 
-  margin: 0rem;
   & > *:not(:first-of-type) {
     margin-top: 12px;
   }
