@@ -115,6 +115,7 @@ const Title = styled.h1`
   max-width: 1200px;
   /* text-align: center; */
   @media (max-width: 960px) {
+    margin-top: -2rem;
     font-size: 2rem;
   }
 `

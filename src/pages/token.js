@@ -69,6 +69,10 @@ const StyledTradeLink = styled.a`
 
   transition: background-color 0.25s ease;
   }
+  @media (max-width: 960px) {
+    align-item: center;
+    align-text: center;
+  }
 `
 
 const StyledBody = styled.div`
@@ -141,6 +145,7 @@ const Numbers = styled(StyledSectionFlex)`
 
 const Title = styled.h1`
   /* font-size: 3rem; */
+  margin-top: -2rem;
   margin-bottom: 4rem;
   font-size: 72px;
 
@@ -222,8 +227,11 @@ const SubTitle = styled.div`
   max-width: 725px;
   font-size: 20px;
   font-weight: 400;
+  marginRight: '48px'
+  text-align: left;
   @media (max-width: 640px) {
     font-size: 14px;
+    text-align: center;
   }
 `
 
@@ -232,7 +240,9 @@ const UniMobileImage = styled.div`
   position: absolute;
   top: 0;
   @media (max-width: 640px) {
+    margin-top: -5rem;
     display: initial;
+    max-width: 10rem;
   }
 `
 
@@ -258,7 +268,9 @@ text-rendering: optimizeLegibility;
 font-size: 32px;
 line-height: 1.1;
   @media (max-width: 640px) {
-    font-size: 20px;
+    font-size: 25px;
+    text-align: center;
+    margin-top: -5rem;
   }
 `
 
@@ -414,12 +426,14 @@ const StyledSectionHeader = styled.h1`
     line-height: 2.5rem;
     max-width: 600px;
     margin-top: 5rem;
+    text-align: center;
   }
   @media (max-width: 640px) {
     width: 100%;
     font-weight: 400;
     margin-top: 5rem;
     text-align: left;
+    text-align: center;
   }
 `
 
@@ -534,7 +548,7 @@ const About = props => {
           </UniMobileImage>
           <AutoColumn gap="20px">
             <Tit style={{ fontFamily: "True"}}>Nerve Token</Tit>
-            <SubTitle style={{ maxWidth: "700px", textAlign: 'left', margin: '0', opacity: '0.6' }}>
+            <SubTitle style={{ maxWidth: "700px", margin: '0', opacity: '0.6' }}>
             Use Nerve Global and get rewarded with the NERVE token, a direct representation of a contribution to the ecosystem.
             </SubTitle>
             <StyledTradeLink
@@ -577,7 +591,7 @@ const About = props => {
         </StyledItemRow>
         <StyledSection>
           <StyledSectionHeader style={{ fontFamily: "True", marginTop: '5rem' }}>{'PLAY AND EARN'}</StyledSectionHeader>
-          <SubTitle style={{ opacity: '0.6', textAlign: 'left', marginRight: '48px' }}>
+          <SubTitle style={{ opacity: '0.6' }}>
           To ensure NERVE is held by those committed to the ecosystem.
           </SubTitle>
           <StyledItemRow style={{ alignItems: 'center', justifyContent: 'center', padding: '2rem 10rem 2rem 10rem' }}>

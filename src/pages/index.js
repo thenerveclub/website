@@ -444,7 +444,7 @@ const IndexPage = props => {
       <SEO
         title="Home"
         path={props.location.pathname}
-        description={'Discover, fund, and be part of projects you care about.'}
+        description={'Crowdfunding for content chosen by the people.'}
       />
       
       <StyledAbout>
@@ -463,7 +463,7 @@ const IndexPage = props => {
             <span style={{ fontFamily: "True", fontWeight: 200 }}>NERVE GLOBAL</span>
           </StyledBodyTitle>
           <StyledBodySubT>
-            {'Discover, fund, and be part of projects you care about.'}
+            {'Crowdfunding for content chosen by the people.'}
           </StyledBodySubT>
           <StyledSocialRow>
           <StyledTradeLink
@@ -643,17 +643,18 @@ const StyledSectionHeaderr = styled.h1`
   }
 
   @media (max-width: 960px) {
-    width: 100%;
     font-size: 2rem;
-    line-height: 2.5rem;
     margin-top: -5rem;
-    max-width: 600px;
+    color: white;
+    a {
+      color: white;
   }
   @media (max-width: 640px) {
-    width: 100%;
-    font-weight: 400;
+    font-size: 2rem;
     margin-top: -5rem;
-    text-align: left;
+    color: white;
+    a {
+      color: white;
   }
 `
 
