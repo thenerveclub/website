@@ -644,7 +644,7 @@ const StyledSectionHeaderr = styled.h1`
 
   @media (max-width: 960px) {
     width: 100%;
-    /* font-size: 2rem; */
+    font-size: 2rem;
     line-height: 2.5rem;
     margin-top: -5rem;
     max-width: 600px;
@@ -677,11 +677,11 @@ const StyledSectionr = styled.section`
   margin: 5rem 50rem;
 
   @media (max-width: 960px) {
-    margin-top: 1rem;
+    margin: 5rem 0;
   }
 
   @media (max-width: 640px) {
-    margin-top: 1rem;
+    margin: 5rem 0;
   }
 `
 

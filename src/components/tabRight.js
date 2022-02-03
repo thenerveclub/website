@@ -18,7 +18,8 @@ const TabStyles = css`
   box-sizing: border-box;
   font-weight: 500;
   font-size: 1.125rem;
-  width: fit-content;
+  min-width: 30rem;
+  max-width: 30rem;
   }
   @media (max-width: 640px) {
     margin-top: 10px;
@@ -28,7 +29,8 @@ const TabStyles = css`
   box-sizing: border-box;
   font-weight: 500;
   font-size: 1.125rem;
-  width: fit-content;
+  min-width: 30rem;
+  max-width: 30rem;
   }
   :hover {
     transform: scale(1);
