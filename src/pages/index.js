@@ -236,7 +236,10 @@ const StyledSectionTitle = styled.h3`
   line-height: 140%;
   font-size: 28px;
   @media (max-width: 640px) {
-    text-align: left;
+    min-width: 400px;
+    min-width: 400px;
+    font-size: 20px;
+    text-align: center;
   }
 `
 
@@ -620,12 +623,13 @@ const StyledSectionHeader = styled.h1`
     line-height: 2.5rem;
     max-width: 600px;
     margin-top: 2rem;
+    text-align: center;
   }
   @media (max-width: 640px) {
     width: 100%;
     font-weight: 400;
     margin-top: 2rem;
-    text-align: left;
+    text-align: center;
   }
 `
 

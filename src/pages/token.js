@@ -547,7 +547,7 @@ const About = props => {
             <SubTitle style={{ maxWidth: "700px", margin: '0', opacity: '0.6' }}>
             Use Nerve Global and get rewarded with the NERVE token, a direct representation of a contribution to the ecosystem.
             </SubTitle>
-            <StyledTradeLink
+            {/*<StyledTradeLink
             style={{
               textAlign: "center",
               minWidth: "8rem",
@@ -557,7 +557,7 @@ const About = props => {
             href="/blog/nerve-token"
           >
             Learn more
-          </StyledTradeLink>
+          </StyledTradeLink>*/}
             </AutoColumn>
         </TokenSection>
 
