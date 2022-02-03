@@ -236,8 +236,10 @@ const StyledSectionTitle = styled.h3`
   line-height: 140%;
   font-size: 28px;
   @media (max-width: 640px) {
-    min-width: 400px;
-    min-width: 400px;
+    padding: 0 0 0 0;
+    margin: 0 0 0 4rem;
+    min-width: 350px;
+    min-width: 350px;
     font-size: 20px;
     text-align: center;
   }
