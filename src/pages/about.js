@@ -486,7 +486,7 @@ const About = props => {
           >
             Docs
           </StyledTradeLink>
-          <StyledTradeLink
+          {/*<StyledTradeLink
             style={{
               textAlign: "center",
               minWidth: "8rem",
@@ -496,7 +496,7 @@ const About = props => {
             href="https://docs.nerveglobal.com"
           >
             Whitepaper
-          </StyledTradeLink>
+          </StyledTradeLink>*/}
             </div>
           </StyledSectionFlex>
           </span>

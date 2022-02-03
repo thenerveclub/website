@@ -2,6 +2,11 @@ import { Link } from 'gatsby'
 import React from 'react'
 import styled from 'styled-components'
 
+import Twitter from '../images/twitter.inline.svg'
+import Github from '../images/github.inline.svg'
+import Discord from '../images/discord.inline.svg'
+import Linkedin from '../images/linkedin.inline.svg'
+
 
 const StyledFooter = styled.footer`
   max-width: auto;
@@ -20,12 +25,55 @@ const StyledFooter = styled.footer`
   }
 `
 
+const StyledTwitter = styled(Twitter)`
+  path {
+    fill: ${({ theme }) => theme.textColor};
+  }
+  width: 20px;
+  height: 20px;
+`
+
+const StyledDiscord = styled(Discord)`
+  path {
+    fill: ${({ theme }) => theme.textColor};
+  }
+  width: 20px;
+  height: 20px;
+`
+
+const StyledGithub = styled(Github)`
+  path {
+    fill: ${({ theme }) => theme.textColor};
+  }
+  width: 20px;
+  height: 20px;
+`
+
+const StyledLinkedIn = styled(Linkedin)`
+  path {
+    fill: ${({ theme }) => theme.textColor};
+  }
+  width: 20px;
+  height: 20px;
+`
+
 const StyledFooterLinkSection = styled.ul`
   display: flex;
   flex-direction: row;
   align-items: center;
   margin: 0;
 `
+
+const StyledSocialRow = styled.nav`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-right: 10rem;
+  & > *:not(:first-of-type) {
+    margin-top: 0;
+    margin-left: 16px;
+  }
+  `
 
 const StyledFooterLink = styled(Link)`
   margin-right: 12px;
@@ -35,7 +83,23 @@ const StyledFooterLink = styled(Link)`
 const Footer = () => {
   return (
     <StyledFooter>
-      <p style={{ margin: 0 }}> {new Date().getFullYear()} Nerve Foundation & Community</p>
+      <p style={{ margin: 0 }}> {new Date().getFullYear()} Nerve Community</p>
+
+      <StyledSocialRow>
+            <a target="_blank" rel="noreferrer" href="https://twitter.com/nerveglobal_">
+              <StyledTwitter />
+            </a>
+            <a target="_blank" rel="noreferrer" href="https://github.com/nerveglobal">
+              <StyledGithub />
+            </a>
+            <a target="_blank" rel="noreferrer" href="https://discord.gg/Xuh5enTNB6">
+              <StyledDiscord />
+            </a>
+            <a target="_blank" rel="noreferrer" href="https://www.linkedin.com/company/nerveglobal/">
+              <StyledLinkedIn />
+            </a>
+          </StyledSocialRow>
+
       <StyledFooterLinkSection>
         {/*<StyledFooterLink to="/privacy-policy">Privacy Policy</StyledFooterLink>
         <StyledFooterLink to="/disclaimer" style={{ marginRight: '12px' }}>
