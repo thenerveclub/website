@@ -550,7 +550,7 @@ const IndexPage = props => {
 
         <StyledSection>
         <StyledItemRow style={{ alignItems: 'center', justifyContent: 'center', padding: '10rem 10rem 0 5rem' }}>
-        <StyledSectionTitle>Discover a new form of crowdfunding, live streaming and interacting with your community - download now.</StyledSectionTitle>
+        <StyledSectionTitle>Discover a new form of crowdfunding, live streaming and community interaction - download now!</StyledSectionTitle>
         <HideSmall>
         <StyledSocialRow>
           <StyledTradeLink

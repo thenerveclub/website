@@ -232,6 +232,43 @@ display: flex;
   }
 `
 
+const StyledTradeLink = styled.a`
+  padding: 0.25rem 0.75rem;
+  background-color: ${({ theme }) => theme.textColor};
+  text-decoration: none;
+  color: ${({ theme }) => theme.invertedTextColor};
+  border-radius: 12px;
+  display: inline-block;
+  font-weight: 500;
+  width: 100%;
+  width: min-content;
+  white-space: nowrap;
+  margin-left: 1rem;
+  border: 1px solid transparent;
+  box-shadow: ${({ theme }) => theme.shadows.small};
+  background: ${({ theme, open, showBG }) => (showBG && !open ? theme.backgroundColor : 'none')};
+	border-bottom: 1px solid ${({ theme }) => theme.buttonBorder};
+  border-image: linear-gradient(var(--angle), aqua, aqua, magenta, magenta) 1;
+	
+	animation: 15s rotate linear infinite;
+}
+
+@keyframes rotate {
+	to {
+		--angle: 360deg;
+	}
+}
+
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+  transition: background-color 0.25s ease;
+  }
+`
+
 export const GET_BLOCK = gql`
   query blocks($timestamp: Int!) {
     blocks(first: 1, orderBy: timestamp, orderDirection: asc, where: { timestamp_gt: $timestamp }) {
@@ -438,8 +475,28 @@ const About = props => {
           
           <StyledSectionFlex id="about" style={{ flexDirection: 'column' }}>
             <div style={{ display: 'flex', width: '100%', marginTop: "5rem" }}>
-            <ExternalLink target="_blank" rel="noreferrer" href={'https://docs.nerveglobal.com'}>Docs <span style={{ fontSize: '15px' }}>↗</span></ExternalLink>
-              <InternalLink target="_blank" rel="noreferrer" href={'https://docs.nerveglobal.com'}>Whitepaper <span style={{ fontSize: '15px' }}>↗</span></InternalLink>
+            <StyledTradeLink
+            style={{
+              textAlign: "center",
+              minWidth: "8rem",
+              color: 'white'
+            }}
+            target="_blank"
+            href="https://docs.nerveglobal.com"
+          >
+            Docs
+          </StyledTradeLink>
+          <StyledTradeLink
+            style={{
+              textAlign: "center",
+              minWidth: "8rem",
+              color: 'white'
+            }}
+            target="_blank"
+            href="https://docs.nerveglobal.com"
+          >
+            Whitepaper
+          </StyledTradeLink>
             </div>
           </StyledSectionFlex>
           </span>
@@ -455,13 +512,22 @@ const About = props => {
             <p>
             Dapps & Subgraphs - $7.5K Grant
             </p>
-            <p>
+            <p style={{ marginBottom: "3rem" }}>
             Grant applicants came from Portugal, Canada, Japan, Korea, Poland, the US and more.
             Each applicant was assessed based on the project’s expected impact, community feedback, relative significance and urgency in the ecosystem.
             </p>
-            <Button target="_blank" rel="noreferrer" href="/blog/thegraph/" outlined>
-              <p style={{ margin: 0 }}>Learn more ↗</p>
-            </Button>
+            <StyledTradeLink
+            style={{
+              textAlign: "center",
+              minWidth: "8rem",
+              color: 'white'
+            }}
+            target="_blank"
+            rel="noreferrer" 
+            href="/blog/thegraph/"
+          >
+            Learn more
+          </StyledTradeLink>
           </GrantsCard>
           <GrantsCard style={{ minHeight: "37rem", maxWidth: "20rem" }}>
           <img style={{ marginLeft: "2rem" }} src={blockland} width="75%" />
@@ -469,13 +535,22 @@ const About = props => {
             <p>
             Pitch Competition - $4K Grant
             </p>
-            <p>
+            <p style={{ marginBottom: "6rem" }}>
             3rd out of 47 international teams.
             Prizes awarded by Jon Pinney, Kohrman Jackson & Krantz LLP, and Bob Sopko (Launchnet at Case Western Reserve University)
             </p>
-            <Button style={{ marginTop: "4.5rem" }} target="_blank" rel="noreferrer" href="/blog/blockland-solutions/" outlined>
-              <p style={{ margin: 0 }}>Learn more ↗</p>
-            </Button>
+            <StyledTradeLink
+            style={{
+              textAlign: "center",
+              minWidth: "8rem",
+              color: 'white'
+            }}
+            target="_blank"
+            rel="noreferrer" 
+            href="/blog/blockland-solutions/"
+          >
+            Learn more
+          </StyledTradeLink>
           </GrantsCard>
         </StyledItemRow>
           
@@ -493,15 +568,42 @@ const About = props => {
             </p>
 
             <div style={{ display: 'flex', width: '100%', margin: 0 }}>
-              <ExternalLink target="_blank" rel="noreferrer" href={'https://discord.gg/VHZCy5Dx'}>
-                Discord <span style={{ fontSize: '11px' }}>↗</span>
-              </ExternalLink>
-              <ExternalLink target="_blank" rel="noreferrer" href={'https://twitter.com/nerveglobal_'}>
-                Twitter <span style={{ fontSize: '11px' }}>↗</span>
-              </ExternalLink>
-              <ExternalLink target="_blank" rel="noreferrer" href={'https://www.linkedin.com/company/nerveglobal/'}>
-                LinkedIn <span style={{ fontSize: '11px' }}>↗</span>
-              </ExternalLink>
+            <StyledTradeLink
+            style={{
+              textAlign: "center",
+              minWidth: "8rem",
+              color: 'white'
+            }}
+            target="_blank"
+            rel="noreferrer" 
+            href="https://discord.gg/VHZCy5Dx"
+          >
+            Discord
+          </StyledTradeLink>
+          <StyledTradeLink
+            style={{
+              textAlign: "center",
+              minWidth: "8rem",
+              color: 'white'
+            }}
+            target="_blank"
+            rel="noreferrer" 
+            href="https://twitter.com/nerveglobal_"
+          >
+            Twitter
+          </StyledTradeLink>
+          <StyledTradeLink
+            style={{
+              textAlign: "center",
+              minWidth: "8rem",
+              color: 'white'
+            }}
+            target="_blank"
+            rel="noreferrer" 
+            href="https://www.linkedin.com/company/nerveglobal/"
+          >
+            LinkedIn
+          </StyledTradeLink>
             </div>
           </StyledSectionFlex>
 

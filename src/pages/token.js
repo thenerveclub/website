@@ -34,6 +34,43 @@ const StyledAbout = styled.div`
   }
 `
 
+const StyledTradeLink = styled.a`
+  padding: 0.25rem 0.75rem;
+  background-color: ${({ theme }) => theme.textColor};
+  text-decoration: none;
+  color: ${({ theme }) => theme.invertedTextColor};
+  border-radius: 12px;
+  display: inline-block;
+  font-weight: 500;
+  width: 100%;
+  width: min-content;
+  white-space: nowrap;
+  margin-left: 1rem;
+  border: 1px solid transparent;
+  box-shadow: ${({ theme }) => theme.shadows.small};
+  background: ${({ theme, open, showBG }) => (showBG && !open ? theme.backgroundColor : 'none')};
+	border-bottom: 1px solid ${({ theme }) => theme.buttonBorder};
+  border-image: linear-gradient(var(--angle), aqua, aqua, magenta, magenta) 1;
+	
+	animation: 15s rotate linear infinite;
+}
+
+@keyframes rotate {
+	to {
+		--angle: 360deg;
+	}
+}
+
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+  transition: background-color 0.25s ease;
+  }
+`
+
 const StyledBody = styled.div`
   position: relative;
   display: flex;
@@ -397,6 +434,7 @@ export const UNISWAP_GLOBALS_24HOURS_AGO_QUERY = block => {
     }
   }
   `
+
   return gql(queryString)
 }
 
@@ -499,9 +537,17 @@ const About = props => {
             <SubTitle style={{ maxWidth: "700px", textAlign: 'left', margin: '0', opacity: '0.6' }}>
             Use Nerve Global and get rewarded with the NERVE token, a direct representation of a contribution to the ecosystem.
             </SubTitle>
-            <Button target="_blank" rel="noreferrer" href="/blog/nerve-token" outlined>
-              <p style={{ margin: 0 }}>Learn more ↗</p>
-            </Button>
+            <StyledTradeLink
+            style={{
+              textAlign: "center",
+              minWidth: "8rem",
+              color: 'white'
+            }}
+            target="_blank"
+            href="/blog/nerve-token"
+          >
+            Learn more
+          </StyledTradeLink>
             </AutoColumn>
         </TokenSection>
 
@@ -545,17 +591,17 @@ const About = props => {
             The creator or participant receives 75% of newly created NERVE according to the fee paid. 25% will accrue to the Nexus Foundation.</p>
           </GrantsCard>
           <GrantsCard style={{ minHeight: "30rem", maxWidth: "25rem" }}>
+            <StyledBodySubTitle>Task completion</StyledBodySubTitle>
+            <p style={{ textAlign: 'left', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
+            After a positive consensus over the fulfillment of the task has been reached, a 5% fee is deducted from the final payout and used to generate new NERVE. 
+            The performer receives 75% of the newly generated NERVE according to the paid fee. 25% will accrue to the Nexus Foundation. </p>
+          </GrantsCard>
+          <GrantsCard style={{ minHeight: "30rem", maxWidth: "25rem" }}>
             <StyledBodySubTitle>Bet hosting</StyledBodySubTitle>
             <p style={{ textAlign: 'left', margin: '0', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
             A fee of 10% is applied to all distributed winnings and are used to partially reimburse the bet creator for their service. 
             New NERVE are generated and the creator receives 75% according to the paid fee. 25% will accrue to the Nexus Foundation.
             </p>
-          </GrantsCard>
-          <GrantsCard style={{ minHeight: "30rem", maxWidth: "25rem" }}>
-            <StyledBodySubTitle>Task completion</StyledBodySubTitle>
-            <p style={{ textAlign: 'left', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
-            After a positive consensus over the fulfillment of the task has been reached, a 5% fee is deducted from the final payout and used to generate new NERVE. 
-            The performer receives 75% of the newly generated NERVE according to the paid fee. 25% will accrue to the Nexus Foundation. </p>
           </GrantsCard>
         </StyledItemRow>
     </StyledSection>
