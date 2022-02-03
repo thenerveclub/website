@@ -558,7 +558,7 @@ const IndexPage = props => {
         */}
 
         <StyledSection>
-        <StyledItemRow style={{ alignItems: 'center', justifyContent: 'center', padding: '10rem 10rem 0 5rem' }}>
+        <StyledItemRow style={{ alignItems: 'center', justifyContent: 'center', padding: '8rem 10rem 0 5rem' }}>
         <StyledSectionTitle>Discover a new form of crowdfunding, live streaming and community interaction - download now!</StyledSectionTitle>
         <HideSmall>
         <StyledSocialRow>
@@ -669,6 +669,7 @@ const StyledSectionHeaderr = styled.h1`
 
 const StyledSectionHeaderrr = styled.h1`
   display: none;
+  visibility: hidden;
   font-size: 5em;
   white-space: wrap;
   overflow-wrap: normal;
