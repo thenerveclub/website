@@ -635,7 +635,7 @@ const StyledSectionHeaderr = styled.h1`
   overflow-wrap: normal;
   font-weight: 500;
   margin-top: 10rem;
-  margin-bottom: -2rem;
+  margin-bottom: -18rem;
 
   background: -webkit-linear-gradient(to right, #DE0CCF 30%, #00F2FC 70%);
   background: -moz-linear-gradient(to right, #DE0CCF 30%, #00F2FC 70%);
@@ -682,6 +682,7 @@ const StyledSectionHeaderrr = styled.h1`
   }
 
   @media (max-width: 960px) {
+    visibility: visible;
     font-size: 2rem;
     margin-top: -5rem;
     color: white;
@@ -689,6 +690,7 @@ const StyledSectionHeaderrr = styled.h1`
       color: white;
   }
   @media (max-width: 640px) {
+    visibility: visible;
     font-size: 2rem;
     margin-top: -5rem;
     color: white;
