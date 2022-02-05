@@ -679,7 +679,7 @@ const StyledSection = styled.section`
 const StyledSectionr = styled.section`
   display: flex;
   flex-direction: right;
-  margin: 5rem 50rem;
+  margin: 5rem 40rem;
 
   @media (max-width: 960px) {
     margin: 5rem 0;
@@ -882,7 +882,7 @@ const KeyAdvantagesBet = () => {
   return (
     <StyledSectionr>
             <HideSmall>
-        <img style={{ position: "absolute", margin: "13.5rem 0 0 -45rem", maxWidth: "35%" }} src={Mockup1} />
+        <img style={{ position: "absolute", margin: "13.5rem 0 0 -40rem", maxWidth: "35%" }} src={Mockup1} />
         </HideSmall>
       <StyledItemRow>
         <span>
