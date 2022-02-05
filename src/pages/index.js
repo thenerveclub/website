@@ -140,7 +140,6 @@ const StyledTitle = styled.div`
 
   @media (max-width: 640px) {
     height: 50vh;
-    margin-top: -8rem;
     margin-bottom: 15rem;
   }
 
@@ -506,7 +505,6 @@ const IndexPage = props => {
             <img style={{ margin: "-5rem 0 0 0" }} src={kitty} width="100%" />
         </GrantCard>
         </HideSmall>
-        <HideSmall>
         <StyledSectionHeaderr style={{ display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
@@ -515,15 +513,6 @@ const IndexPage = props => {
               fontFamily: "True"}}>
           <a /*href="https://info.uniswap.org/"*/>{'POLYGON LAUNCH'}</a>
           </StyledSectionHeaderr>
-          </HideSmall>
-          <StyledSectionHeaderrr style={{ display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              width: '100%',
-              padding: '2rem 0 2rem 0',
-              fontFamily: "True"}}>
-          <a /*href="https://info.uniswap.org/"*/>{'POLYGON LAUNCH'}</a>
-          </StyledSectionHeaderrr>
           <div
             style={{
               display: 'flex',
@@ -641,7 +630,7 @@ const StyledSectionHeaderr = styled.h1`
   overflow-wrap: normal;
   font-weight: 500;
   margin-top: 10rem;
-  margin-bottom: -18rem;
+  margin-bottom: -2rem;
 
   background: -webkit-linear-gradient(to right, #DE0CCF 30%, #00F2FC 70%);
   background: -moz-linear-gradient(to right, #DE0CCF 30%, #00F2FC 70%);
@@ -665,38 +654,6 @@ const StyledSectionHeaderr = styled.h1`
       color: white;
   }
   @media (max-width: 640px) {
-    font-size: 2rem;
-    margin-top: -5rem;
-    color: white;
-    a {
-      color: white;
-  }
-`
-
-const StyledSectionHeaderrr = styled.h1`
-  display: none;
-  visibility: hidden;
-  font-size: 5em;
-  white-space: wrap;
-  overflow-wrap: normal;
-  font-weight: 500;
-  margin-top: 10rem;
-  margin-bottom: -2rem;
-
-  a {
-    color: ${({ theme }) => theme.textColor};
-  }
-
-  @media (max-width: 960px) {
-    visibility: visible;
-    font-size: 2rem;
-    margin-top: -5rem;
-    color: white;
-    a {
-      color: white;
-  }
-  @media (max-width: 640px) {
-    visibility: visible;
     font-size: 2rem;
     margin-top: -5rem;
     color: white;

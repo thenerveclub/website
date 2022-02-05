@@ -47,6 +47,7 @@ const StyledBlog = styled.div`
     flex-direction: column;
     grid-template-columns: 1fr;
     margin-top: 0rem;
+    margin-bottom: 0;
   }
 `
 

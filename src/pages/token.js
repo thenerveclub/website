@@ -152,6 +152,11 @@ const Title = styled.h1`
   /* text-align: center; */
   @media (max-width: 960px) {
     font-size: 2rem;
+    visibility: hidden;
+  }
+  @media (max-width: 640px) {
+    font-size: 2rem;
+    visibility: hidden;
   }
 `
 
@@ -226,6 +231,7 @@ const SubTitle = styled.div`
   marginRight: '48px'
   text-align: left;
   @media (max-width: 640px) {
+    margin-top: -5rem;
     font-size: 14px;
     text-align: center;
   }
@@ -236,7 +242,7 @@ const UniMobileImage = styled.div`
   position: absolute;
   top: 0;
   @media (max-width: 640px) {
-    margin-top: -5rem;
+    margin-top: -10rem;
     display: initial;
     max-width: 10rem;
   }
@@ -253,7 +259,7 @@ const TokenSection = styled.div`
   position: relative;
   @media (max-width: 640px) {
     padding-top: 220px;
-    margin: 60px 0;
+    margin-bottom: -1rem;
   }
 `
 
@@ -266,7 +272,7 @@ line-height: 1.1;
   @media (max-width: 640px) {
     font-size: 30px;
     text-align: center;
-    margin-top: -5rem;
+    margin-top: -10rem;
   }
 `
 
@@ -303,7 +309,7 @@ const StyledItemRow = styled.nav`
 
   margin: 0rem;
   & > *:not(:first-of-type) {
-    margin-top: 12px;
+    margin-top: 8px;
   }
   @media (min-width: 960px) {
     flex-direction: row;
@@ -544,7 +550,7 @@ const About = props => {
           </UniMobileImage>
           <AutoColumn gap="20px">
             <Tit style={{ fontFamily: "True"}}>Nerve Token</Tit>
-            <SubTitle style={{ maxWidth: "700px", margin: '0', opacity: '0.6' }}>
+            <SubTitle style={{ maxWidth: "350px", opacity: '0.6' }}>
             Use Nerve Global and get rewarded with the NERVE token, a direct representation of a contribution to the ecosystem.
             </SubTitle>
             {/*<StyledTradeLink

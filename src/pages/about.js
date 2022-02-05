@@ -224,7 +224,7 @@ display: flex;
   @media (min-width: 960px) {
     flex-direction: row;
     & > * {
-      margin-bottom: 12px;
+      margin-bottom: 8px;
     }
     & > *:not(:first-of-type) {
       margin-top: 0;
