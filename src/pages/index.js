@@ -682,11 +682,15 @@ const StyledSectionr = styled.section`
   margin: 5rem 40rem;
 
   @media (max-width: 960px) {
-    margin: 5rem 0;
+  display: flex;
+  flex-direction: column;
+  margin: 5rem 0;
   }
 
   @media (max-width: 640px) {
-    margin: 5rem 0;
+  display: flex;
+  flex-direction: column;
+  margin: 5rem 0;
   }
 `
 
