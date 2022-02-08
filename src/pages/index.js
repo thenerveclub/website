@@ -886,7 +886,7 @@ const KeyAdvantagesBet = () => {
   return (
     <StyledSectionr>
             <HideSmall>
-        <img style={{ position: "absolute", margin: "13.5rem 0 0 -40rem", maxWidth: "38%" }} src={Mockup1} />
+        <img style={{ position: "absolute", margin: "8rem 0 0 -40rem", maxWidth: "38%" }} src={Mockup1} />
         </HideSmall>
       <StyledItemRow>
         <span>
