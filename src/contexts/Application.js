@@ -10,7 +10,7 @@ const DARK_MODE_OPTION = {
 }
 
 const INITIAL_STATE = {
-  [DARKMODE_KEY]: DARK_MODE_OPTION.LIGHT
+  [DARKMODE_KEY]: DARK_MODE_OPTION.DARK
 }
 
 const ApplicationContext = createContext({})

@@ -474,11 +474,11 @@ const About = props => {
             ABOUT
           </Title>
 
-          <StyledSectionTitle>A sustainable and engaging future that is controlled and driven - by the people.</StyledSectionTitle>
+          <StyledSectionTitle>It is our goal to demonstrate and instantiate trust between people.</StyledSectionTitle>
           <SubTitle style={{ opacity: '0.6', textAlign: 'left', marginRight: '48px' }}>
           We envision new global markets that allow the exchange of value between advanced and emerging economies, redistributing value in the exchange 
           for novel kinds of services and accelerating global digitalization. We firmly believe in money as a language for the communication of values and 
-          therefore think universal access to sound digital money is a right to free speech. It is our goal to demonstrate and instantiate trust between people.
+          therefore think universal access to sound digital money is a right to free speech.
           </SubTitle>
           
           <StyledSectionFlex id="about" style={{ flexDirection: 'column' }}>
@@ -571,8 +571,7 @@ const About = props => {
             </p>
 
             <p>
-              We encourage anyone facing issues with their wallet, transaction or Nerve related question to join our
-              active community and explore the <a target="_blank" rel="noreferrer" href={'https://docs.nerveglobal.com'}>documentation</a> site.
+            We encourage anyone facing technical issues to join our active community and explore the <a target="_blank" rel="noreferrer" href={'https://docs.nerveglobal.com'}>documentation</a> site.
             </p>
             <HideSmall>
             <div style={{ display: 'flex', width: '100%', margin: 0 }}>

@@ -593,11 +593,8 @@ const About = props => {
         </StyledItemRow>
         <StyledSection>
           <StyledSectionHeader style={{ fontFamily: "True", marginTop: '5rem' }}>{'PLAY AND EARN'}</StyledSectionHeader>
-          <SubTitle style={{ opacity: '0.6' }}>
-          To ensure NERVE is held by those committed to the ecosystem.
-          </SubTitle>
           <StyledItemRow style={{ alignItems: 'center', justifyContent: 'center', padding: '2rem 10rem 2rem 10rem' }}>
-          <GrantsCard style={{ minHeight: "30rem", maxWidth: "25rem" }}>
+          <GrantsCard style={{ minHeight: "30rem", maxWidth: "28rem" }}>
             <StyledBodySubTitle>Task proposals</StyledBodySubTitle>
             <p style={{ textAlign: 'left', margin: '0', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
             In the process of creating a task, a 5% fee is deducted from the initial stake to prevent spamming and denial of service. 
@@ -606,13 +603,13 @@ const About = props => {
             At the same time, new NERVE are created, the quantity of which is derived from the current market price and the amount of the paid fee. 
             The creator or participant receives 75% of newly created NERVE according to the fee paid. 25% will accrue to the Nexus Foundation.</p>
           </GrantsCard>
-          <GrantsCard style={{ minHeight: "30rem", maxWidth: "25rem" }}>
+          <GrantsCard style={{ minHeight: "30rem", maxWidth: "28rem" }}>
             <StyledBodySubTitle>Task completion</StyledBodySubTitle>
             <p style={{ textAlign: 'left', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
             After a positive consensus over the fulfillment of the task has been reached, a 5% fee is deducted from the final payout and used to generate new NERVE. 
             The performer receives 75% of the newly generated NERVE according to the paid fee. 25% will accrue to the Nexus Foundation. </p>
           </GrantsCard>
-          <GrantsCard style={{ minHeight: "30rem", maxWidth: "25rem" }}>
+          <GrantsCard style={{ minHeight: "30rem", maxWidth: "28rem" }}>
             <StyledBodySubTitle>Bet hosting</StyledBodySubTitle>
             <p style={{ textAlign: 'left', margin: '0', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
             A fee of 10% is applied to all distributed winnings and are used to partially reimburse the bet creator for their service. 

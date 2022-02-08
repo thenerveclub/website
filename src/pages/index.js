@@ -502,16 +502,16 @@ const IndexPage = props => {
         
         <HideSmall>
         <GrantCard>
-            <img style={{ margin: "-5rem 0 0 0" }} src={kitty} width="100%" />
+            <img style={{ minWidth: "20rem", margin: "-7rem 0 0 0" }} src={kitty} width="100%" />
         </GrantCard>
         </HideSmall>
-        <StyledSectionHeaderr style={{ display: 'flex',
+        {/*<StyledSectionHeaderr style={{ display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
               width: '100%',
               padding: '2rem 0 2rem 0',
               fontFamily: "True"}}>
-          <a /*href="https://info.uniswap.org/"*/>{'POLYGON LAUNCH'}</a>
+          <a>{'POLYGON LAUNCH'}</a>
           </StyledSectionHeaderr>
           <div
             style={{
@@ -523,7 +523,7 @@ const IndexPage = props => {
             }}
           >
             <Countdown />
-            </div>
+            </div>*/}
             {/*}
           <EcosystemSection data={data} props={props} />
           */}
@@ -886,7 +886,7 @@ const KeyAdvantagesBet = () => {
   return (
     <StyledSectionr>
             <HideSmall>
-        <img style={{ position: "absolute", margin: "13.5rem 0 0 -40rem", maxWidth: "35%" }} src={Mockup1} />
+        <img style={{ position: "absolute", margin: "13.5rem 0 0 -40rem", maxWidth: "38%" }} src={Mockup1} />
         </HideSmall>
       <StyledItemRow>
         <span>
