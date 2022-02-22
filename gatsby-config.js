@@ -7,7 +7,7 @@ require('dotenv').config({
 module.exports = {
   siteMetadata: {
     title: `Nerve Global`,
-    description: `P2P crowdfunding application`,
+    description: `CROWDFUNDING FOR CONTENT CHOSEN BY THE PEOPLE.`,
     author: `@nerveglobal`,
     menulinks: menu,
     siteUrl: `https://nerveglobal.com`,
