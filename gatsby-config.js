@@ -6,9 +6,9 @@ require('dotenv').config({
 
 module.exports = {
   siteMetadata: {
-    title: `Nerve`,
+    title: `Nerve Global`,
     description: `P2P crowdfunding application`,
-    author: `@Nerve`,
+    author: `@nerveglobal`,
     menulinks: menu,
     siteUrl: `https://nerveglobal.com`,
     repository: `https://github.com/nerveglobal/website`,
@@ -20,14 +20,14 @@ module.exports = {
       options: {
         bucketName: process.env.AWS_S3_BUCKET || 'NOT_SPECIFIED',
         protocol: 'https',
-        hostname: 'uniswap.org',
+        hostname: 'nerveglobal.com',
         acl: null
       }
     },
     {
       resolve: `gatsby-plugin-canonical-urls`,
       options: {
-        siteUrl: `https://uniswap.org`
+        siteUrl: `https://nerveglobal.com/`
       }
     },
     {
@@ -92,9 +92,9 @@ module.exports = {
           {
             resolve: `gatsby-remark-twitter-cards`,
             options: {
-              title: 'Uniswap', // website title
+              title: 'Nerve Global', // website title
               separator: '|', // default
-              author: '@Uniswap',
+              author: '@nerveglobal',
               background: require.resolve('./static/images/twitter_card_bg.jpg'), // path to 1200x630px file or hex code, defaults to black (#000000)
               fontColor: '#FF3093', // defaults to white (#ffffff)
               fontStyle: 'sans-serif', // default
@@ -176,7 +176,7 @@ module.exports = {
             }
             `,
             output: '/rss.xml',
-            title: 'Uniswap Blog RSS Feed'
+            title: 'Nerve Global Blog RSS Feed'
           }
         ]
       }
