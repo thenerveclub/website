@@ -470,12 +470,14 @@ const IndexPage = props => {
             {'Crowdfunding for content chosen by the people.'}
           </StyledBodySubT>
           <StyledSocialRow>
+            {/*
           <StyledTradeLink
             target="_blank"
             href="https://apps.apple.com/de/app/nerve-global/id1500517863"
           >
             <img style={{ maxWidth: "20rem" }} src={appstore} width="143%" />
           </StyledTradeLink>
+            */}
           <StyledTradeLink
             target="_blank"
             href="https://play.google.com/store/apps/details?id=com.academy.nerve&hl=en&gl=US"
@@ -544,7 +546,7 @@ const IndexPage = props => {
           </div>*/}
 
         <KeyAdvantagesTask data={data} props={props} />
-        
+
         {/*
         <KeyAdvantagesBet data={data} props={props} />
         */}
@@ -559,12 +561,14 @@ const IndexPage = props => {
         <StyledSectionTitle>Discover a new form of crowdfunding, live streaming and community interaction - download now!</StyledSectionTitle>
         <HideSmall>
         <StyledSocialRow>
+          {/*
           <StyledTradeLink
             target="_blank"
             href="https://apps.apple.com/de/app/nerve-global/id1500517863"
           >
             <img style={{ maxWidth: "20rem" }} src={appstore} width="143%" />
           </StyledTradeLink>
+          */}
           <StyledTradeLink
             target="_blank"
             href="https://play.google.com/store/apps/details?id=com.academy.nerve&hl=en&gl=US"
