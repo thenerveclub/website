@@ -544,7 +544,10 @@ const IndexPage = props => {
           </div>*/}
 
         <KeyAdvantagesTask data={data} props={props} />
+        
+        {/*
         <KeyAdvantagesBet data={data} props={props} />
+        */}
 
         {/*
         <Ranking data={data} props={props} />

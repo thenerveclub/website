@@ -609,6 +609,7 @@ const About = props => {
             After a positive consensus over the fulfillment of the task has been reached, a 5% fee is deducted from the final payout and used to generate new NERVE. 
             The performer receives 75% of the newly generated NERVE according to the paid fee. 25% will accrue to the Nexus Foundation. </p>
           </GrantsCard>
+          {/*
           <GrantsCard style={{ minHeight: "30rem", maxWidth: "28rem" }}>
             <StyledBodySubTitle>Bet hosting</StyledBodySubTitle>
             <p style={{ textAlign: 'left', margin: '0', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
@@ -616,6 +617,7 @@ const About = props => {
             New NERVE are generated and the creator receives 75% according to the paid fee. 25% will accrue to the Nexus Foundation.
             </p>
           </GrantsCard>
+        */}
         </StyledItemRow>
     </StyledSection>
 
