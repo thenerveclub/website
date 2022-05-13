@@ -88,7 +88,6 @@
     "uuid": "^8.3.2"
   },
   "devDependencies": {
-    "@uniswap/token-lists": "^1.0.0-beta.26",
     "babel-eslint": "^10.1.0",
     "eslint": "^6.8.0",
     "eslint-loader": "^3.0.3",
@@ -112,8 +111,7 @@
     "dev": "gatsby develop",
     "devlocal": "gatsby develop -H 0.0.0.0",
     "start": "gatsby develop",
-    "build": "gatsby build && yarn post-build",
-    "post-build": "cp ./node_modules/@uniswap/token-lists/src/tokenlist.schema.json public/",
+    "build": "gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "format": "prettier --write \"src/**/*.{js,jsx,md,mdx}\"",

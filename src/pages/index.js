@@ -569,7 +569,7 @@ const IndexPage = props => {
             <img style={{ maxWidth: "20rem" }} src={appstore} width="143%" />
           </StyledTradeLink>
           */}
-          <StyledTradeLink
+          <StyledTradeLink style={{ marginTop: '1rem' }}
             target="_blank"
             href="https://play.google.com/store/apps/details?id=com.academy.nerve&hl=en&gl=US"
           >
