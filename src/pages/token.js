@@ -532,8 +532,8 @@ const About = props => {
 
       <SEO title="Token" path={props.location.pathname} />
       <StyledAbout>
-        <span style={{ marginTop: '5rem' }}>
-          <Title style={{ fontFamily: "True", paddingBottom: '4rem' }}>
+        <span style={{ marginTop: '9rem' }}>
+          <Title style={{ fontFamily: "True" }}>
           TOKEN
           </Title>
           </span>
@@ -550,7 +550,7 @@ const About = props => {
           </UniMobileImage>
           <AutoColumn gap="20px">
             <Tit style={{ fontFamily: "True"}}>Nerve Token</Tit>
-            <SubTitle style={{ maxWidth: "350px", opacity: '0.6' }}>
+            <SubTitle style={{ maxWidth: "400px", opacity: '0.6' }}>
             Use Nerve Global and get rewarded with the NERVE token, a direct representation of a contribution to the ecosystem.
             </SubTitle>
             {/*<StyledTradeLink
@@ -569,7 +569,7 @@ const About = props => {
 
 
         <StyledBody>        
-          <StyledSectionHeader style={{ fontFamily: "True", marginTop: '5rem' }}>{'INTRODUCING THE NERVE TOKEN'}</StyledSectionHeader>
+          <StyledSectionHeader style={{ fontFamily: "True", marginTop: '12rem' }}>{'INTRODUCING THE NERVE TOKEN'}</StyledSectionHeader>
           <StyledItemRow style={{ alignItems: 'center', justifyContent: 'center', padding: '2rem 10rem 2rem 10rem' }}>
           <GrantsCard style={{ minHeight: "16rem", maxWidth: "28rem" }}>
             <StyledBodySubTitle>Zero initial supply</StyledBodySubTitle>
@@ -592,7 +592,7 @@ const About = props => {
           </GrantsCard>
         </StyledItemRow>
         <StyledSection>
-          <StyledSectionHeader style={{ fontFamily: "True", marginTop: '5rem' }}>{'PLAY AND EARN'}</StyledSectionHeader>
+          <StyledSectionHeader style={{ fontFamily: "True", marginTop: '9rem' }}>{'PLAY AND EARN'}</StyledSectionHeader>
           <StyledItemRow style={{ alignItems: 'center', justifyContent: 'center', padding: '2rem 10rem 2rem 10rem' }}>
           <GrantsCard style={{ minHeight: "30rem", maxWidth: "28rem" }}>
             <StyledBodySubTitle>Task proposals</StyledBodySubTitle>

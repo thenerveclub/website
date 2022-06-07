@@ -159,23 +159,23 @@ const StyledBodyTitle = styled.h1`
 
   @media (max-width: 960px) {
     width: 100%;
-    margin: 2rem 0 2rem 0;
+    margin: 2rem auto 2rem auto;
     font-weight: 500;
-    text-align: left;
+    text-align: center;
     font-size: 32px;
   }
 
   @media (max-width: 640px) {
     width: 100%;
-    margin: 2rem 0 2rem 0;
+    margin: 2rem auto 2rem auto;
     font-weight: 500;
-    text-align: left;
+    text-align: center;
     font-size: 32px;
   }
 
   @media (max-width: 440px) {
     font-weight: 500;
-    text-align: left;
+    text-align: center;
     font-size: 37px;
   }
 `
@@ -200,7 +200,7 @@ const SubTitle = styled.div`
   }
 `
 
-const StyledBodySubT = styled.h2`
+const StyledBodySubM = styled.h2`
   display: none;
   visibility: hidden;
   text-transform: uppercase;
@@ -210,14 +210,50 @@ const StyledBodySubT = styled.h2`
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 
+  @media (max-width: 960px) {
+    display: block;
+    visibility: visible;
+    width: 100%;
+    margin: 2rem auto 2rem auto;
+    font-weight: 500;
+    text-align: center;
+    font-size: 32px;
+  }
+
   @media (max-width: 640px) {
+    display: block;
+    visibility: visible;
+    width: 100%;
+    margin: 2rem auto 2rem auto;
+    font-weight: 500;
+    text-align: center;
+    font-size: 32px;
+  }
+
+  @media (max-width: 440px) {
+    display: block;
+    visibility: visible;
+    font-weight: 500;
+    text-align: center;
+    font-size: 37px;
+  }
+`
+
+const StyledBodySubT = styled.h2`
   display: block;
   visibility: visible;
-  max-width: 720px;
-  line-height: 150%;
-  font-weight: 400;
-  text-align: left;
-    text-align: left;
+  width: 800px;
+  font-size: 20px;
+  white-space: pre-line
+
+  @media (max-width: 960px) {
+    display: none;
+    visibility: hidden;
+    width: 100%;
+    margin: 2rem auto 2rem auto;
+    font-weight: 500;
+    text-align: center;
+    font-size: 32px;
   }
 `
 
@@ -234,11 +270,17 @@ const StyledSectionTitle = styled.h3`
   max-width: 900px;
   line-height: 140%;
   font-size: 28px;
+
+  @media (max-width: 960px) {
+    width: vw;
+    margin: 0 auto 0 auto;
+    font-size: 20px;
+    text-align: center;
+  }
+
   @media (max-width: 640px) {
-    padding: 0 0 0 0;
-    margin: 0 0 0 4rem;
-    min-width: 350px;
-    min-width: 350px;
+    max-width: vw;
+    margin: 0 auto 0 auto;
     font-size: 20px;
     text-align: center;
   }
@@ -248,24 +290,45 @@ const StyledSocialRow = styled.nav`
   display: flex;
   flex-direction: row;
   margin-top: 1rem;
-  margin-bottom: 2rem;
   & > *:not(:first-of-type) {
     margin-top: 0;
     margin-left: 16px;
   }
-  `
+  
+  @media (max-width: 960px) {
+    margin: 2rem auto 2rem auto;
+    font-weight: 500;
+    align-items: center;
+    font-size: 32px;
+  }
+
+  @media (max-width: 640px) {
+    margin: 2rem auto 2rem auto;
+    font-weight: 500;
+    align-items: center;
+    font-size: 32px;
+  }
+
+  @media (max-width: 440px) {
+    font-weight: 500;
+    align-items: center;
+    font-size: 37px;
+  }
+`
 
 const StyledSocialRowL = styled.nav`
   display: none;
-  
-    @media (max-width: 960px) {
+
+  @media (max-width: 960px) {
       display: flex;
-  flex-direction: row;
-  margin-top: -3rem;
-  & > *:not(:first-of-type) {
-    margin-top: 0;
-    margin-left: 16px;
-    }
+      flex-direction: row;
+      margin: 2rem auto 2rem auto;
+      
+      & > *:not(:first-of-type) {
+        margin-top: 0;
+        margin-left: 16px;
+      }
+  }
 `
 
 const StyledItemRow = styled.nav`
@@ -467,8 +530,12 @@ const IndexPage = props => {
             <span style={{ fontFamily: "True", fontWeight: 200 }}>NERVE GLOBAL</span>
           </StyledBodyTitle>
           <StyledBodySubT>
-            {'Crowdfunding for content chosen by the people.'}
+            {'A bolt on solution that runs on top of existing social media platforms &'} <br />
+            {'assists content creators to find their niche while entering the crypto ecosystem.'}
           </StyledBodySubT>
+          <StyledBodySubM>
+            {'Crowdfunding for content chosen by the people.'}
+          </StyledBodySubM>
           <StyledSocialRow>
             {/*
           <StyledTradeLink
@@ -507,7 +574,8 @@ const IndexPage = props => {
             <img style={{ minWidth: "20rem", margin: "-7rem 0 0 0" }} src={kitty} width="100%" />
         </GrantCard>
         </HideSmall>
-        {/*<StyledSectionHeaderr style={{ display: 'flex',
+        {/*
+        <StyledSectionHeaderr style={{ display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
               width: '100%',
@@ -525,12 +593,14 @@ const IndexPage = props => {
             }}
           >
             <Countdown />
-            </div>*/}
-            {/*}
+            </div>
+            */}
+            {/*
           <EcosystemSection data={data} props={props} />
           */}
           
-          {/*<StyledSectionHeader>
+          {/*
+          <StyledSectionHeader>
           <a href="https://info.uniswap.org/">{'DATA ANALYTICS →'}</a>
           </StyledSectionHeader>
           <div
@@ -543,7 +613,8 @@ const IndexPage = props => {
             }}
           >
             <ProtocolData />
-          </div>*/}
+          </div>
+          */}
 
         <KeyAdvantagesTask data={data} props={props} />
 
@@ -557,7 +628,7 @@ const IndexPage = props => {
         */}
 
         <StyledSection>
-        <StyledItemRow style={{ alignItems: 'center', justifyContent: 'center', padding: '8rem 10rem 0 5rem' }}>
+        <StyledItemRow style={{ alignItems: 'center', justifyContent: 'center'}}>
         <StyledSectionTitle>Discover a new form of crowdfunding, live streaming and community interaction - download now!</StyledSectionTitle>
         <HideSmall>
         <StyledSocialRow>
@@ -573,7 +644,7 @@ const IndexPage = props => {
             target="_blank"
             href="https://play.google.com/store/apps/details?id=com.academy.nerve&hl=en&gl=US"
           >
-            <img style={{ marginTop: '1rem', maxWidth: "20rem" }} src={google} width="140%" />
+            <img style={{ marginTop: '4rem', maxWidth: "20rem" }} src={google} width="140%" />
           </StyledTradeLink>
           </StyledSocialRow>   
           </HideSmall>   

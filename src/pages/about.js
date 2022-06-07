@@ -510,6 +510,7 @@ const About = props => {
           </span>
       </StyledAbout>
 
+      <StyledBody>
       <DeveloperSection data={data} props={props} />
 
       <StyledSectionHeader style={{ fontFamily: "True", marginTop: '10rem' }}>{'RECOGNITION'}</StyledSectionHeader>
@@ -561,8 +562,7 @@ const About = props => {
           </StyledTradeLink>
           </GrantsCard>
         </StyledItemRow>
-          
-          <StyledBody>
+
           <StyledSectionHeader style={{ fontFamily: "True"}}>{'CONTACT'}</StyledSectionHeader>
 
           <StyledSectionFlex id="contact" style={{ flexDirection: 'column' }}>
@@ -665,34 +665,34 @@ const DeveloperSection = () => {
       <StyledSection>
         <StyledSectionHeader style={{ fontFamily: "True"}}>{'INNOVATIONS'}</StyledSectionHeader>
         <StyledItemRow style={{ alignItems: 'center', justifyContent: 'center', padding: '2rem 10rem 2rem 10rem' }}>
-          <GrantsCard style={{ minHeight: "16rem", maxWidth: "20rem" }}>
+          <GrantsCard style={{ minHeight: "16rem", minWidth: "18rem" }}>
             <StyledBodySubTitle>EARN CRYPTO</StyledBodySubTitle>
             <p style={{ textAlign: 'left', margin: '0', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
-            Global access to crowdfunding without a bank account
+            Global access to crowdfunding without a bank account.
             </p>
           </GrantsCard>
-          <GrantsCard style={{ minHeight: "16rem", maxWidth: "20rem" }}>
+          <GrantsCard style={{ minHeight: "16rem", minWidth: "18rem" }}>
             <StyledBodySubTitle>EASE OF USE</StyledBodySubTitle>
             <p style={{ textAlign: 'left', margin: '0', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
-            Receive a task, submit a proof, get approved, claim funds
+            Receive a task, submit a proof, get approved, claim funds.
             </p>
           </GrantsCard>
-          <GrantsCard style={{ minHeight: "16rem", maxWidth: "20rem" }}>
+          <GrantsCard style={{ minHeight: "16rem", minWidth: "18rem" }}>
             <StyledBodySubTitle>INSTANT FUNDING</StyledBodySubTitle>
             <p style={{ textAlign: 'left', margin: '0', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
-            Funds are transferred within minutes, rather than days
+            Funds are transferred within minutes, rather than days.
             </p>
           </GrantsCard>
-          <GrantsCard style={{ minHeight: "16rem", maxWidth: "20rem" }}>
+          <GrantsCard style={{ minHeight: "16rem", minWidth: "18rem" }}>
             <StyledBodySubTitle>ON DELIVERY</StyledBodySubTitle>
             <p style={{ textAlign: 'left', margin: '0', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
-            Donors approve task completion before disbursement of funds
+            Donors approve task completion before disbursement of funds.
             </p>
           </GrantsCard>
-          <GrantsCard style={{ minHeight: "16rem", maxWidth: "20rem" }}>
+          <GrantsCard style={{ minHeight: "16rem", minWidth: "18rem" }}>
             <StyledBodySubTitle>SMALL PROJECTS</StyledBodySubTitle>
             <p style={{ textAlign: 'left', margin: '0', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
-            Step-by-step funding for specific tasks - no minimum amount
+            Step-by-step funding for specific tasks - no minimum amount.
             </p>
           </GrantsCard>
         </StyledItemRow>

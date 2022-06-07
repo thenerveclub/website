@@ -68,7 +68,7 @@ const StyledSocialRow = styled.nav`
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin-right: 10rem;
+  margin-right: 12.5rem;
   & > *:not(:first-of-type) {
     margin-top: 0;
     margin-left: 16px;
@@ -85,7 +85,7 @@ const StyledFooterLink = styled(Link)`
 const Footer = () => {
   return (
     <StyledFooter>
-      <p style={{ margin: 0 }}> {new Date().getFullYear()} Nerve Community</p>
+      <p style={{ margin: 0 }}> {new Date().getFullYear()} Nerve Global Community</p>
 
       <StyledSocialRow>
             <a target="_blank" rel="noreferrer" href="https://twitter.com/nerveglobal_">
