@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import { useStaticQuery, graphql } from 'gatsby'
 import Layout from '../layouts'
@@ -8,7 +8,7 @@ import { Butt } from '../components/butt'
 import { Tab } from '../components/tab'
 import { TabRight } from '../components/tabRight'
 import ProtocolData from '../components/protocolData'
-
+import { Button } from '../components/button'
 import True from '../styles/fontTrue.css'
 
 import { useDarkMode } from '../contexts/Application'
@@ -18,7 +18,7 @@ import Twitter from '../images/twitter.inline.svg'
 import Github from '../images/github.inline.svg'
 import Discord from '../images/discord.inline.svg'
 import Linkedin from '../images/linkedin.inline.svg'
-import AppsImage from '../images/apps.png'
+import AppsImage from '../images/apps.jpg'
 import appstore from '../images/appstore.svg'
 import google from '../images/google.svg'
 import kitty from '../images/kitty.gif'
@@ -249,11 +249,11 @@ const StyledBodySubT = styled.h2`
   @media (max-width: 960px) {
     display: none;
     visibility: hidden;
-    width: 100%;
-    margin: 2rem auto 2rem auto;
-    font-weight: 500;
-    text-align: center;
-    font-size: 32px;
+  }
+
+  @media (max-width: 640px) {
+    display: none;
+    visibility: hidden;
   }
 `
 
@@ -439,67 +439,95 @@ white-space: nowrap;
 }
 `
 
+const StyledButton = styled.a`
+  padding: 0.25rem 0.75rem;
+  background-color: ${({ theme }) => theme.textColor};
+  text-decoration: none;
+  color: ${({ theme }) => theme.invertedTextColor};
+  display: inline-block;
+  font-weight: 500;
+  font-size: 18px;
+  width: 100%;
+  width: min-content;
+  white-space: nowrap;
+  margin: 3rem -8rem 0 13rem;
+  border: 1px solid transparent;
+  box-shadow: ${({ theme }) => theme.shadows.small};
+  background: ${({ theme, open, showBG }) => (showBG && !open ? theme.backgroundColor : 'none')};
+	border-bottom: 1px solid ${({ theme }) => theme.buttonBorder};
+  border-image: linear-gradient(var(--angle), aqua, aqua, magenta, magenta) 1;
+	
+	animation: 15s rotate linear infinite;
+  cursor: pointer;
+}
+
+@keyframes rotate {
+	to {
+		--angle: 360deg;
+	}
+}
+
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+  transition: background-color 0.25s ease;
+  }
+  @media (max-width: 960px) {
+    margin: 6rem auto 3rem auto;
+  }
+  @media (max-width: 640px) {
+    margin: 6rem auto 3rem auto;
+  }
+`
+
+const StyledButtonTop = styled.a`
+  padding: 0.25rem 0.75rem;
+  background-color: ${({ theme }) => theme.textColor};
+  text-decoration: none;
+  color: white;
+  display: inline-block;
+  font-weight: 500;
+  font-size: 18px;
+  width: 100%;
+  width: min-content;
+  white-space: nowrap;
+  border: 1px solid transparent;
+  box-shadow: ${({ theme }) => theme.shadows.small};
+  background: ${({ theme, open, showBG }) => (showBG && !open ? theme.backgroundColor : 'none')};
+	border-bottom: 1px solid ${({ theme }) => theme.buttonBorder};
+  border-image: linear-gradient(var(--angle), aqua, aqua, magenta, magenta) 1;
+	
+	animation: 15s rotate linear infinite;
+  cursor: pointer;
+}
+
+@keyframes rotate {
+	to {
+		--angle: 360deg;
+	}
+}
+
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+  transition: background-color 0.25s ease;
+  }
+  @media (max-width: 960px) {
+
+  @media (max-width: 640px) {
+
+  }
+`
+
 const IndexPage = props => {
   const isDark = useDarkMode()
-
-  const data = useStaticQuery(graphql`
-    {
-      site {
-        siteMetadata {
-          siteUrl
-        }
-      }
-      banner: file(relativePath: { eq: "Banner.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 1200) {
-            ...GatsbyImageSharpFluid_noBase64
-          }
-        }
-      }
-      grants: file(relativePath: { eq: "unigrants.png" }) {
-        childImageSharp {
-          fluid(maxWidth: 1200) {
-            ...GatsbyImageSharpFluid_noBase64
-          }
-        }
-      }
-      discord: file(relativePath: { eq: "discord.png" }) {
-        childImageSharp {
-          fluid(maxWidth: 1200) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-      twitter: file(relativePath: { eq: "twitter.png" }) {
-        childImageSharp {
-          fluid(maxWidth: 1200) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-      reddit: file(relativePath: { eq: "reddit.png" }) {
-        childImageSharp {
-          fluid(maxWidth: 1200) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-      discourse: file(relativePath: { eq: "discourse.png" }) {
-        childImageSharp {
-          fluid(maxWidth: 1200) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-      devs: file(relativePath: { eq: "devs.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 1200) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-    }
-  `)
+  const [active, setActive] = useState("Creator");
 
   return (
     <Layout path={props.location.pathname}>
@@ -537,14 +565,12 @@ const IndexPage = props => {
             {'Crowdfunding for content chosen by the people.'}
           </StyledBodySubM>
           <StyledSocialRow>
-            {/*
           <StyledTradeLink
             target="_blank"
             href="https://apps.apple.com/de/app/nerve-global/id1500517863"
           >
             <img style={{ maxWidth: "20rem" }} src={appstore} width="143%" />
           </StyledTradeLink>
-            */}
           <StyledTradeLink
             target="_blank"
             href="https://play.google.com/store/apps/details?id=com.academy.nerve&hl=en&gl=US"
@@ -595,14 +621,17 @@ const IndexPage = props => {
             <Countdown />
             </div>
             */}
-            {/*
-          <EcosystemSection data={data} props={props} />
-          */}
+
+          <SectionHeader style={{ 
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              width: '100%',
+              padding: '2rem 0 2rem 0',
+              fontFamily: "True"}}>
+          <a>{'Platform Stats'}</a>
+          </SectionHeader>
           
-          {/*
-          <StyledSectionHeader>
-          <a href="https://info.uniswap.org/">{'DATA ANALYTICS →'}</a>
-          </StyledSectionHeader>
           <div
             style={{
               display: 'flex',
@@ -614,10 +643,61 @@ const IndexPage = props => {
           >
             <ProtocolData />
           </div>
-          */}
+          
 
-        <KeyAdvantagesTask data={data} props={props} />
+          <SectionHeader style={{ 
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              width: '100%',
+              padding: '2rem 0 2rem 0',
+              marginTop: "0",
+              fontFamily: "True"}}>
+          <a>{'How to Play'}</a>
+          </SectionHeader>
 
+          <nav>
+            <StyledButton style={{
+              textAlign: "center",
+              minWidth: "8rem",
+              color: 'white'
+            }} onClick={() => setActive("Creator")}>Creator</StyledButton>
+            <StyledButton style={{
+              textAlign: "center",
+              minWidth: "8rem",
+              color: 'white'
+            }} onClick={() => setActive("Supporter")}>Supporter</StyledButton>
+          </nav>
+          <div>
+            {active === "Creator" && <TaskCreator props={props} />}
+            {active === "Supporter" && <TaskSupporter props={props} />}
+          </div>
+
+
+          <SectionHeader style={{ 
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              width: '100%',
+              padding: '2rem 0 2rem 0',
+              fontFamily: "True"}}>
+          <a>{'Decentralized Wallet'}</a>
+          </SectionHeader>
+          <EcosystemSection props={props} />
+
+
+          <SectionHeader style={{ 
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              width: '100%',
+              padding: '2rem 0 2rem 0',
+              fontFamily: "True"}}>
+          <a>{'Governance & More'}</a>
+          </SectionHeader>
+          <DeveloperSection props={props} />
+
+          
         {/*
         <KeyAdvantagesBet data={data} props={props} />
         */}
@@ -632,19 +712,17 @@ const IndexPage = props => {
         <StyledSectionTitle>Discover a new form of crowdfunding, live streaming and community interaction - download now!</StyledSectionTitle>
         <HideSmall>
         <StyledSocialRow>
-          {/*
           <StyledTradeLink
             target="_blank"
             href="https://apps.apple.com/de/app/nerve-global/id1500517863"
           >
-            <img style={{ maxWidth: "20rem" }} src={appstore} width="143%" />
+            <img style={{ marginTop: '2rem', maxWidth: "20rem" }} src={appstore} width="143%" />
           </StyledTradeLink>
-          */}
           <StyledTradeLink
             target="_blank"
             href="https://play.google.com/store/apps/details?id=com.academy.nerve&hl=en&gl=US"
           >
-            <img style={{ marginTop: '4rem', maxWidth: "20rem" }} src={google} width="140%" />
+            <img style={{ marginTop: '2rem', maxWidth: "20rem" }} src={google} width="140%" />
           </StyledTradeLink>
           </StyledSocialRow>   
           </HideSmall>   
@@ -740,6 +818,34 @@ const StyledSectionHeaderr = styled.h1`
   }
 `
 
+const SectionHeader = styled.h1`
+  font-size: 5em;
+  white-space: wrap;
+  overflow-wrap: normal;
+  font-weight: 500;
+  margin-top: 10rem;
+  margin-bottom: -2rem;
+  color: white;
+    a {
+      color: white;
+  }
+
+  @media (max-width: 960px) {
+    font-size: 2rem;
+    margin-top: -5rem;
+    color: white;
+    a {
+      color: white;
+  }
+  @media (max-width: 640px) {
+    font-size: 2rem;
+    margin-top: -5rem;
+    color: white;
+    a {
+      color: white;
+  }
+`
+
 const StyledSection = styled.section`
   display: flex;
   flex-direction: column;
@@ -785,24 +891,6 @@ export const GovernanceCard = styled(StyledCard)`
   background-repeat: no-repeat;
   margin-right: 12px;
 
-  border-image: linear-gradient(var(--angle), aqua, aqua, magenta, magenta) 1;
-	
-	animation: 15s rotate linear infinite;
-}
-
-@keyframes rotate {
-	to {
-		--angle: 360deg;
-	}
-}
-
-@property --angle {
-  syntax: '<angle>';
-  initial-value: 0deg;
-  inherits: false;
-}
-
-  transition: background-color 0.25s ease;
   @media (max-width: 960px) {
     padding: 1rem 1.25rem;
     height: ${({ open }) => (open ? '100vh' : '100%')};
@@ -867,38 +955,33 @@ export const GrantCard = styled(StyledC)`
   }
 `
 
-{/*
+
 const EcosystemSection = () => {
   return (
     <StyledSection>
       <StyledItemRow>
-        <span style={{ marginTop: '-60px', marginBottom: '80px' }}>
-          <StyledSectionHeader style={{ fontFamily: "True", marginTop: '5rem' }}>{'NERVE ECOSYSTEM →'}</StyledSectionHeader>
-          <StyledSectionTitle>We contribute to an open, inclusive and creative society.</StyledSectionTitle>
+        <span style={{ marginTop: '2rem' }}>
+          <StyledSectionTitle>Your Keys, Your Coins - Secure</StyledSectionTitle>
           <SubTitle style={{ opacity: '0.6', textAlign: 'left', marginRight: '48px', marginBottom: '48px' }}>
-          People share unique adventures, experiences, educational content and much more with the world, which unlock a massively larger creative economy 
-          than the one constrained by today’s platforms and their policies.
-          This ecosystem will be built - by you.
+          The Nerve Global wallet is a non-custodial hot wallet built in C++ that is run on the user’s device. 
+          Nerve Global has no access to a user’s private keys. 
+          The wallet performs ideal gas price discovery for transaction and gives access to the native gas and NERVE token.
           </SubTitle>
         </span>
         <AppsCard>
-          <h1>∞</h1>
-          <p>Opportunities</p>
         </AppsCard>
       </StyledItemRow>
     </StyledSection>
   )
 }
-*/}
 
-const KeyAdvantagesTask = () => {
+
+const TaskCreator = () => {
   return (
     <StyledSection>
       <StyledItemRow>
         <span>
-          <StyledSectionHeader style={{ fontFamily: "True"}}>{'TASKS'}</StyledSectionHeader>
-
-          <StyledItemColumn style={{ display: 'flex', flexDirection: 'column' }}>
+          <StyledItemColumn style={{ marginTop: "-3rem", display: 'flex', flexDirection: 'column' }}>
             <Tab style={{ zIndex: "1", borderRadius: '20px' }} outlined>
               <div style={{ padding: '1rem' }}>
                 <StyledBodySubTitle style={{ marginBottom: '0.25rem' }}>
@@ -952,7 +1035,74 @@ const KeyAdvantagesTask = () => {
 
         </span>
         <HideSmall>
-        <img style={{ position: "absolute", margin: "11rem 0 0 5rem", maxWidth: "35%" }} src={Mockup} />
+        <img style={{ position: "absolute", margin: "0 0 0 5rem", maxWidth: "35%" }} src={Mockup} />
+        </HideSmall>
+        </StyledItemRow>
+    </StyledSection>
+  )
+}
+
+
+const TaskSupporter = () => {
+  return (
+    <StyledSection>
+      <StyledItemRow>
+        <span>
+          <StyledItemColumn style={{ marginTop: "-3rem", display: 'flex', flexDirection: 'column' }}>
+            <Tab style={{ zIndex: "1", borderRadius: '20px' }} outlined>
+              <div style={{ padding: '1rem' }}>
+                <StyledBodySubTitle style={{ marginBottom: '0.25rem' }}>
+                1. Create or join a task
+                </StyledBodySubTitle>
+                <p style={{ textAlign: 'left', margin: '0', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
+                Search for family, friends or influencers to create personalized tasks. Set a time limit and attach an arbitrary value to it. Other users can join the task and attach further value to it.
+                </p>
+              </div>
+            </Tab>
+          </StyledItemColumn>
+
+          <StyledItemColumn style={{ display: 'flex', flexDirection: 'column' }}>
+            <Tab style={{ zIndex: "1", borderRadius: '20px' }} outlined>
+              <div style={{ padding: '1rem' }}>
+                <StyledBodySubTitle style={{ marginBottom: '0.25rem' }}>
+                2. Wait for proof
+                </StyledBodySubTitle>
+                <p style={{ textAlign: 'left', margin: '0', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
+                Wait for proof that the task has been completed.
+                </p>
+              </div>
+            </Tab>
+          </StyledItemColumn>
+
+          <StyledItemColumn style={{ display: 'flex', flexDirection: 'column' }}>
+            <Tab style={{ zIndex: "1", borderRadius: '20px' }} outlined>
+              <div style={{ padding: '1rem' }}>
+                <StyledBodySubTitle style={{ marginBottom: '0.25rem' }}>
+                3. Approve
+                </StyledBodySubTitle>
+                <p style={{ textAlign: 'left', margin: '0', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
+                Vote on a task and decide, if it has been completed. On a positive vote result, all funds are distributed to the task performer.
+                </p>
+              </div>
+            </Tab>
+          </StyledItemColumn>
+
+          <StyledItemColumn style={{ display: 'flex', flexDirection: 'column' }}>
+            <Tab style={{ zIndex: "1", borderRadius: '20px' }} outlined>
+              <div style={{ padding: '1rem' }}>
+                <StyledBodySubTitle style={{ marginBottom: '0.25rem' }}>
+                4. Claim your refund (optional)
+                </StyledBodySubTitle>
+                <p style={{ textAlign: 'left', margin: '0', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
+                If a task is rated negative, all participants will get their stake back (the previously collected fee is not returned).
+                </p>
+              </div>
+            </Tab>
+          </StyledItemColumn>
+
+        </span>
+        <HideSmall>
+        <img style={{ position: "absolute", margin: "0 0 0 5rem", maxWidth: "35%" }} src={Mockup} />
         </HideSmall>
         </StyledItemRow>
     </StyledSection>
@@ -1122,3 +1272,65 @@ const Ranking = () => {
   )
 }
 */}
+
+const DeveloperSection = props => {
+  return (
+    <>
+      <StyledSection>
+        <StyledItemRow>
+          <GovernanceCard style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+            <span>
+              <StyledSectionTitle style={{ fontSize: "35px", fontWeight: 600 }}>Governed By The Community</StyledSectionTitle>
+              <StyledBodySubTitle style={{ fontSize: '20px' }}>
+              The Nerve Global DAO is the central decision-making organ of the protocol. All proposals and executions are handled on chain.
+              </StyledBodySubTitle>
+              <StyledBodySubTitle style={{ fontSize: '20px' }}>
+              Voting rights in the DAO are granted exclusively to core community and team members in form of NFTs. 
+              New voting rights are delegated every 3 months to the topmost participants in the protocol.
+              </StyledBodySubTitle>
+            </span>
+
+            <StyledButtonTop target="_blank"
+            href="https://docs.nerveglobal.com/protocol/dao/overview" outlined>
+              <p style={{ margin: 0 }}>Learn more </p>
+            </StyledButtonTop>
+          </GovernanceCard>
+          <StyledItemColumn style={{ display: 'flex', flexDirection: 'column' }}>
+            <Button style={{ borderRadius: '20px' }} target="_blank"
+            href="https://docs.nerveglobal.com/sdk/automated-market-maker" outlined>
+              <div style={{ padding: '1rem' }}>
+                <StyledBodySubTitle style={{ marginBottom: '0.25rem' }}>
+                Automated Market Maker <span style={{ fontSize: '16px' }}>↗</span>
+                </StyledBodySubTitle>
+                <p style={{ textAlign: 'left', margin: '0', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
+                The Nerve Global AMM has a special feature where NERVE tokens can only be sold through the AMM, not purchased.
+                </p>
+              </div>
+            </Button>
+            <Button style={{ borderRadius: '20px' }} target="_blank"
+            href="https://www.nerveglobal.com/token/" outlined>
+              <div style={{ padding: '1rem' }}>
+                <StyledBodySubTitle style={{ marginBottom: '0.25rem' }}>
+                  Token Economy <span style={{ fontSize: '16px' }}>↗</span>
+                </StyledBodySubTitle>
+                <p style={{ textAlign: 'left', margin: '0', opacity: '0.6', fontSize: '16px', fontWeight: 400, maxWidth: "850px" }}>
+                Nerve is a decentralized system operating on EVM based blockchains. The entire system is composed of independent smart contracts that operate independently and decentrally with mathematical security.
+                </p>
+              </div>
+            </Button>
+            <Button style={{ width: '100%', borderRadius: '20px' }} outlined>
+              <div style={{ padding: '1rem' }}>
+                <StyledBodySubTitle style={{ marginBottom: '0.25rem' }}>
+                  Seasons <span style={{ fontSize: '16px' }}>(coming soon)</span>
+                </StyledBodySubTitle>
+                <p style={{ textAlign: 'left', margin: '0', opacity: '0.6', fontSize: '16px', fontWeight: 400, maxWidth: "850px" }}>
+                The Nerve Global DAO awards unique NFTs to the top three users in both ranking categories (value spent, value earned), granting exclusive voting rights within the DAO.
+                </p>
+              </div>
+            </Button>
+          </StyledItemColumn>
+        </StyledItemRow>
+      </StyledSection>
+    </>
+  )
+}

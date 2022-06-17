@@ -5,7 +5,7 @@ import GlimmerGray from '../images/glimmer_gray.svg'
 
 import ZUsers from '../ZUsers'
 import ZTCount from '../ZTCount'
-import TEarn from '../TEarn'
+import TMoney from '../TMoney'
 import ZBCount from '../ZBCount'
 import BEarn from '../BEarn'
 
@@ -132,8 +132,8 @@ const ProtocolData = () => {
           <p style={{ fontSize: '14px' }}>Tasks</p>
         </BigNumbers>
         <BigNumbers>
-          <span><ZBCount /></span>
-          <p style={{ fontSize: '14px' }}>Bets</p>
+          <span><TMoney /></span>
+          <p style={{ fontSize: '14px' }}>USD earned</p>
           <SparkleGray />
         </BigNumbers>
       </div>

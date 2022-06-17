@@ -275,50 +275,6 @@ const StyledTradeLink = styled.a`
   }
 `
 
-export const GET_BLOCK = gql`
-  query blocks($timestamp: Int!) {
-    blocks(first: 1, orderBy: timestamp, orderDirection: asc, where: { timestamp_gt: $timestamp }) {
-      id
-      number
-      timestamp
-    }
-  }
-`
-
-export const ETH_PRICE = block => {
-  const queryString = block
-    ? `
-    query bundles {
-      bundles(where: { id: ${1} } block: {number: ${block}}) {
-        id
-        ethPrice
-      }
-    }
-  `
-    : ` query bundles {
-      bundles(where: { id: ${1} }) {
-        id
-        ethPrice
-      }
-    }
-  `
-  return gql(queryString)
-}
-
-const APOLLO_QUERY = gql`
-  {
-    uniswapFactory(id: "0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f") {
-      totalVolumeUSD
-      totalLiquidityUSD
-      pairCount
-      txCount
-    }
-    bundle(id: 1) {
-      ethPrice
-    }
-  }
-`
-
 const StyledSectionHeader = styled.h1`
 font-size: 25px;
 white-space: wrap;
@@ -378,91 +334,8 @@ export const AppsCard = styled(StyledCard)`
   }
 `
 
-export const UNISWAP_GLOBALS_24HOURS_AGO_QUERY = block => {
-  let queryString = `
-  query uniswapFactory {
-    uniswapFactory(id: "0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f", block: { number: ${block} }) {
-      totalVolumeUSD
-      totalLiquidityUSD
-      pairCount
-    
-    }
-  }
-  `
-  return gql(queryString)
-}
 
 const About = props => {
-  dayjs.extend(utc)
-  const utcCurrentTime = dayjs()
-  const utcOneDayBack = utcCurrentTime.subtract(1, 'day').unix()
-
-  const { data: blockData } = useQuery(GET_BLOCK, {
-    client: blockClient,
-    variables: {
-      timestamp: utcOneDayBack
-    }
-  })
-  const oneDayBackBlock = blockData?.blocks?.[0]?.number
-  const { data } = useQuery(APOLLO_QUERY, { pollInterval: 10000, client: client })
-
-  const [oneDayResult, setOnedayResult] = useState()
-
-  useEffect(() => {
-    async function getData() {
-      let result = await client.query({
-        query: UNISWAP_GLOBALS_24HOURS_AGO_QUERY(oneDayBackBlock),
-
-        fetchPolicy: 'cache-first'
-      })
-      if (result) {
-        setOnedayResult(result?.data?.uniswapFactory)
-      }
-    }
-    if (oneDayBackBlock) {
-      getData()
-    }
-  }, [oneDayBackBlock])
-
-  let UniStats = {
-    key: function(n) {
-      return this[Object.keys(this)[n]]
-    }
-  }
-
-  if (data && oneDayResult) {
-    const volume24Hour = parseFloat(data?.uniswapFactory?.totalVolumeUSD) - parseFloat(oneDayResult?.totalVolumeUSD)
-
-    UniStats.volume = [
-      new Intl.NumberFormat('en-US', {
-        style: 'currency',
-        currency: 'USD',
-        notation: 'compact',
-        compactDisplay: 'short'
-      }).format(volume24Hour)
-    ]
-    UniStats.liquidity = [
-      new Intl.NumberFormat('en-US', {
-        style: 'currency',
-        currency: 'USD',
-        notation: 'compact',
-        compactDisplay: 'short'
-        // maximumSignificantDigits: 5
-      }).format(data.uniswapFactory.totalLiquidityUSD)
-    ]
-    UniStats.exchanges = [Number.parseFloat(data?.uniswapFactory?.pairCount)]
-
-    UniStats.ETHprice = [
-      new Intl.NumberFormat('en-US', {
-        style: 'currency',
-        currency: 'USD',
-        notation: 'compact',
-        compactDisplay: 'short',
-        maximumSignificantDigits: 5
-      }).format(parseFloat(data?.bundle?.ethPrice)),
-      '<small> Uni ETH Price </small>'
-    ]
-  }
 
   return (
     <Layout path={props.location.pathname}>
@@ -511,7 +384,8 @@ const About = props => {
       </StyledAbout>
 
       <StyledBody>
-      <DeveloperSection data={data} props={props} />
+      <DeveloperSection props={props} />
+      <DeveloperSection2 props={props} />
 
       <StyledSectionHeader style={{ fontFamily: "True", marginTop: '10rem' }}>{'RECOGNITION'}</StyledSectionHeader>
           <StyledItemRow style={{ alignItems: 'center', justifyContent: 'center', padding: '2rem 10rem 2rem 10rem' }}>
@@ -663,36 +537,57 @@ const Pillars = () => {
 const DeveloperSection = () => {
   return (
       <StyledSection>
-        <StyledSectionHeader style={{ fontFamily: "True"}}>{'INNOVATIONS'}</StyledSectionHeader>
+        <StyledSectionHeader style={{ fontFamily: "True"}}>{'ADVANTAGES'}</StyledSectionHeader>
         <StyledItemRow style={{ alignItems: 'center', justifyContent: 'center', padding: '2rem 10rem 2rem 10rem' }}>
-          <GrantsCard style={{ minHeight: "16rem", minWidth: "18rem" }}>
+          <GrantsCard style={{ minHeight: "13rem", minWidth: "18rem" }}>
+            <StyledBodySubTitle>ONBOARDING</StyledBodySubTitle>
+            <p style={{ textAlign: 'left', margin: '0', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
+            Educating users about crypto through seamless integration.
+            </p>
+          </GrantsCard>
+          <GrantsCard style={{ minHeight: "13rem", minWidth: "18rem" }}>
+            <StyledBodySubTitle>FIRST TO MARKET</StyledBodySubTitle>
+            <p style={{ textAlign: 'left', margin: '0', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
+            For consumer-based funding proposals.
+            </p>
+          </GrantsCard>
+          <GrantsCard style={{ minHeight: "13rem", minWidth: "18rem" }}>
+            <StyledBodySubTitle>SMALL PROJECTS</StyledBodySubTitle>
+            <p style={{ textAlign: 'left', margin: '0', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
+            Step-by-step funding for specific tasks.
+            </p>
+          </GrantsCard>
+        </StyledItemRow>
+      </StyledSection>
+      )
+}
+
+const DeveloperSection2 = () => {
+  return (
+      <StyledSection>
+        <StyledItemRow style={{ alignItems: 'center', justifyContent: 'center', marginTop: "-5rem", padding: '2rem 10rem 2rem 10rem' }}>
+          <GrantsCard style={{ minHeight: "13rem", minWidth: "23rem" }}>
             <StyledBodySubTitle>EARN CRYPTO</StyledBodySubTitle>
             <p style={{ textAlign: 'left', margin: '0', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
             Global access to crowdfunding without a bank account.
             </p>
           </GrantsCard>
-          <GrantsCard style={{ minHeight: "16rem", minWidth: "18rem" }}>
+          <GrantsCard style={{ minHeight: "13rem", minWidth: "23rem" }}>
             <StyledBodySubTitle>EASE OF USE</StyledBodySubTitle>
             <p style={{ textAlign: 'left', margin: '0', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
             Receive a task, submit a proof, get approved, claim funds.
             </p>
           </GrantsCard>
-          <GrantsCard style={{ minHeight: "16rem", minWidth: "18rem" }}>
+          <GrantsCard style={{ minHeight: "13rem", minWidth: "23rem" }}>
             <StyledBodySubTitle>INSTANT FUNDING</StyledBodySubTitle>
             <p style={{ textAlign: 'left', margin: '0', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
             Funds are transferred within minutes, rather than days.
             </p>
           </GrantsCard>
-          <GrantsCard style={{ minHeight: "16rem", minWidth: "18rem" }}>
+          <GrantsCard style={{ minHeight: "13rem", minWidth: "23rem" }}>
             <StyledBodySubTitle>ON DELIVERY</StyledBodySubTitle>
             <p style={{ textAlign: 'left', margin: '0', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
             Donors approve task completion before disbursement of funds.
-            </p>
-          </GrantsCard>
-          <GrantsCard style={{ minHeight: "16rem", minWidth: "18rem" }}>
-            <StyledBodySubTitle>SMALL PROJECTS</StyledBodySubTitle>
-            <p style={{ textAlign: 'left', margin: '0', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
-            Step-by-step funding for specific tasks - no minimum amount.
             </p>
           </GrantsCard>
         </StyledItemRow>

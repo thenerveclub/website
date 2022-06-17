@@ -164,6 +164,18 @@ const ExternalLink = styled.a`
   }
 `
 
+const StyledBodySub = styled.h2`
+  max-width: 1000px;
+  line-height: 150%;
+  font-size: 20px;
+  font-weight: 400;
+  text-align: left;
+
+  @media (max-width: 640px) {
+    text-align: left;
+  }
+`
+
 const StyledBodySubTitle = styled.h2`
   max-width: 800px;
   line-height: 150%;
@@ -175,52 +187,8 @@ const StyledBodySubTitle = styled.h2`
   }
 `
 
-export const GET_BLOCK = gql`
-  query blocks($timestamp: Int!) {
-    blocks(first: 1, orderBy: timestamp, orderDirection: asc, where: { timestamp_gt: $timestamp }) {
-      id
-      number
-      timestamp
-    }
-  }
-`
-
-export const ETH_PRICE = block => {
-  const queryString = block
-    ? `
-    query bundles {
-      bundles(where: { id: ${1} } block: {number: ${block}}) {
-        id
-        ethPrice
-      }
-    }
-  `
-    : ` query bundles {
-      bundles(where: { id: ${1} }) {
-        id
-        ethPrice
-      }
-    }
-  `
-  return gql(queryString)
-}
-
-const APOLLO_QUERY = gql`
-  {
-    uniswapFactory(id: "0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f") {
-      totalVolumeUSD
-      totalLiquidityUSD
-      pairCount
-      txCount
-    }
-    bundle(id: 1) {
-      ethPrice
-    }
-  }
-`
-
 const StyledSectionHeader = styled.h1`
-  font-size: 20px;
+  font-size: 25px;
   white-space: wrap;
   overflow-wrap: normal;
   max-width: 900px;
@@ -246,91 +214,26 @@ const StyledSectionHeader = styled.h1`
   }
 `
 
-export const UNISWAP_GLOBALS_24HOURS_AGO_QUERY = block => {
-  let queryString = `
-  query uniswapFactory {
-    uniswapFactory(id: "0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f", block: { number: ${block} }) {
-      totalVolumeUSD
-      totalLiquidityUSD
-      pairCount
-    
-    }
+const StyledSectionTitle = styled.h3`
+  max-width: 975px;
+  line-height: 140%;
+  font-size: 32px;
+  @media (max-width: 640px) {
+    text-align: left;
   }
-  `
-  return gql(queryString)
-}
+`
+
+const SubTitle = styled.div`
+  max-width: 930px;
+  font-size: 20px;
+  font-weight: 400;
+  @media (max-width: 640px) {
+    font-size: 14px;
+  }
+`
+
 
 const People = props => {
-  dayjs.extend(utc)
-  const utcCurrentTime = dayjs()
-  const utcOneDayBack = utcCurrentTime.subtract(1, 'day').unix()
-
-  const { data: blockData } = useQuery(GET_BLOCK, {
-    client: blockClient,
-    variables: {
-      timestamp: utcOneDayBack
-    }
-  })
-  const oneDayBackBlock = blockData?.blocks?.[0]?.number
-  const { data } = useQuery(APOLLO_QUERY, { pollInterval: 10000, client: client })
-
-  const [oneDayResult, setOnedayResult] = useState()
-
-  useEffect(() => {
-    async function getData() {
-      let result = await client.query({
-        query: UNISWAP_GLOBALS_24HOURS_AGO_QUERY(oneDayBackBlock),
-
-        fetchPolicy: 'cache-first'
-      })
-      if (result) {
-        setOnedayResult(result?.data?.uniswapFactory)
-      }
-    }
-    if (oneDayBackBlock) {
-      getData()
-    }
-  }, [oneDayBackBlock])
-
-  let UniStats = {
-    key: function(n) {
-      return this[Object.keys(this)[n]]
-    }
-  }
-
-  if (data && oneDayResult) {
-    const volume24Hour = parseFloat(data?.uniswapFactory?.totalVolumeUSD) - parseFloat(oneDayResult?.totalVolumeUSD)
-
-    UniStats.volume = [
-      new Intl.NumberFormat('en-US', {
-        style: 'currency',
-        currency: 'USD',
-        notation: 'compact',
-        compactDisplay: 'short'
-      }).format(volume24Hour)
-    ]
-    UniStats.liquidity = [
-      new Intl.NumberFormat('en-US', {
-        style: 'currency',
-        currency: 'USD',
-        notation: 'compact',
-        compactDisplay: 'short'
-        // maximumSignificantDigits: 5
-      }).format(data.uniswapFactory.totalLiquidityUSD)
-    ]
-    UniStats.exchanges = [Number.parseFloat(data?.uniswapFactory?.pairCount)]
-
-    UniStats.ETHprice = [
-      new Intl.NumberFormat('en-US', {
-        style: 'currency',
-        currency: 'USD',
-        notation: 'compact',
-        compactDisplay: 'short',
-        maximumSignificantDigits: 5
-      }).format(parseFloat(data?.bundle?.ethPrice)),
-      '<small> Uni ETH Price </small>'
-    ]
-  }
 
   const StyledCard = styled.div`
   background-color: ${({ theme }) => theme.cardBG};
@@ -419,21 +322,32 @@ const StyledGithub = styled(Github)`
       <SEO title="Team" path={props.location.pathname} />
       <StyledAbout>
         <span style={{ marginTop: '5rem' }}>
-          <Title style={{ fontFamily: "True"}}>
-            Meet our Team
+          <Title style={{ fontFamily: "True", paddingBottom: '4rem'}}>
+            Meet OUR TEAM
           </Title>
+          <StyledSectionTitle>We exclusively work on unique ideas in the emerging sector of blockchain technology.</StyledSectionTitle>
+          <SubTitle style={{ opacity: '0.6', textAlign: 'left', marginRight: '48px' }}>
+          The core development team of Nerve Global has been operating together since early 2015. 
+          With an initial focus on next-gen online multiplayer games, we ventured deep into complex networking and security structures and gained the necessary expertise 
+          to handle critical value transactions on the blockchain. We brought our own computer game to the market in 2017 and collected valuable experience 
+          in financial and organizational business operation.
+          </SubTitle>
+          <SubTitle style={{ marginTop: "1rem", marginBottom: "1rem", opacity: '0.6', textAlign: 'left', marginRight: '48px' }}>
+          Every team member has been active as a blockchain consultant for more than three years and the overall knowledge about blockchain technology is exceptional. 
+          To bring that into scope: at Nerve Global we are implementing our own code for blockchain interactions based on mathematical and cryptographic principles.
+          </SubTitle>
           </span>
       </StyledAbout>
 
 
           <StyledBody>
-        {/*<StyledSectionHeader style={{ fontFamily: "True"}}>{'TEAM →'}</StyledSectionHeader>*/}
+          <StyledSectionHeader style={{ fontFamily: "True", marginTop: '10rem' }}>{'TEAM'}</StyledSectionHeader>
         <StyledItemRow style={{ alignItems: 'center', justifyContent: 'center', padding: '2rem 10rem 12rem 10rem' }}>
-          <GrantsCard style={{ minHeight: "10rem", minWidth: "20rem" }}>
+        <GrantsCard style={{ minHeight: "10rem", minWidth: "20rem" }}>
           {/*<img style={{ marginLeft: "5rem" }} src={phil} width="35%" />*/}
-            <StyledBodySubTitle>Philip Georg</StyledBodySubTitle>
+            <StyledBodySubTitle>Kurt Uhler</StyledBodySubTitle>
             <StyledSocialRow>
-            <a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/philgeorg/">
+            <a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/kurt-uhler/">
               <StyledLinkedIn />
             </a>
             <a target="_blank" rel="noreferrer" href="https://discord.gg/Xuh5enTNB6">
@@ -446,6 +360,18 @@ const StyledGithub = styled(Github)`
             <StyledBodySubTitle>Christoph Könekamp</StyledBodySubTitle>
             <StyledSocialRow>
             <a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/christophkoenekamp/">
+              <StyledLinkedIn />
+            </a>
+            <a target="_blank" rel="noreferrer" href="https://discord.gg/Xuh5enTNB6">
+              <StyledDiscord />
+            </a>
+          </StyledSocialRow>
+          </GrantsCard>
+          <GrantsCard style={{ minHeight: "10rem", minWidth: "20rem" }}>
+          {/*<img style={{ marginLeft: "5rem" }} src={phil} width="35%" />*/}
+            <StyledBodySubTitle>Philip Georg</StyledBodySubTitle>
+            <StyledSocialRow>
+            <a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/philgeorg/">
               <StyledLinkedIn />
             </a>
             <a target="_blank" rel="noreferrer" href="https://discord.gg/Xuh5enTNB6">

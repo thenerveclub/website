@@ -68,7 +68,7 @@ const StyledSocialRow = styled.nav`
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin-right: 12.5rem;
+  margin-right: 6rem;
   & > *:not(:first-of-type) {
     margin-top: 0;
     margin-left: 16px;
@@ -103,11 +103,13 @@ const Footer = () => {
           </StyledSocialRow>
 
       <StyledFooterLinkSection>
-        {/*<StyledFooterLink to="/privacy-policy">Privacy Policy</StyledFooterLink>
+        <StyledFooterLink to="/privacy-policy">Privacy Policy</StyledFooterLink>
+        {/*
         <StyledFooterLink to="/disclaimer" style={{ marginRight: '12px' }}>
           Disclaimer
         </StyledFooterLink>
-  <StyledFooterLink to="/terms-of-service">Terms of Service</StyledFooterLink>*/}
+        <StyledFooterLink to="/terms-of-service">Terms of Service</StyledFooterLink>
+        */}
       </StyledFooterLinkSection>
     </StyledFooter>
   )

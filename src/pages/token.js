@@ -19,6 +19,9 @@ import Layout from '../layouts'
 import SEO from '../components/seo'
 import BG from '../components/bg'
 
+import { TabRight } from '../components/tabRight'
+import Distribution from '../images/distribution.png'
+
 const StyledAbout = styled.div`
   display: grid;
   grid-template-columns: 1fr 200px;
@@ -45,7 +48,6 @@ const StyledTradeLink = styled.a`
   width: 100%;
   width: min-content;
   white-space: nowrap;
-  margin-left: 1rem;
   border: 1px solid transparent;
   box-shadow: ${({ theme }) => theme.shadows.small};
   background: ${({ theme, open, showBG }) => (showBG && !open ? theme.backgroundColor : 'none')};
@@ -455,76 +457,6 @@ export const UNISWAP_GLOBALS_24HOURS_AGO_QUERY = block => {
 }
 
 const About = props => {
-  dayjs.extend(utc)
-  const utcCurrentTime = dayjs()
-  const utcOneDayBack = utcCurrentTime.subtract(1, 'day').unix()
-
-  const { data: blockData } = useQuery(GET_BLOCK, {
-    client: blockClient,
-    variables: {
-      timestamp: utcOneDayBack
-    }
-  })
-  const oneDayBackBlock = blockData?.blocks?.[0]?.number
-  const { data } = useQuery(APOLLO_QUERY, { pollInterval: 10000, client: client })
-
-  const [oneDayResult, setOnedayResult] = useState()
-
-  useEffect(() => {
-    async function getData() {
-      let result = await client.query({
-        query: UNISWAP_GLOBALS_24HOURS_AGO_QUERY(oneDayBackBlock),
-
-        fetchPolicy: 'cache-first'
-      })
-      if (result) {
-        setOnedayResult(result?.data?.uniswapFactory)
-      }
-    }
-    if (oneDayBackBlock) {
-      getData()
-    }
-  }, [oneDayBackBlock])
-
-  let UniStats = {
-    key: function(n) {
-      return this[Object.keys(this)[n]]
-    }
-  }
-
-  if (data && oneDayResult) {
-    const volume24Hour = parseFloat(data?.uniswapFactory?.totalVolumeUSD) - parseFloat(oneDayResult?.totalVolumeUSD)
-
-    UniStats.volume = [
-      new Intl.NumberFormat('en-US', {
-        style: 'currency',
-        currency: 'USD',
-        notation: 'compact',
-        compactDisplay: 'short'
-      }).format(volume24Hour)
-    ]
-    UniStats.liquidity = [
-      new Intl.NumberFormat('en-US', {
-        style: 'currency',
-        currency: 'USD',
-        notation: 'compact',
-        compactDisplay: 'short'
-        // maximumSignificantDigits: 5
-      }).format(data.uniswapFactory.totalLiquidityUSD)
-    ]
-    UniStats.exchanges = [Number.parseFloat(data?.uniswapFactory?.pairCount)]
-
-    UniStats.ETHprice = [
-      new Intl.NumberFormat('en-US', {
-        style: 'currency',
-        currency: 'USD',
-        notation: 'compact',
-        compactDisplay: 'short',
-        maximumSignificantDigits: 5
-      }).format(parseFloat(data?.bundle?.ethPrice)),
-      '<small> Uni ETH Price </small>'
-    ]
-  }
 
   return (
     <Layout path={props.location.pathname}>
@@ -553,17 +485,17 @@ const About = props => {
             <SubTitle style={{ maxWidth: "400px", opacity: '0.6' }}>
             Use Nerve Global and get rewarded with the NERVE token, a direct representation of a contribution to the ecosystem.
             </SubTitle>
-            {/*<StyledTradeLink
+            <StyledTradeLink
             style={{
               textAlign: "center",
               minWidth: "8rem",
               color: 'white'
             }}
             target="_blank"
-            href="/blog/nerve-token"
+            href="https://docs.nerveglobal.com/sdk/token-economy/abstract"
           >
             Learn more
-          </StyledTradeLink>*/}
+          </StyledTradeLink>
             </AutoColumn>
         </TokenSection>
 
@@ -572,42 +504,46 @@ const About = props => {
           <StyledSectionHeader style={{ fontFamily: "True", marginTop: '12rem' }}>{'INTRODUCING THE NERVE TOKEN'}</StyledSectionHeader>
           <StyledItemRow style={{ alignItems: 'center', justifyContent: 'center', padding: '2rem 10rem 2rem 10rem' }}>
           <GrantsCard style={{ minHeight: "16rem", maxWidth: "28rem" }}>
-            <StyledBodySubTitle>Zero initial supply</StyledBodySubTitle>
+            <StyledBodySubTitle>Fixed initial supply</StyledBodySubTitle>
             <p style={{ textAlign: 'left', margin: '0', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
-            No allocations, no investors, no private sale. The Nerve Token (NERVE) is launched without an initial token distribution. Only a small amount gets 
-            minted and infinitely locked in the Nerve Decentralized Exchange.
+            The total supply of NERVE is fixed and is indefinitely locked into the internal AMM. The emission rate is based solely on usage of the protocol and directly proportional to collected fees.
             </p>
           </GrantsCard>
           <GrantsCard style={{ minHeight: "16rem", maxWidth: "28rem" }}>
-            <StyledBodySubTitle>Deflationary</StyledBodySubTitle>
+            <StyledBodySubTitle>Burn function</StyledBodySubTitle>
             <p style={{ textAlign: 'left', margin: '0', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
-            New NERVE can only be minted in exchange for the current price in the native currency, which will be used to buy back and burn the token from the Nerve Decentralized Exchange.
+            Collected fees in the native token of the blockchain are used to buy back the NERVE token through the internal AMM. These tokens are then burned.
             </p>
           </GrantsCard>
           <GrantsCard style={{ minHeight: "16rem", maxWidth: "28rem" }}>
-            <StyledBodySubTitle>Community driven</StyledBodySubTitle>
+            <StyledBodySubTitle>Predictable emission rate</StyledBodySubTitle>
             <p style={{ textAlign: 'left', margin: '0', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
-            NERVE can only be generated by contributing to the Nerve ecosystem. Payed fees will be automatically used to mint and buy back and burn the token.
+            The emission rate is based solely on usage of the protocol and directly proportional to collected fees.
             </p>
           </GrantsCard>
         </StyledItemRow>
+        
         <StyledSection>
-          <StyledSectionHeader style={{ fontFamily: "True", marginTop: '9rem' }}>{'PLAY AND EARN'}</StyledSectionHeader>
+          <StyledSectionHeader style={{ fontFamily: "True", marginTop: '9rem' }}>{'Fee STRUCTURE'}</StyledSectionHeader>
           <StyledItemRow style={{ alignItems: 'center', justifyContent: 'center', padding: '2rem 10rem 2rem 10rem' }}>
-          <GrantsCard style={{ minHeight: "30rem", maxWidth: "28rem" }}>
+          <GrantsCard style={{ minHeight: "31rem", maxWidth: "28rem" }}>
             <StyledBodySubTitle>Task proposals</StyledBodySubTitle>
             <p style={{ textAlign: 'left', margin: '0', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
             In the process of creating a task, a 5% fee is deducted from the initial stake to prevent spamming and denial of service. 
             The initial stake of the task creator is obligatory as a minimum stake for all further participants.</p>
             <p style={{ textAlign: 'left', marginTop: '1rem', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
             At the same time, new NERVE are created, the quantity of which is derived from the current market price and the amount of the paid fee. 
-            The creator or participant receives 75% of newly created NERVE according to the fee paid. 25% will accrue to the Nexus Foundation.</p>
+            The creator or participant receives 60% of newly created NERVE according to the fee paid.</p>
           </GrantsCard>
-          <GrantsCard style={{ minHeight: "30rem", maxWidth: "28rem" }}>
+          <GrantsCard style={{ minHeight: "31rem", maxWidth: "28rem" }}>
             <StyledBodySubTitle>Task completion</StyledBodySubTitle>
             <p style={{ textAlign: 'left', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
-            After a positive consensus over the fulfillment of the task has been reached, a 5% fee is deducted from the final payout and used to generate new NERVE. 
-            The performer receives 75% of the newly generated NERVE according to the paid fee. 25% will accrue to the Nexus Foundation. </p>
+            Positive consensus: In this outcome, a 5% fee is deducted from the final payout. The creator of the task receives 95.00% of the total stake.</p>
+            <p style={{ textAlign: 'left', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
+            At the same time, new NERVE are created, the quantity of which is derived from the current market price and the amount of the paid fee. 
+            The performer receives 60% of newly created NERVE according to the fee paid.</p>
+            <p style={{ textAlign: 'left', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
+            Negative consensus: In this outcome, all participants, as well as the creator of the task, will receive their stake back. The previously collected fee is not returned. </p>
           </GrantsCard>
           {/*
           <GrantsCard style={{ minHeight: "30rem", maxWidth: "28rem" }}>
@@ -621,6 +557,15 @@ const About = props => {
         </StyledItemRow>
     </StyledSection>
 
+    <StyledSection>
+          <StyledSectionHeader style={{ fontFamily: "True", marginTop: '9rem' }}>{'FUNDS DISTRIBUTION'}</StyledSectionHeader>
+          <StyledItemRow style={{ alignItems: 'center', justifyContent: 'center', padding: '2rem 10rem 2rem 10rem' }}>
+
+          <KeyAdvantagesBet props={props} />
+          
+        </StyledItemRow>
+    </StyledSection>
+
       </StyledBody>
       <BG />
     </Layout>
@@ -628,3 +573,84 @@ const About = props => {
 }
 
 export default About
+
+
+const KeyAdvantagesBet = () => {
+  return (
+    <StyledSectionr>
+            <HideSmall>
+        <img style={{ position: "absolute", margin: "-5rem 0 0 -45rem", maxWidth: "38%" }} src={Distribution} />
+        </HideSmall>
+      <StyledItemRow>
+        <span>
+          <StyledItemColumn style={{ display: 'flex', flexDirection: 'column' }}>
+            <TabRight style={{ zIndex: "1", borderRadius: '20px' }} outlined>
+              <div style={{ padding: '1rem' }}>
+                <StyledBodySubTitle style={{ marginBottom: '0.25rem' }}>
+                60% to Community
+                </StyledBodySubTitle>
+              </div>
+            </TabRight>
+          </StyledItemColumn>
+
+          <StyledItemColumn style={{ display: 'flex', flexDirection: 'column' }}>
+            <TabRight style={{ zIndex: "1", borderRadius: '20px' }} outlined>
+              <div style={{ padding: '1rem' }}>
+                <StyledBodySubTitle style={{ marginBottom: '0.25rem' }}>
+                20% to the DAO
+                </StyledBodySubTitle>
+              </div>
+            </TabRight>
+          </StyledItemColumn>
+
+          <StyledItemColumn style={{ display: 'flex', flexDirection: 'column' }}>
+            <TabRight style={{ zIndex: "1", borderRadius: '20px' }} outlined>
+              <div style={{ padding: '1rem' }}>
+                <StyledBodySubTitle style={{ marginBottom: '0.25rem' }}>
+                10% to Presale Investors
+                </StyledBodySubTitle>
+              </div>
+            </TabRight>
+          </StyledItemColumn>
+
+          <StyledItemColumn style={{ display: 'flex', flexDirection: 'column' }}>
+            <TabRight style={{ zIndex: "1", borderRadius: '20px' }} outlined>
+              <div style={{ padding: '1rem' }}>
+                <StyledBodySubTitle style={{ marginBottom: '0.25rem' }}>
+                10% to the Team
+                </StyledBodySubTitle>
+              </div>
+            </TabRight>
+          </StyledItemColumn>
+        </span>
+        </StyledItemRow>
+    </StyledSectionr>
+  )
+}
+
+const StyledSectionr = styled.section`
+  display: flex;
+  flex-direction: right;
+  margin: 10rem 0 10rem 50rem;
+
+  @media (max-width: 960px) {
+  display: flex;
+  flex-direction: column;
+  margin: 5rem 0;
+  }
+
+  @media (max-width: 640px) {
+  display: flex;
+  flex-direction: column;
+  margin: 5rem 0;
+  }
+`
+
+const StyledItemColumn = styled.nav`
+  display: flex;
+  flex-direction: column;
+  & > *:not(:last-of-type) {
+    margin-bottom: 12px;
+  }
+`
+

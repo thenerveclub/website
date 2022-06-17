@@ -22,7 +22,7 @@ export default function TMoney() {
     <div>
       <ul>
         {tmoney.map((tmoney) => (
-          <li key={tmoney.id}>USD {(tmoney.amount/1.e+18)}</li>
+          <li key={tmoney.id}>{(tmoney.amount/1.e+18).toFixed(2)}</li>
         ))}
       </ul>
     </div>
