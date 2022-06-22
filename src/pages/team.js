@@ -117,6 +117,7 @@ const Title = styled.h1`
   @media (max-width: 960px) {
     margin-top: -2rem;
     font-size: 2rem;
+    text-align: center;
   }
 `
 
@@ -193,7 +194,7 @@ const StyledSectionHeader = styled.h1`
   overflow-wrap: normal;
   max-width: 900px;
   font-weight: 500;
-  margin-top: 8rem;
+  margin-top: 10rem;
 
   a {
     color: ${({ theme }) => theme.textColor};
@@ -205,12 +206,13 @@ const StyledSectionHeader = styled.h1`
     line-height: 2.5rem;
     max-width: 600px;
     margin-top: 5rem;
+    text-align: center;
   }
   @media (max-width: 640px) {
     width: 100%;
     font-weight: 400;
     margin-top: 5rem;
-    text-align: left;
+    text-align: center;
   }
 `
 
@@ -218,8 +220,15 @@ const StyledSectionTitle = styled.h3`
   max-width: 975px;
   line-height: 140%;
   font-size: 32px;
+
   @media (max-width: 640px) {
-    text-align: left;
+    font-size: 25px;
+    text-align: center;
+  }
+
+  @media (max-width: 640px) {
+    font-size: 25px;
+    text-align: center;
   }
 `
 
@@ -227,7 +236,18 @@ const SubTitle = styled.div`
   max-width: 930px;
   font-size: 20px;
   font-weight: 400;
+  text-align: left;
+  margin-right: 48px;
+
   @media (max-width: 640px) {
+    text-align: center;
+    margin-right: 0;
+    font-size: 14px;
+  }
+
+  @media (max-width: 640px) {
+    text-align: center;
+    margin-right: 0;
     font-size: 14px;
   }
 `
@@ -326,13 +346,13 @@ const StyledGithub = styled(Github)`
             Meet OUR TEAM
           </Title>
           <StyledSectionTitle>We exclusively work on unique ideas in the emerging sector of blockchain technology.</StyledSectionTitle>
-          <SubTitle style={{ opacity: '0.6', textAlign: 'left', marginRight: '48px' }}>
+          <SubTitle style={{ opacity: '0.6' }}>
           The core development team of Nerve Global has been operating together since early 2015. 
           With an initial focus on next-gen online multiplayer games, we ventured deep into complex networking and security structures and gained the necessary expertise 
           to handle critical value transactions on the blockchain. We brought our own computer game to the market in 2017 and collected valuable experience 
           in financial and organizational business operation.
           </SubTitle>
-          <SubTitle style={{ marginTop: "1rem", marginBottom: "1rem", opacity: '0.6', textAlign: 'left', marginRight: '48px' }}>
+          <SubTitle style={{ marginTop: "1rem", marginBottom: "1rem", opacity: '0.6' }}>
           Every team member has been active as a blockchain consultant for more than three years and the overall knowledge about blockchain technology is exceptional. 
           To bring that into scope: at Nerve Global we are implementing our own code for blockchain interactions based on mathematical and cryptographic principles.
           </SubTitle>
@@ -341,8 +361,8 @@ const StyledGithub = styled(Github)`
 
 
           <StyledBody>
-          <StyledSectionHeader style={{ fontFamily: "True", marginTop: '10rem' }}>{'TEAM'}</StyledSectionHeader>
-        <StyledItemRow style={{ alignItems: 'center', justifyContent: 'center', padding: '2rem 10rem 12rem 10rem' }}>
+          <StyledSectionHeader style={{ fontFamily: "True" }}>{'TEAM'}</StyledSectionHeader>
+        <StyledItemRow style={{ alignItems: 'center', justifyContent: 'center', padding: '2rem 10rem 6rem 10rem' }}>
         <GrantsCard style={{ minHeight: "10rem", minWidth: "20rem" }}>
           {/*<img style={{ marginLeft: "5rem" }} src={phil} width="35%" />*/}
             <StyledBodySubTitle>Kurt Uhler</StyledBodySubTitle>

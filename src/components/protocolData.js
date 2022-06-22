@@ -16,7 +16,7 @@ const StyledSectionFlex = styled.div`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-
+  margin: 0 0 0 0;
   max-width: 960px;
   width: 100%;
   @media (max-width: 1024px) {
@@ -49,9 +49,7 @@ const StyledSectionFlex = styled.div`
 `
 
 const Numbers = styled(StyledSectionFlex)`
-  @media (max-width: 960px) {
-    /* display: none; */
-  }
+  margin: 0 0 0 0;
 `
 
 const BigNumbers = styled(StyledSectionFlex)`
@@ -133,7 +131,7 @@ const ProtocolData = () => {
         </BigNumbers>
         <BigNumbers>
           <span><TMoney /></span>
-          <p style={{ fontSize: '14px' }}>USD earned</p>
+          <p style={{ fontSize: '14px' }}>Earned</p>
           <SparkleGray />
         </BigNumbers>
       </div>

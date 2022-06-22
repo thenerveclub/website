@@ -42,7 +42,6 @@ const StyledTradeLink = styled.a`
   background-color: ${({ theme }) => theme.textColor};
   text-decoration: none;
   color: ${({ theme }) => theme.invertedTextColor};
-  border-radius: 12px;
   display: inline-block;
   font-weight: 500;
   width: 100%;
@@ -53,6 +52,7 @@ const StyledTradeLink = styled.a`
   background: ${({ theme, open, showBG }) => (showBG && !open ? theme.backgroundColor : 'none')};
 	border-bottom: 1px solid ${({ theme }) => theme.buttonBorder};
   border-image: linear-gradient(var(--angle), aqua, aqua, magenta, magenta) 1;
+  text-align: center;
 	
 	animation: 15s rotate linear infinite;
 }
@@ -71,7 +71,17 @@ const StyledTradeLink = styled.a`
 
   transition: background-color 0.25s ease;
   }
-  `
+
+  @media (max-width: 960px) {
+    margin: 0 auto 0 auto;
+    text-align: center;
+  }
+
+  @media (max-width: 640px) {
+    margin: 0 auto 0 auto;
+    text-align: center;
+  }
+`
 
 const StyledBody = styled.div`
   position: relative;
@@ -212,8 +222,38 @@ const StyledBodySubTitle = styled.h2`
   font-weight: 400;
   text-align: left;
 
+  @media (max-width: 960px) {
+    text-align: center;
+  }
+
   @media (max-width: 640px) {
-    text-align: left;
+    text-align: center;
+  }
+`
+
+
+const SubText = styled.h2`
+  text-align: left; 
+  margin: 0; 
+  opacity: 0.6; 
+  font-size: 16px; 
+  line-height: 1.5;
+  font-weight: 400;
+
+  @media (max-width: 960px) {
+    text-align: center; 
+    margin: 0; 
+    opacity: 0.6; 
+    font-size: 14px; 
+    font-weight: 400;
+  }
+
+  @media (max-width: 640px) {
+    text-align: center; 
+    margin: 0; 
+    opacity: 0.6; 
+    font-size: 14px; 
+    font-weight: 400;
   }
 `
 
@@ -230,11 +270,22 @@ const SubTitle = styled.div`
   max-width: 725px;
   font-size: 20px;
   font-weight: 400;
-  marginRight: '48px'
+  marginRight: '48px';
   text-align: left;
-  @media (max-width: 640px) {
+
+  @media (max-width: 960px) {
+    width: 300px;
     margin-top: -5rem;
     font-size: 14px;
+    marginRight: 0;
+    text-align: center;
+  }
+
+  @media (max-width: 640px) {
+    width: 300px;
+    margin-top: -5rem;
+    font-size: 14px;
+    marginRight: 0;
     text-align: center;
   }
 `
@@ -487,7 +538,6 @@ const About = props => {
             </SubTitle>
             <StyledTradeLink
             style={{
-              textAlign: "center",
               minWidth: "8rem",
               color: 'white'
             }}
@@ -505,21 +555,21 @@ const About = props => {
           <StyledItemRow style={{ alignItems: 'center', justifyContent: 'center', padding: '2rem 10rem 2rem 10rem' }}>
           <GrantsCard style={{ minHeight: "16rem", maxWidth: "28rem" }}>
             <StyledBodySubTitle>Fixed initial supply</StyledBodySubTitle>
-            <p style={{ textAlign: 'left', margin: '0', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
+            <SubText>
             The total supply of NERVE is fixed and is indefinitely locked into the internal AMM. The emission rate is based solely on usage of the protocol and directly proportional to collected fees.
-            </p>
+            </SubText>
           </GrantsCard>
           <GrantsCard style={{ minHeight: "16rem", maxWidth: "28rem" }}>
             <StyledBodySubTitle>Burn function</StyledBodySubTitle>
-            <p style={{ textAlign: 'left', margin: '0', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
+            <SubText>
             Collected fees in the native token of the blockchain are used to buy back the NERVE token through the internal AMM. These tokens are then burned.
-            </p>
+            </SubText>
           </GrantsCard>
           <GrantsCard style={{ minHeight: "16rem", maxWidth: "28rem" }}>
             <StyledBodySubTitle>Predictable emission rate</StyledBodySubTitle>
-            <p style={{ textAlign: 'left', margin: '0', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
+            <SubText>
             The emission rate is based solely on usage of the protocol and directly proportional to collected fees.
-            </p>
+            </SubText>
           </GrantsCard>
         </StyledItemRow>
         
@@ -528,22 +578,22 @@ const About = props => {
           <StyledItemRow style={{ alignItems: 'center', justifyContent: 'center', padding: '2rem 10rem 2rem 10rem' }}>
           <GrantsCard style={{ minHeight: "31rem", maxWidth: "28rem" }}>
             <StyledBodySubTitle>Task proposals</StyledBodySubTitle>
-            <p style={{ textAlign: 'left', margin: '0', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
+            <SubText>
             In the process of creating a task, a 5% fee is deducted from the initial stake to prevent spamming and denial of service. 
-            The initial stake of the task creator is obligatory as a minimum stake for all further participants.</p>
-            <p style={{ textAlign: 'left', marginTop: '1rem', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
+            The initial stake of the task creator is obligatory as a minimum stake for all further participants.</SubText>
+            <SubText style={{ marginTop: "1rem" }}>
             At the same time, new NERVE are created, the quantity of which is derived from the current market price and the amount of the paid fee. 
-            The creator or participant receives 60% of newly created NERVE according to the fee paid.</p>
+            The creator or participant receives 60% of newly created NERVE according to the fee paid.</SubText>
           </GrantsCard>
           <GrantsCard style={{ minHeight: "31rem", maxWidth: "28rem" }}>
             <StyledBodySubTitle>Task completion</StyledBodySubTitle>
-            <p style={{ textAlign: 'left', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
-            Positive consensus: In this outcome, a 5% fee is deducted from the final payout. The creator of the task receives 95.00% of the total stake.</p>
-            <p style={{ textAlign: 'left', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
+            <SubText>
+            Positive consensus: In this outcome, a 5% fee is deducted from the final payout. The creator of the task receives 95.00% of the total stake.</SubText>
+            <SubText style={{ marginTop: "1rem" }}>
             At the same time, new NERVE are created, the quantity of which is derived from the current market price and the amount of the paid fee. 
-            The performer receives 60% of newly created NERVE according to the fee paid.</p>
-            <p style={{ textAlign: 'left', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
-            Negative consensus: In this outcome, all participants, as well as the creator of the task, will receive their stake back. The previously collected fee is not returned. </p>
+            The performer receives 60% of newly created NERVE according to the fee paid.</SubText>
+            <SubText style={{ marginTop: "1rem" }}>
+            Negative consensus: In this outcome, all participants, as well as the creator of the task, will receive their stake back. The previously collected fee is not returned. </SubText>
           </GrantsCard>
           {/*
           <GrantsCard style={{ minHeight: "30rem", maxWidth: "28rem" }}>
@@ -559,7 +609,7 @@ const About = props => {
 
     <StyledSection>
           <StyledSectionHeader style={{ fontFamily: "True", marginTop: '9rem' }}>{'FUNDS DISTRIBUTION'}</StyledSectionHeader>
-          <StyledItemRow style={{ alignItems: 'center', justifyContent: 'center', padding: '2rem 10rem 2rem 10rem' }}>
+          <StyledItemRow style={{ alignItems: 'center', justifyContent: 'center', padding: '0 10rem 0 10rem' }}>
 
           <KeyAdvantagesBet props={props} />
           
@@ -586,9 +636,9 @@ const KeyAdvantagesBet = () => {
           <StyledItemColumn style={{ display: 'flex', flexDirection: 'column' }}>
             <TabRight style={{ zIndex: "1", borderRadius: '20px' }} outlined>
               <div style={{ padding: '1rem' }}>
-                <StyledBodySubTitle style={{ marginBottom: '0.25rem' }}>
+                <StyledBodySubTitleDown style={{ marginBottom: '0.25rem' }}>
                 60% to Community
-                </StyledBodySubTitle>
+                </StyledBodySubTitleDown>
               </div>
             </TabRight>
           </StyledItemColumn>
@@ -596,9 +646,9 @@ const KeyAdvantagesBet = () => {
           <StyledItemColumn style={{ display: 'flex', flexDirection: 'column' }}>
             <TabRight style={{ zIndex: "1", borderRadius: '20px' }} outlined>
               <div style={{ padding: '1rem' }}>
-                <StyledBodySubTitle style={{ marginBottom: '0.25rem' }}>
+                <StyledBodySubTitleDown style={{ marginBottom: '0.25rem' }}>
                 20% to the DAO
-                </StyledBodySubTitle>
+                </StyledBodySubTitleDown>
               </div>
             </TabRight>
           </StyledItemColumn>
@@ -606,9 +656,9 @@ const KeyAdvantagesBet = () => {
           <StyledItemColumn style={{ display: 'flex', flexDirection: 'column' }}>
             <TabRight style={{ zIndex: "1", borderRadius: '20px' }} outlined>
               <div style={{ padding: '1rem' }}>
-                <StyledBodySubTitle style={{ marginBottom: '0.25rem' }}>
+                <StyledBodySubTitleDown style={{ marginBottom: '0.25rem' }}>
                 10% to Presale Investors
-                </StyledBodySubTitle>
+                </StyledBodySubTitleDown>
               </div>
             </TabRight>
           </StyledItemColumn>
@@ -616,9 +666,9 @@ const KeyAdvantagesBet = () => {
           <StyledItemColumn style={{ display: 'flex', flexDirection: 'column' }}>
             <TabRight style={{ zIndex: "1", borderRadius: '20px' }} outlined>
               <div style={{ padding: '1rem' }}>
-                <StyledBodySubTitle style={{ marginBottom: '0.25rem' }}>
+                <StyledBodySubTitleDown style={{ marginBottom: '0.25rem' }}>
                 10% to the Team
-                </StyledBodySubTitle>
+                </StyledBodySubTitleDown>
               </div>
             </TabRight>
           </StyledItemColumn>
@@ -636,13 +686,13 @@ const StyledSectionr = styled.section`
   @media (max-width: 960px) {
   display: flex;
   flex-direction: column;
-  margin: 5rem 0;
+  margin: 0;
   }
 
   @media (max-width: 640px) {
   display: flex;
   flex-direction: column;
-  margin: 5rem 0;
+  margin: 0;
   }
 `
 
@@ -651,6 +701,31 @@ const StyledItemColumn = styled.nav`
   flex-direction: column;
   & > *:not(:last-of-type) {
     margin-bottom: 12px;
+  }
+
+  @media (max-width: 960px) {
+    width: 350px;
+    }
+  
+    @media (max-width: 640px) {
+    width: 325px;
+    }
+  `
+
+  const StyledBodySubTitleDown = styled.h2`
+  max-width: 800px;
+  line-height: 150%;
+  font-weight: 400;
+  text-align: left;
+
+  @media (max-width: 960px) {
+    text-align: center;
+    font-size: 20px;
+  }
+
+  @media (max-width: 640px) {
+    text-align: center;
+    font-size: 20px;
   }
 `
 

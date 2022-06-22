@@ -74,13 +74,15 @@ const StyledSectionFlex = styled.div`
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: space-between;
+
   @media (max-width: 1024px) {
     padding: 1rem;
     margin-top: 0rem;
     flex-direction: ${({ wrapSmall }) => (!wrapSmall ? 'row' : 'column')};
   }
+
   @media (max-width: 960px) {
-    padding: 1rem;
+    text-align: center;
     margin-left: 0;
     margin-top: 0rem;
     width: 100%;
@@ -109,6 +111,7 @@ const Title = styled.h1`
   @media (max-width: 960px) {
     margin-top: -2rem;
     font-size: 2rem;
+    text-align: center;
   }
 `
 
@@ -181,8 +184,15 @@ const StyledSectionTitle = styled.h3`
   max-width: 975px;
   line-height: 140%;
   font-size: 32px;
+
+  @media (max-width: 960px) {
+    text-align: center;
+    font-size: 20px;
+  }
+
   @media (max-width: 640px) {
-    text-align: left;
+    text-align: center;
+    font-size: 20px;
   }
 `
 
@@ -190,8 +200,19 @@ const SubTitle = styled.div`
   max-width: 930px;
   font-size: 20px;
   font-weight: 400;
+  text-align: left;
+  margin-right: 48px;
+
+  @media (max-width: 960px) {
+    font-size: 14px;
+    text-align: center;
+    margin-right: 0;
+  }
+
   @media (max-width: 640px) {
     font-size: 14px;
+    text-align: center;
+    margin-right: 0;
   }
 `
 
@@ -238,18 +259,17 @@ const StyledTradeLink = styled.a`
   background-color: ${({ theme }) => theme.textColor};
   text-decoration: none;
   color: ${({ theme }) => theme.invertedTextColor};
-  border-radius: 12px;
   display: inline-block;
   font-weight: 500;
   width: 100%;
   width: min-content;
   white-space: nowrap;
-  margin-left: 1rem;
   border: 1px solid transparent;
   box-shadow: ${({ theme }) => theme.shadows.small};
   background: ${({ theme, open, showBG }) => (showBG && !open ? theme.backgroundColor : 'none')};
 	border-bottom: 1px solid ${({ theme }) => theme.buttonBorder};
   border-image: linear-gradient(var(--angle), aqua, aqua, magenta, magenta) 1;
+  text-align: center;
 	
 	animation: 15s rotate linear infinite;
 }
@@ -268,10 +288,15 @@ const StyledTradeLink = styled.a`
 
   transition: background-color 0.25s ease;
   }
+
   @media (max-width: 960px) {
+    margin: 0 auto 0 auto;
+    text-align: center;
+  }
 
   @media (max-width: 640px) {
-
+    margin: 0 auto 0 auto;
+    text-align: center;
   }
 `
 
@@ -348,7 +373,7 @@ const About = props => {
           </Title>
 
           <StyledSectionTitle>It is our goal to demonstrate and instantiate trust between people.</StyledSectionTitle>
-          <SubTitle style={{ opacity: '0.6', textAlign: 'left', marginRight: '48px' }}>
+          <SubTitle style={{ opacity: '0.6' }}>
           We envision new global markets that allow the exchange of value between advanced and emerging economies, redistributing value in the exchange 
           for novel kinds of services and accelerating global digitalization. We firmly believe in money as a language for the communication of values and 
           therefore think universal access to sound digital money is a right to free speech.
@@ -358,7 +383,6 @@ const About = props => {
             <div style={{ display: 'flex', width: '100%', marginTop: "5rem" }}>
             <StyledTradeLink
             style={{
-              textAlign: "center",
               minWidth: "8rem",
               color: 'white'
             }}
@@ -384,10 +408,12 @@ const About = props => {
       </StyledAbout>
 
       <StyledBody>
+      <HideSmall>
       <DeveloperSection props={props} />
       <DeveloperSection2 props={props} />
+      </HideSmall>
 
-      <StyledSectionHeader style={{ fontFamily: "True", marginTop: '10rem' }}>{'RECOGNITION'}</StyledSectionHeader>
+      <StyledSectionHeader style={{ fontFamily: "True" }}>{'RECOGNITION'}</StyledSectionHeader>
           <StyledItemRow style={{ alignItems: 'center', justifyContent: 'center', padding: '2rem 10rem 2rem 10rem' }}>
           <GrantsCard style={{ minHeight: "37rem", maxWidth: "20rem" }}>
           <img style={{ marginLeft: "5rem" }} src={graph} width="35%" />
@@ -451,7 +477,7 @@ const About = props => {
             <div style={{ display: 'flex', width: '100%', margin: 0 }}>
             <StyledTradeLink
             style={{
-              textAlign: "center",
+              marginRight: "10px",
               minWidth: "8rem",
               color: 'white'
             }}
@@ -463,7 +489,7 @@ const About = props => {
           </StyledTradeLink>
           <StyledTradeLink
             style={{
-              textAlign: "center",
+              marginRight: "10px",
               minWidth: "8rem",
               color: 'white'
             }}
@@ -475,7 +501,6 @@ const About = props => {
           </StyledTradeLink>
           <StyledTradeLink
             style={{
-              textAlign: "center",
               minWidth: "8rem",
               color: 'white'
             }}

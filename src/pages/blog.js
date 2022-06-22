@@ -111,6 +111,7 @@ const Title = styled.h1`
   @media (max-width: 960px) {
     margin-top: -2rem;
     font-size: 2rem;
+    text-align: center;
   }
 `
 
@@ -121,7 +122,8 @@ const StyledBodySubTitle = styled.h2`
   text-align: left;
 
   @media (max-width: 640px) {
-    text-align: left;
+    text-align: center;
+    font-size: 20px;
   }
 `
 
@@ -179,10 +181,13 @@ export const PostTitleWrapper = styled.div`
   h2 {
     font-size: 36px;
   }
+
   @media (max-width: 960px) {
     > * + * {
       margin-left: 0;
     }
+    h2 {
+      font-size: 25px;
   }
 `
 

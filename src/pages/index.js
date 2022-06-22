@@ -135,16 +135,16 @@ const StyledTitle = styled.div`
   height: 15vh;
 
   @media (max-width: 1024px) {
-    height: 50vh;
+    height: 60vh;
   }
 
   @media (max-width: 640px) {
-    height: 50vh;
-    margin-bottom: 15rem;
+    height: 60vh;
+    margin-bottom: 5rem;
   }
 
   @media (max-width: 440px) {
-    height: 50vh;
+    height: 60vh;
   }
 `
 
@@ -154,12 +154,12 @@ const StyledBodyTitle = styled.h1`
   overflow-wrap: normal;
   
   @media (max-width: 1024px) {
-    margin: 2rem 0 0rem 0;
+    margin: 2rem 0 0 0;
   }
 
   @media (max-width: 960px) {
     width: 100%;
-    margin: 2rem auto 2rem auto;
+    margin: 2rem auto 0 auto;
     font-weight: 500;
     text-align: center;
     font-size: 32px;
@@ -167,7 +167,7 @@ const StyledBodyTitle = styled.h1`
 
   @media (max-width: 640px) {
     width: 100%;
-    margin: 2rem auto 2rem auto;
+    margin: 2rem auto 0 auto;
     font-weight: 500;
     text-align: center;
     font-size: 32px;
@@ -195,8 +195,19 @@ const SubTitle = styled.div`
   max-width: 930px;
   font-size: 20px;
   font-weight: 400;
+  text-align: left;
+  margin-right: 48px;
+
+  @media (max-width: 960px) {
+    font-size: 14px;
+    text-align: center;
+    margin-right: 0;
+  }
+
   @media (max-width: 640px) {
     font-size: 14px;
+    text-align: center;
+    margin-right: 0;
   }
 `
 
@@ -214,7 +225,7 @@ const StyledBodySubM = styled.h2`
     display: block;
     visibility: visible;
     width: 100%;
-    margin: 2rem auto 2rem auto;
+    margin: 4rem auto 2rem auto;
     font-weight: 500;
     text-align: center;
     font-size: 32px;
@@ -224,7 +235,7 @@ const StyledBodySubM = styled.h2`
     display: block;
     visibility: visible;
     width: 100%;
-    margin: 2rem auto 2rem auto;
+    margin: 4rem auto 2rem auto;
     font-weight: 500;
     text-align: center;
     font-size: 32px;
@@ -448,9 +459,9 @@ const StyledButton = styled.a`
   font-weight: 500;
   font-size: 18px;
   width: 100%;
+  margin: 3rem 1rem 0 1rem;
   width: min-content;
   white-space: nowrap;
-  margin: 3rem -8rem 0 13rem;
   border: 1px solid transparent;
   box-shadow: ${({ theme }) => theme.shadows.small};
   background: ${({ theme, open, showBG }) => (showBG && !open ? theme.backgroundColor : 'none')};
@@ -476,10 +487,10 @@ const StyledButton = styled.a`
   transition: background-color 0.25s ease;
   }
   @media (max-width: 960px) {
-    margin: 6rem auto 3rem auto;
+    margin: 3rem 1rem 3rem 1rem;
   }
   @media (max-width: 640px) {
-    margin: 6rem auto 3rem auto;
+    margin: 3rem 1rem 3rem 1rem;
   }
 `
 
@@ -578,7 +589,7 @@ const IndexPage = props => {
             <img style={{ maxWidth: "20rem" }} src={google} width="140%" />
           </StyledTradeLink>
           </StyledSocialRow>
-          <StyledSocialRow style={{ marginTop: "3rem" }}>
+          <StyledSocialRow style={{ marginTop: "3rem"}}>
             <a target="_blank" rel="noreferrer" href="https://twitter.com/nerveglobal_">
               <StyledTwitter />
             </a>
@@ -627,7 +638,7 @@ const IndexPage = props => {
               alignItems: 'center',
               justifyContent: 'center',
               width: '100%',
-              padding: '2rem 0 2rem 0',
+              padding: '3.5rem 0 2rem 0',
               fontFamily: "True"}}>
           <a>{'Platform Stats'}</a>
           </SectionHeader>
@@ -638,7 +649,7 @@ const IndexPage = props => {
               alignItems: 'center',
               justifyContent: 'center',
               width: '100%',
-              padding: '2rem 0 12rem 0'
+              padding: '2rem 0 6rem 0'
             }}
           >
             <ProtocolData />
@@ -651,11 +662,16 @@ const IndexPage = props => {
               justifyContent: 'center',
               width: '100%',
               padding: '2rem 0 2rem 0',
-              marginTop: "0",
               fontFamily: "True"}}>
           <a>{'How to Play'}</a>
           </SectionHeader>
 
+          <SectionHeaderMobile style={{ 
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              width: '100%',
+              marginTop: "0"}}>
           <nav>
             <StyledButton style={{
               textAlign: "center",
@@ -668,11 +684,12 @@ const IndexPage = props => {
               color: 'white'
             }} onClick={() => setActive("Supporter")}>Supporter</StyledButton>
           </nav>
+          </SectionHeaderMobile>
           <div>
             {active === "Creator" && <TaskCreator props={props} />}
             {active === "Supporter" && <TaskSupporter props={props} />}
           </div>
-
+          
 
           <SectionHeader style={{ 
               display: 'flex',
@@ -691,7 +708,7 @@ const IndexPage = props => {
               alignItems: 'center',
               justifyContent: 'center',
               width: '100%',
-              padding: '2rem 0 2rem 0',
+              padding: '0 0 2rem 0',
               fontFamily: "True"}}>
           <a>{'Governance & More'}</a>
           </SectionHeader>
@@ -823,7 +840,7 @@ const SectionHeader = styled.h1`
   white-space: wrap;
   overflow-wrap: normal;
   font-weight: 500;
-  margin-top: 10rem;
+  margin-top: 7.5rem;
   margin-bottom: -2rem;
   color: white;
     a {
@@ -832,12 +849,34 @@ const SectionHeader = styled.h1`
 
   @media (max-width: 960px) {
     font-size: 2rem;
+    margin-top: 0rem;
+    color: white;
+    a {
+      color: white;
+  }
+  @media (max-width: 640px) {
+    font-size: 2rem;
+    margin-top: 0rem;
+    color: white;
+    a {
+      color: white;
+  }
+`
+
+const SectionHeaderMobile = styled.h1`
+  max-width: 500px;
+  margin: 0 0 0 7.5rem;
+
+  @media (max-width: 960px) {
+    margin: 0 0 0 0;
+    font-size: 2rem;
     margin-top: -5rem;
     color: white;
     a {
       color: white;
   }
   @media (max-width: 640px) {
+    margin: 0 0 0 0;
     font-size: 2rem;
     margin-top: -5rem;
     color: white;
@@ -925,10 +964,8 @@ export const AppsCard = styled(StyledCard)`
   }
 
   @media (max-width: 960px) {
-    margin-top: -80px;
-    margin-bottom: 10px;
-    margin-right: 0px;
-    max-width: unset;
+    display: none;
+    visibility: hidden;
   }
 `
 
@@ -962,7 +999,7 @@ const EcosystemSection = () => {
       <StyledItemRow>
         <span style={{ marginTop: '2rem' }}>
           <StyledSectionTitle>Your Keys, Your Coins - Secure</StyledSectionTitle>
-          <SubTitle style={{ opacity: '0.6', textAlign: 'left', marginRight: '48px', marginBottom: '48px' }}>
+          <SubTitle style={{ opacity: '0.6', marginBottom: '48px' }}>
           The Nerve Global wallet is a non-custodial hot wallet built in C++ that is run on the user’s device. 
           Nerve Global has no access to a user’s private keys. 
           The wallet performs ideal gas price discovery for transaction and gives access to the native gas and NERVE token.
@@ -1277,16 +1314,20 @@ const DeveloperSection = props => {
   return (
     <>
       <StyledSection>
-        <StyledItemRow>
+        <StyledItemRow style={{ marginTop: '2rem' }}>
           <GovernanceCard style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
             <span>
               <StyledSectionTitle style={{ fontSize: "35px", fontWeight: 600 }}>Governed By The Community</StyledSectionTitle>
               <StyledBodySubTitle style={{ fontSize: '20px' }}>
+              <p style={{ textAlign: 'left', margin: '0', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
               The Nerve Global DAO is the central decision-making organ of the protocol. All proposals and executions are handled on chain.
+                </p>
               </StyledBodySubTitle>
               <StyledBodySubTitle style={{ fontSize: '20px' }}>
+              <p style={{ textAlign: 'left', margin: '0', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
               Voting rights in the DAO are granted exclusively to core community and team members in form of NFTs. 
               New voting rights are delegated every 3 months to the topmost participants in the protocol.
+                </p>
               </StyledBodySubTitle>
             </span>
 
