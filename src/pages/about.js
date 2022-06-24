@@ -99,17 +99,16 @@ const StyledSectionFlex = styled.div`
 `
 
 const Title = styled.h1`
-  /* font-size: 3rem; */
-  margin-bottom: 4rem;
+  margin-bottom: 10rem;
   font-size: 72px;
-
   pointer-events: none;
   white-space: wrap;
   overflow-wrap: normal;
   max-width: 1200px;
-  /* text-align: center; */
+  
   @media (max-width: 960px) {
-    margin-top: -2rem;
+    margin-top: 2.5rem;
+    margin-bottom: 4rem;
     font-size: 2rem;
     text-align: center;
   }
@@ -368,10 +367,9 @@ const About = props => {
       <SEO title="About" path={props.location.pathname} />
       <StyledAbout>
         <span style={{ marginTop: '5rem' }}>
-          <Title style={{ fontFamily: "True", paddingBottom: '4rem' }}>
+          <Title style={{ fontFamily: "True" }}>
             ABOUT
           </Title>
-
           <StyledSectionTitle>It is our goal to demonstrate and instantiate trust between people.</StyledSectionTitle>
           <SubTitle style={{ opacity: '0.6' }}>
           We envision new global markets that allow the exchange of value between advanced and emerging economies, redistributing value in the exchange 

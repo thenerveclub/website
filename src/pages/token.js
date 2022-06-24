@@ -152,8 +152,6 @@ const Numbers = styled(StyledSectionFlex)`
 `
 
 const Title = styled.h1`
-  /* font-size: 3rem; */
-  margin-top: -2rem;
   margin-bottom: 4rem;
   font-size: 72px;
 
@@ -161,12 +159,14 @@ const Title = styled.h1`
   white-space: wrap;
   overflow-wrap: normal;
   max-width: 1200px;
-  /* text-align: center; */
+
   @media (max-width: 960px) {
+    margin-top: 0;
     font-size: 2rem;
     visibility: hidden;
   }
   @media (max-width: 640px) {
+    margin-top: 0;
     font-size: 2rem;
     visibility: hidden;
   }
@@ -515,7 +515,7 @@ const About = props => {
 
       <SEO title="Token" path={props.location.pathname} />
       <StyledAbout>
-        <span style={{ marginTop: '9rem' }}>
+        <span style={{ marginTop: '6rem' }}>
           <Title style={{ fontFamily: "True" }}>
           TOKEN
           </Title>

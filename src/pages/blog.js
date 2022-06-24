@@ -96,20 +96,19 @@ const StyledAbout = styled.div`
     grid-template-columns: 1fr;
     margin-top: 0rem;
     padding-top: 1rem;
+
+    border-bottom: 0;
   }
 `
 
 const Title = styled.h1`
-  /* font-size: 3rem; */
   font-size: 72px;
-
   pointer-events: none;
   white-space: wrap;
   overflow-wrap: normal;
   max-width: 1200px;
-  /* text-align: center; */
+
   @media (max-width: 960px) {
-    margin-top: -2rem;
     font-size: 2rem;
     text-align: center;
   }

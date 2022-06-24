@@ -105,17 +105,16 @@ const Numbers = styled(StyledSectionFlex)`
 `
 
 const Title = styled.h1`
-  /* font-size: 3rem; */
-  margin-bottom: 4rem;
+  margin-bottom: 10rem;
   font-size: 72px;
-
   pointer-events: none;
   white-space: wrap;
   overflow-wrap: normal;
   max-width: 1200px;
-  /* text-align: center; */
+
   @media (max-width: 960px) {
-    margin-top: -2rem;
+    margin-top: 2.5rem;
+    margin-bottom: 4rem;
     font-size: 2rem;
     text-align: center;
   }
@@ -342,7 +341,7 @@ const StyledGithub = styled(Github)`
       <SEO title="Team" path={props.location.pathname} />
       <StyledAbout>
         <span style={{ marginTop: '5rem' }}>
-          <Title style={{ fontFamily: "True", paddingBottom: '4rem'}}>
+          <Title style={{ fontFamily: "True" }}>
             Meet OUR TEAM
           </Title>
           <StyledSectionTitle>We exclusively work on unique ideas in the emerging sector of blockchain technology.</StyledSectionTitle>
