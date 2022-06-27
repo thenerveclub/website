@@ -6,8 +6,6 @@ import GlimmerGray from '../images/glimmer_gray.svg'
 import ZUsers from '../ZUsers'
 import ZTCount from '../ZTCount'
 import TMoney from '../TMoney'
-import ZBCount from '../ZBCount'
-import BEarn from '../BEarn'
 
 
 const StyledSectionFlex = styled.div`

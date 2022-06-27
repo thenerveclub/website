@@ -25,19 +25,6 @@ import kitty from '../images/kitty.gif'
 import Mockup from '../images/Mockup.png'
 import Mockup1 from '../images/Mockup1.png'
 
-import ZTask from '../ZTask'
-import ZBet from '../ZBet'
-import TEarn from '../TEarn'
-import BEarn from '../BEarn'
-import BEarnTotal from '../BEarnTotal'
-import ZTopspent from '../ZTopspent'
-import ZTopspent1 from '../ZTopspent1'
-import ZTopearn from '../ZTopearn'
-import ZTopearn1 from '../ZTopearn1'
-
-import Countdown from '../components/countdown'
-import TMoney from '../TMoney'
-
 
 const StyledAbout = styled.div`
   display: grid;

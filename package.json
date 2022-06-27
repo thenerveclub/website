@@ -19,6 +19,7 @@
     "apollo-cache-inmemory": "^1.6.6",
     "apollo-link-http": "^1.5.17",
     "babel-plugin-styled-components": "^1.10.7",
+    "bignumber.js": "^9.0.2",
     "blurb": "^1.0.0",
     "dayjs": "^1.8.22",
     "dotenv": "^8.2.0",
