@@ -6,9 +6,6 @@ public
 .next/
 node_modules/
 
-#deeplinkFiles
-.well-known/
-
 #misc
 **/.DS_Store
 .now

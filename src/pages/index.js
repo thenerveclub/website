@@ -45,7 +45,6 @@ const StyledAbout = styled.div`
 `
 
 const Title = styled.h1`
-  /* font-size: 3rem; */
   margin-bottom: 4rem;
   font-size: 65px;
   text-transform: uppercase;
@@ -59,7 +58,6 @@ const Title = styled.h1`
   white-space: wrap;
   overflow-wrap: normal;
   max-width: 1200px;
-  /* text-align: center; */
   @media (max-width: 960px) {
     font-size: 2rem;
   }
@@ -284,6 +282,65 @@ const StyledSectionTitle = styled.h3`
   }
 `
 
+const StyledSectionTitleGradient = styled.h3`
+  max-width: 900px;
+  line-height: 140%;
+  font-size: 35px;
+  font-weight: 600;
+
+  background: -webkit-linear-gradient(to right, #DE0CCF 0%, #00F2FC 100%);
+  background: -moz-linear-gradient(to right, #DE0CCF 0%, #00F2FC 100%);
+	background: linear-gradient(to right, #DE0CCF 0%, #00F2FC 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+
+  pointer-events: none;
+  white-space: wrap;
+  overflow-wrap: normal;
+  width: 600px;
+
+  @media (max-width: 960px) {
+    width: vw;
+    margin: 0 auto 0.5rem auto;
+    font-size: 22px;
+    text-align: center;
+    width: auto;
+  }
+
+  @media (max-width: 640px) {
+    max-width: vw;
+    margin: 0 auto 0.5rem auto;
+    font-size: 22px;
+    text-align: center;
+    width: auto;
+  }
+`
+
+const StyledSectionTitlePlay = styled.h3`
+  line-height: 140%;
+  font-size: 28px;
+  font-weight: 600;
+  background: -webkit-linear-gradient(to right, #DE0CCF 0%, #00F2FC 100%);
+  background: -moz-linear-gradient(to right, #DE0CCF 0%, #00F2FC 100%);
+	background: linear-gradient(to right, #DE0CCF 0%, #00F2FC 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+
+  pointer-events: none;
+  white-space: wrap;
+  overflow-wrap: normal;
+
+  @media (max-width: 960px) {
+    display: none;
+    visibility: hidden;
+  }
+
+  @media (max-width: 640px) {
+    display: none;
+    visibility: hidden;
+  }
+`
+
 const StyledSocialRow = styled.nav`
   display: flex;
   flex-direction: row;
@@ -437,11 +494,10 @@ white-space: nowrap;
 }
 `
 
-const StyledButton = styled.a`
+const StyledButton = styled.h1`
   padding: 0.25rem 0.75rem;
   background-color: ${({ theme }) => theme.textColor};
   text-decoration: none;
-  color: ${({ theme }) => theme.invertedTextColor};
   display: inline-block;
   font-weight: 500;
   font-size: 18px;
@@ -481,11 +537,10 @@ const StyledButton = styled.a`
   }
 `
 
-const StyledButtonTop = styled.a`
+const StyledButtonTop = styled.h1`
   padding: 0.25rem 0.75rem;
   background-color: ${({ theme }) => theme.textColor};
   text-decoration: none;
-  color: white;
   display: inline-block;
   font-weight: 500;
   font-size: 18px;
@@ -627,7 +682,7 @@ const IndexPage = props => {
               width: '100%',
               padding: '3.5rem 0 2rem 0',
               fontFamily: "True"}}>
-          <a>{'Platform Stats'}</a>
+          <span>{'Platform Stats'}</span>
           </SectionHeader>
           
           <div
@@ -650,25 +705,26 @@ const IndexPage = props => {
               width: '100%',
               padding: '2rem 0 2rem 0',
               fontFamily: "True"}}>
-          <a>{'How to Play'}</a>
+          <span>{'How to Play'}</span>
           </SectionHeader>
+
+          <SectionHeaderMobileTitle>
+          <StyledSectionTitlePlay>Nerve Global has two ways to utilise the app</StyledSectionTitlePlay>
+          </SectionHeaderMobileTitle>
 
           <SectionHeaderMobile style={{ 
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              width: '100%',
-              marginTop: "0"}}>
+              width: '100%',}}>
           <nav>
             <StyledButton style={{
               textAlign: "center",
               minWidth: "8rem",
-              color: 'white'
             }} onClick={() => setActive("Creator")}>Creator</StyledButton>
             <StyledButton style={{
               textAlign: "center",
               minWidth: "8rem",
-              color: 'white'
             }} onClick={() => setActive("Supporter")}>Supporter</StyledButton>
           </nav>
           </SectionHeaderMobile>
@@ -685,7 +741,7 @@ const IndexPage = props => {
               width: '100%',
               padding: '2rem 0 2rem 0',
               fontFamily: "True"}}>
-          <a>{'Decentralized Wallet'}</a>
+          <span>{'Decentralized Wallet'}</span>
           </SectionHeader>
           <EcosystemSection props={props} />
 
@@ -697,7 +753,7 @@ const IndexPage = props => {
               width: '100%',
               padding: '0 0 2rem 0',
               fontFamily: "True"}}>
-          <a>{'Governance & More'}</a>
+          <span>{'Governance & More'}</span>
           </SectionHeader>
           <DeveloperSection props={props} />
 
@@ -824,35 +880,48 @@ const StyledSectionHeaderr = styled.h1`
 
 const SectionHeader = styled.h1`
   font-size: 5em;
-  white-space: wrap;
-  overflow-wrap: normal;
   font-weight: 500;
   margin-top: 7.5rem;
   margin-bottom: -2rem;
-  color: white;
-    a {
-      color: white;
-  }
+  white-space: wrap;
+  overflow-wrap: normal;
+
 
   @media (max-width: 960px) {
     font-size: 2rem;
     margin-top: 0rem;
+
+  @media (max-width: 640px) {
+    font-size: 2rem;
+    margin-top: 0rem;
+`
+
+const SectionHeaderMobile = styled.h1`
+  max-width: 500px;
+  margin: 0 0 0 9rem;
+
+  @media (max-width: 960px) {
+    margin: 5rem 0 0 0;
+    font-size: 2rem;
     color: white;
     a {
       color: white;
   }
   @media (max-width: 640px) {
+    margin: 5rem 0 0 0;
     font-size: 2rem;
-    margin-top: 0rem;
     color: white;
     a {
       color: white;
   }
 `
 
-const SectionHeaderMobile = styled.h1`
-  max-width: 500px;
-  margin: 0 0 0 7.5rem;
+const SectionHeaderMobileTitle = styled.h1`
+  max-width: 600px;
+  display: flex;
+  alignItems: center;
+  justifyContent: center;
+  margin: 3rem 0 -2.5rem 6.5rem;
 
   @media (max-width: 960px) {
     margin: 0 0 0 0;
@@ -912,7 +981,6 @@ export const DeveloperCard = styled(StyledCard)`
 `
 
 export const GovernanceCard = styled(StyledCard)`
-  mix-blend-mode: ${({ isDark }) => (isDark ? 'overlay' : 'lighten')};
   background-size: cover;
   background-repeat: no-repeat;
   margin-right: 12px;
@@ -985,7 +1053,7 @@ const EcosystemSection = () => {
     <StyledSection>
       <StyledItemRow>
         <span style={{ marginTop: '2rem' }}>
-          <StyledSectionTitle>Your Keys, Your Coins - Secure</StyledSectionTitle>
+          <StyledSectionTitleGradient>Your Keys, Your Coins - Secure</StyledSectionTitleGradient>
           <SubTitle style={{ opacity: '0.6', marginBottom: '48px' }}>
           The Nerve Global wallet is a non-custodial hot wallet built in C++ that is run on the user’s device. 
           Nerve Global has no access to a user’s private keys. 
@@ -1038,7 +1106,7 @@ const TaskCreator = () => {
                 3. Get approved
                 </StyledBodySubTitle>
                 <p style={{ textAlign: 'left', margin: '0', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
-                Every contributor is eligible to cast a vote on the completion of your task and decides on the disbursement of attached funds.
+                Every contributor is eligible to cast a vote on completing your task and decides on the disbursement of attached funds.
                 </p>
               </div>
             </Tab>
@@ -1304,7 +1372,7 @@ const DeveloperSection = props => {
         <StyledItemRow style={{ marginTop: '2rem' }}>
           <GovernanceCard style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
             <span>
-              <StyledSectionTitle style={{ fontSize: "35px", fontWeight: 600 }}>Governed By The Community</StyledSectionTitle>
+              <StyledSectionTitleGradient>Governed By The Community</StyledSectionTitleGradient>
               <StyledBodySubTitle style={{ fontSize: '20px' }}>
               <p style={{ textAlign: 'left', margin: '0', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
               The Nerve Global DAO is the central decision-making organ of the protocol. All proposals and executions are handled on chain.
@@ -1320,7 +1388,7 @@ const DeveloperSection = props => {
 
             <StyledButtonTop target="_blank"
             href="https://docs.nerveglobal.com/protocol/dao/overview" outlined>
-              <p style={{ margin: 0 }}>Learn more </p>
+              <span style={{ margin: 0 }}>Learn more </span>
             </StyledButtonTop>
           </GovernanceCard>
           <StyledItemColumn style={{ display: 'flex', flexDirection: 'column' }}>

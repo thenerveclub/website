@@ -163,8 +163,8 @@ const StyledUni = styled(Uni)`
     fill: ${({ theme }) => theme.textColor};
   }
   margin: 0;
-  width: 32px;
-  height: 32px;
+  width: 45px;
+  height: 45px;
   margin-left: 2rem;
   margin-top: -4px;
   transform: rotate(0deg);

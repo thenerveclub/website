@@ -19,6 +19,7 @@ import Twitter from '../images/twitter.inline.svg'
 import Github from '../images/github.inline.svg'
 import Discord from '../images/discord.inline.svg'
 import Linkedin from '../images/linkedin.inline.svg'
+import Telegram from '../images/telegram.inline.svg'
 
 
 const StyledAbout = styled.div`
@@ -335,6 +336,14 @@ const StyledGithub = styled(Github)`
   height: 24px;
 `
 
+const StyledTelegram = styled(Telegram)`
+  path {
+    fill: ${({ theme }) => theme.textColor};
+  }
+  width: 24px;
+  height: 24px;
+`
+
   return (
     <Layout path={props.location.pathname}>
       
@@ -369,8 +378,8 @@ const StyledGithub = styled(Github)`
             <a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/kurt-uhler/">
               <StyledLinkedIn />
             </a>
-            <a target="_blank" rel="noreferrer" href="https://discord.gg/Xuh5enTNB6">
-              <StyledDiscord />
+            <a target="_blank" rel="noreferrer" href="https://t.me/kurt_u">
+              <StyledTelegram />
             </a>
           </StyledSocialRow>
           </GrantsCard>
@@ -384,6 +393,9 @@ const StyledGithub = styled(Github)`
             <a target="_blank" rel="noreferrer" href="https://discord.gg/Xuh5enTNB6">
               <StyledDiscord />
             </a>
+            <a target="_blank" rel="noreferrer" href="https://t.me/christophkoenekamp">
+              <StyledTelegram />
+            </a>
           </StyledSocialRow>
           </GrantsCard>
           <GrantsCard style={{ minHeight: "10rem", minWidth: "20rem" }}>
@@ -395,6 +407,9 @@ const StyledGithub = styled(Github)`
             </a>
             <a target="_blank" rel="noreferrer" href="https://discord.gg/Xuh5enTNB6">
               <StyledDiscord />
+            </a>
+            <a target="_blank" rel="noreferrer" href="https://t.me/JKXFFX">
+              <StyledTelegram />
             </a>
           </StyledSocialRow>
           </GrantsCard>
