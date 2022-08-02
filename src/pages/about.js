@@ -598,7 +598,7 @@ const DeveloperSection2 = () => {
           <GrantsCard style={{ minHeight: "13rem", minWidth: "23rem" }}>
             <StyledBodySubTitle>EASE OF USE</StyledBodySubTitle>
             <p style={{ textAlign: 'left', margin: '0', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
-            Receive a task, submit a proof, get approved, claim funds.
+            Receive a dare, submit a proof, get approved, claim funds.
             </p>
           </GrantsCard>
           <GrantsCard style={{ minHeight: "13rem", minWidth: "23rem" }}>
@@ -610,7 +610,7 @@ const DeveloperSection2 = () => {
           <GrantsCard style={{ minHeight: "13rem", minWidth: "23rem" }}>
             <StyledBodySubTitle>ON DELIVERY</StyledBodySubTitle>
             <p style={{ textAlign: 'left', margin: '0', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
-            Donors approve task completion before disbursement of funds.
+            Watchers approve dare completion before disbursement of funds.
             </p>
           </GrantsCard>
         </StyledItemRow>

@@ -772,7 +772,7 @@ const Spotlight = () => {
               padding: '2rem 10rem 2rem 10rem'
             }}>
         <GrantsCard style={{ minHeight: "16rem", maxWidth: "50rem" }}>
-            <StyledBodySubTitle style={{ fontSize: '1.125rem' }}>Latest Task</StyledBodySubTitle>
+            <StyledBodySubTitle style={{ fontSize: '1.125rem' }}>Latest Dare</StyledBodySubTitle>
             <p style={{ fontSize: '20px', fontWeight: "600" }}>
             <ZTask />
             </p>

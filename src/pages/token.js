@@ -577,23 +577,23 @@ const About = props => {
           <StyledSectionHeader style={{ fontFamily: "True", marginTop: '9rem' }}>{'Fee STRUCTURE'}</StyledSectionHeader>
           <StyledItemRow style={{ alignItems: 'center', justifyContent: 'center', padding: '2rem 10rem 2rem 10rem' }}>
           <GrantsCard style={{ minHeight: "31rem", maxWidth: "28rem" }}>
-            <StyledBodySubTitle>Task proposals</StyledBodySubTitle>
+            <StyledBodySubTitle>Dare proposals</StyledBodySubTitle>
             <SubText>
-            In the process of creating a task, a 5% fee is deducted from the initial stake to prevent spamming and denial of service. 
-            The initial stake of the task creator is obligatory as a minimum stake for all further participants.</SubText>
+            In the process of creating a dare, a 5% fee is deducted from the initial stake to prevent spamming and denial of service. 
+            The initial stake of the dare creator is obligatory as a minimum stake for all further participants.</SubText>
             <SubText style={{ marginTop: "1rem" }}>
             At the same time, new NERVE are created, the quantity of which is derived from the current market price and the amount of the paid fee. 
-            The creator or participant receives 60% of newly created NERVE according to the fee paid.</SubText>
+            The participants receive 60% of newly created NERVE according to the fee paid.</SubText>
           </GrantsCard>
           <GrantsCard style={{ minHeight: "31rem", maxWidth: "28rem" }}>
-            <StyledBodySubTitle>Task completion</StyledBodySubTitle>
+            <StyledBodySubTitle>Dare completion</StyledBodySubTitle>
             <SubText>
-            Positive consensus: In this outcome, a 5% fee is deducted from the final payout. The creator of the task receives 95.00% of the total stake.</SubText>
+            Positive consensus: In this outcome, a 5% fee is deducted from the final payout. The player receives 95.00% of the total stake.</SubText>
             <SubText style={{ marginTop: "1rem" }}>
             At the same time, new NERVE are created, the quantity of which is derived from the current market price and the amount of the paid fee. 
-            The performer receives 60% of newly created NERVE according to the fee paid.</SubText>
+            The player receives 60% of newly created NERVE according to the fee paid.</SubText>
             <SubText style={{ marginTop: "1rem" }}>
-            Negative consensus: In this outcome, all participants, as well as the creator of the task, will receive their stake back. The previously collected fee is not returned. </SubText>
+            Negative consensus: In this outcome, all participants will receive their stake back. The previously collected fee is not returned. </SubText>
           </GrantsCard>
           {/*
           <GrantsCard style={{ minHeight: "30rem", maxWidth: "28rem" }}>

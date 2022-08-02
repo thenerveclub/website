@@ -580,7 +580,7 @@ const StyledButtonTop = styled.h1`
 
 const IndexPage = props => {
   const isDark = useDarkMode()
-  const [active, setActive] = useState("Creator");
+  const [active, setActive] = useState("Player");
 
   return (
     <Layout path={props.location.pathname}>
@@ -721,16 +721,16 @@ const IndexPage = props => {
             <StyledButton style={{
               textAlign: "center",
               minWidth: "8rem",
-            }} onClick={() => setActive("Creator")}>Creator</StyledButton>
+            }} onClick={() => setActive("Player")}>Player</StyledButton>
             <StyledButton style={{
               textAlign: "center",
               minWidth: "8rem",
-            }} onClick={() => setActive("Supporter")}>Supporter</StyledButton>
+            }} onClick={() => setActive("Watcher")}>Watcher</StyledButton>
           </nav>
           </SectionHeaderMobile>
           <div>
-            {active === "Creator" && <TaskCreator props={props} />}
-            {active === "Supporter" && <TaskSupporter props={props} />}
+            {active === "Player" && <Player props={props} />}
+            {active === "Watcher" && <Watcher props={props} />}
           </div>
           
 
@@ -1000,10 +1000,11 @@ export const AppsCard = styled(StyledCard)`
   background: url(${AppsImage});
   background-size: cover;
   background-repeat: no-repeat;
+  margin-left: 7.5rem;
   margin-right: 12px;
-  width: 100%;
-  min-height: 290px;
-  max-width: 590px;
+  width: 400px;
+  height: 400px;
+
 
   h1 {
     font-size: 48px;
@@ -1068,7 +1069,7 @@ const EcosystemSection = () => {
 }
 
 
-const TaskCreator = () => {
+const Player = () => {
   return (
     <StyledSection>
       <StyledItemRow>
@@ -1077,10 +1078,10 @@ const TaskCreator = () => {
             <Tab style={{ zIndex: "1", borderRadius: '20px' }} outlined>
               <div style={{ padding: '1rem' }}>
                 <StyledBodySubTitle style={{ marginBottom: '0.25rem' }}>
-                1. Receive a task
+                1. Receive a dare
                 </StyledBodySubTitle>
                 <p style={{ textAlign: 'left', margin: '0', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
-                Link your social media accounts to Nerve Global and receive personalized tasks directly from your community.
+                Link your social media accounts to Nerve Global and receive personalized dares directly from your community.
                 </p>
               </div>
             </Tab>
@@ -1093,7 +1094,7 @@ const TaskCreator = () => {
                 2. Submit a proof
                 </StyledBodySubTitle>
                 <p style={{ textAlign: 'left', margin: '0', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
-                Perform your task and upload a proof to your favorite social media platform.
+                Perform your dare and upload a proof to your favorite social media platform.
                 </p>
               </div>
             </Tab>
@@ -1106,7 +1107,7 @@ const TaskCreator = () => {
                 3. Get approved
                 </StyledBodySubTitle>
                 <p style={{ textAlign: 'left', margin: '0', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
-                Every contributor is eligible to cast a vote on completing your task and decides on the disbursement of attached funds.
+                Every watcher is eligible to cast a vote on completing your dare and decides on the disbursement of attached funds.
                 </p>
               </div>
             </Tab>
@@ -1135,7 +1136,7 @@ const TaskCreator = () => {
 }
 
 
-const TaskSupporter = () => {
+const Watcher = () => {
   return (
     <StyledSection>
       <StyledItemRow>
@@ -1144,10 +1145,10 @@ const TaskSupporter = () => {
             <Tab style={{ zIndex: "1", borderRadius: '20px' }} outlined>
               <div style={{ padding: '1rem' }}>
                 <StyledBodySubTitle style={{ marginBottom: '0.25rem' }}>
-                1. Create or join a task
+                1. Create or join a dare
                 </StyledBodySubTitle>
                 <p style={{ textAlign: 'left', margin: '0', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
-                Search for family, friends or influencers to create personalized tasks. Set a time limit and attach an arbitrary value to it. Other users can join the task and attach further value to it.
+                Search for family, friends or influencers to create personalized dares. Set a time limit and attach an arbitrary value to it. Other users can join the dare and attach further value to it.
                 </p>
               </div>
             </Tab>
@@ -1160,7 +1161,7 @@ const TaskSupporter = () => {
                 2. Wait for proof
                 </StyledBodySubTitle>
                 <p style={{ textAlign: 'left', margin: '0', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
-                Wait for proof that the task has been completed.
+                Wait for proof that the dare has been completed.
                 </p>
               </div>
             </Tab>
@@ -1173,7 +1174,7 @@ const TaskSupporter = () => {
                 3. Approve
                 </StyledBodySubTitle>
                 <p style={{ textAlign: 'left', margin: '0', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
-                Vote on a task and decide, if it has been completed. On a positive vote result, all funds are distributed to the task performer.
+                Vote on a dare and decide, if it has been completed. On a positive vote result, all funds are distributed to the player.
                 </p>
               </div>
             </Tab>
@@ -1183,10 +1184,10 @@ const TaskSupporter = () => {
             <Tab style={{ zIndex: "1", borderRadius: '20px' }} outlined>
               <div style={{ padding: '1rem' }}>
                 <StyledBodySubTitle style={{ marginBottom: '0.25rem' }}>
-                4. Claim your refund (optional)
+                4. Claim your refund (optional)s
                 </StyledBodySubTitle>
                 <p style={{ textAlign: 'left', margin: '0', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
-                If a task is rated negative, all participants will get their stake back (the previously collected fee is not returned).
+                If a dare is rated negative, all participants will get their stake back (the previously collected fee is not returned).
                 </p>
               </div>
             </Tab>

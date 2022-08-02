@@ -125,7 +125,7 @@ const ProtocolData = () => {
         <BigNumbers>
           <SparkleTopRight />
           <span><ZTCount /></span>
-          <p style={{ fontSize: '14px' }}>Tasks</p>
+          <p style={{ fontSize: '14px' }}>Dares</p>
         </BigNumbers>
         <BigNumbers>
           <span><TMoney /></span>
