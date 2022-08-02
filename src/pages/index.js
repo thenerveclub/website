@@ -48,16 +48,16 @@ const Title = styled.h1`
   margin-bottom: 4rem;
   font-size: 65px;
   text-transform: uppercase;
-  background: -webkit-linear-gradient(to right, #DE0CCF 0%, #00F2FC 100%);
-  background: -moz-linear-gradient(to right, #DE0CCF 0%, #00F2FC 100%);
-	background: linear-gradient(to right, #DE0CCF 0%, #00F2FC 100%);
+  background: -webkit-linear-gradient(to right, #DE0CCF 0%, #00F2FC 70%);
+  background: -moz-linear-gradient(to right, #DE0CCF 0%, #00F2FC 70%);
+	background: linear-gradient(to right, #DE0CCF 0%, #00F2FC 70%);
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 
   pointer-events: none;
   white-space: wrap;
   overflow-wrap: normal;
-  max-width: 1200px;
+  max-width: 900px;
   @media (max-width: 960px) {
     font-size: 2rem;
   }
@@ -592,14 +592,15 @@ const IndexPage = props => {
       <SEO
         title="Home"
         path={props.location.pathname}
-        description={'Crowdfunding for content chosen by the people.'}
+        description={'Do. You. Dare?'}
       />
       
       <StyledAbout>
         <span style={{ marginTop: '5rem' }}>
         <HideSmall>
-          <Title style={{ fontWeight: "600", paddingBottom: '4rem' }}>
-          Crowdfunding for content chosen by the people.
+          <Title style={{ fontFamily: "True", paddingBottom: '4rem' }}>
+          <p>Do You Dare?</p>
+          <p>How Far will you go?</p>
           </Title>
         </HideSmall>
         </span> 
@@ -615,21 +616,23 @@ const IndexPage = props => {
             {'assists content creators to find their niche while entering the crypto ecosystem.'}
           </StyledBodySubT>
           <StyledBodySubM>
-            {'Crowdfunding for content chosen by the people.'}
+            {'A bolt on solution that runs on top of existing social media platforms &'} <br />
+            {'assists content creators to find their niche while entering the crypto ecosystem.'}
           </StyledBodySubM>
           <StyledSocialRow>
+            {/*
           <StyledTradeLink
             target="_blank"
-            href="https://apps.apple.com/de/app/nerve-global/id1500517863"
-          >
+            href="https://apps.apple.com/de/app/nerve-global/id1500517863">
             <img style={{ maxWidth: "20rem" }} src={appstore} width="143%" />
           </StyledTradeLink>
+            
           <StyledTradeLink
             target="_blank"
-            href="https://play.google.com/store/apps/details?id=com.academy.nerve&hl=en&gl=US"
-          >
+            href="https://play.google.com/store/apps/details?id=com.academy.nerve&hl=en&gl=US">
             <img style={{ maxWidth: "20rem" }} src={google} width="140%" />
           </StyledTradeLink>
+          */}
           </StyledSocialRow>
           <StyledSocialRow style={{ marginTop: "3rem"}}>
             <a target="_blank" rel="noreferrer" href="https://twitter.com/nerveglobal_">
@@ -679,10 +682,17 @@ const IndexPage = props => {
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
+              flexDirection: "column",
               width: '100%',
               padding: '3.5rem 0 2rem 0',
               fontFamily: "True"}}>
           <span>{'Platform Stats'}</span>
+          <span style={{ 
+            flexDirection: "column",
+            marginLeft: "3rem",
+            marginTop: "1rem",
+            fontSize: "30px"}}>
+              {'(Closed Beta)'}</span>
           </SectionHeader>
           
           <div
@@ -772,38 +782,37 @@ const IndexPage = props => {
         <StyledSectionTitle>Discover a new form of crowdfunding, live streaming and community interaction - download now!</StyledSectionTitle>
         <HideSmall>
         <StyledSocialRow>
+          {/*}
           <StyledTradeLink
             target="_blank"
-            href="https://apps.apple.com/de/app/nerve-global/id1500517863"
-          >
-            <img style={{ marginTop: '2rem', maxWidth: "20rem" }} src={appstore} width="143%" />
+            href="https://apps.apple.com/de/app/nerve-global/id1500517863">
+            <img style={{ maxWidth: "20rem" }} src={appstore} width="143%" />
           </StyledTradeLink>
+          
           <StyledTradeLink
             target="_blank"
-            href="https://play.google.com/store/apps/details?id=com.academy.nerve&hl=en&gl=US"
-          >
-            <img style={{ marginTop: '2rem', maxWidth: "20rem" }} src={google} width="140%" />
+            href="https://play.google.com/store/apps/details?id=com.academy.nerve&hl=en&gl=US">
+            <img style={{ marginTop: '1rem', maxWidth: "20rem" }} src={google} width="140%" />
           </StyledTradeLink>
+          */}
           </StyledSocialRow>   
           </HideSmall>   
         </StyledItemRow>
       </StyledSection>
-
+      {/*
       <StyledSocialRowL>
           <StyledTradeLink
             target="_blank"
-            href="https://apps.apple.com/de/app/nerve-global/id1500517863"
-          >
+            href="https://apps.apple.com/de/app/nerve-global/id1500517863">
             <img style={{ maxWidth: "20rem" }} src={appstore} width="143%" />
           </StyledTradeLink>
           <StyledTradeLink
             target="_blank"
-            href="https://play.google.com/store/apps/details?id=com.academy.nerve&hl=en&gl=US"
-          >
+            href="https://play.google.com/store/apps/details?id=com.academy.nerve&hl=en&gl=US">
             <img style={{ maxWidth: "20rem" }} src={google} width="140%" />
           </StyledTradeLink>
           </StyledSocialRowL>
-
+        */}
       </StyledBody>
       <BG />
     </Layout>
@@ -1062,6 +1071,13 @@ const EcosystemSection = () => {
           </SubTitle>
         </span>
         <AppsCard>
+          <p style={{
+            marginTop: "20rem",
+            fontSize: "15px",
+            fontWeight: "700",
+            textColor: "#FFFFFF",
+            opacity: "1"
+          }}>Powered by DALL•E 2</p>
         </AppsCard>
       </StyledItemRow>
     </StyledSection>

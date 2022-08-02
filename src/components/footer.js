@@ -104,12 +104,12 @@ const Footer = () => {
 
       <StyledFooterLinkSection>
         <StyledFooterLink to="/privacy-policy">Privacy Policy</StyledFooterLink>
-        {/*
         <StyledFooterLink to="/disclaimer" style={{ marginRight: '12px' }}>
           Disclaimer
         </StyledFooterLink>
-        <StyledFooterLink to="/terms-of-service">Terms of Service</StyledFooterLink>
-        */}
+  {/*
+  <StyledFooterLink to="/terms-of-service">Terms of Service</StyledFooterLink>
+  */}
       </StyledFooterLinkSection>
     </StyledFooter>
   )
