@@ -53,8 +53,10 @@ const StyledAbout = styled.div`
 `
 
 const Title = styled.h1`
+  padding: 2rem;
   margin-bottom: 4rem;
-  font-size: 65px;
+  font-family: True;
+  font-size: 100px;
   text-transform: uppercase;
   background: -webkit-linear-gradient(to right, #DE0CCF 0%, #00F2FC 70%);
   background: -moz-linear-gradient(to right, #DE0CCF 0%, #00F2FC 70%);
@@ -62,9 +64,6 @@ const Title = styled.h1`
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 
-  pointer-events: none;
-  white-space: wrap;
-  overflow-wrap: normal;
   max-width: 900px;
   @media (max-width: 960px) {
     font-size: 2rem;
@@ -641,7 +640,7 @@ const IndexPage = props => {
       <StyledAbout>
         <span style={{ marginTop: '5rem' }}>
         <HideSmall>
-          <Title style={{ fontFamily: "True", fontSize: "100px", paddingBottom: '4rem' }}>
+          <Title>
           Do You Dare?
           </Title>
         </HideSmall>
@@ -1149,28 +1148,28 @@ const Player = () => {
     <StyledItemRowPlayerWatcher style={{ alignItems: 'center', justifyContent: 'center', padding: '2rem 10rem 6rem 10rem' }}>
         <GrantsCardNoBorder style={{ minHeight: "40rem", minWidth: "5rem" }}>
         <img src={dashboard} width="100%" />
-            <StyledBodySubTitle style={{ textAlign: "center" }}>
+            <StyledBodySubTitle style={{ fontSize: '20px', textAlign: "center" }}>
               Receive a dare
               </StyledBodySubTitle>
           </GrantsCardNoBorder>
 
           <GrantsCardNoBorder style={{ minHeight: "40rem", minWidth: "5rem" }}>
         <img src={prove} width="100%" />
-            <StyledBodySubTitle style={{ textAlign: "center" }}>
+            <StyledBodySubTitle style={{ fontSize: '20px', textAlign: "center" }}>
               Submit a proof
               </StyledBodySubTitle>
           </GrantsCardNoBorder>
 
           <GrantsCardNoBorder style={{ minHeight: "40rem", minWidth: "5rem" }}>
         <img src={wallet} width="100%" />
-            <StyledBodySubTitle style={{ textAlign: "center" }}>
+            <StyledBodySubTitle style={{ fontSize: '20px', textAlign: "center" }}>
               Get approved
               </StyledBodySubTitle>
           </GrantsCardNoBorder>
 
           <GrantsCardNoBorder style={{ minHeight: "40rem", minWidth: "5rem" }}>
         <img src={claimPlayer} width="100%" />
-            <StyledBodySubTitle style={{ textAlign: "center" }}>
+            <StyledBodySubTitle style={{ fontSize: '20px', textAlign: "center" }}>
               Claim your funds
               </StyledBodySubTitle>
           </GrantsCardNoBorder>
@@ -1184,28 +1183,28 @@ const Watcher = () => {
     <StyledItemRowPlayerWatcher style={{ alignItems: 'center', justifyContent: 'center', padding: '2rem 10rem 6rem 10rem' }}>
         <GrantsCardNoBorder style={{ minHeight: "40rem", minWidth: "5rem" }}>
         <img src={create} width="100%" />
-            <StyledBodySubTitle style={{ textAlign: "center" }}>
+            <StyledBodySubTitle style={{ fontSize: '20px', textAlign: "center" }}>
               Create a dare
               </StyledBodySubTitle>
           </GrantsCardNoBorder>
 
           <GrantsCardNoBorder style={{ minHeight: "40rem", minWidth: "5rem" }}>
         <img src={global} width="100%" />
-            <StyledBodySubTitle style={{ textAlign: "center" }}>
+            <StyledBodySubTitle style={{ fontSize: '20px', textAlign: "center" }}>
               Wait for proof
               </StyledBodySubTitle>
           </GrantsCardNoBorder>
 
           <GrantsCardNoBorder style={{ minHeight: "40rem", minWidth: "5rem" }}>
         <img src={vote} width="100%" />
-            <StyledBodySubTitle style={{ textAlign: "center" }}>
+            <StyledBodySubTitle style={{ fontSize: '20px', textAlign: "center" }}>
               Approve
               </StyledBodySubTitle>
           </GrantsCardNoBorder>
 
           <GrantsCardNoBorder style={{ minHeight: "40rem", minWidth: "5rem" }}>
         <img src={claimWatcher} width="100%" />
-            <StyledBodySubTitle style={{ textAlign: "center" }}>
+            <StyledBodySubTitle style={{ fontSize: '20px',textAlign: "center" }}>
               Claim your refund
               </StyledBodySubTitle>
           </GrantsCardNoBorder>

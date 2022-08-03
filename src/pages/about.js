@@ -481,7 +481,7 @@ const About = props => {
             }}
             target="_blank"
             rel="noreferrer" 
-            href="https://discord.gg/VHZCy5Dx"
+            href="https://discord.gg/Xuh5enTNB6"
           >
             Discord
           </StyledTradeLink>
