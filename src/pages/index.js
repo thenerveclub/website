@@ -40,7 +40,7 @@ const StyledAbout = styled.div`
   justify-content: space-between;
   padding: 0 2rem;
   padding-bottom: 4rem;
-  margin-bottom: 4rem;
+  margin-bottom: 10rem;
   padding-top: 2rem;
 
 
@@ -48,13 +48,15 @@ const StyledAbout = styled.div`
     flex-direction: column;
     grid-template-columns: 1fr;
     margin-top: 0rem;
+    margin-bottom: 5rem;
     padding-top: 1rem;
   }
 `
 
 const Title = styled.h1`
   padding: 2rem;
-  margin-bottom: 4rem;
+  margin-top: 5rem;
+  margin-bottom: 0;
   font-family: True;
   font-size: 100px;
   text-transform: uppercase;
@@ -251,20 +253,22 @@ const StyledBodySubM = styled.h2`
 `
 
 const StyledBodySubT = styled.h2`
-  display: block;
-  visibility: visible;
   width: 800px;
   font-size: 20px;
   white-space: pre-line
 
   @media (max-width: 960px) {
-    display: none;
-    visibility: hidden;
+  text-align: center;
+  margin: 0 auto 0 auto;
+  width: 300px;
+  font-size: 20px;
   }
 
   @media (max-width: 640px) {
-    display: none;
-    visibility: hidden;
+  text-align: center;
+  margin: 0 auto 0 auto;
+  width: 300px;
+  font-size: 20px;
   }
 `
 
@@ -638,10 +642,10 @@ const IndexPage = props => {
       />
       
       <StyledAbout>
-        <span style={{ marginTop: '5rem' }}>
+        <span>
         <HideSmall>
           <Title>
-          Do You Dare?
+          Do You Dare ?
           </Title>
         </HideSmall>
         </span> 
@@ -956,14 +960,14 @@ const SectionHeaderMobile = styled.h1`
   justifyContent: center;
 
   @media (max-width: 960px) {
-    margin: 5rem 0 0 0;
+    margin: 3rem 0 -3rem 0;
     font-size: 2rem;
     color: white;
     a {
       color: white;
   }
   @media (max-width: 640px) {
-    margin: 5rem 0 0 0;
+    margin: 3rem 0 -3rem 0;
     font-size: 2rem;
     color: white;
     a {
@@ -1054,10 +1058,8 @@ export const AppsCard = styled(StyledCard)`
   background: url(${AppsImage});
   background-size: cover;
   background-repeat: no-repeat;
-  margin-left: 7.5rem;
-  margin-right: 12px;
-  width: 400px;
-  height: 400px;
+  width: 300px;
+  height: 300px;
 
 
   h1 {
@@ -1118,19 +1120,21 @@ export const GrantCard = styled(StyledC)`
 
 const EcosystemSection = () => {
   return (
-    <StyledSection>
-      <StyledItemRow>
-        <span style={{ marginTop: '2rem' }}>
-          <StyledSectionTitleGradient>Your Keys, Your Coins - Secure</StyledSectionTitleGradient>
-          <SubTitle style={{ opacity: '0.6', marginBottom: '48px' }}>
-          The Nerve Global wallet is a non-custodial hot wallet built in C++ that is run on the user’s device. 
-          Nerve Global has no access to a user’s private keys. 
-          The wallet performs ideal gas price discovery for transaction and gives access to the native gas and NERVE token.
-          </SubTitle>
-        </span>
+    <StyledSection style={{ marginRight: "auto", marginLeft: "auto" }}>
+      <StyledItemRow style={{ marginTop: '2rem' }}>
+        <GovernanceCard style={{ display: 'flex', flexDirection: '1', justifyContent: 'space-between' }}>
+            <span>
+              <StyledSectionTitleGradient>Your Keys, Your Coins - Secure</StyledSectionTitleGradient>
+              <StyledBodySubTitle style={{ textColor: "#FFFFFF", opacity: '1', fontSize: '16px', fontWeight: 600 }}>
+              <text style={{ opacity: '0.6', fontWeight: 400 }}>The Nerve Global wallet is a non-custodial hot wallet built in C++ that is run on the user’s device.
+              </text> Nerve Global has no access to a user’s private keys.
+              <p style={{ opacity: '0.6', fontWeight: 400 }}> The wallet performs ideal gas price discovery for transaction and gives access to the native gas and NERVE governance token.</p>
+              </StyledBodySubTitle>
+            </span>
+          </GovernanceCard>
         <AppsCard>
           <p style={{
-            marginTop: "21rem",
+            marginTop: "15rem",
             fontSize: "13px",
             fontWeight: "700",
             textColor: "#FFFFFF",
@@ -1147,7 +1151,7 @@ const Player = () => {
   return (
     <StyledItemRowPlayerWatcher style={{ alignItems: 'center', justifyContent: 'center', padding: '2rem 10rem 6rem 10rem' }}>
         <GrantsCardNoBorder style={{ minHeight: "40rem", minWidth: "5rem" }}>
-        <img src={dashboard} width="100%" />
+        <img style={{ marginTop: "11px" }} src={dashboard} width="100%" />
             <StyledBodySubTitle style={{ fontSize: '20px', textAlign: "center" }}>
               Receive a dare
               </StyledBodySubTitle>
