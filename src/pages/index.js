@@ -186,8 +186,29 @@ const StyledBodySubTitle = styled.h2`
   font-weight: 400;
   text-align: left;
 
+  @media (max-width: 960px) {
+    text-align: center;
+  }
+
   @media (max-width: 640px) {
-    text-align: left;
+    text-align: center;
+  }
+`
+
+const StyledBodySubTitleWallet = styled.h2`
+  max-width: 850px;
+  line-height: 150%;
+  font-weight: 400;
+  text-align: left;
+
+  @media (max-width: 960px) {
+    margin-top: 1rem;
+    text-align: center;
+  }
+
+  @media (max-width: 640px) {
+    margin-top: 1rem;
+    text-align: center;
   }
 `
 
@@ -434,18 +455,21 @@ flex-direction: column;
 const StyledItemRowPlayerWatcher = styled.nav`
   width: 100%;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  align-items: start;
 
   & > *:not(:first-of-type) {
     margin-top: 12px;
   }
 
-  @media (min-width: 960px) {
-    flex-direction: row;
+  @media (max-width: 960px) {
+    flex-direction: column;
+    align-items: center;
   }
 
-  @media (min-width: 640px) {
-    flex-direction: row;
+  @media (max-width: 640px) {
+    flex-direction: column;
+    align-items: center;
   }
 `
 
@@ -617,16 +641,22 @@ const StyledButtonTop = styled.h1`
 
   transition: background-color 0.25s ease;
   }
+
   @media (max-width: 960px) {
+    margin: 0 auto 0 auto;
+    align-items: center;
+  }
 
   @media (max-width: 640px) {
-
+    margin: 0 auto 0 auto;
+    align-items: center;
   }
 `
 
+
 const IndexPage = props => {
   const isDark = useDarkMode()
-  const [active, setActive] = useState("Player");
+  const [active, setActive] = useState("Player"); 
 
   return (
     <Layout path={props.location.pathname}>
@@ -761,7 +791,7 @@ const IndexPage = props => {
               alignItems: 'center',
               justifyContent: 'center',
               width: '100%',
-              padding: '2rem 0 6rem 0'
+              padding: '2rem 0 2rem 0'
             }}
           >
             <ProtocolData />
@@ -789,8 +819,8 @@ const IndexPage = props => {
           </nav>
           </SectionHeaderMobile>
           <div>
-            {active === "Player" && <Player props={props} />}
-            {active === "Watcher" && <Watcher props={props} />}
+          {active === "Player" && <Player props={props} />}
+          {active === "Watcher" && <Watcher props={props} />}
           </div>
 
           <SectionHeader style={{ 
@@ -1125,11 +1155,12 @@ const EcosystemSection = () => {
         <GovernanceCard style={{ display: 'flex', flexDirection: '1', justifyContent: 'space-between' }}>
             <span>
               <StyledSectionTitleGradient>Your Keys, Your Coins - Secure</StyledSectionTitleGradient>
-              <StyledBodySubTitle style={{ textColor: "#FFFFFF", opacity: '1', fontSize: '16px', fontWeight: 600 }}>
-              <text style={{ opacity: '0.6', fontWeight: 400 }}>The Nerve Global wallet is a non-custodial hot wallet built in C++ that is run on the user’s device.
-              </text> Nerve Global has no access to a user’s private keys.
-              <p style={{ opacity: '0.6', fontWeight: 400 }}> The wallet performs ideal gas price discovery for transaction and gives access to the native gas and NERVE governance token.</p>
-              </StyledBodySubTitle>
+              <StyledBodySubTitleWallet style={{ textColor: "#FFFFFF", opacity: '1', fontSize: '16px', fontWeight: 600 }}>
+              <p>Nerve Global has no access to a user’s private keys.</p>
+              <p style={{ opacity: '0.6', fontWeight: 400 }}>The Nerve Global wallet is a non-custodial hot wallet built in C++ that is run on the user’s device.
+              The wallet performs ideal gas price discovery for transaction and gives access to the native gas and NERVE governance token.
+              </p>
+              </StyledBodySubTitleWallet>
             </span>
           </GovernanceCard>
         <AppsCard>
@@ -1149,11 +1180,14 @@ const EcosystemSection = () => {
 
 const Player = () => {
   return (
-    <StyledItemRowPlayerWatcher style={{ alignItems: 'center', justifyContent: 'center', padding: '2rem 10rem 6rem 10rem' }}>
-        <GrantsCardNoBorder style={{ minHeight: "40rem", minWidth: "5rem" }}>
+    <StyledItemRowPlayerWatcher style={{ justifyContent: 'center', padding: '2rem 10rem 0 10rem' }}>
+        <GrantsCardNoBorder>
         <img style={{ marginTop: "11px" }} src={dashboard} width="100%" />
             <StyledBodySubTitle style={{ fontSize: '20px', textAlign: "center" }}>
               Receive a dare
+              </StyledBodySubTitle>
+              <StyledBodySubTitle style={{ textAlign: "center", textColor: "#FFFFFF", opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
+              <p>Link your social media accounts to Nerve Global and receive personalized dares directly from your community.</p>
               </StyledBodySubTitle>
           </GrantsCardNoBorder>
 
@@ -1162,6 +1196,9 @@ const Player = () => {
             <StyledBodySubTitle style={{ fontSize: '20px', textAlign: "center" }}>
               Submit a proof
               </StyledBodySubTitle>
+              <StyledBodySubTitle style={{ textAlign: "center", textColor: "#FFFFFF", opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
+              <p>Perform your dare and upload a proof to your favorite social media platform.</p>
+              </StyledBodySubTitle>
           </GrantsCardNoBorder>
 
           <GrantsCardNoBorder style={{ minHeight: "40rem", minWidth: "5rem" }}>
@@ -1169,12 +1206,18 @@ const Player = () => {
             <StyledBodySubTitle style={{ fontSize: '20px', textAlign: "center" }}>
               Get approved
               </StyledBodySubTitle>
+              <StyledBodySubTitle style={{ textAlign: "center", textColor: "#FFFFFF", opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
+              <p>Every watcher is eligible to cast a vote on completing your dare and decides on the disbursement of attached funds.</p>
+              </StyledBodySubTitle>
           </GrantsCardNoBorder>
 
           <GrantsCardNoBorder style={{ minHeight: "40rem", minWidth: "5rem" }}>
         <img src={claimPlayer} width="100%" />
             <StyledBodySubTitle style={{ fontSize: '20px', textAlign: "center" }}>
               Claim your funds
+              </StyledBodySubTitle>
+              <StyledBodySubTitle style={{ textAlign: "center", textColor: "#FFFFFF", opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
+              <p>All collected funds will be directly disbursed to your account - fully decentralized and routed through the blockchain.</p>
               </StyledBodySubTitle>
           </GrantsCardNoBorder>
     </StyledItemRowPlayerWatcher>
@@ -1184,11 +1227,14 @@ const Player = () => {
 
 const Watcher = () => {
   return (
-    <StyledItemRowPlayerWatcher style={{ alignItems: 'center', justifyContent: 'center', padding: '2rem 10rem 6rem 10rem' }}>
+    <StyledItemRowPlayerWatcher style={{ justifyContent: 'center', padding: '2rem 10rem 0 10rem' }}>
         <GrantsCardNoBorder style={{ minHeight: "40rem", minWidth: "5rem" }}>
-        <img src={create} width="100%" />
+        <img style={{ marginTop: "11px" }} src={create} width="100%" />
             <StyledBodySubTitle style={{ fontSize: '20px', textAlign: "center" }}>
               Create a dare
+              </StyledBodySubTitle>
+              <StyledBodySubTitle style={{ textAlign: "center", textColor: "#FFFFFF", opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
+              <p>Search for other players to create dares. Set a time limit and attach value to it. Other users can join the dare and attach further value.</p>
               </StyledBodySubTitle>
           </GrantsCardNoBorder>
 
@@ -1197,6 +1243,9 @@ const Watcher = () => {
             <StyledBodySubTitle style={{ fontSize: '20px', textAlign: "center" }}>
               Wait for proof
               </StyledBodySubTitle>
+              <StyledBodySubTitle style={{ textAlign: "center", textColor: "#FFFFFF", opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
+              <p>Wait for proof that the dare has been completed.</p>
+              </StyledBodySubTitle>
           </GrantsCardNoBorder>
 
           <GrantsCardNoBorder style={{ minHeight: "40rem", minWidth: "5rem" }}>
@@ -1204,12 +1253,18 @@ const Watcher = () => {
             <StyledBodySubTitle style={{ fontSize: '20px', textAlign: "center" }}>
               Approve
               </StyledBodySubTitle>
+              <StyledBodySubTitle style={{ textAlign: "center", textColor: "#FFFFFF", opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
+              <p>Vote on a dare and decide, if it has been completed. On a positive vote result, all funds are distributed to the player.</p>
+              </StyledBodySubTitle>
           </GrantsCardNoBorder>
 
           <GrantsCardNoBorder style={{ minHeight: "40rem", minWidth: "5rem" }}>
         <img src={claimWatcher} width="100%" />
             <StyledBodySubTitle style={{ fontSize: '20px',textAlign: "center" }}>
               Claim your refund
+              </StyledBodySubTitle>
+              <StyledBodySubTitle style={{ textAlign: "center", textColor: "#FFFFFF", opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
+              <p>If a dare is rated negative, all participants will get their stake back (the previously collected fee is not returned).</p>
               </StyledBodySubTitle>
           </GrantsCardNoBorder>
     </StyledItemRowPlayerWatcher>
@@ -1389,12 +1444,12 @@ const DeveloperSection = props => {
             <span>
               <StyledSectionTitleGradient>Governed By The Community</StyledSectionTitleGradient>
               <StyledBodySubTitle style={{ fontSize: '20px' }}>
-              <p style={{ textAlign: 'left', margin: '0', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
+              <p style={{ margin: '0', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
               The Nerve Global DAO is the central decision-making organ of the protocol. All proposals and executions are handled on chain.
                 </p>
               </StyledBodySubTitle>
               <StyledBodySubTitle style={{ fontSize: '20px' }}>
-              <p style={{ textAlign: 'left', margin: '0', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
+              <p style={{ margin: '0', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
               Voting rights in the DAO are granted exclusively to core community and team members in form of NFTs. 
               New voting rights are delegated every 3 months to the topmost participants in the protocol.
                 </p>
@@ -1403,7 +1458,7 @@ const DeveloperSection = props => {
 
             <StyledButtonTop target="_blank"
             href="https://docs.nerveglobal.com/protocol/dao/overview" outlined>
-              <span style={{ margin: 0 }}>Learn more </span>
+              <span style={{ margin: 0 }}>Learn more</span>
             </StyledButtonTop>
           </GovernanceCard>
           <StyledItemColumn style={{ display: 'flex', flexDirection: 'column' }}>
@@ -1413,7 +1468,7 @@ const DeveloperSection = props => {
                 <StyledBodySubTitle style={{ marginBottom: '0.25rem' }}>
                 Automated Market Maker <span style={{ fontSize: '16px' }}>↗</span>
                 </StyledBodySubTitle>
-                <p style={{ textAlign: 'left', margin: '0', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
+                <p style={{ margin: '0', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
                 The Nerve Global AMM has a special feature where NERVE tokens can only be sold through the AMM, not purchased.
                 </p>
               </div>
@@ -1424,7 +1479,7 @@ const DeveloperSection = props => {
                 <StyledBodySubTitle style={{ marginBottom: '0.25rem' }}>
                   Token Economy <span style={{ fontSize: '16px' }}>↗</span>
                 </StyledBodySubTitle>
-                <p style={{ textAlign: 'left', margin: '0', opacity: '0.6', fontSize: '16px', fontWeight: 400, maxWidth: "850px" }}>
+                <p style={{ margin: '0', opacity: '0.6', fontSize: '16px', fontWeight: 400, maxWidth: "850px" }}>
                 Nerve is a decentralized system operating on EVM based blockchains. The entire system is composed of independent smart contracts that operate independently and decentrally with mathematical security.
                 </p>
               </div>
@@ -1434,7 +1489,7 @@ const DeveloperSection = props => {
                 <StyledBodySubTitle style={{ marginBottom: '0.25rem' }}>
                   Seasons <span style={{ fontSize: '16px' }}>(coming soon)</span>
                 </StyledBodySubTitle>
-                <p style={{ textAlign: 'left', margin: '0', opacity: '0.6', fontSize: '16px', fontWeight: 400, maxWidth: "850px" }}>
+                <p style={{ margin: '0', opacity: '0.6', fontSize: '16px', fontWeight: 400, maxWidth: "850px" }}>
                 The Nerve Global DAO awards unique NFTs to the top three users in both ranking categories (value spent, value earned), granting exclusive voting rights within the DAO.
                 </p>
               </div>
