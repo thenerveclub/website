@@ -1450,7 +1450,7 @@ const DeveloperSection = props => {
               </StyledBodySubTitle>
               <StyledBodySubTitle style={{ fontSize: '20px' }}>
               <p style={{ margin: '0', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
-              Voting rights in the DAO are granted exclusively to core community and team members in form of NFTs. 
+              Voting rights in the DAO will be handed to community members according to DAO decision in form of NFTs. 
               New voting rights are delegated every 3 months to the topmost participants in the protocol.
                 </p>
               </StyledBodySubTitle>
@@ -1490,7 +1490,7 @@ const DeveloperSection = props => {
                   Seasons <span style={{ fontSize: '16px' }}>(coming soon)</span>
                 </StyledBodySubTitle>
                 <p style={{ margin: '0', opacity: '0.6', fontSize: '16px', fontWeight: 400, maxWidth: "850px" }}>
-                The Nerve Global DAO awards unique NFTs to the top three users in both ranking categories (value spent, value earned), granting exclusive voting rights within the DAO.
+                The Nerve Global DAO awards unique NFTs to the top three users in both ranking categories (Earned, Spent), granting exclusive voting rights within the DAO.
                 </p>
               </div>
             </Button>
