@@ -1158,7 +1158,7 @@ const EcosystemSection = () => {
               <StyledBodySubTitleWallet style={{ textColor: "#FFFFFF", opacity: '1', fontSize: '16px', fontWeight: 600 }}>
               <p>Nerve Global has no access to a user’s private keys.</p>
               <p style={{ opacity: '0.6', fontWeight: 400 }}>The Nerve Global wallet is a non-custodial hot wallet built in C++ that is run on the user’s device.
-              The wallet performs ideal gas price discovery for transaction and gives access to the native gas and NERVE governance token.
+              The wallet performs ideal gas price discovery for transactions and gives access to the native gas and NERVE governance token.
               </p>
               </StyledBodySubTitleWallet>
             </span>
