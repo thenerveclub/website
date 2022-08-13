@@ -189,7 +189,7 @@ const IndexPage = props => {
           </SectionHeaderMobile>
           <div>
           {active === "Player" && <Player props={props} />}
-          {active === "Watcher" && <Watcher />}
+          {active === "Watcher" && <Watcher props={props} />}
           </div>
 
       </StyledBody>
