@@ -19,9 +19,8 @@ const StyledBlog = styled.div`
   flex-direction: column;
   position: relative;
   align-items: center;
-  /* padding: 2rem 5rem; */
   margin: 0 auto;
-  margin-bottom: 2rem;
+
   @media (max-width: 960px) {
     padding: 1rem;
     padding-top: 0px;
@@ -38,6 +37,7 @@ const StyledBlogPostWrapper = styled.div`
   gap: 50px;
   padding-bottom: 4rem;
   margin-bottom: 4rem;
+
   @media (max-width: 960px) {
     flex-direction: column;
     grid-template-columns: 1fr;
@@ -52,15 +52,18 @@ const StyledMDX = styled.div`
   max-width: 900px;
   padding: 0;
   margin-bottom: 3rem;
+
   a {
     color: ${({ theme }) => theme.colors.link};
   }
+
   figcaption {
     padding: 0.25rem;
     font-style: italic;
     color: ${({ theme }) => theme.colors.grey6};
     text-align: center;
   }
+  
   @media (max-width: 960px) {
     min-width: 100%;
     max-width: 100%;
@@ -163,11 +166,29 @@ const StyledDocsNavWrapper = styled.ul`
   justify-content: space-between;
   list-style: none;
   margin: 0;
-  margin-bottom: 2rem;
   padding: 3rem;
-  border-bottom: 1px solid ${({ theme }) => theme.colors.grey2};
-  width: 100%;
+  width: 1700px;
   flex-wrap: wrap;
+
+  border-bottom: 1px solid ${({ theme }) => theme.buttonBorder};
+  border-bottom: 1px solid;
+  border-image: linear-gradient(var(--angle), aqua, aqua, magenta, magenta) 1;
+	
+	animation: 15s rotate linear infinite;
+}
+
+@keyframes rotate {
+	to {
+		--angle: 360deg;
+	}
+}
+
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
   @media (max-width: 960px) {
     padding: 0;
   }
@@ -283,8 +304,6 @@ const Blog = props => {
     }
   `)
 
-  // console.log(props.pageContext.frontmatter)
-  // let featuredImgFluid = post.frontmatter.featuredImage.childImageSharp.fluid
 
   return (
     <Layout path={props.location.pathname}>

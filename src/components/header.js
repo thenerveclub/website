@@ -190,12 +190,6 @@ const StyledMenuIcon = styled(MenuIcon)`
   }
 `
 
-const HideSmall = styled.span`
-  @media (max-width: 960px) {
-    display: none;
-  }
-`
-
 const StyledBodySubText = styled.h3`
   color: ${({ theme }) => theme.textColor};
   font-weight: 500;
@@ -205,7 +199,7 @@ const StyledBodySubText = styled.h3`
   }
 `
 
-const Header = props => {
+const Header = () => {
   const matches = useMediaQuery('only screen and (max-width: 1024px)')
   const node = useRef()
   const button = useRef()

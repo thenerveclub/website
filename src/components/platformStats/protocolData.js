@@ -1,11 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
-import Glimmer from '../images/glimmer_center.svg'
-import GlimmerGray from '../images/glimmer_gray.svg'
+import Glimmer from '../../images/glimmer_center.svg'
+import GlimmerGray from '../../images/glimmer_gray.svg'
 
-import ZUsers from '../ZUsers'
-import ZTCount from '../ZTCount'
-import TMoney from '../TMoney'
+import Users from './users'
+import Dares from './dares'
+import Earned from './earned'
 
 
 const StyledSectionFlex = styled.div`
@@ -47,7 +47,11 @@ const StyledSectionFlex = styled.div`
 `
 
 const Numbers = styled(StyledSectionFlex)`
-  margin: 0 0 0 0;
+  margin: 1rem 0 0 0;
+
+  @media (max-width: 960px) {
+    margin: 0 0 2rem 0;
+  }
 `
 
 const BigNumbers = styled(StyledSectionFlex)`
@@ -56,11 +60,21 @@ const BigNumbers = styled(StyledSectionFlex)`
   flex-direction: column;
   position: relative;
   overflow: visisble;
+
   p {
+    margin-top: -1.5rem;
+    font-size: 20px;
     font-weight: 300;
   }
+
   @media (max-width: 960px) {
-    font-size: 32px;
+    font-size: 25px;
+
+    p {
+      font-size: 14px;
+      font-weight: 300;
+    }
+    
   }
 `
 
@@ -118,18 +132,18 @@ const ProtocolData = () => {
       <div style={{ display: 'flex', width: '100%', justifyContent: 'space-between', alignItems: 'center', margin: 0 }}>
         <BigNumbers>
           <Sparkle />
-          <span><ZUsers /></span>
-          <p style={{ fontSize: '14px' }}>Users</p>
+          <span><Users /></span>
+          <p>Users</p>
           <SparkleGray />
         </BigNumbers>
         <BigNumbers>
           <SparkleTopRight />
-          <span><ZTCount /></span>
-          <p style={{ fontSize: '14px' }}>Dares</p>
+          <span><Dares /></span>
+          <p>Dares</p>
         </BigNumbers>
         <BigNumbers>
-          <span><TMoney /></span>
-          <p style={{ fontSize: '14px' }}>Earned</p>
+          <span><Earned /></span>
+          <p>Earned</p>
           <SparkleGray />
         </BigNumbers>
       </div>

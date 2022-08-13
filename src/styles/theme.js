@@ -39,7 +39,7 @@ export const theme = darkMode => ({
   invertImage: darkMode ? 'filter: invert(0);' : 'filter: invert(1);',
 
   // for setting css on <html>
-  backgroundColor: darkMode ? '#000014' : '#F7F8FA',
+  backgroundColor: darkMode ? '#000014' : '#fff5fe',
 
   modalBackground: darkMode ? 'rgba(0,0,0,0.6)' : 'rgba(0,0,0,0.5)',
   cardBG: darkMode ? 'rgba(255, 255, 255, .02)' : 'rgba(0, 0, 0, .04)',
@@ -79,7 +79,7 @@ export const theme = darkMode => ({
     grey9: darkMode ? '#F7F8FA' : '#191B1F',
 
     grey1: darkMode ? '#191b1f' : '#FFFFFF',
-    grey2: darkMode ? '#2C2F36' : '#F7F8FA',
+    grey2: darkMode ? '#F7F8FA' : '#2C2F36',
     grey3: darkMode ? '#40444F' : '#EDEEF2',
     grey4: darkMode ? '#565A69' : '#CED0D9',
     grey5: darkMode ? '#6C7284' : '#888D9B',
@@ -90,17 +90,18 @@ export const theme = darkMode => ({
     green1: '#E6F3EC',
     green2: '#27AE60',
 
-    pink1: darkMode ? '#2F80ED' : '#FF007A',
-    pink2: '#FF8EC4',
-    pink3: '#FFD7EA',
+    pink1: darkMode ? '#00f2fc' : '#de0ccf',
+    pink2: '#de0ccf',
+    pink3: '#de0ccf',
 
     yellow1: darkMode ? '#F3BE1E' : '#F3BE1E',
     yellow2: darkMode ? '#ffe490' : '#ffe490',
 
     red1: '#FF6871',
 
-    link: darkMode ? '#2F80ED' : '#FF007A',
-    invertedLink: darkMode ? '#2F80ED' : '#FF007A'
+    link: darkMode ? '#00f2fc' : '#de0ccf',
+    link2: darkMode ? '#FFFFFF' : '#000000',
+    invertedLink: darkMode ? '#2F80ED' : '#de0ccf'
   },
 
   shadows: {
@@ -205,7 +206,7 @@ export const GlobalStyle = createGlobalStyle`
     position: relative;
   }
   a{
-    color: ${({ theme }) => theme.colors.link};
+    color: ${({ theme }) => theme.colors.link2};
     text-decoration: none;
   }
   button{

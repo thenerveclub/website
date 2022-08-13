@@ -1,19 +1,9 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import styled from 'styled-components'
-import Img from 'gatsby-image'
-
-import gql from 'graphql-tag'
-import dayjs from 'dayjs'
-import utc from 'dayjs/plugin/utc'
-import { useQuery } from '@apollo/react-hooks'
-import { client, blockClient } from '../apollo/client'
-
-import { Link } from 'gatsby'
 
 import Layout from '../layouts'
 import SEO from '../components/seo'
 import BG from '../components/bg'
-import { Button } from '../components/button'
 
 import Twitter from '../images/twitter.inline.svg'
 import Github from '../images/github.inline.svg'
@@ -69,42 +59,6 @@ const StyledBody = styled.div`
   }
 `
 
-const StyledSectionFlex = styled.div`
-  padding: 0 0 4rem 0;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  justify-content: space-between;
-  max-width: 960px;
-  margin-left: 5rem;
-  @media (max-width: 1024px) {
-    padding: 1rem;
-    margin-top: 0rem;
-    flex-direction: ${({ wrapSmall }) => (!wrapSmall ? 'row' : 'column')};
-  }
-  @media (max-width: 960px) {
-    padding: 1rem;
-    margin-left: 0;
-    margin-top: 0rem;
-    width: 100%;
-    flex-direction: column;
-  }
-  h1,
-  h2 {
-    max-width: 650px;
-  }
-  p {
-    /* margin-bottom: 0.5rem; */
-    max-width: 650px;
-  }
-`
-
-const Numbers = styled(StyledSectionFlex)`
-  @media (max-width: 960px) {
-    display: none;
-  }
-`
-
 const Title = styled.h1`
   margin-bottom: 10rem;
   font-size: 72px;
@@ -118,62 +72,6 @@ const Title = styled.h1`
     margin-bottom: 4rem;
     font-size: 2rem;
     text-align: center;
-  }
-`
-
-const InternalLink = styled(Link)`
-  border-radius: 8px;
-  color: ${({ theme }) => theme.textColor};
-  font-weight: 600;
-
-  &:not(:last-child) {
-    margin-right: 1rem;
-  }
-
-  h2 {
-    margin: 0;
-  }
-
-  transition: transform 0.45s cubic-bezier(0.19, 1, 0.22, 1);
-  :hover {
-    transform: translate3d(2px, 2px, 10px);
-  }
-`
-
-const HideSmall = styled.span`
-  @media (max-width: 960px) {
-    display: none;
-  }
-`
-
-const ExternalLink = styled.a`
-  border-radius: 8px;
-  color: ${({ theme }) => theme.textColor};
-  font-weight: 600;
-
-  &:not(:last-child) {
-    margin-right: 1rem;
-  }
-
-  h2 {
-    margin: 0;
-  }
-
-  transition: transform 0.45s cubic-bezier(0.19, 1, 0.22, 1);
-  :hover {
-    transform: translate3d(2px, 2px, 10px);
-  }
-`
-
-const StyledBodySub = styled.h2`
-  max-width: 1000px;
-  line-height: 150%;
-  font-size: 20px;
-  font-weight: 400;
-  text-align: left;
-
-  @media (max-width: 640px) {
-    text-align: left;
   }
 `
 
@@ -291,14 +189,6 @@ const StyledItemRow = styled.nav`
       margin-left: 12px;
     }
   }
-`
-
-const StyledProductImage = styled(Img)`
-  width: 100%;
-  max-width: 120px;
-  margin-bottom: 2rem;
-  background-color: none;
-  border-radius: 12px;
 `
 
 const StyledSocialRow = styled.nav`

@@ -68,7 +68,7 @@ const StyledSocialRow = styled.nav`
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin-right: 6rem;
+  margin-right: 0;
   & > *:not(:first-of-type) {
     margin-top: 0;
     margin-left: 16px;

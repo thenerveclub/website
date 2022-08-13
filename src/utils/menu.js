@@ -7,6 +7,13 @@ const menu = [
     ]
   },
   {
+    name: 'Seasons',
+    sublinks: [
+      { name: 'Closed Beta', 
+      link: '/seasons' },
+    ]
+  },
+  {
     name: 'Docs',
     sublinks: [
       { name: 'Documentation ↗', link: 'https://docs.nerveglobal.com' },

@@ -42,8 +42,8 @@ function SEO({ description, lang, title, path }) {
       <meta name="title" content={title} />
       <meta name="description" content={metaDescription} />
       <meta name="keywords" content={title}></meta>
-      <meta name="theme-color" media="(prefers-color-scheme: light)" content="#FF007A" />
-      <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#FF007A" />
+      <meta name="theme-color" media="(prefers-color-scheme: light)" content="#de0ccf" />
+      <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#de0ccf" />
 
       <meta property="og:title" content={uniTitle} />
       <meta property="og:description" content={metaDescription} />

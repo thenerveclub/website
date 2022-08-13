@@ -1,9 +1,6 @@
 import React, { useState, useCallback } from 'react'
-
 import styled from 'styled-components'
 
-import { Link } from 'gatsby'
-import Uni from '../images/uni.inline.svg'
 
 export function useToggle(initialState = false) {
   const [state, setState] = useState(initialState)
@@ -196,43 +193,6 @@ const StyledDescription = styled.p`
   }
 `
 
-const StyledHomeLink = styled(Link)`
-  max-height: 48px;
-  display: flex;
-  align-items: center;
-`
-
-const StyledUni = styled(Uni)`
-  path {
-    fill: ${({ theme }) => theme.textColor};
-  }
-  margin: 0;
-  width: 32px;
-  height: 32px;
-  margin-left: 2rem;
-  margin-top: -4px;
-  transform: rotate(0deg);
-  transition: transform 0.2s linear;
-  :hover {
-    transform: rotate(-10deg);
-  }
-
-  @media (max-width: 960px) {
-    width: 25px;
-    height: 25px;
-    margin-left: 0rem;
-  }
-`
-
-const StyledBodySubText = styled.h3`
-  color: ${({ theme }) => theme.textColor};
-  font-size: 1rem;
-  font-weight: 600;
-  margin: 1rem 1rem 1rem 1rem;
-  @media (max-width: 640px) {
-    text-align: left;
-  }
-`
 
 export default function Menu(props) {
   return (
@@ -246,7 +206,8 @@ export default function Menu(props) {
                 {item.link.split('/').pop() === 'about' ||
                 item.link.split('/').pop() === 'token' ||
                 item.link.split('/').pop() === 'team' ||
-                item.link.split('/').pop() === 'blog' ? (
+                item.link.split('/').pop() === 'blog' ||
+                item.link.split('/').pop() === 'seasons' ? (
                   <StyledExternalLink href={item.link}>
                     <StyledTitle>{item.name}</StyledTitle>
                   </StyledExternalLink>

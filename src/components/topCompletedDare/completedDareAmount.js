@@ -1,44 +1,45 @@
 import * as React from "react";
 import BigNumber from 'bignumber.js'
 
-const Tmoney = `
+const TopCompletedDare = `
 {
-  globalStats {
-    taskEarnings
-}
+  tasks(where: { finished: true }, orderBy:amount, orderDirection:desc, first: 1) 
+  {
+      amount
+  }
 }
 `;
 
 
-export default function TMoney() {
-  const tmoney = useTmoney();
+export default function CompletedDareAmount() {
+  const tcd = useTCD();
   const matic = usePrice();
 
   return (
     <div>
       <ul>
-        {tmoney.map((tmoney) => (
-          <li key={tmoney.id}>${((tmoney.taskEarnings/1.e+18)*matic).toFixed(2)}</li>
+        {tcd.map((tcd) => (
+          <li key={tcd.id}>${((tcd.amount/1.e+18)*matic).toFixed(2)}</li>
         ))}
       </ul>
     </div>
   );
 }
 
-function useTmoney() {
-  const [tmoney, setTmoney] = React.useState([]);
+function useTCD() {
+  const [tcd, setTCD] = React.useState([]);
 
   React.useEffect(() => {
-    fetch("https://api.thegraph.com/subgraphs/name/nerveglobal/nerveglobal", {
+    fetch("http://ec2-3-68-153-1.eu-central-1.compute.amazonaws.com:8000/subgraphs/name/nerveglobal/nerveglobal", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ query: Tmoney })
+      body: JSON.stringify({ query: TopCompletedDare })
     })
       .then((response) => response.json())
-      .then((data) => setTmoney(data.data.globalStats));
+      .then((data) => setTCD(data.data.tasks));
   }, []);
 
-  return tmoney;
+  return tcd;
 }
 
 function usePrice() {

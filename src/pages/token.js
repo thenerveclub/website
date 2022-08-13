@@ -1,26 +1,15 @@
-import React, { useState, useEffect } from 'react'
-
+import React from 'react'
 import styled from 'styled-components'
 
 import uni from '../images/uni.svg'
-import Grafik from '../images/Grafik.svg'
-
-import { Button } from '../components/button'
-import gql from 'graphql-tag'
-import dayjs from 'dayjs'
-import utc from 'dayjs/plugin/utc'
-import { useQuery } from '@apollo/react-hooks'
-import { client, blockClient } from '../apollo/client'
 import AppsImage from '../images/apps.png'
-
-import { Link } from 'gatsby'
-
 import Layout from '../layouts'
 import SEO from '../components/seo'
 import BG from '../components/bg'
 
 import { TabRight } from '../components/tabRight'
 import Distribution from '../images/distribution.png'
+
 
 const StyledAbout = styled.div`
   display: grid;
@@ -34,52 +23,6 @@ const StyledAbout = styled.div`
     grid-template-columns: 1fr;
     margin-top: 0rem;
     padding-top: 1rem;
-  }
-`
-
-const StyledTradeLink = styled.a`
-  padding: 0.25rem 0.75rem;
-  background-color: ${({ theme }) => theme.textColor};
-  text-decoration: none;
-  color: ${({ theme }) => theme.invertedTextColor};
-  display: inline-block;
-  font-weight: 500;
-  width: 100%;
-  width: min-content;
-  white-space: nowrap;
-  border: 1px solid transparent;
-  box-shadow: ${({ theme }) => theme.shadows.small};
-  background: ${({ theme, open, showBG }) => (showBG && !open ? theme.backgroundColor : 'none')};
-	border-bottom: 1px solid ${({ theme }) => theme.buttonBorder};
-  border-image: linear-gradient(var(--angle), aqua, aqua, magenta, magenta) 1;
-  text-align: center;
-	
-	animation: 15s rotate linear infinite;
-}
-
-@keyframes rotate {
-	to {
-		--angle: 360deg;
-	}
-}
-
-@property --angle {
-  syntax: '<angle>';
-  initial-value: 0deg;
-  inherits: false;
-}
-
-  transition: background-color 0.25s ease;
-  }
-
-  @media (max-width: 960px) {
-    margin: 0 auto 0 auto;
-    text-align: center;
-  }
-
-  @media (max-width: 640px) {
-    margin: 0 auto 0 auto;
-    text-align: center;
   }
 `
 
@@ -115,42 +58,6 @@ const StyledBody = styled.div`
   }
 `
 
-const StyledSectionFlex = styled.div`
-  padding: 0 0 4rem 0;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  justify-content: space-between;
-  max-width: 960px;
-  margin-left: 5rem;
-  @media (max-width: 1024px) {
-    padding: 1rem;
-    margin-top: 0rem;
-    flex-direction: ${({ wrapSmall }) => (!wrapSmall ? 'row' : 'column')};
-  }
-  @media (max-width: 960px) {
-    padding: 1rem;
-    margin-left: 0;
-    margin-top: 0rem;
-    width: 100%;
-    flex-direction: column;
-  }
-  h1,
-  h2 {
-    max-width: 650px;
-  }
-  p {
-    /* margin-bottom: 0.5rem; */
-    max-width: 650px;
-  }
-`
-
-const Numbers = styled(StyledSectionFlex)`
-  @media (max-width: 960px) {
-    display: none;
-  }
-`
-
 const Title = styled.h1`
   margin-bottom: 4rem;
   font-size: 72px;
@@ -172,47 +79,9 @@ const Title = styled.h1`
   }
 `
 
-const InternalLink = styled(Link)`
-  border-radius: 8px;
-  color: ${({ theme }) => theme.textColor};
-  font-weight: 600;
-
-  &:not(:last-child) {
-    margin-right: 1rem;
-  }
-
-  h2 {
-    margin: 0;
-  }
-
-  transition: transform 0.45s cubic-bezier(0.19, 1, 0.22, 1);
-  :hover {
-    transform: translate3d(2px, 2px, 10px);
-  }
-`
-
 const HideSmall = styled.span`
   @media (max-width: 960px) {
     display: none;
-  }
-`
-
-const ExternalLink = styled.a`
-  border-radius: 8px;
-  color: ${({ theme }) => theme.textColor};
-  font-weight: 600;
-
-  &:not(:last-child) {
-    margin-right: 1rem;
-  }
-
-  h2 {
-    margin: 0;
-  }
-
-  transition: transform 0.45s cubic-bezier(0.19, 1, 0.22, 1);
-  :hover {
-    transform: translate3d(2px, 2px, 10px);
   }
 `
 
@@ -347,15 +216,6 @@ const StyledCard = styled.div`
   }
 `
 
-const StyledSectionTitle = styled.h3`
-  max-width: 960px;
-  line-height: 140%;
-  font-size: 32px;
-  @media (max-width: 640px) {
-    text-align: left;
-  }
-`
-
 const StyledItemRow = styled.nav`
   display: flex;
   flex-direction: column;
@@ -413,56 +273,6 @@ export const AppsCard = styled(StyledCard)`
   }
 `
 
-export const GET_BLOCK = gql`
-  query blocks($timestamp: Int!) {
-    blocks(first: 1, orderBy: timestamp, orderDirection: asc, where: { timestamp_gt: $timestamp }) {
-      id
-      number
-      timestamp
-    }
-  }
-`
-
-export const ETH_PRICE = block => {
-  const queryString = block
-    ? `
-    query bundles {
-      bundles(where: { id: ${1} } block: {number: ${block}}) {
-        id
-        ethPrice
-      }
-    }
-  `
-    : ` query bundles {
-      bundles(where: { id: ${1} }) {
-        id
-        ethPrice
-      }
-    }
-  `
-  return gql(queryString)
-}
-
-const APOLLO_QUERY = gql`
-  {
-    uniswapFactory(id: "0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f") {
-      totalVolumeUSD
-      totalLiquidityUSD
-      pairCount
-      txCount
-    }
-    bundle(id: 1) {
-      ethPrice
-    }
-  }
-`
-
-const PageTitle = styled.div`
-  font-size: 18px;
-  font-weight: 200;
-  color: rgba(255, 255, 255, 0.6);
-`
-
 const StyledSectionHeader = styled.h1`
   font-size: 25px;
   white-space: wrap;
@@ -492,20 +302,55 @@ const StyledSectionHeader = styled.h1`
   }
 `
 
-export const UNISWAP_GLOBALS_24HOURS_AGO_QUERY = block => {
-  let queryString = `
-  query uniswapFactory {
-    uniswapFactory(id: "0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f", block: { number: ${block} }) {
-      totalVolumeUSD
-      totalLiquidityUSD
-      pairCount
-    
-    }
-  }
-  `
-
-  return gql(queryString)
+const StyledButtonTop = styled.a`
+  padding: 0.25rem 0.75rem;
+  text-align: center;
+  justify-content: center; 
+  align-items: center;
+  background-color: ${({ theme }) => theme.textColor};
+  text-decoration: none;
+  display: inline-block;
+  font-weight: 500;
+  font-size: 16px;
+  width: 100%;
+  width: 7.5rem;
+  white-space: nowrap;
+  border: 1px solid transparent;
+  box-shadow: ${({ theme }) => theme.shadows.small};
+  background: ${({ theme, open, showBG }) => (showBG && !open ? theme.backgroundColor : 'none')};
+	border-bottom: 1px solid ${({ theme }) => theme.buttonBorder};
+  border-image: linear-gradient(var(--angle), aqua, aqua, magenta, magenta) 1;
+	
+	animation: 15s rotate linear infinite;
+  cursor: pointer;
 }
+
+@keyframes rotate {
+	to {
+		--angle: 360deg;
+	}
+}
+
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+  transition: background-color 0.25s ease;
+  }
+
+  @media (max-width: 960px) {
+    margin: 0 auto 0 auto;
+    align-items: center;
+  }
+
+  @media (max-width: 640px) {
+    margin: 0 auto 0 auto;
+    align-items: center;
+  }
+`
+
 
 const About = props => {
 
@@ -536,16 +381,9 @@ const About = props => {
             <SubTitle style={{ maxWidth: "400px", opacity: '0.6' }}>
             Use Nerve Global and get rewarded with the NERVE token, a direct representation of a contribution to the ecosystem.
             </SubTitle>
-            <StyledTradeLink
-            style={{
-              minWidth: "8rem",
-              color: 'white'
-            }}
-            target="_blank"
-            href="https://docs.nerveglobal.com/sdk/token-economy/abstract"
-          >
-            Learn more
-          </StyledTradeLink>
+          <StyledButtonTop target="_blank" rel="noreferrer" href="https://docs.nerveglobal.com/sdk/token-economy/abstract">
+              <span>Learn more</span>
+            </StyledButtonTop>
             </AutoColumn>
         </TokenSection>
 
@@ -595,15 +433,6 @@ const About = props => {
             <SubText style={{ marginTop: "1rem" }}>
             Negative consensus: In this outcome, all participants will receive their stake back. The previously collected fee is not returned. </SubText>
           </GrantsCard>
-          {/*
-          <GrantsCard style={{ minHeight: "30rem", maxWidth: "28rem" }}>
-            <StyledBodySubTitle>Bet hosting</StyledBodySubTitle>
-            <p style={{ textAlign: 'left', margin: '0', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
-            A fee of 10% is applied to all distributed winnings and are used to partially reimburse the bet creator for their service. 
-            New NERVE are generated and the creator receives 75% according to the paid fee. 25% will accrue to the Nexus Foundation.
-            </p>
-          </GrantsCard>
-        */}
         </StyledItemRow>
     </StyledSection>
 

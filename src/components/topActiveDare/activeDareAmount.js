@@ -1,46 +1,47 @@
 import * as React from "react";
 import BigNumber from 'bignumber.js'
 
-const Tope = `
-{
-  userDashStats(orderBy:earned, orderDirection:desc, first: 10) {
-    id
-    userName
-    spent
-  }
 
+const timestamp = Math.floor(Date.now() / 1000);
+const TopActiveDare = `
+{
+  tasks(where: { endTask_gt:"${timestamp}", finished: false }, orderBy:amount, orderDirection:desc, first: 1) 
+  {
+      amount
+  }
 }
 `;
 
-export default function ZSpent() {
-  const tope = useTope();
+
+export default function ActiveDareAmount() {
+  const tad = useTAD();
   const matic = usePrice();
 
   return (
     <div>
-      <ul style={{ listStyle: "none" }}>
-        {tope.map((tope) => (
-          <li key={tope.id}>USD {((tope.spent/1.e+18)*matic).toFixed(2)}</li>
+      <ul>
+        {tad.map((tad) => (
+          <li key={tad.id}>${((tad.amount/1.e+18)*matic).toFixed(2)}</li>
         ))}
       </ul>
-</div>
+    </div>
   );
 }
 
-function useTope() {
-  const [tope, setTope] = React.useState([]);
+function useTAD() {
+  const [tad, setTAD] = React.useState([]);
 
   React.useEffect(() => {
-    fetch("https://api.thegraph.com/subgraphs/name/nerveglobal/nerveglobal", {
+    fetch("http://ec2-3-68-153-1.eu-central-1.compute.amazonaws.com:8000/subgraphs/name/nerveglobal/nerveglobal", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ query: Tope })
+      body: JSON.stringify({ query: TopActiveDare })
     })
       .then((response) => response.json())
-      .then((data) => setTope(data.data.userDashStats));
+      .then((data) => setTAD(data.data.tasks));
   }, []);
 
-  return tope;
+  return tad;
 }
 
 function usePrice() {

@@ -1,19 +1,14 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
-import { useStaticQuery, graphql } from 'gatsby'
 import Layout from '../layouts'
 import SEO from '../components/seo'
 import BG from '../components/bg'
-import { Butt } from '../components/butt'
-import { Tab } from '../components/tab'
-import { TabRight } from '../components/tabRight'
-import ProtocolData from '../components/protocolData'
+import ProtocolData from '../components/platformStats/protocolData'
 import { Button } from '../components/button'
 import True from '../styles/fontTrue.css'
 
 import { useDarkMode } from '../contexts/Application'
 
-import PinkGlimmer from '../images/pink_glimmer.inline.svg'
 import Twitter from '../images/twitter.inline.svg'
 import Github from '../images/github.inline.svg'
 import Discord from '../images/discord.inline.svg'
@@ -22,7 +17,6 @@ import AppsImage from '../images/apps.jpg'
 import appstore from '../images/appstore.svg'
 import google from '../images/google.svg'
 import kitty from '../images/kitty.png'
-import Mockup1 from '../images/Mockup1.png'
 
 import global from '../images/GLOBAL.png'
 import dashboard from '../images/DASHBOARD.png'
@@ -32,6 +26,17 @@ import vote from '../images/VOTE.png'
 import wallet from '../images/WALLET.png'
 import claimPlayer from '../images/PLAYER.png'
 import claimWatcher from '../images/WATCHER.png'
+
+import ActiveDareDescription from '../components/topActiveDare/activeDareDescription'
+import ActiveDaredUser from '../components/topActiveDare/activeDaredUser'
+import ActiveDareAmount from '../components/topActiveDare/activeDareAmount'
+import ActiveDareProof from '../components/topActiveDare/activeDareProof'
+
+import CompletedDareDescription from '../components/topCompletedDare/completedDareDescription'
+import CompletedDaredUser from '../components/topCompletedDare/completedDaredUser'
+import CompletedDareAmount from '../components/topCompletedDare/completedDareAmount'
+import CompletedDareProof from '../components/topCompletedDare/completedDareProof'
+
 
 
 const StyledAbout = styled.div`
@@ -69,22 +74,6 @@ const Title = styled.h1`
   max-width: 900px;
   @media (max-width: 960px) {
     font-size: 2rem;
-  }
-`
-
-const BGCard = styled.span`
-  width: 100vw;
-  height: 100vh;
-  max-height: 1220px;
-  user-select: none;
-  background-repeat: no-repeat;
-  background: ${({ theme }) => theme.heroBG};
-  background-size: contain;
-  mix-blend-mode: overlay;
-
-  @media (max-width: 960px) {
-    width: 100vw;
-    height: 100vh;
   }
 `
 
@@ -196,7 +185,7 @@ const StyledBodySubTitle = styled.h2`
 `
 
 const StyledBodySubTitleWallet = styled.h2`
-  max-width: 850px;
+  max-width: 900px;
   line-height: 150%;
   font-weight: 400;
   text-align: left;
@@ -209,26 +198,6 @@ const StyledBodySubTitleWallet = styled.h2`
   @media (max-width: 640px) {
     margin-top: 1rem;
     text-align: center;
-  }
-`
-
-const SubTitle = styled.div`
-  max-width: 930px;
-  font-size: 20px;
-  font-weight: 400;
-  text-align: left;
-  margin-right: 48px;
-
-  @media (max-width: 960px) {
-    font-size: 14px;
-    text-align: center;
-    margin-right: 0;
-  }
-
-  @media (max-width: 640px) {
-    font-size: 14px;
-    text-align: center;
-    margin-right: 0;
   }
 `
 
@@ -293,15 +262,6 @@ const StyledBodySubT = styled.h2`
   }
 `
 
-const StyledBodySubText = styled.h3`
-  max-width: 960px;
-  line-height: 150%;
-  opacity: 0.8;
-  @media (max-width: 640px) {
-    text-align: left;
-  }
-`
-
 const StyledSectionTitle = styled.h3`
   max-width: 900px;
   line-height: 140%;
@@ -356,37 +316,6 @@ const StyledSectionTitleGradient = styled.h3`
   }
 `
 
-const StyledSectionTitlePlay = styled.h3`
-  display: flex;
-  text-align: center;
-  align-items; center;
-  justify-content: center;
-  width: 100%;
-
-  line-height: 140%;
-  font-size: 28px;
-  font-weight: 600;
-  background: -webkit-linear-gradient(to right, #DE0CCF 30%, #00F2FC 70%);
-  background: -moz-linear-gradient(to right, #DE0CCF 30%, #00F2FC 70%);
-	background: linear-gradient(to right, #DE0CCF 30%, #00F2FC 70%);
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
-
-  pointer-events: none;
-  white-space: wrap;
-  overflow-wrap: normal;
-
-  @media (max-width: 960px) {
-    display: none;
-    visibility: hidden;
-  }
-
-  @media (max-width: 640px) {
-    display: none;
-    visibility: hidden;
-  }
-`
-
 const StyledSocialRow = styled.nav`
   display: flex;
   flex-direction: row;
@@ -417,37 +346,24 @@ const StyledSocialRow = styled.nav`
   }
 `
 
-const StyledSocialRowL = styled.nav`
-  display: none;
-
-  @media (max-width: 960px) {
-      display: flex;
-      flex-direction: row;
-      margin: 2rem auto 2rem auto;
-      
-      & > *:not(:first-of-type) {
-        margin-top: 0;
-        margin-left: 16px;
-      }
-  }
-`
-
 const StyledItemRow = styled.nav`
 display: flex;
-flex-direction: column;
+flex-direction: row;
+margin: 0 auto 0 auto;
 
   & > *:not(:first-of-type) {
-    margin-top: 12px;
+    margin-left: 12px;
   }
-  @media (min-width: 960px) {
-    flex-direction: row;
+
+  @media (max-width: 960px) {
+    flex-direction: column;
     & > * {
       margin-top: 1px;
       margin-bottom: 1px;
     }
     & > *:not(:first-of-type) {
       margin-top: 0;
-      margin-left: 12px;
+      margin-left: 0;
     }
   }
 `
@@ -476,23 +392,14 @@ const StyledItemRowPlayerWatcher = styled.nav`
 const StyledItemColumn = styled.nav`
   display: flex;
   flex-direction: column;
+  margin-left: 12px;
+
   & > *:not(:last-of-type) {
     margin-bottom: 12px;
   }
-`
 
-const StyledPinkGlimmer = styled(PinkGlimmer)`
-  margin: 0;
-  width: 48px;
-  height: 48px;
-  position: relative;
-  top: -24px;
-  right: -32px;
-  margin-left: -50px;
-  margin-right: 2px;
-  transition: transform 0.2s linear;
-  :hover {
-    transform: rotate(-10deg);
+  @media (max-width: 960px) {
+    margin-left: 0;
   }
 `
 
@@ -546,20 +453,6 @@ const HideSmall = styled.span`
   }
 `
 
-const StyledTradeLink = styled.a`
-padding: 0 3rem 0 0;
-text-decoration: none;
-display: inline-block;
-width: 100%
-alignSelf: center;
-white-space: nowrap;
-
-}
-@media (max-width: 960px) {
-  display: inline-block;
-}
-`
-
 const StyledButton = styled.h1`
   padding: 0.25rem 0.75rem;
   background-color: ${({ theme }) => theme.textColor};
@@ -596,18 +489,18 @@ const StyledButton = styled.h1`
   transition: background-color 0.25s ease;
   }
   @media (max-width: 960px) {
-    margin: 0 1rem 3rem 1rem;
+    margin: 3rem 0.5rem 1rem 0.5rem;
     font-size: 16px;
-    width: auto;
+    width: 6rem;
   }
   @media (max-width: 640px) {
-    margin: 0 1rem 3rem 1rem;
+    margin: 3rem 0.5rem 1rem 0.5rem;
     font-size: 16px;
-    width: auto;
+    width: 6rem;
   }
 `
 
-const StyledButtonTop = styled.h1`
+const StyledButtonTop = styled.a`
   padding: 0.25rem 0.75rem;
   background-color: ${({ theme }) => theme.textColor};
   text-decoration: none;
@@ -645,6 +538,7 @@ const StyledButtonTop = styled.h1`
   @media (max-width: 960px) {
     margin: 0 auto 0 auto;
     align-items: center;
+    font-size: 14px;
   }
 
   @media (max-width: 640px) {
@@ -660,11 +554,6 @@ const IndexPage = props => {
 
   return (
     <Layout path={props.location.pathname}>
-      <BGCard>
-        {/* <CardNoise /> */}
-        
-        {/* <CardFade /> */}
-      </BGCard>
       <SEO
         title="Home"
         path={props.location.pathname}
@@ -743,27 +632,6 @@ const IndexPage = props => {
           }}>Powered by DALL•E 2</p>
         </GrantCard>
         </HideSmall>
-        {/*
-        <StyledSectionHeaderr style={{ display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              width: '100%',
-              padding: '2rem 0 2rem 0',
-              fontFamily: "True"}}>
-          <a>{'POLYGON LAUNCH'}</a>
-          </StyledSectionHeaderr>
-          <div
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              width: '100%',
-              padding: '2rem 0 8rem 0'
-            }}
-          >
-            <Countdown />
-            </div>
-            */}
 
           <SectionHeader style={{ 
               display: 'flex',
@@ -774,16 +642,10 @@ const IndexPage = props => {
               padding: '5.5rem 0 2rem 0',
               fontFamily: "True"}}>
           <span>{'Platform Stats'}</span>
-          <span style={{ 
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            width: '100%',
-            flexDirection: "column",
-            marginTop: "1rem",
-            fontSize: "30px"}}>
-              {'(Closed Beta)'}</span>
           </SectionHeader>
+          <SectionHeaderSmall>
+              <span>{'(Closed Beta)'}</span>
+          </SectionHeaderSmall>
           
           <div
             style={{
@@ -830,6 +692,17 @@ const IndexPage = props => {
               width: '100%',
               padding: '2rem 0 0 0',
               fontFamily: "True"}}>
+          <span>{'Spotlight'}</span>
+          </SectionHeader>
+          <Spotlight props={props} />
+
+          <SectionHeader style={{ 
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              width: '100%',
+              padding: '2rem 0 0 0',
+              fontFamily: "True"}}>
           <span>{'Decentralized Wallet'}</span>
           </SectionHeader>
           <EcosystemSection props={props} />
@@ -846,15 +719,6 @@ const IndexPage = props => {
           </SectionHeader>
           <DeveloperSection props={props} />
 
-          
-        {/*
-        <KeyAdvantagesBet data={data} props={props} />
-        */}
-
-        {/*
-        <Ranking data={data} props={props} />
-        <Spotlight data={data} props={props} />
-        */}
 
         <StyledSection>
         <StyledItemRow style={{ alignItems: 'center', justifyContent: 'center'}}>
@@ -900,80 +764,14 @@ const IndexPage = props => {
 
 export default IndexPage
 
-const StyledSectionHeader = styled.h1`
-  font-size: 30px;
-  white-space: wrap;
-  overflow-wrap: normal;
-  max-width: 900px;
-  font-weight: 500;
-  margin-top: 6rem;
-
-  a {
-    color: ${({ theme }) => theme.textColor};
-  }
-
-  @media (max-width: 960px) {
-    width: 100%;
-    /* font-size: 2rem; */
-    line-height: 2.5rem;
-    max-width: 600px;
-    margin-top: 2rem;
-    text-align: center;
-  }
-  @media (max-width: 640px) {
-    width: 100%;
-    font-weight: 400;
-    margin-top: 2rem;
-    text-align: center;
-  }
-`
-
-const StyledSectionHeaderr = styled.h1`
-  font-size: 5em;
-  white-space: wrap;
-  overflow-wrap: normal;
-  font-weight: 500;
-  margin-top: 10rem;
-  margin-bottom: -2rem;
-
-  background: -webkit-linear-gradient(to right, #DE0CCF 30%, #00F2FC 70%);
-  background: -moz-linear-gradient(to right, #DE0CCF 30%, #00F2FC 70%);
-	background: linear-gradient(to right, #DE0CCF 30%, #00F2FC 70%);
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
-
-  pointer-events: none;
-  white-space: wrap;
-  overflow-wrap: normal;
-
-  a {
-    color: ${({ theme }) => theme.textColor};
-  }
-
-  @media (max-width: 960px) {
-    font-size: 2rem;
-    margin-top: -5rem;
-    color: white;
-    a {
-      color: white;
-  }
-  @media (max-width: 640px) {
-    font-size: 2rem;
-    margin-top: -5rem;
-    color: white;
-    a {
-      color: white;
-  }
-`
 
 const SectionHeader = styled.h1`
-  font-size: 5em;
+  font-size: 5rem;
   font-weight: 500;
   margin-top: 7.5rem;
   margin-bottom: -2rem;
   white-space: wrap;
   overflow-wrap: normal;
-
 
   @media (max-width: 960px) {
     font-size: 2rem;
@@ -981,6 +779,25 @@ const SectionHeader = styled.h1`
 
   @media (max-width: 640px) {
     font-size: 2rem;
+    margin-top: 0rem;
+`
+
+const SectionHeaderSmall = styled.h1`
+  text-align: center;
+  font-size: 2rem;
+  font-family: True;
+  font-weight: 500;
+  margin-top: -0.25rem;
+  margin-bottom: -1rem;
+  white-space: wrap;
+  overflow-wrap: normal;
+
+  @media (max-width: 960px) {
+    font-size: 1rem;
+    margin-top: 0rem;
+
+  @media (max-width: 640px) {
+    font-size: 1rem;
     margin-top: 0rem;
 `
 
@@ -1005,31 +822,6 @@ const SectionHeaderMobile = styled.h1`
   }
 `
 
-const SectionHeaderMobileTitle = styled.h1`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 2rem;
-  margin-bottom: -5rem;
-
-  @media (max-width: 960px) {
-    margin: 0 0 0 0;
-    font-size: 2rem;
-    margin-top: -5rem;
-    color: white;
-    a {
-      color: white;
-  }
-  @media (max-width: 640px) {
-    margin: 0 0 0 0;
-    font-size: 2rem;
-    margin-top: -5rem;
-    color: white;
-    a {
-      color: white;
-  }
-`
-
 const StyledSection = styled.section`
   display: flex;
   margin: 5rem 0;
@@ -1043,24 +835,6 @@ const StyledSection = styled.section`
   }
 `
 
-const StyledSectionr = styled.section`
-  display: flex;
-  flex-direction: right;
-  margin: 5rem 40rem;
-
-  @media (max-width: 960px) {
-  display: flex;
-  flex-direction: column;
-  margin: 5rem 0;
-  }
-
-  @media (max-width: 640px) {
-  display: flex;
-  flex-direction: column;
-  margin: 5rem 0;
-  }
-`
-
 export const DeveloperCard = styled(StyledCard)`
   mix-blend-mode: ${({ isDark }) => (isDark ? 'overlay' : 'lighten')};
   color: white;
@@ -1071,7 +845,6 @@ export const DeveloperCard = styled(StyledCard)`
 export const GovernanceCard = styled(StyledCard)`
   background-size: cover;
   background-repeat: no-repeat;
-  margin-right: 12px;
 
   @media (max-width: 960px) {
     padding: 1rem 1.25rem;
@@ -1080,7 +853,6 @@ export const GovernanceCard = styled(StyledCard)`
 
   @media (max-width: 960px) {
     margin-bottom: 10px;
-    margin-right: 0px;
   }
 `
 
@@ -1112,12 +884,14 @@ export const AppsCard = styled(StyledCard)`
 `
 
 export const GrantsCard = styled(StyledCard)`
-  width: 600px;
-  alignItems: center;
-  justifyContent: center;
+  width: 750px;
+  align-items: center;
+  justify-content: center;
   
   @media (max-width: 960px) {
-    width: 325px;
+    width: 100%;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
   }
 `
 
@@ -1126,8 +900,9 @@ export const GrantsCardNoBorder = styled(StyledCard)`
   border-radius: 0;
   border: 0;
   background-color: transparent;
-  alignItems: center;
-  justifyContent: center;
+  box-shadow: none;
+  align-items: center;
+  justify-content: center;
   
   @media (max-width: 960px) {
     width: 325px;
@@ -1144,6 +919,39 @@ export const GrantCard = styled(StyledC)`
     width: 250px;
     top: 23rem;
     right: 5rem;
+  }
+`
+
+const StyledItemRowIntern = styled.nav`
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  font-size: 20px;
+  font-weight: 500;
+  justify-content: space-between;
+  width: 95%;
+  margin: 0 auto 0 auto;
+
+  p {
+    font-size: 16px;
+  }
+
+  
+  @media (max-width: 960px) {
+    font-size: 16px;
+
+    p {
+      font-size: 14px;
+    }
+
+    & > * {
+      margin-top: 1px;
+      margin-bottom: 1px;
+    }
+    & > *:not(:first-of-type) {
+      margin-top: 0;
+      align-items: right;
+    }
   }
 `
 
@@ -1166,7 +974,7 @@ const EcosystemSection = () => {
         <AppsCard>
           <p style={{
             marginTop: "15rem",
-            fontSize: "13px",
+            fontSize: "12px",
             fontWeight: "700",
             textColor: "#FFFFFF",
             opacity: "1"
@@ -1272,170 +1080,7 @@ const Watcher = () => {
 }
 
 
-const KeyAdvantagesBet = () => {
-  return (
-    <StyledSectionr>
-            <HideSmall>
-        <img style={{ position: "absolute", margin: "8rem 0 0 -40rem", maxWidth: "38%" }} src={Mockup1} />
-        </HideSmall>
-      <StyledItemRow>
-        <span>
-          <StyledSectionHeader style={{ fontFamily: "True"}}>{'BETS'}</StyledSectionHeader>
-
-          <StyledItemColumn style={{ display: 'flex', flexDirection: 'column' }}>
-            <TabRight style={{ zIndex: "1", borderRadius: '20px' }} outlined>
-              <div style={{ padding: '1rem' }}>
-                <StyledBodySubTitle style={{ marginBottom: '0.25rem' }}>
-                1. Host a bet
-                </StyledBodySubTitle>
-                <p style={{ textAlign: 'left', margin: '0', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
-                Enter a description and define two possible outcomes. You will receive a share of the total winnings as a remuneration for your betting service.
-                </p>
-              </div>
-            </TabRight>
-          </StyledItemColumn>
-
-          <StyledItemColumn style={{ display: 'flex', flexDirection: 'column' }}>
-            <TabRight style={{ zIndex: "1", borderRadius: '20px' }} outlined>
-              <div style={{ padding: '1rem' }}>
-                <StyledBodySubTitle style={{ marginBottom: '0.25rem' }}>
-                2. Raise the stakes
-                </StyledBodySubTitle>
-                <p style={{ textAlign: 'left', margin: '0', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
-                Anyone can join your bet with no limits. 
-                </p>
-              </div>
-            </TabRight>
-          </StyledItemColumn>
-
-          <StyledItemColumn style={{ display: 'flex', flexDirection: 'column' }}>
-            <TabRight style={{ zIndex: "1", borderRadius: '20px' }} outlined>
-              <div style={{ padding: '1rem' }}>
-                <StyledBodySubTitle style={{ marginBottom: '0.25rem' }}>
-                3. Present the result
-                </StyledBodySubTitle>
-                <p style={{ textAlign: 'left', margin: '0', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
-                You are in total control of your bet. Present the correct result and build up your reputation. All funds are automatically transferred to the winning party.
-                </p>
-              </div>
-            </TabRight>
-          </StyledItemColumn>
-
-          <StyledItemColumn style={{ display: 'flex', flexDirection: 'column' }}>
-            <TabRight style={{ zIndex: "1", borderRadius: '20px' }} outlined>
-              <div style={{ padding: '1rem' }}>
-                <StyledBodySubTitle style={{ marginBottom: '0.25rem' }}>
-                4. Submit a proof
-                </StyledBodySubTitle>
-                <p style={{ textAlign: 'left', margin: '0', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
-                Underpin your result with a proof uploaded to your favorite social media platform.
-                </p>
-              </div>
-            </TabRight>
-          </StyledItemColumn>
-        </span>
-        </StyledItemRow>
-    </StyledSectionr>
-  )
-}
-
-
-{/*const Spotlight = () => {
-  return (
-    <>
-      <StyledSection>
-        <StyledSectionHeader>{'SPOTLIGHT →'}</StyledSectionHeader>
-        <StyledItemRow style={{
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              padding: '2rem 10rem 2rem 10rem'
-            }}>
-        <GrantsCard style={{ minHeight: "16rem", maxWidth: "50rem" }}>
-            <StyledBodySubTitle style={{ fontSize: '1.125rem' }}>Latest Task</StyledBodySubTitle>
-            <p style={{ fontSize: '20px', fontWeight: "600" }}>
-            <ZTask />
-            </p>
-            <StyledItemRow>
-            <Butt outlined>
-              <p style={{ fontSize: '1.125rem' }}>For<TEarn /></p>
-            </Butt>
-            <p style={{ fontSize: '1.125rem', textAlign: "right", flex: "1" }}>USD</p>
-            <Butt outlined>
-              <p style={{ fontSize: '1.125rem' }}><TMoney/></p>
-            </Butt>
-            </StyledItemRow>
-            
-            
-          </GrantsCard>
-
-          <GrantsCard style={{ minHeight: "16rem", maxWidth: "50rem" }}>
-            <StyledBodySubTitle style={{ fontSize: '1.125rem' }}>Latest Bet</StyledBodySubTitle>
-            <p style={{ fontSize: '20px', fontWeight: "600" }}>
-            <ZBet />
-            </p>
-            <StyledItemRow>
-            <Butt outlined>
-              <p style={{ fontSize: '1.125rem' }}>By<BEarn /></p>
-            </Butt>
-            <Butt outlined>
-              <p style={{ fontSize: '1.125rem', textAlign: "right", flex: "1" }}>
-                <BEarnTotal/>
-                </p>
-            </Butt>
-            </StyledItemRow>
-          </GrantsCard>
-          
-        </StyledItemRow>
-      </StyledSection>
-    </>
-  )
-}
-
-const Ranking = () => {
-  return (
-    <>
-      <StyledSection>
-        <StyledSectionHeader>{'RANKING →'}</StyledSectionHeader>
-        <StyledItemRow style={{
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              padding: '2rem 10rem 2rem 10rem'
-            }}>
-
-          <GrantsCard style={{ minHeight: "16rem", maxWidth: "50rem" }}>
-            <StyledBodySubTitle style={{ fontSize: '1.125rem' }}>TOP EARNERS</StyledBodySubTitle>
-            <p style={{ marginLeft: "2rem", fontSize: '18px', fontWeight: "600" }}>
-            <StyledItemRow>
-            <ZTopearn />
-            <p style={{ textAlign: "right", flex: "1" }}>
-            <ZTopearn1 />
-            </p>
-            </StyledItemRow>
-            </p>
-          </GrantsCard>
-
-          <GrantsCard style={{ minHeight: "16rem", maxWidth: "50rem" }}>
-            <StyledBodySubTitle style={{ fontSize: '1.125rem' }}>TOP SPENDERS</StyledBodySubTitle>
-            <p style={{ marginLeft: "2rem", fontSize: '18px', fontWeight: "600" }}>
-            <StyledItemRow>
-              <ZTopspent />
-              <p style={{ textAlign: "right", flex: "1" }}>
-            <ZTopspent1 />
-            </p>
-            </StyledItemRow>
-            </p>
-          </GrantsCard>
-          
-        </StyledItemRow>
-      </StyledSection>
-    </>
-  )
-}
-*/}
-
-const DeveloperSection = props => {
+const DeveloperSection = () => {
   return (
     <>
       <StyledSection>
@@ -1457,7 +1102,7 @@ const DeveloperSection = props => {
             </span>
 
             <StyledButtonTop target="_blank"
-            href="https://docs.nerveglobal.com/protocol/dao/overview" outlined>
+              href="https://docs.nerveglobal.com/protocol/dao/overview">
               <span style={{ margin: 0 }}>Learn more</span>
             </StyledButtonTop>
           </GovernanceCard>
@@ -1495,6 +1140,56 @@ const DeveloperSection = props => {
               </div>
             </Button>
           </StyledItemColumn>
+        </StyledItemRow>
+      </StyledSection>
+    </>
+  )
+}
+
+const Spotlight = () => {
+  return (
+    <>
+      <StyledSection style={{ marginRight: "auto", marginLeft: "auto" }}>
+        <StyledItemRow>
+              
+          <GrantsCard>
+            <StyledBodySubTitle style={{ fontSize: '1.125rem' }}>Top Active Dare</StyledBodySubTitle>
+            <StyledItemRowIntern style={{ justifyContent: 'center', textAlign: 'center'}}>
+              <ActiveDareDescription />
+            </StyledItemRowIntern>
+            <StyledItemRowIntern>
+              <p>Player</p>
+              <p><ActiveDaredUser /></p>
+            </StyledItemRowIntern>
+            <StyledItemRowIntern>
+              <p>Value</p>
+              <p><ActiveDareAmount/></p>
+            </StyledItemRowIntern>
+            <StyledItemRowIntern>
+              <p>Proof</p>
+              <p><ActiveDareProof/></p>
+            </StyledItemRowIntern>
+          </GrantsCard>
+
+          <GrantsCard>
+            <StyledBodySubTitle style={{ fontSize: '1.125rem' }}>Top Completed Dare</StyledBodySubTitle>
+            <StyledItemRowIntern style={{ justifyContent: 'center', textAlign: 'center'}}>
+              <CompletedDareDescription />
+            </StyledItemRowIntern>
+            <StyledItemRowIntern>
+              <p>Player</p>
+              <p><CompletedDaredUser /></p>
+            </StyledItemRowIntern>
+            <StyledItemRowIntern>
+              <p>Value</p>
+              <p><CompletedDareAmount/></p>
+            </StyledItemRowIntern>
+            <StyledItemRowIntern>
+              <p>Proof</p>
+              <p><CompletedDareProof/></p>
+            </StyledItemRowIntern>
+          </GrantsCard>
+
         </StyledItemRow>
       </StyledSection>
     </>

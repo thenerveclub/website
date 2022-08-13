@@ -1,46 +1,43 @@
 import * as React from "react";
 import BigNumber from 'bignumber.js'
 
-const Tope = `
-{
-  userDashStats(orderBy:earned, orderDirection:desc, first: 10) {
-    id
-    userName
-    earned
+const GlobalEarned = `
+  {
+    globalStats {
+      taskEarnings
   }
-
 }
 `;
 
-export default function ZSpent() {
-  const tope = useTope();
+export default function Users() {
+  const earned = useEarned();
   const matic = usePrice();
 
   return (
     <div>
-      <ul style={{ listStyle: "none" }}>
-        {tope.map((tope) => (
-          <li key={tope.id}>USD {((tope.earned/1.e+18)*matic).toFixed(2)}</li>
+      <ul>
+        {earned.map((earned) => (
+          <li key={earned.id}>${((earned.taskEarnings/1.e+18)*matic).toFixed(2)}</li>
         ))}
       </ul>
-</div>
+    </div>
   );
 }
 
-function useTope() {
-  const [tope, setTope] = React.useState([]);
+function useEarned() {
+  const [earned, setEarned] = React.useState([]);
 
   React.useEffect(() => {
-    fetch("https://api.thegraph.com/subgraphs/name/nerveglobal/nerveglobal", {
+    fetch("http://ec2-3-68-153-1.eu-central-1.compute.amazonaws.com:8000/subgraphs/name/nerveglobal/nerveglobal", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ query: Tope })
+      body: JSON.stringify({ query: GlobalEarned })
     })
       .then((response) => response.json())
-      .then((data) => setTope(data.data.userDashStats));
+      .then((data) => setEarned(data.data.globalStats));
   }, []);
 
-  return tope;
+  return earned;
 }
 
 function usePrice() {

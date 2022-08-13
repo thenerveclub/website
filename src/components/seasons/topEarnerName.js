@@ -13,12 +13,17 @@ const Tope = `
 
 export default function ZSpent() {
   const tope = useTope();
-
+  
   return (
     <div>
       <ul style={{ listStyle: "decimal" }}>
         {tope.map((tope) => (
-          <li key={tope.id}>{tope.userName}</li>
+          <li key={tope.id} >{tope.userName}
+          <a target="_blank" rel="noreferrer" href={"https://app.nerveglobal.com/#" + tope.userName}>
+          ↗
+          </a>
+          </li>
+          
         ))}
       </ul>
 </div>
@@ -29,7 +34,7 @@ function useTope() {
   const [tope, setTope] = React.useState([]);
 
   React.useEffect(() => {
-    fetch("https://api.thegraph.com/subgraphs/name/nerveglobal/nerveglobal", {
+    fetch("http://ec2-3-68-153-1.eu-central-1.compute.amazonaws.com:8000/subgraphs/name/nerveglobal/nerveglobal", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ query: Tope })

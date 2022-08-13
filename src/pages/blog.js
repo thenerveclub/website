@@ -7,6 +7,7 @@ import Layout from '../layouts'
 import BG from '../components/bg'
 import SEO from '../components/seo'
 
+
 const StyledBody = styled.div`
   position: relative;
   display: flex;
@@ -66,20 +67,6 @@ grid-auto-rows: 1fr;
   grid-gap: 24px;
   grid-auto-rows: auto;
 }
-`
-
-const PageTitleWrapper = styled.section`
-  display: flex;
-  flex-direction: column;
-  /* align-items: center; */
-  /* justify-content: center; */
-  max-width: 960px;
-  margin: 0 auto;
-  width: 100%;
-  padding: 4rem;
-  @media (max-width: 960px) {
-    padding: 0;
-  }
 `
 
 const StyledAbout = styled.div`
