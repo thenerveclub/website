@@ -1,18 +1,17 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
+
 import Layout from '../layouts'
 import SEO from '../components/seo'
 import BG from '../components/bg'
-import True from '../styles/fontTrue.css'
-
-import { useDarkMode } from '../contexts/Application'
-
-import AppsImage from '../images/apps.jpg'
-
 
 import TopEarnerName from '../components/seasons/topEarnerName'
 import TopEarnerSocials from '../components/seasons/topEarnerSocials'
 import Earned from '../components/seasons/earned'
+
+import TopSpenderName from '../components/seasons/topSpenderName'
+import TopSpenderSocials from '../components/seasons/topSpenderSocials'
+import Spent from '../components/seasons/spent'
 
 
 
@@ -46,25 +45,37 @@ const Title = styled.h1`
 `
 
 const StyledBody = styled.div`
+  position: relative;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  justify-content: flex-start;
+  padding: 2.5rem;
+  border-bottom: 1px solid ${({ theme }) => theme.buttonBorder};
+  border-bottom: 1px solid;
+  border-image: linear-gradient(var(--angle), aqua, aqua, magenta, magenta) 1;
+	
+	animation: 15s rotate linear infinite;
+}
+
+@keyframes rotate {
+	to {
+		--angle: 360deg;
+	}
+}
+
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
 
   @media (max-width: 960px) {
-
+    margin-bottom: 0;
+    padding: 1rem;
+    padding-bottom: 8rem;
   }
 `
 
-const StyledBodySubTitle = styled.h2`
-  max-width: 720px;
-  line-height: 150%;
-  font-weight: 400;
-  text-align: left;
-
-  @media (max-width: 640px) {
-    text-align: center;
-  }
-`
 
 const StyledItemRow = styled.nav`
   display: flex;
@@ -110,9 +121,6 @@ const StyledCard = styled.div`
   box-shadow: ${({ theme }) => theme.shadows.huge};
 `
 
-const StyledC = styled.div`
-  border-radius: 24px;
-`
 
 const StyledButton = styled.h1`
   padding: 0.25rem 0.75rem;
@@ -161,47 +169,6 @@ const StyledButton = styled.h1`
   }
 `
 
-const IndexPage = props => {
-  const isDark = useDarkMode()
-  const [active, setActive] = useState("Player");
-
-  return (
-    <Layout path={props.location.pathname}>
-      <SEO title="SEASONS" path={props.location.pathname} />
-      <StyledAbout>
-        <span style={{ marginTop: '5rem' }}>
-          <Title style={{ fontFamily: "True" }}>
-            CLOSED BETA SEASON
-          </Title>
-        </span>
-      </StyledAbout>
-      <StyledBody>
-
-      <SectionHeaderMobile style={{ 
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              width: '100%',}}>
-          <nav>
-            <StyledButton onClick={() => setActive("Player")}>Top Earners</StyledButton>
-            <StyledButton onClick={() => setActive("Watcher")}>Top Spenders</StyledButton>
-          </nav>
-          </SectionHeaderMobile>
-          <div>
-          {active === "Player" && <Player props={props} />}
-          {active === "Watcher" && <Watcher props={props} />}
-          </div>
-
-      </StyledBody>
-      <BG />
-    </Layout>
-  )
-}
-
-export default IndexPage
-
-
-
 const SectionHeaderMobile = styled.h1`
   width: 100%;
 
@@ -237,59 +204,7 @@ const StyledSection = styled.section`
   }
 `
 
-export const DeveloperCard = styled(StyledCard)`
-  mix-blend-mode: ${({ isDark }) => (isDark ? 'overlay' : 'lighten')};
-  color: white;
-  background-size: cover;
-  background-repeat: no-repeat;
-`
-
-export const GovernanceCard = styled(StyledCard)`
-  mix-blend-mode: ${({ isDark }) => (isDark ? 'overlay' : 'lighten')};
-  background-size: cover;
-  background-repeat: no-repeat;
-  margin-right: 12px;
-
-  @media (max-width: 960px) {
-    padding: 1rem 1.25rem;
-    height: ${({ open }) => (open ? '100vh' : '100%')};
-  }
-
-  @media (max-width: 960px) {
-    margin-bottom: 10px;
-    margin-right: 0px;
-  }
-`
-
-export const AppsCard = styled(StyledCard)`
-  background: url(${AppsImage});
-  background-size: cover;
-  background-repeat: no-repeat;
-  margin-right: 12px;
-  width: 100%;
-  min-height: 290px;
-  max-width: 590px;
-
-  h1 {
-    font-size: 48px;
-    font-weight: 700;
-    margin: 0;
-    margin-bottom: 0.25rem;
-  }
-
-  p {
-    opacity: 0.6;
-    font-size: 20px;
-    font-weight: 300;
-  }
-
-  @media (max-width: 960px) {
-    display: none;
-    visibility: hidden;
-  }
-`
-
-export const GrantsCard = styled(StyledCard)`
+const GrantsCard = styled(StyledCard)`
   width: 1200px;
   align-items: center;
   justify-content: center;
@@ -300,49 +215,80 @@ export const GrantsCard = styled(StyledCard)`
   }
 `
 
-export const GrantCard = styled(StyledC)`
-  width: 250px;
-  position: absolute; 
-  top: -1rem;
-  right: 10rem;
+const Seasons = props => {
+  const [active, setActive] = useState([]);
   
-  @media (max-width: 960px) {
-    width: 250px;
-    top: 23rem;
-    right: 5rem;
-  }
-`
-
-const Player = () => {
   return (
-      <StyledSection>
-        <StyledItemRow>
+  <Layout path={props.location.pathname}>
+    <SEO title="SEASONS" path={props.location.pathname} />
+      <StyledAbout>
+        <span style={{ marginTop: '5rem' }}>
+          <Title style={{ fontFamily: "True" }}>
+          CLOSED BETA SEASON
+          </Title>
+        </span>
+      </StyledAbout>
+      <StyledBody>
+        <SectionHeaderMobile style={{ 
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          width: '100%',}}>
+            <a>
+              Top Earners
+            </a>
+        </SectionHeaderMobile>
+          <TopEarners props={props} />
 
-          <GrantsCard>
-            <StyledItemRowIntern>
+          <SectionHeaderMobile style={{ 
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          width: '100%',}}>
+            <a>
+              Top Spenders
+            </a>
+        </SectionHeaderMobile>
+          <TopSpenders props={props} />
+      </StyledBody>
+      <BG />
+  </Layout>
+  )
+}
+
+export default Seasons
+
+
+
+const TopEarners = () => {
+  return (
+  <StyledSection>
+    <StyledItemRow>
+      <GrantsCard>
+          <StyledItemRowIntern>
             <TopEarnerName/>
             <TopEarnerSocials/>
             <Earned/>
-            </StyledItemRowIntern>
-          </GrantsCard>
-          
-        </StyledItemRow>
-      </StyledSection>
+          </StyledItemRowIntern>
+      </GrantsCard>   
+    </StyledItemRow>
+  </StyledSection>
   )
 }
 
 
-const Watcher = () => {
+const TopSpenders = () => {
   return (
-      <StyledSection>
-        <StyledItemRow>
-
-          <GrantsCard>
-            <StyledBodySubTitle style={{ fontSize: '1.125rem' }}>TOP SPENDERS</StyledBodySubTitle>
-
-          </GrantsCard>
-          
-        </StyledItemRow>
-      </StyledSection>
+  <StyledSection>
+    <StyledItemRow>
+      <GrantsCard>
+        <StyledItemRowIntern>
+          <TopSpenderName/>
+          <TopSpenderSocials/>
+          <Spent/>
+        </StyledItemRowIntern>
+      </GrantsCard>
+    </StyledItemRow>
+  </StyledSection>
   )
 }

@@ -1,45 +1,45 @@
 import * as React from "react";
 import BigNumber from 'bignumber.js'
 
-const TopPlayerEarned = `
+const TopPlayerSpent = `
 {
-  userDashStats(orderBy:earned, orderDirection:desc, first: 10) {
+  userDashStats(orderBy:spent, orderDirection:desc, first: 10) {
     id
     userName
-    earned
+    spent
   }
 }
 `;
 
-export default function TopEarned() {
-  const tpe = useTPE();
+export default function TopSpent() {
+  const tps = useTPS();
   const matic = usePrice();
 
   return (
     <div>
       <ul style={{ listStyle: "none" }}>
-        {tpe.map((tpe) => (
-          <li key={tpe.id}>${((tpe.earned/1.e+18)*matic).toFixed(2)}</li>
+        {tps.map((tps) => (
+          <li key={tps.id}>${((tps.spent/1.e+18)*matic).toFixed(2)}</li>
         ))}
       </ul>
 </div>
   );
 }
 
-function useTPE() {
-  const [tpe, setTPE] = React.useState([]);
+function useTPS() {
+  const [tps, setTPS] = React.useState([]);
 
   React.useEffect(() => {
     fetch("https://api.thegraph.com/subgraphs/name/nerveglobal/nerveglobal", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ query: TopPlayerEarned })
+      body: JSON.stringify({ query: TopPlayerSpent })
     })
       .then((response) => response.json())
-      .then((data) => setTPE(data.data.userDashStats));
+      .then((data) => setTPS(data.data.userDashStats));
   }, []);
 
-  return tpe;
+  return tps;
 }
 
 function usePrice() {

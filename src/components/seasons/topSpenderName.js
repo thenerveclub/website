@@ -1,26 +1,26 @@
 import * as React from "react";
 
-const TopEarnerName = `
+const TopSpenderName = `
 {
-  userDashStats(orderBy:earned, orderDirection:desc, first: 10) {
+  userDashStats(orderBy:spent, orderDirection:desc, first: 10) {
     id
     userName
-    earned
+    spent
   }
 
 }
 `;
 
 export default function EarnerName() {
-  const ten = useTEN();
+  const tsn = useTSN();
   
   return (
     <div>
       <ul style={{ listStyle: "decimal" }}>
-        {ten.map((ten) => (
-          <li key={ten.id} >
-          <a target="_blank" rel="noreferrer" href={"https://app.nerveglobal.com/#" + ten.userName}>
-          {ten.userName}↗
+        {tsn.map((tsn) => (
+          <li key={tsn.id} >
+          <a target="_blank" rel="noreferrer" href={"https://app.nerveglobal.com/#" + tsn.userName}>
+          {tsn.userName}↗
           </a>
           </li>
           
@@ -30,18 +30,18 @@ export default function EarnerName() {
   );
 }
 
-function useTEN() {
-  const [ten, setTEN] = React.useState([]);
+function useTSN() {
+  const [tsn, setTSN] = React.useState([]);
 
   React.useEffect(() => {
     fetch("https://api.thegraph.com/subgraphs/name/nerveglobal/nerveglobal", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ query: TopEarnerName })
+      body: JSON.stringify({ query: TopSpenderName })
     })
       .then((response) => response.json())
-      .then((data) => setTEN(data.data.userDashStats));
+      .then((data) => setTSN(data.data.userDashStats));
   }, []);
 
-  return ten;
+  return tsn;
 }

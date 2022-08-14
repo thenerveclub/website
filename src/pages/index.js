@@ -5,9 +5,6 @@ import SEO from '../components/seo'
 import BG from '../components/bg'
 import ProtocolData from '../components/platformStats/protocolData'
 import { Button } from '../components/button'
-import True from '../styles/fontTrue.css'
-
-import { useDarkMode } from '../contexts/Application'
 
 import Twitter from '../images/twitter.inline.svg'
 import Github from '../images/github.inline.svg'
@@ -549,7 +546,6 @@ const StyledButtonTop = styled.a`
 
 
 const IndexPage = props => {
-  const isDark = useDarkMode()
   const [active, setActive] = useState("Player"); 
 
   return (
@@ -835,14 +831,7 @@ const StyledSection = styled.section`
   }
 `
 
-export const DeveloperCard = styled(StyledCard)`
-  mix-blend-mode: ${({ isDark }) => (isDark ? 'overlay' : 'lighten')};
-  color: white;
-  background-size: cover;
-  background-repeat: no-repeat;
-`
-
-export const GovernanceCard = styled(StyledCard)`
+const GovernanceCard = styled(StyledCard)`
   background-size: cover;
   background-repeat: no-repeat;
 
@@ -856,7 +845,7 @@ export const GovernanceCard = styled(StyledCard)`
   }
 `
 
-export const AppsCard = styled(StyledCard)`
+const AppsCard = styled(StyledCard)`
   background: url(${AppsImage});
   background-size: cover;
   background-repeat: no-repeat;
@@ -883,7 +872,7 @@ export const AppsCard = styled(StyledCard)`
   }
 `
 
-export const GrantsCard = styled(StyledCard)`
+const GrantsCard = styled(StyledCard)`
   width: 750px;
   align-items: center;
   justify-content: center;
@@ -895,7 +884,7 @@ export const GrantsCard = styled(StyledCard)`
   }
 `
 
-export const GrantsCardNoBorder = styled(StyledCard)`
+const GrantsCardNoBorder = styled(StyledCard)`
   width: 600px;
   border-radius: 0;
   border: 0;
@@ -909,7 +898,7 @@ export const GrantsCardNoBorder = styled(StyledCard)`
   }
 `
 
-export const GrantCard = styled(StyledC)`
+const GrantCard = styled(StyledC)`
   width: 250px;
   position: absolute; 
   top: -1rem;
