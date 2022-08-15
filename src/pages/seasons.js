@@ -70,7 +70,11 @@ const StyledBody = styled.div`
 }
 
   @media (max-width: 960px) {
-    margin-bottom: 0;
+    padding: 1rem;
+    padding-bottom: 8rem;
+  }
+
+  @media (max-width: 640px) {
     padding: 1rem;
     padding-bottom: 8rem;
   }
@@ -173,17 +177,16 @@ const SectionHeaderMobile = styled.h1`
   width: 100%;
 
   @media (max-width: 960px) {
-    margin: 0 0 0 0;
+    margin: 2rem 0 0 0;
     font-size: 2rem;
-    margin-top: -5rem;
     color: white;
     a {
       color: white;
   }
+
   @media (max-width: 640px) {
-    margin: 0 0 0 0;
+    margin: 2rem 0 0 0;
     font-size: 2rem;
-    margin-top: -5rem;
     color: white;
     a {
       color: white;
@@ -234,9 +237,7 @@ const Seasons = props => {
           alignItems: 'center',
           justifyContent: 'center',
           width: '100%',}}>
-            <a>
-              Top Earners
-            </a>
+            <a>Top Earners</a>
         </SectionHeaderMobile>
           <TopEarners props={props} />
 
@@ -245,9 +246,7 @@ const Seasons = props => {
           alignItems: 'center',
           justifyContent: 'center',
           width: '100%',}}>
-            <a>
-              Top Spenders
-            </a>
+            <a>Top Spenders</a>
         </SectionHeaderMobile>
           <TopSpenders props={props} />
       </StyledBody>
