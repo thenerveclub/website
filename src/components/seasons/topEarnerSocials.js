@@ -13,7 +13,7 @@ const StyledInstagram = styled(Instagram)`
   fill: ${({ theme }) => theme.textColor};
   }
 
-  margin-left: -15rem;
+  margin-left: -10rem;
   width: 20px;
   height: 20px;
 
@@ -31,7 +31,7 @@ const StyledInstagram = styled(Instagram)`
 const StyledInstagramHidden = styled(Instagram)`
   visibility: hidden;
 
-  margin-left: -15rem;
+  margin-left: -10rem;
   width: 20px;
   height: 20px;
 
@@ -131,7 +131,7 @@ const StyledTwitch = styled(Twitch)`
 const StyledTwitchHidden = styled(Twitch)`
   visibility: hidden;
 
-  margin-left: -15rem;
+  margin-left: -10rem;
   width: 20px;
   height: 20px;
 

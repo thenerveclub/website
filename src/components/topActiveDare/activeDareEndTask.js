@@ -1,46 +1,46 @@
 import * as React from "react";
 import BigNumber from 'bignumber.js'
 
-const TopCompletedDare = `
+
+const timestamp = Math.floor(Date.now() / 1000);
+const TopActiveDare = `
 {
-  tasks(where: { finished: true }, orderBy:amount, orderDirection:desc, first: 1) 
+  tasks(where: { endTask_gt:"${timestamp}", finished: false }, orderBy:amount, orderDirection:desc, first: 1) 
   {
-      amount
-      participants
+      endTask
   }
 }
 `;
 
 
-export default function CompletedDareAmount() {
-  const tcd = useTCD();
-  const matic = usePrice();
+export default function ActiveDareEndTask() {
+  const tad = useTAD();
 
   return (
     <div>
       <ul>
-        {tcd.map((tcd) => (
-          <li key={tcd.id}>({tcd.participants}) ${((tcd.amount/1.e+18)*matic).toFixed(2)}</li>
+        {tad.map((tad) => (
+          <li key={tad.id}>{tad.endTask}</li>
         ))}
       </ul>
     </div>
   );
 }
 
-function useTCD() {
-  const [tcd, setTCD] = React.useState([]);
+function useTAD() {
+  const [tad, setTAD] = React.useState([]);
 
   React.useEffect(() => {
     fetch("https://api.thegraph.com/subgraphs/name/nerveglobal/nerveglobal", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ query: TopCompletedDare })
+      body: JSON.stringify({ query: TopActiveDare })
     })
       .then((response) => response.json())
-      .then((data) => setTCD(data.data.tasks));
+      .then((data) => setTAD(data.data.tasks));
   }, []);
 
-  return tcd;
+  return tad;
 }
 
 function usePrice() {

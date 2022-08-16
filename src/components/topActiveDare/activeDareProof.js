@@ -80,6 +80,7 @@ const TopActiveDare = `
   tasks(where: { endTask_gt:"${timestamp}", finished: false }, orderBy:amount, orderDirection:desc, first: 1) 
   {
     proofLink
+    endTask
   }
 }
 `;
@@ -109,7 +110,7 @@ export default function ActiveDareProof() {
             <a target="_blank" rel="noreferrer" href={tad.proofLink}>
             {tad.proofLink.includes("twitch") ? (<StyledTwitch />) : (<a></a>)}</a>
 
-            <a>{tad.proofLink.includes('') ? (<a style={{ color: "#FFFFFF"}}>Outstanding</a>) : (<a></a>)}</a>
+            <a>{tad.proofLink.includes('') ? (<a style={{ color: "#FFFFFF"}}>Proof: Outstanding</a>) : (<a></a>)}</a>
 
           </li>
         ))}

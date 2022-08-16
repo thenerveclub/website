@@ -8,6 +8,7 @@ const TopActiveDare = `
   tasks(where: { endTask_gt:"${timestamp}", finished: false }, orderBy:amount, orderDirection:desc, first: 1) 
   {
       amount
+      participants
   }
 }
 `;
@@ -21,7 +22,7 @@ export default function ActiveDareAmount() {
     <div>
       <ul>
         {tad.map((tad) => (
-          <li key={tad.id}>${((tad.amount/1.e+18)*matic).toFixed(2)}</li>
+          <li key={tad.id}>({tad.participants}) ${((tad.amount/1.e+18)*matic).toFixed(2)}</li>
         ))}
       </ul>
     </div>

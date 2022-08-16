@@ -29,6 +29,8 @@ import ActiveDaredUser from '../components/topActiveDare/activeDaredUser'
 import ActiveDareAmount from '../components/topActiveDare/activeDareAmount'
 import ActiveDareProof from '../components/topActiveDare/activeDareProof'
 
+import Countdown from '../components/topActiveDare/countdownTimer'
+
 import CompletedDareDescription from '../components/topCompletedDare/completedDareDescription'
 import CompletedDaredUser from '../components/topCompletedDare/completedDaredUser'
 import CompletedDareAmount from '../components/topCompletedDare/completedDareAmount'
@@ -918,11 +920,12 @@ const StyledItemRowIntern = styled.nav`
   font-size: 20px;
   font-weight: 500;
   justify-content: space-between;
-  width: 95%;
+  width: 100%;
   margin: 0 auto 0 auto;
 
   p {
-    font-size: 16px;
+    font-size: 12px;
+    justify-content: space-between;
   }
 
   
@@ -1143,40 +1146,50 @@ const Spotlight = () => {
               
           <GrantsCard>
             <StyledBodySubTitle style={{ fontSize: '1.125rem' }}>Top Active Dare</StyledBodySubTitle>
-            <StyledItemRowIntern style={{ justifyContent: 'center', textAlign: 'center'}}>
+            
+            <StyledItemRowIntern style={{ fontSize: '16px' }}>
+              <ActiveDaredUser />
+              <ActiveDareProof/>
+            </StyledItemRowIntern>
+
+            <StyledItemRowIntern>
               <ActiveDareDescription />
             </StyledItemRowIntern>
-            <StyledItemRowIntern>
-              <p>Player</p>
-              <p><ActiveDaredUser /></p>
+
+            <StyledItemRowIntern style={{ marginBottom: '-1.5rem' }}>
+              <Countdown />
+              <ActiveDareAmount/>
             </StyledItemRowIntern>
+
             <StyledItemRowIntern>
-              <p>Value</p>
-              <p><ActiveDareAmount/></p>
+              <p>Time</p>
+              <p>Participants & Value</p>
             </StyledItemRowIntern>
-            <StyledItemRowIntern>
-              <p>Proof</p>
-              <p><ActiveDareProof/></p>
-            </StyledItemRowIntern>
+
           </GrantsCard>
 
           <GrantsCard>
             <StyledBodySubTitle style={{ fontSize: '1.125rem' }}>Top Completed Dare</StyledBodySubTitle>
-            <StyledItemRowIntern style={{ justifyContent: 'center', textAlign: 'center'}}>
+
+            <StyledItemRowIntern style={{ fontSize: '16px' }}>
+              <CompletedDaredUser />
+              <CompletedDareProof/>
+            </StyledItemRowIntern>
+
+            <StyledItemRowIntern>
               <CompletedDareDescription />
             </StyledItemRowIntern>
-            <StyledItemRowIntern>
-              <p>Player</p>
-              <p><CompletedDaredUser /></p>
+
+            <StyledItemRowIntern style={{ marginBottom: '-1.5rem' }}>
+              Finished
+              <CompletedDareAmount/>
             </StyledItemRowIntern>
+
             <StyledItemRowIntern>
-              <p>Value</p>
-              <p><CompletedDareAmount/></p>
+              <p>Time</p>
+              <p>Participants & Value</p>
             </StyledItemRowIntern>
-            <StyledItemRowIntern>
-              <p>Proof</p>
-              <p><CompletedDareProof/></p>
-            </StyledItemRowIntern>
+
           </GrantsCard>
 
         </StyledItemRow>

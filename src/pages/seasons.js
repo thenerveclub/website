@@ -47,7 +47,7 @@ const Title = styled.h1`
 const StyledBody = styled.div`
   position: relative;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: flex-start;
   padding: 2.5rem;
   border-bottom: 1px solid ${({ theme }) => theme.buttonBorder};
@@ -72,12 +72,19 @@ const StyledBody = styled.div`
   @media (max-width: 960px) {
     padding: 1rem;
     padding-bottom: 8rem;
+    flex-direction: column;
   }
 
   @media (max-width: 640px) {
     padding: 1rem;
     padding-bottom: 8rem;
+    flex-direction: column;
   }
+`
+
+const StyledBodyIntern = styled.div`
+  position: relative;
+  margin: 0 auto 0 auto;
 `
 
 
@@ -99,7 +106,7 @@ const StyledItemRowIntern = styled.nav`
   font-weight: 500;
   justify-content: space-between;
   width: 95%;
-  margin: 0 auto 0 auto;
+  margin: 1rem auto 0 auto;
 
   
   @media (max-width: 960px) {
@@ -110,6 +117,7 @@ const StyledItemRowIntern = styled.nav`
       margin-top: 1px;
       margin-bottom: 1px;
     }
+    
     & > *:not(:first-of-type) {
       margin-top: 0;
       align-items: right;
@@ -129,14 +137,11 @@ const StyledCard = styled.div`
 const StyledButton = styled.h1`
   padding: 0.25rem 0.75rem;
   background-color: ${({ theme }) => theme.textColor};
-  text-decoration: none;
-  display: inline-block;
   font-weight: 600;
   font-size: 18px;
   text-align: center;
-  margin: 3rem 1rem 0 1rem;
-  width: 9rem;
-  white-space: nowrap;
+  margin: 0 auto 0 auto;
+  width: 10rem;
   border: 1px solid transparent;
   box-shadow: ${({ theme }) => theme.shadows.small};
   background: ${({ theme, open, showBG }) => (showBG && !open ? theme.backgroundColor : 'none')};
@@ -144,7 +149,6 @@ const StyledButton = styled.h1`
   border-image: linear-gradient(var(--angle), aqua, aqua, magenta, magenta) 1;
 	
 	animation: 15s rotate linear infinite;
-  cursor: pointer;
 }
 
 @keyframes rotate {
@@ -161,13 +165,15 @@ const StyledButton = styled.h1`
 
   transition: background-color 0.25s ease;
   }
+
   @media (max-width: 960px) {
-    margin: 5rem 0.5rem 1rem 0.5rem;
+    margin: 0 0.5rem 1rem 0.5rem;
     font-size: 16px;
     width: auto;
   }
+
   @media (max-width: 640px) {
-    margin: 5rem 0.5rem 1rem 0.5rem;
+    margin: 0 0.5rem 1rem 0.5rem;
     font-size: 16px;
     width: auto;
   }
@@ -208,7 +214,7 @@ const StyledSection = styled.section`
 `
 
 const GrantsCard = styled(StyledCard)`
-  width: 1200px;
+  width: 750px;
   align-items: center;
   justify-content: center;
   margin: 0 auto 5rem auto;
@@ -219,8 +225,7 @@ const GrantsCard = styled(StyledCard)`
 `
 
 const Seasons = props => {
-  const [active, setActive] = useState([]);
-  
+
   return (
   <Layout path={props.location.pathname}>
     <SEO title="SEASONS" path={props.location.pathname} />
@@ -232,23 +237,26 @@ const Seasons = props => {
         </span>
       </StyledAbout>
       <StyledBody>
+      <StyledBodyIntern>
         <SectionHeaderMobile style={{ 
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
           width: '100%',}}>
-            <a>Top Earners</a>
+            <StyledButton>Top Earners</StyledButton>
         </SectionHeaderMobile>
-          <TopEarners props={props} />
-
+          <TopEarners />
+          </StyledBodyIntern>
+          <StyledBodyIntern>
           <SectionHeaderMobile style={{ 
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
           width: '100%',}}>
-            <a>Top Spenders</a>
+            <StyledButton>Top Spenders</StyledButton>
         </SectionHeaderMobile>
-          <TopSpenders props={props} />
+          <TopSpenders />
+          </StyledBodyIntern>
       </StyledBody>
       <BG />
   </Layout>
