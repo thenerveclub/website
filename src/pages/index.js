@@ -29,6 +29,7 @@ import ActiveDaredUser from '../components/topActiveDare/activeDaredUser'
 import ActiveDareAmount from '../components/topActiveDare/activeDareAmount'
 import ActiveDareProof from '../components/topActiveDare/activeDareProof'
 
+import ActiveDareEndTask from '../components/topActiveDare/activeDareEndTask'
 import Countdown from '../components/topActiveDare/countdownTimer'
 
 import CompletedDareDescription from '../components/topCompletedDare/completedDareDescription'

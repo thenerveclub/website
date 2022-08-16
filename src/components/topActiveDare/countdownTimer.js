@@ -1,16 +1,16 @@
 import React from 'react'
-import { endTask } from './activeDareEndTask'
-
+import { EndTask } from './activeDareEndTask'
 
 
 export default function Countdown() {
-  
+
 	(function () {
     React.useEffect(() => {
 		const second = 1000,
 		minute = second * 60,
 		hour = minute * 60,
 		day = hour * 24;
+        
     
 		const countDown = Math.floor(1663264400 * 1000),
 			x = setInterval(function() {

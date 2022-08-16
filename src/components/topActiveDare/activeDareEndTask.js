@@ -1,6 +1,9 @@
 import * as React from "react";
 import BigNumber from 'bignumber.js'
 
+var EndTask = 0
+export { EndTask };
+console.log("TEST", EndTask)
 
 const timestamp = Math.floor(Date.now() / 1000);
 const TopActiveDare = `
@@ -15,6 +18,12 @@ const TopActiveDare = `
 
 export default function ActiveDareEndTask() {
   const tad = useTAD();
+  console.log("TAD", tad)
+
+  tad.map((tad) => (
+    EndTask = tad.endTask
+  ))
+  
 
   return (
     <div>
@@ -55,3 +64,4 @@ function usePrice() {
 
   return maticPrice;
 }
+

@@ -228,7 +228,7 @@ const Seasons = props => {
 
   return (
   <Layout path={props.location.pathname}>
-    <SEO title="SEASONS" path={props.location.pathname} />
+    <SEO title="Seasons" path={props.location.pathname} />
       <StyledAbout>
         <span style={{ marginTop: '5rem' }}>
           <Title style={{ fontFamily: "True" }}>
