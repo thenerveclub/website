@@ -12,25 +12,25 @@ const TabStyles = css`
   max-width: 50rem;
   @media (max-width: 960px) {
     margin-top: 10px;
-  text-decoration: none;
-  border-radius: 12px;
-  display: inline-block;
-  box-sizing: border-box;
-  font-weight: 500;
-  font-size: 0.75rem;
-  min-width: 0;
-  max-width: 23.5rem;
+    text-decoration: none;
+    border-radius: 12px;
+    display: inline-block;
+    box-sizing: border-box;
+    font-weight: 500;
+    font-size: 0.75rem;
+    min-width: 0;
+    max-width: 23.5rem;
   }
   @media (max-width: 640px) {
     margin-top: 10px;
-  text-decoration: none;
-  border-radius: 12px;
-  display: inline-block;
-  box-sizing: border-box;
-  font-weight: 500;
-  font-size: 0.75rem;
-  min-width: 0;
-  max-width: 23.5rem;
+    text-decoration: none;
+    border-radius: 12px;
+    display: inline-block;
+    box-sizing: border-box;
+    font-weight: 500;
+    font-size: 0.75rem;
+    min-width: 0;
+    max-width: 23.5rem;
   }
   :hover {
     transform: scale(1);

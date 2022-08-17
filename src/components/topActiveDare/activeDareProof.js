@@ -7,10 +7,9 @@ import TikTok from '../../images/tiktok.inline.svg'
 import Youtube from '../../images/youtube.inline.svg'
 import Twitch from '../../images/twitch.inline.svg'
 
-
 const StyledInstagram = styled(Instagram)`
   path {
-  fill: ${({ theme }) => theme.textColor};
+    fill: ${({ theme }) => theme.textColor};
   }
 
   width: 20px;
@@ -23,7 +22,7 @@ const StyledInstagram = styled(Instagram)`
 
 const StyledTwitter = styled(Twitter)`
   path {
-  fill: ${({ theme }) => theme.textColor};
+    fill: ${({ theme }) => theme.textColor};
   }
 
   width: 20px;
@@ -36,7 +35,7 @@ const StyledTwitter = styled(Twitter)`
 
 const StyledTikTok = styled(TikTok)`
   path {
-  fill: ${({ theme }) => theme.textColor};
+    fill: ${({ theme }) => theme.textColor};
   }
 
   width: 20px;
@@ -49,7 +48,7 @@ const StyledTikTok = styled(TikTok)`
 
 const StyledYoutube = styled(Youtube)`
   path {
-  fill: ${({ theme }) => theme.textColor};
+    fill: ${({ theme }) => theme.textColor};
   }
 
   width: 20px;
@@ -62,7 +61,7 @@ const StyledYoutube = styled(Youtube)`
 
 const StyledTwitch = styled(Twitch)`
   path {
-  fill: ${({ theme }) => theme.textColor};
+    fill: ${({ theme }) => theme.textColor};
   }
 
   width: 20px;
@@ -73,8 +72,7 @@ const StyledTwitch = styled(Twitch)`
   }
 `
 
-
-const timestamp = Math.floor(Date.now() / 1000);
+const timestamp = Math.floor(Date.now() / 1000)
 const TopActiveDare = `
 {
   tasks(where: { endTask_gt:"${timestamp}", finished: false }, orderBy:amount, orderDirection:desc, first: 1) 
@@ -83,54 +81,56 @@ const TopActiveDare = `
     endTask
   }
 }
-`;
-
+`
 
 export default function ActiveDareProof() {
-  const tad = useTAD();
+  const tad = useTAD()
 
   return (
     <div>
       <ul>
-        {tad.map((tad) => (
-          <li key={tad.id}>
-            
+        {tad.map(tad => (
+          <li key={tad.proofLink}>
             <a target="_blank" rel="noreferrer" href={tad.proofLink}>
-            {tad.proofLink.includes("instagram") ? (<StyledInstagram />) : (<a></a>)}</a>
-
-            <a target="_blank" rel="noreferrer" href={tad.proofLink}>
-            {tad.proofLink.includes("twitter") ? (<StyledTwitter />) :  (<a></a>)}</a>
+              {tad.proofLink.includes('instagram') ? <StyledInstagram /> : <a></a>}
+            </a>
 
             <a target="_blank" rel="noreferrer" href={tad.proofLink}>
-            {tad.proofLink.includes("tiktok") ? (<StyledTikTok />) : (<a></a>)}</a>
+              {tad.proofLink.includes('twitter') ? <StyledTwitter /> : <a></a>}
+            </a>
 
             <a target="_blank" rel="noreferrer" href={tad.proofLink}>
-            {tad.proofLink.includes("youtube") ? (<StyledYoutube />) : (<a></a>)}</a>
+              {tad.proofLink.includes('tiktok') ? <StyledTikTok /> : <a></a>}
+            </a>
 
             <a target="_blank" rel="noreferrer" href={tad.proofLink}>
-            {tad.proofLink.includes("twitch") ? (<StyledTwitch />) : (<a></a>)}</a>
+              {tad.proofLink.includes('youtube') ? <StyledYoutube /> : <a></a>}
+            </a>
 
-            <a>{tad.proofLink.includes('') ? (<a style={{ color: "#FFFFFF"}}>Proof: Outstanding</a>) : (<a></a>)}</a>
+            <a target="_blank" rel="noreferrer" href={tad.proofLink}>
+              {tad.proofLink.includes('twitch') ? <StyledTwitch /> : <a></a>}
+            </a>
 
+            <a>{tad.proofLink.includes('') ? <a style={{ color: '#FFFFFF' }}>Proof: Outstanding</a> : <a></a>}</a>
           </li>
         ))}
       </ul>
     </div>
-  );
+  )
 }
 
 function useTAD() {
-  const [tad, setTAD] = React.useState([]);
+  const [tad, setTAD] = React.useState([])
 
   React.useEffect(() => {
-    fetch("https://api.thegraph.com/subgraphs/name/nerveglobal/nerveglobal", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
+    fetch('https://api.thegraph.com/subgraphs/name/nerveglobal/nerveglobal', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ query: TopActiveDare })
     })
-      .then((response) => response.json())
-      .then((data) => setTAD(data.data.tasks));
-  }, []);
+      .then(response => response.json())
+      .then(data => setTAD(data.data.tasks))
+  }, [])
 
-  return tad;
+  return tad
 }

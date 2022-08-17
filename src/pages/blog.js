@@ -7,7 +7,6 @@ import Layout from '../layouts'
 import BG from '../components/bg'
 import SEO from '../components/seo'
 
-
 const StyledBody = styled.div`
   position: relative;
   display: flex;
@@ -53,20 +52,20 @@ const StyledBlog = styled.div`
 `
 
 const PostsWrapper = styled.div`
-margin-top: 80px;
-display: grid;
-grid-template-columns: 1fr 1fr 1fr;
-grid-gap: 24px;
-align-items: flex-start;
-grid-auto-rows: 1fr;
-@media (max-width: 960px) {
-  grid-template-columns: 1fr 1fr;
-}
-@media (max-width: 640px) {
-  grid-template-columns: 1fr;
+  margin-top: 80px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 24px;
-  grid-auto-rows: auto;
-}
+  align-items: flex-start;
+  grid-auto-rows: 1fr;
+  @media (max-width: 960px) {
+    grid-template-columns: 1fr 1fr;
+  }
+  @media (max-width: 640px) {
+    grid-template-columns: 1fr;
+    grid-gap: 24px;
+    grid-auto-rows: auto;
+  }
 `
 
 const StyledAbout = styled.div`
@@ -142,7 +141,6 @@ export const Posts = styled.div`
     width: 100%;
     height: 475px;
     margin-bottom: 3rem;
-
   }
 `
 
@@ -267,42 +265,39 @@ const Blog = props => {
 
   return (
     <Layout path={props.location.pathname}>
-      
       <SEO title="Blog" path={props.location.pathname} />
-      
+
       <StyledAbout>
         <span style={{ marginTop: '5rem' }}>
-          <Title style={{ fontFamily: "True"}}>
-            BLOG
-          </Title>
+          <Title style={{ fontFamily: 'True' }}>BLOG</Title>
           <StyledBodySubTitle>
             {'Updates, stories, and announcements from the Nerve Team & Community.'}
           </StyledBodySubTitle>
-          </span>
-          </StyledAbout>
-          
-          <StyledBody>
-          <StyledBlog>
-        <PostsWrapper>
-          {data.allMdx.edges.map(({ node }, index) => {
-            return (
-              <Posts wide={index} key={node.id}>
-                <PostLinkWrapper wide={index} to={node.fields.slug}>
-                  {index === 0 && <NewPill>New</NewPill>}
-                  <PostTitleWrapper>
-                    <h2 style={{ marginTop: '0px' }}>{node.frontmatter.title}</h2>
-                    {node.frontmatter.previewText ? <p>{node.frontmatter.previewText} </p> : ''}
-                    <PostMetaData>{node.frontmatter.date + ' - ' + node.fields.readingTime.text}</PostMetaData>
-                  </PostTitleWrapper>
-                  {node.frontmatter.featuredImage && (
-                    <StyledImage fluid={node.frontmatter.featuredImage.childImageSharp.fluid} />
-                  )}
-                </PostLinkWrapper>
-              </Posts>
-            )
-          })}
-        </PostsWrapper>
-      </StyledBlog>
+        </span>
+      </StyledAbout>
+
+      <StyledBody>
+        <StyledBlog>
+          <PostsWrapper>
+            {data.allMdx.edges.map(({ node }, index) => {
+              return (
+                <Posts wide={index} key={node.id}>
+                  <PostLinkWrapper wide={index} to={node.fields.slug}>
+                    {index === 0 && <NewPill>New</NewPill>}
+                    <PostTitleWrapper>
+                      <h2 style={{ marginTop: '0px' }}>{node.frontmatter.title}</h2>
+                      {node.frontmatter.previewText ? <p>{node.frontmatter.previewText} </p> : ''}
+                      <PostMetaData>{node.frontmatter.date + ' - ' + node.fields.readingTime.text}</PostMetaData>
+                    </PostTitleWrapper>
+                    {node.frontmatter.featuredImage && (
+                      <StyledImage fluid={node.frontmatter.featuredImage.childImageSharp.fluid} />
+                    )}
+                  </PostLinkWrapper>
+                </Posts>
+              )
+            })}
+          </PostsWrapper>
+        </StyledBlog>
       </StyledBody>
       <BG />
     </Layout>

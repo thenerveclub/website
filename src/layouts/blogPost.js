@@ -63,7 +63,7 @@ const StyledMDX = styled.div`
     color: ${({ theme }) => theme.colors.grey6};
     text-align: center;
   }
-  
+
   @media (max-width: 960px) {
     min-width: 100%;
     max-width: 100%;
@@ -303,7 +303,6 @@ const Blog = props => {
       }
     }
   `)
-
 
   return (
     <Layout path={props.location.pathname}>

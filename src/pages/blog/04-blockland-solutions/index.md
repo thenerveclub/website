@@ -6,10 +6,9 @@ featuredImage: ./featured.png
 previewText: '3rd out of 47 international teams at Blockland Solutions Conference Pitch Competition.'
 ---
 
-
 # Grant
 
-**$4K Grant from Blockland Solutions Conference**
+**\$4K Grant from Blockland Solutions Conference**
 
 # Commentary
 

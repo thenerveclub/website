@@ -7,7 +7,6 @@ import Users from './users'
 import Dares from './dares'
 import Earned from './earned'
 
-
 const StyledSectionFlex = styled.div`
   display: flex;
   flex-wrap: wrap;
@@ -74,7 +73,6 @@ const BigNumbers = styled(StyledSectionFlex)`
       font-size: 14px;
       font-weight: 300;
     }
-    
   }
 `
 
@@ -123,26 +121,29 @@ export const SparkleTopRight = styled.div`
   right: -30px;
 `
 
-
 const ProtocolData = () => {
-
-
   return (
     <Numbers id="about" style={{ flexDirection: 'column' }}>
       <div style={{ display: 'flex', width: '100%', justifyContent: 'space-between', alignItems: 'center', margin: 0 }}>
         <BigNumbers>
           <Sparkle />
-          <span><Users /></span>
+          <span>
+            <Users />
+          </span>
           <p>Users</p>
           <SparkleGray />
         </BigNumbers>
         <BigNumbers>
           <SparkleTopRight />
-          <span><Dares /></span>
+          <span>
+            <Dares />
+          </span>
           <p>Dares</p>
         </BigNumbers>
         <BigNumbers>
-          <span><Earned /></span>
+          <span>
+            <Earned />
+          </span>
           <p>Earned</p>
           <SparkleGray />
         </BigNumbers>

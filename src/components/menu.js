@@ -1,7 +1,6 @@
 import React, { useState, useCallback } from 'react'
 import styled from 'styled-components'
 
-
 export function useToggle(initialState = false) {
   const [state, setState] = useState(initialState)
   const toggle = useCallback(() => setState(state => !state), [])
@@ -192,7 +191,6 @@ const StyledDescription = styled.p`
     padding: 0;
   }
 `
-
 
 export default function Menu(props) {
   return (

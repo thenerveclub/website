@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
+import True from '../styles/fontTrue.css'
 import Layout from '../layouts'
 import SEO from '../components/seo'
 import BG from '../components/bg'
@@ -28,16 +29,12 @@ import ActiveDareDescription from '../components/topActiveDare/activeDareDescrip
 import ActiveDaredUser from '../components/topActiveDare/activeDaredUser'
 import ActiveDareAmount from '../components/topActiveDare/activeDareAmount'
 import ActiveDareProof from '../components/topActiveDare/activeDareProof'
-
-import ActiveDareEndTask from '../components/topActiveDare/activeDareEndTask'
 import Countdown from '../components/topActiveDare/countdownTimer'
 
 import CompletedDareDescription from '../components/topCompletedDare/completedDareDescription'
 import CompletedDaredUser from '../components/topCompletedDare/completedDaredUser'
 import CompletedDareAmount from '../components/topCompletedDare/completedDareAmount'
 import CompletedDareProof from '../components/topCompletedDare/completedDareProof'
-
-
 
 const StyledAbout = styled.div`
   display: grid;
@@ -47,7 +44,6 @@ const StyledAbout = styled.div`
   padding-bottom: 4rem;
   margin-bottom: 10rem;
   padding-top: 2rem;
-
 
   @media (max-width: 960px) {
     flex-direction: column;
@@ -65,11 +61,11 @@ const Title = styled.h1`
   font-family: True;
   font-size: 100px;
   text-transform: uppercase;
-  background: -webkit-linear-gradient(to right, #DE0CCF 0%, #00F2FC 70%);
-  background: -moz-linear-gradient(to right, #DE0CCF 0%, #00F2FC 70%);
-	background: linear-gradient(to right, #DE0CCF 0%, #00F2FC 70%);
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
+  background: -webkit-linear-gradient(to right, #de0ccf 0%, #00f2fc 70%);
+  background: -moz-linear-gradient(to right, #de0ccf 0%, #00f2fc 70%);
+  background: linear-gradient(to right, #de0ccf 0%, #00f2fc 70%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 
   max-width: 900px;
   @media (max-width: 960px) {
@@ -135,15 +131,15 @@ const StyledBodyTitle = styled.h1`
   font-size: 48px;
   white-space: wrap;
   overflow-wrap: normal;
-  
+
   @media (max-width: 1024px) {
     margin: 2rem 0 0 0;
   }
 
   @media (max-width: 960px) {
     display: none;
-  visibility: hidden;
-  width: 100%;
+    visibility: hidden;
+    width: 100%;
     margin: 2rem auto 0 auto;
     font-weight: 500;
     text-align: center;
@@ -152,8 +148,8 @@ const StyledBodyTitle = styled.h1`
 
   @media (max-width: 640px) {
     display: none;
-  visibility: hidden;
-  width: 100%;
+    visibility: hidden;
+    width: 100%;
     margin: 2rem auto 0 auto;
     font-weight: 500;
     text-align: center;
@@ -162,8 +158,8 @@ const StyledBodyTitle = styled.h1`
 
   @media (max-width: 440px) {
     display: none;
-  visibility: hidden;
-  font-weight: 500;
+    visibility: hidden;
+    font-weight: 500;
     text-align: center;
     font-size: 37px;
   }
@@ -206,11 +202,11 @@ const StyledBodySubM = styled.h2`
   visibility: hidden;
   font-family: True;
   text-transform: uppercase;
-  background: -webkit-linear-gradient(to right, #DE0CCF 0%, #00F2FC 100%);
-  background: -moz-linear-gradient(to right, #DE0CCF 0%, #00F2FC 100%);
-	background: linear-gradient(to right, #DE0CCF 40%, #00F2FC 60%);
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
+  background: -webkit-linear-gradient(to right, #de0ccf 0%, #00f2fc 100%);
+  background: -moz-linear-gradient(to right, #de0ccf 0%, #00f2fc 100%);
+  background: linear-gradient(to right, #de0ccf 40%, #00f2fc 60%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 
   @media (max-width: 960px) {
     display: block;
@@ -245,20 +241,18 @@ const StyledBodySubM = styled.h2`
 const StyledBodySubT = styled.h2`
   width: 800px;
   font-size: 20px;
-  white-space: pre-line
-
-  @media (max-width: 960px) {
-  text-align: center;
-  margin: 0 auto 0 auto;
-  width: 300px;
-  font-size: 20px;
+  white-space: pre-line @media (max-width: 960px) {
+    text-align: center;
+    margin: 0 auto 0 auto;
+    width: 300px;
+    font-size: 20px;
   }
 
   @media (max-width: 640px) {
-  text-align: center;
-  margin: 0 auto 0 auto;
-  width: 300px;
-  font-size: 20px;
+    text-align: center;
+    margin: 0 auto 0 auto;
+    width: 300px;
+    font-size: 20px;
   }
 `
 
@@ -288,11 +282,11 @@ const StyledSectionTitleGradient = styled.h3`
   font-size: 35px;
   font-weight: 600;
 
-  background: -webkit-linear-gradient(to right, #DE0CCF 0%, #00F2FC 100%);
-  background: -moz-linear-gradient(to right, #DE0CCF 0%, #00F2FC 100%);
-	background: linear-gradient(to right, #DE0CCF 0%, #00F2FC 100%);
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
+  background: -webkit-linear-gradient(to right, #de0ccf 0%, #00f2fc 100%);
+  background: -moz-linear-gradient(to right, #de0ccf 0%, #00f2fc 100%);
+  background: linear-gradient(to right, #de0ccf 0%, #00f2fc 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 
   pointer-events: none;
   white-space: wrap;
@@ -324,7 +318,7 @@ const StyledSocialRow = styled.nav`
     margin-top: 0;
     margin-left: 16px;
   }
-  
+
   @media (max-width: 960px) {
     margin: 2rem auto 2rem auto;
     font-weight: 500;
@@ -347,9 +341,9 @@ const StyledSocialRow = styled.nav`
 `
 
 const StyledItemRow = styled.nav`
-display: flex;
-flex-direction: row;
-margin: 0 auto 0 auto;
+  display: flex;
+  flex-direction: row;
+  margin: 0 auto 0 auto;
 
   & > *:not(:first-of-type) {
     margin-left: 12px;
@@ -547,40 +541,35 @@ const StyledButtonTop = styled.a`
   }
 `
 
-
 const IndexPage = props => {
-  const [active, setActive] = useState("Player"); 
+  const [active, setActive] = useState('Player')
 
   return (
     <Layout path={props.location.pathname}>
-      <SEO
-        title="Home"
-        path={props.location.pathname}
-        description={'Do. You. Dare?'}
-      />
-      
+      <SEO title="Home" path={props.location.pathname} description={'Do. You. Dare?'} />
+
       <StyledAbout>
         <span>
-        <HideSmall>
-          <Title>
-          Do You Dare ?
-          </Title>
-        </HideSmall>
-        </span> 
+          <HideSmall>
+            <Title>Do You Dare ?</Title>
+          </HideSmall>
+        </span>
       </StyledAbout>
-          
+
       <StyledBody>
-      <StyledBodySubM>
-            {'Do'} <br />
-            {'You'} <br />
-            {'Dare?'}
-          </StyledBodySubM>
+        <StyledBodySubM>
+          {'Do'} <br />
+          {'You'} <br />
+          {'Dare?'}
+        </StyledBodySubM>
         <StyledTitle>
           <StyledBodyTitle>
-            <span style={{ fontFamily: "True", fontWeight: 200 }}>NERVE GLOBAL</span>
+            <span style={{ fontFamily: 'True', fontWeight: 200 }}>NERVE GLOBAL</span>
           </StyledBodyTitle>
           <StyledBodySubT>
-            {'Nerve is an infrastructure that facilitates peer-to-peer transactions and crowdfunding of dares, entirely on-chain.'}
+            {
+              'Nerve is an infrastructure that facilitates peer-to-peer transactions and crowdfunding of dares, entirely on-chain.'
+            }
           </StyledBodySubT>
           <StyledSocialRow>
             {/*
@@ -597,7 +586,7 @@ const IndexPage = props => {
           </StyledTradeLink>
           */}
           </StyledSocialRow>
-          <StyledSocialRow style={{ marginTop: "3rem"}}>
+          <StyledSocialRow style={{ marginTop: '3rem' }}>
             <a target="_blank" rel="noreferrer" href="https://twitter.com/nerveglobal_">
               <StyledTwitter />
             </a>
@@ -611,120 +600,145 @@ const IndexPage = props => {
               <StyledLinkedIn />
             </a>
           </StyledSocialRow>
-          
         </StyledTitle>
-        
+
         <HideSmall>
-        <GrantCard>
-            <img style={{ 
-            minWidth: "35rem", 
-            margin: "-22rem 0 0 -15rem", 
-            opacity: "1",
-            borderRadius: "12px" }} src={kitty} width="100%" />
-            <p style={{
-            marginTop: "-2rem",
-            marginLeft: "-1.5rem",
-            fontSize: "13px",
-            fontWeight: "700",
-            textColor: "#FFFFFF",
-            opacity: "1"
-          }}>Powered by DALL•E 2</p>
-        </GrantCard>
+          <GrantCard>
+            <img
+              style={{
+                minWidth: '35rem',
+                margin: '-22rem 0 0 -15rem',
+                opacity: '1',
+                borderRadius: '12px'
+              }}
+              src={kitty}
+              width="100%"
+            />
+            <p
+              style={{
+                marginTop: '-2rem',
+                marginLeft: '-1.5rem',
+                fontSize: '13px',
+                fontWeight: '700',
+                textColor: '#FFFFFF',
+                opacity: '1'
+              }}
+            >
+              Powered by DALL•E 2
+            </p>
+          </GrantCard>
         </HideSmall>
 
-          <SectionHeader style={{ 
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              flexDirection: "column",
-              width: '100%',
-              padding: '5.5rem 0 2rem 0',
-              fontFamily: "True"}}>
+        <SectionHeader
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            flexDirection: 'column',
+            width: '100%',
+            padding: '5.5rem 0 2rem 0',
+            fontFamily: 'True'
+          }}
+        >
           <span>{'Platform Stats'}</span>
-          </SectionHeader>
-          <SectionHeaderSmall>
-              <span>{'(Closed Beta)'}</span>
-          </SectionHeaderSmall>
-          
-          <div
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              width: '100%',
-              padding: '2rem 0 2rem 0'
-            }}
-          >
-            <ProtocolData />
-          </div>
-          
+        </SectionHeader>
+        <SectionHeaderSmall>
+          <span>{'(Closed Beta)'}</span>
+        </SectionHeaderSmall>
 
-          <SectionHeader style={{ 
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              width: '100%',
-              padding: '2rem 0 0 0',
-              fontFamily: "True"}}>
+        <div
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            width: '100%',
+            padding: '2rem 0 2rem 0'
+          }}
+        >
+          <ProtocolData />
+        </div>
+
+        <SectionHeader
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            width: '100%',
+            padding: '2rem 0 0 0',
+            fontFamily: 'True'
+          }}
+        >
           <span>{'How to Play'}</span>
-          </SectionHeader>
+        </SectionHeader>
 
-          <SectionHeaderMobile style={{ 
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              width: '100%',}}>
+        <SectionHeaderMobile
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            width: '100%'
+          }}
+        >
           <nav>
-            <StyledButton onClick={() => setActive("Player")}>Player</StyledButton>
-            <StyledButton onClick={() => setActive("Watcher")}>Watcher</StyledButton>
+            <StyledButton onClick={() => setActive('Player')}>Player</StyledButton>
+            <StyledButton onClick={() => setActive('Watcher')}>Watcher</StyledButton>
           </nav>
-          </SectionHeaderMobile>
-          <div>
-          {active === "Player" && <Player props={props} />}
-          {active === "Watcher" && <Watcher props={props} />}
-          </div>
+        </SectionHeaderMobile>
+        <div>
+          {active === 'Player' && <Player props={props} />}
+          {active === 'Watcher' && <Watcher props={props} />}
+        </div>
 
-          <SectionHeader style={{ 
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              width: '100%',
-              padding: '2rem 0 0 0',
-              fontFamily: "True"}}>
+        <SectionHeader
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            width: '100%',
+            padding: '2rem 0 0 0',
+            fontFamily: 'True'
+          }}
+        >
           <span>{'Spotlight'}</span>
-          </SectionHeader>
-          <Spotlight props={props} />
+        </SectionHeader>
+        <Spotlight props={props} />
 
-          <SectionHeader style={{ 
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              width: '100%',
-              padding: '2rem 0 0 0',
-              fontFamily: "True"}}>
+        <SectionHeader
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            width: '100%',
+            padding: '2rem 0 0 0',
+            fontFamily: 'True'
+          }}
+        >
           <span>{'Decentralized Wallet'}</span>
-          </SectionHeader>
-          <EcosystemSection props={props} />
+        </SectionHeader>
+        <EcosystemSection props={props} />
 
-
-          <SectionHeader style={{ 
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              width: '100%',
-              padding: '0 0 0 0',
-              fontFamily: "True"}}>
+        <SectionHeader
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            width: '100%',
+            padding: '0 0 0 0',
+            fontFamily: 'True'
+          }}
+        >
           <span>{'Governance & More'}</span>
-          </SectionHeader>
-          <DeveloperSection props={props} />
-
+        </SectionHeader>
+        <DeveloperSection props={props} />
 
         <StyledSection>
-        <StyledItemRow style={{ alignItems: 'center', justifyContent: 'center'}}>
-        <StyledSectionTitle>Discover a new form of crowdfunding, live streaming and community interaction - download now!</StyledSectionTitle>
-        <HideSmall>
-        <StyledSocialRow>
-          {/*}
+          <StyledItemRow style={{ alignItems: 'center', justifyContent: 'center' }}>
+            <StyledSectionTitle>
+              Discover a new form of crowdfunding, live streaming and community interaction - download now!
+            </StyledSectionTitle>
+            <HideSmall>
+              <StyledSocialRow>
+                {/*}
           <StyledTradeLink
             target="_blank"
             href="https://apps.apple.com/de/app/nerve-global/id1500517863">
@@ -737,11 +751,11 @@ const IndexPage = props => {
             <img style={{ marginTop: '1rem', maxWidth: "20rem" }} src={google} width="140%" />
           </StyledTradeLink>
           */}
-          </StyledSocialRow>   
-          </HideSmall>   
-        </StyledItemRow>
-      </StyledSection>
-      {/*
+              </StyledSocialRow>
+            </HideSmall>
+          </StyledItemRow>
+        </StyledSection>
+        {/*
       <StyledSocialRowL>
           <StyledTradeLink
             target="_blank"
@@ -762,7 +776,6 @@ const IndexPage = props => {
 }
 
 export default IndexPage
-
 
 const SectionHeader = styled.h1`
   font-size: 5rem;
@@ -855,7 +868,6 @@ const AppsCard = styled(StyledCard)`
   width: 300px;
   height: 300px;
 
-
   h1 {
     font-size: 48px;
     font-weight: 700;
@@ -879,7 +891,7 @@ const GrantsCard = styled(StyledCard)`
   width: 750px;
   align-items: center;
   justify-content: center;
-  
+
   @media (max-width: 960px) {
     width: 100%;
     margin-top: 2rem;
@@ -895,7 +907,7 @@ const GrantsCardNoBorder = styled(StyledCard)`
   box-shadow: none;
   align-items: center;
   justify-content: center;
-  
+
   @media (max-width: 960px) {
     width: 325px;
   }
@@ -903,10 +915,10 @@ const GrantsCardNoBorder = styled(StyledCard)`
 
 const GrantCard = styled(StyledC)`
   width: 250px;
-  position: absolute; 
+  position: absolute;
   top: -1rem;
   right: 10rem;
-  
+
   @media (max-width: 960px) {
     width: 250px;
     top: 23rem;
@@ -929,7 +941,6 @@ const StyledItemRowIntern = styled.nav`
     justify-content: space-between;
   }
 
-  
   @media (max-width: 960px) {
     font-size: 16px;
 
@@ -948,130 +959,149 @@ const StyledItemRowIntern = styled.nav`
   }
 `
 
-
 const EcosystemSection = () => {
   return (
-    <StyledSection style={{ marginRight: "auto", marginLeft: "auto" }}>
+    <StyledSection style={{ marginRight: 'auto', marginLeft: 'auto' }}>
       <StyledItemRow style={{ marginTop: '2rem' }}>
         <GovernanceCard style={{ display: 'flex', flexDirection: '1', justifyContent: 'space-between' }}>
-            <span>
-              <StyledSectionTitleGradient>Your Keys, Your Coins - Secure</StyledSectionTitleGradient>
-              <StyledBodySubTitleWallet style={{ textColor: "#FFFFFF", opacity: '1', fontSize: '16px', fontWeight: 600 }}>
+          <span>
+            <StyledSectionTitleGradient>Your Keys, Your Coins - Secure</StyledSectionTitleGradient>
+            <StyledBodySubTitleWallet style={{ textColor: '#FFFFFF', opacity: '1', fontSize: '16px', fontWeight: 600 }}>
               <p>Nerve Global has no access to a user’s private keys.</p>
-              <p style={{ opacity: '0.6', fontWeight: 400 }}>The Nerve Global wallet is a non-custodial hot wallet built in C++ that is run on the user’s device.
-              The wallet performs ideal gas price discovery for transactions and gives access to the native gas and NERVE governance token.
+              <p style={{ opacity: '0.6', fontWeight: 400 }}>
+                The Nerve Global wallet is a non-custodial hot wallet built in C++ that is run on the user’s device. The
+                wallet performs ideal gas price discovery for transactions and gives access to the native gas and NERVE
+                governance token.
               </p>
-              </StyledBodySubTitleWallet>
-            </span>
-          </GovernanceCard>
+            </StyledBodySubTitleWallet>
+          </span>
+        </GovernanceCard>
         <AppsCard>
-          <p style={{
-            marginTop: "15rem",
-            fontSize: "12px",
-            fontWeight: "700",
-            textColor: "#FFFFFF",
-            opacity: "1"
-          }}>Powered by DALL•E 2</p>
+          <p
+            style={{
+              marginTop: '15rem',
+              fontSize: '12px',
+              fontWeight: '700',
+              textColor: '#FFFFFF',
+              opacity: '1'
+            }}
+          >
+            Powered by DALL•E 2
+          </p>
         </AppsCard>
       </StyledItemRow>
     </StyledSection>
   )
 }
 
-
 const Player = () => {
   return (
     <StyledItemRowPlayerWatcher style={{ justifyContent: 'center', padding: '2rem 10rem 0 10rem' }}>
-        <GrantsCardNoBorder>
-        <img style={{ marginTop: "11px" }} src={dashboard} width="100%" />
-            <StyledBodySubTitle style={{ fontSize: '20px', textAlign: "center" }}>
-              Receive a dare
-              </StyledBodySubTitle>
-              <StyledBodySubTitle style={{ textAlign: "center", textColor: "#FFFFFF", opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
-              <p>Link your social media accounts to Nerve Global and receive personalized dares directly from your community.</p>
-              </StyledBodySubTitle>
-          </GrantsCardNoBorder>
+      <GrantsCardNoBorder>
+        <img style={{ marginTop: '11px' }} src={dashboard} width="100%" />
+        <StyledBodySubTitle style={{ fontSize: '20px', textAlign: 'center' }}>Receive a dare</StyledBodySubTitle>
+        <StyledBodySubTitle
+          style={{ textAlign: 'center', textColor: '#FFFFFF', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}
+        >
+          <p>
+            Link your social media accounts to Nerve Global and receive personalized dares directly from your community.
+          </p>
+        </StyledBodySubTitle>
+      </GrantsCardNoBorder>
 
-          <GrantsCardNoBorder style={{ minHeight: "40rem", minWidth: "5rem" }}>
+      <GrantsCardNoBorder style={{ minHeight: '40rem', minWidth: '5rem' }}>
         <img src={prove} width="100%" />
-            <StyledBodySubTitle style={{ fontSize: '20px', textAlign: "center" }}>
-              Submit a proof
-              </StyledBodySubTitle>
-              <StyledBodySubTitle style={{ textAlign: "center", textColor: "#FFFFFF", opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
-              <p>Perform your dare and upload a proof to your favorite social media platform.</p>
-              </StyledBodySubTitle>
-          </GrantsCardNoBorder>
+        <StyledBodySubTitle style={{ fontSize: '20px', textAlign: 'center' }}>Submit a proof</StyledBodySubTitle>
+        <StyledBodySubTitle
+          style={{ textAlign: 'center', textColor: '#FFFFFF', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}
+        >
+          <p>Perform your dare and upload a proof to your favorite social media platform.</p>
+        </StyledBodySubTitle>
+      </GrantsCardNoBorder>
 
-          <GrantsCardNoBorder style={{ minHeight: "40rem", minWidth: "5rem" }}>
+      <GrantsCardNoBorder style={{ minHeight: '40rem', minWidth: '5rem' }}>
         <img src={wallet} width="100%" />
-            <StyledBodySubTitle style={{ fontSize: '20px', textAlign: "center" }}>
-              Get approved
-              </StyledBodySubTitle>
-              <StyledBodySubTitle style={{ textAlign: "center", textColor: "#FFFFFF", opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
-              <p>Every watcher is eligible to cast a vote on completing your dare and decides on the disbursement of attached funds.</p>
-              </StyledBodySubTitle>
-          </GrantsCardNoBorder>
+        <StyledBodySubTitle style={{ fontSize: '20px', textAlign: 'center' }}>Get approved</StyledBodySubTitle>
+        <StyledBodySubTitle
+          style={{ textAlign: 'center', textColor: '#FFFFFF', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}
+        >
+          <p>
+            Every watcher is eligible to cast a vote on completing your dare and decides on the disbursement of attached
+            funds.
+          </p>
+        </StyledBodySubTitle>
+      </GrantsCardNoBorder>
 
-          <GrantsCardNoBorder style={{ minHeight: "40rem", minWidth: "5rem" }}>
+      <GrantsCardNoBorder style={{ minHeight: '40rem', minWidth: '5rem' }}>
         <img src={claimPlayer} width="100%" />
-            <StyledBodySubTitle style={{ fontSize: '20px', textAlign: "center" }}>
-              Claim your funds
-              </StyledBodySubTitle>
-              <StyledBodySubTitle style={{ textAlign: "center", textColor: "#FFFFFF", opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
-              <p>All collected funds will be directly disbursed to your account - fully decentralized and routed through the blockchain.</p>
-              </StyledBodySubTitle>
-          </GrantsCardNoBorder>
+        <StyledBodySubTitle style={{ fontSize: '20px', textAlign: 'center' }}>Claim your funds</StyledBodySubTitle>
+        <StyledBodySubTitle
+          style={{ textAlign: 'center', textColor: '#FFFFFF', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}
+        >
+          <p>
+            All collected funds will be directly disbursed to your account - fully decentralized and routed through the
+            blockchain.
+          </p>
+        </StyledBodySubTitle>
+      </GrantsCardNoBorder>
     </StyledItemRowPlayerWatcher>
   )
 }
-
 
 const Watcher = () => {
   return (
     <StyledItemRowPlayerWatcher style={{ justifyContent: 'center', padding: '2rem 10rem 0 10rem' }}>
-        <GrantsCardNoBorder style={{ minHeight: "40rem", minWidth: "5rem" }}>
-        <img style={{ marginTop: "11px" }} src={create} width="100%" />
-            <StyledBodySubTitle style={{ fontSize: '20px', textAlign: "center" }}>
-              Create a dare
-              </StyledBodySubTitle>
-              <StyledBodySubTitle style={{ textAlign: "center", textColor: "#FFFFFF", opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
-              <p>Search for other players to create dares. Set a time limit and attach value to it. Other users can join the dare and attach further value.</p>
-              </StyledBodySubTitle>
-          </GrantsCardNoBorder>
+      <GrantsCardNoBorder style={{ minHeight: '40rem', minWidth: '5rem' }}>
+        <img style={{ marginTop: '11px' }} src={create} width="100%" />
+        <StyledBodySubTitle style={{ fontSize: '20px', textAlign: 'center' }}>Create a dare</StyledBodySubTitle>
+        <StyledBodySubTitle
+          style={{ textAlign: 'center', textColor: '#FFFFFF', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}
+        >
+          <p>
+            Search for other players to create dares. Set a time limit and attach value to it. Other users can join the
+            dare and attach further value.
+          </p>
+        </StyledBodySubTitle>
+      </GrantsCardNoBorder>
 
-          <GrantsCardNoBorder style={{ minHeight: "40rem", minWidth: "5rem" }}>
+      <GrantsCardNoBorder style={{ minHeight: '40rem', minWidth: '5rem' }}>
         <img src={global} width="100%" />
-            <StyledBodySubTitle style={{ fontSize: '20px', textAlign: "center" }}>
-              Wait for proof
-              </StyledBodySubTitle>
-              <StyledBodySubTitle style={{ textAlign: "center", textColor: "#FFFFFF", opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
-              <p>Wait for proof that the dare has been completed.</p>
-              </StyledBodySubTitle>
-          </GrantsCardNoBorder>
+        <StyledBodySubTitle style={{ fontSize: '20px', textAlign: 'center' }}>Wait for proof</StyledBodySubTitle>
+        <StyledBodySubTitle
+          style={{ textAlign: 'center', textColor: '#FFFFFF', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}
+        >
+          <p>Wait for proof that the dare has been completed.</p>
+        </StyledBodySubTitle>
+      </GrantsCardNoBorder>
 
-          <GrantsCardNoBorder style={{ minHeight: "40rem", minWidth: "5rem" }}>
+      <GrantsCardNoBorder style={{ minHeight: '40rem', minWidth: '5rem' }}>
         <img src={vote} width="100%" />
-            <StyledBodySubTitle style={{ fontSize: '20px', textAlign: "center" }}>
-              Approve
-              </StyledBodySubTitle>
-              <StyledBodySubTitle style={{ textAlign: "center", textColor: "#FFFFFF", opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
-              <p>Vote on a dare and decide, if it has been completed. On a positive vote result, all funds are distributed to the player.</p>
-              </StyledBodySubTitle>
-          </GrantsCardNoBorder>
+        <StyledBodySubTitle style={{ fontSize: '20px', textAlign: 'center' }}>Approve</StyledBodySubTitle>
+        <StyledBodySubTitle
+          style={{ textAlign: 'center', textColor: '#FFFFFF', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}
+        >
+          <p>
+            Vote on a dare and decide, if it has been completed. On a positive vote result, all funds are distributed to
+            the player.
+          </p>
+        </StyledBodySubTitle>
+      </GrantsCardNoBorder>
 
-          <GrantsCardNoBorder style={{ minHeight: "40rem", minWidth: "5rem" }}>
+      <GrantsCardNoBorder style={{ minHeight: '40rem', minWidth: '5rem' }}>
         <img src={claimWatcher} width="100%" />
-            <StyledBodySubTitle style={{ fontSize: '20px',textAlign: "center" }}>
-              Claim your refund
-              </StyledBodySubTitle>
-              <StyledBodySubTitle style={{ textAlign: "center", textColor: "#FFFFFF", opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
-              <p>If a dare is rated negative, all participants will get their stake back (the previously collected fee is not returned).</p>
-              </StyledBodySubTitle>
-          </GrantsCardNoBorder>
+        <StyledBodySubTitle style={{ fontSize: '20px', textAlign: 'center' }}>Claim your refund</StyledBodySubTitle>
+        <StyledBodySubTitle
+          style={{ textAlign: 'center', textColor: '#FFFFFF', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}
+        >
+          <p>
+            If a dare is rated negative, all participants will get their stake back (the previously collected fee is not
+            returned).
+          </p>
+        </StyledBodySubTitle>
+      </GrantsCardNoBorder>
     </StyledItemRowPlayerWatcher>
   )
 }
-
 
 const DeveloperSection = () => {
   return (
@@ -1082,43 +1112,48 @@ const DeveloperSection = () => {
             <span>
               <StyledSectionTitleGradient>Governed By The Community</StyledSectionTitleGradient>
               <StyledBodySubTitle style={{ fontSize: '20px' }}>
-              <p style={{ margin: '0', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
-              The Nerve Global DAO is the central decision-making organ of the protocol. All proposals and executions are handled on chain.
+                <p style={{ margin: '0', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
+                  The Nerve Global DAO is the central decision-making organ of the protocol. All proposals and
+                  executions are handled on chain.
                 </p>
               </StyledBodySubTitle>
               <StyledBodySubTitle style={{ fontSize: '20px' }}>
-              <p style={{ margin: '0', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
-              Voting rights in the DAO will be handed to community members according to DAO decision in form of NFTs. 
-              New voting rights are delegated every 3 months to the topmost participants in the protocol.
+                <p style={{ margin: '0', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
+                  Voting rights in the DAO will be handed to community members according to DAO decision in form of
+                  NFTs. New voting rights are delegated every 3 months to the topmost participants in the protocol.
                 </p>
               </StyledBodySubTitle>
             </span>
 
-            <StyledButtonTop target="_blank"
-              href="https://docs.nerveglobal.com/protocol/dao/overview">
+            <StyledButtonTop target="_blank" href="https://docs.nerveglobal.com/protocol/dao/overview">
               <span style={{ margin: 0 }}>Learn more</span>
             </StyledButtonTop>
           </GovernanceCard>
           <StyledItemColumn style={{ display: 'flex', flexDirection: 'column' }}>
-            <Button style={{ borderRadius: '20px' }} target="_blank"
-            href="https://docs.nerveglobal.com/sdk/automated-market-maker" outlined>
+            <Button
+              style={{ borderRadius: '20px' }}
+              target="_blank"
+              href="https://docs.nerveglobal.com/sdk/automated-market-maker"
+              outlined
+            >
               <div style={{ padding: '1rem' }}>
                 <StyledBodySubTitle style={{ marginBottom: '0.25rem' }}>
-                Automated Market Maker <span style={{ fontSize: '16px' }}>↗</span>
+                  Automated Market Maker <span style={{ fontSize: '16px' }}>↗</span>
                 </StyledBodySubTitle>
                 <p style={{ margin: '0', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
-                The Nerve Global AMM has a special feature where NERVE tokens can only be sold through the AMM, not purchased.
+                  The Nerve Global AMM has a special feature where NERVE tokens can only be sold through the AMM, not
+                  purchased.
                 </p>
               </div>
             </Button>
-            <Button style={{ borderRadius: '20px' }} target="_blank"
-            href="https://www.nerveglobal.com/token/" outlined>
+            <Button style={{ borderRadius: '20px' }} target="_blank" href="https://www.nerveglobal.com/token/" outlined>
               <div style={{ padding: '1rem' }}>
                 <StyledBodySubTitle style={{ marginBottom: '0.25rem' }}>
                   Token Economy <span style={{ fontSize: '16px' }}>↗</span>
                 </StyledBodySubTitle>
-                <p style={{ margin: '0', opacity: '0.6', fontSize: '16px', fontWeight: 400, maxWidth: "850px" }}>
-                Nerve is a decentralized system operating on EVM based blockchains. The entire system is composed of independent smart contracts that operate independently and decentrally with mathematical security.
+                <p style={{ margin: '0', opacity: '0.6', fontSize: '16px', fontWeight: 400, maxWidth: '850px' }}>
+                  Nerve is a decentralized system operating on EVM based blockchains. The entire system is composed of
+                  independent smart contracts that operate independently and decentrally with mathematical security.
                 </p>
               </div>
             </Button>
@@ -1127,8 +1162,9 @@ const DeveloperSection = () => {
                 <StyledBodySubTitle style={{ marginBottom: '0.25rem' }}>
                   Seasons <span style={{ fontSize: '16px' }}>(coming soon)</span>
                 </StyledBodySubTitle>
-                <p style={{ margin: '0', opacity: '0.6', fontSize: '16px', fontWeight: 400, maxWidth: "850px" }}>
-                The Nerve Global DAO awards unique NFTs to the top three users in both ranking categories (Earned, Spent), granting exclusive voting rights within the DAO.
+                <p style={{ margin: '0', opacity: '0.6', fontSize: '16px', fontWeight: 400, maxWidth: '850px' }}>
+                  The Nerve Global DAO awards unique NFTs to the top three users in both ranking categories (Earned,
+                  Spent), granting exclusive voting rights within the DAO.
                 </p>
               </div>
             </Button>
@@ -1142,15 +1178,14 @@ const DeveloperSection = () => {
 const Spotlight = () => {
   return (
     <>
-      <StyledSection style={{ marginRight: "auto", marginLeft: "auto" }}>
+      <StyledSection style={{ marginRight: 'auto', marginLeft: 'auto' }}>
         <StyledItemRow>
-              
           <GrantsCard>
             <StyledBodySubTitle style={{ fontSize: '1.125rem' }}>Top Active Dare</StyledBodySubTitle>
-            
+
             <StyledItemRowIntern style={{ fontSize: '16px' }}>
               <ActiveDaredUser />
-              <ActiveDareProof/>
+              <ActiveDareProof />
             </StyledItemRowIntern>
 
             <StyledItemRowIntern>
@@ -1159,14 +1194,13 @@ const Spotlight = () => {
 
             <StyledItemRowIntern style={{ marginBottom: '-1.5rem' }}>
               <Countdown />
-              <ActiveDareAmount/>
+              <ActiveDareAmount />
             </StyledItemRowIntern>
 
             <StyledItemRowIntern>
               <p>Time</p>
               <p>Participants & Value</p>
             </StyledItemRowIntern>
-
           </GrantsCard>
 
           <GrantsCard>
@@ -1174,7 +1208,7 @@ const Spotlight = () => {
 
             <StyledItemRowIntern style={{ fontSize: '16px' }}>
               <CompletedDaredUser />
-              <CompletedDareProof/>
+              <CompletedDareProof />
             </StyledItemRowIntern>
 
             <StyledItemRowIntern>
@@ -1183,16 +1217,14 @@ const Spotlight = () => {
 
             <StyledItemRowIntern style={{ marginBottom: '-1.5rem' }}>
               Finished
-              <CompletedDareAmount/>
+              <CompletedDareAmount />
             </StyledItemRowIntern>
 
             <StyledItemRowIntern>
               <p>Time</p>
               <p>Participants & Value</p>
             </StyledItemRowIntern>
-
           </GrantsCard>
-
         </StyledItemRow>
       </StyledSection>
     </>

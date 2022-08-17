@@ -7,10 +7,9 @@ import TikTok from '../../images/tiktok.inline.svg'
 import Youtube from '../../images/youtube.inline.svg'
 import Twitch from '../../images/twitch.inline.svg'
 
-
 const StyledInstagram = styled(Instagram)`
   path {
-  fill: ${({ theme }) => theme.textColor};
+    fill: ${({ theme }) => theme.textColor};
   }
 
   width: 20px;
@@ -28,7 +27,7 @@ const StyledInstagram = styled(Instagram)`
 
 const StyledTwitter = styled(Twitter)`
   path {
-  fill: ${({ theme }) => theme.textColor};
+    fill: ${({ theme }) => theme.textColor};
   }
 
   width: 20px;
@@ -46,7 +45,7 @@ const StyledTwitter = styled(Twitter)`
 
 const StyledTikTok = styled(TikTok)`
   path {
-  fill: ${({ theme }) => theme.textColor};
+    fill: ${({ theme }) => theme.textColor};
   }
 
   width: 20px;
@@ -64,7 +63,7 @@ const StyledTikTok = styled(TikTok)`
 
 const StyledYoutube = styled(Youtube)`
   path {
-  fill: ${({ theme }) => theme.textColor};
+    fill: ${({ theme }) => theme.textColor};
   }
 
   width: 20px;
@@ -82,7 +81,7 @@ const StyledYoutube = styled(Youtube)`
 
 const StyledTwitch = styled(Twitch)`
   path {
-  fill: ${({ theme }) => theme.textColor};
+    fill: ${({ theme }) => theme.textColor};
   }
 
   width: 20px;
@@ -105,52 +104,54 @@ const TopCompletedDare = `
     proofLink
   }
 }
-`;
-
+`
 
 export default function CompletedDareProof() {
-  const tcd = useTCD();
-  
+  const tcd = useTCD()
+
   return (
     <div>
       <ul>
-        {tcd.map((tcd) => (
-          <li key={tcd.id}>
-            
+        {tcd.map(tcd => (
+          <li key={tcd.proofLink}>
             <a target="_blank" rel="noreferrer" href={tcd.proofLink}>
-            {tcd.proofLink.includes("instagram") ? (<StyledInstagram />) : (<a></a>)}</a>
+              {tcd.proofLink.includes('instagram') ? <StyledInstagram /> : <a></a>}
+            </a>
 
             <a target="_blank" rel="noreferrer" href={tcd.proofLink}>
-            {tcd.proofLink.includes("twitter") ? (<StyledTwitter />) :  (<a></a>)}</a>
+              {tcd.proofLink.includes('twitter') ? <StyledTwitter /> : <a></a>}
+            </a>
 
             <a target="_blank" rel="noreferrer" href={tcd.proofLink}>
-            {tcd.proofLink.includes("tiktok") ? (<StyledTikTok />) : (<a></a>)}</a>
+              {tcd.proofLink.includes('tiktok') ? <StyledTikTok /> : <a></a>}
+            </a>
 
             <a target="_blank" rel="noreferrer" href={tcd.proofLink}>
-            {tcd.proofLink.includes("youtube") ? (<StyledYoutube />) : (<a></a>)}</a>
+              {tcd.proofLink.includes('youtube') ? <StyledYoutube /> : <a></a>}
+            </a>
 
             <a target="_blank" rel="noreferrer" href={tcd.proofLink}>
-            {tcd.proofLink.includes("twitch") ? (<StyledTwitch />) : (<a></a>)}</a>
-
+              {tcd.proofLink.includes('twitch') ? <StyledTwitch /> : <a></a>}
+            </a>
           </li>
         ))}
       </ul>
     </div>
-  );
+  )
 }
 
 function useTCD() {
-  const [tcd, setTCD] = React.useState([]);
+  const [tcd, setTCD] = React.useState([])
 
   React.useEffect(() => {
-    fetch("https://api.thegraph.com/subgraphs/name/nerveglobal/nerveglobal", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
+    fetch('https://api.thegraph.com/subgraphs/name/nerveglobal/nerveglobal', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ query: TopCompletedDare })
     })
-      .then((response) => response.json())
-      .then((data) => setTCD(data.data.tasks));
-  }, []);
+      .then(response => response.json())
+      .then(data => setTCD(data.data.tasks))
+  }, [])
 
-  return tcd;
+  return tcd
 }

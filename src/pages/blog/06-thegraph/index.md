@@ -8,8 +8,7 @@ previewText: 'We are super excited that we´ve received a $7.5K grant from The G
 
 # The Graph - A decentralized indexing protocol for Web3
 
-[The Graph](https://thegraph.com/en/) is an indexing protocol for querying networks like Ethereum and IPFS. Anyone can build and publish open APIs, called subgraphs, making data easily accessible. 
-
+[The Graph](https://thegraph.com/en/) is an indexing protocol for querying networks like Ethereum and IPFS. Anyone can build and publish open APIs, called subgraphs, making data easily accessible.
 
 # Centralised services have us trapped
 
@@ -20,7 +19,6 @@ It is:
 - **Unreliable**
 - **Restrictive**
 - **Extractive**
-
 
 # Full-Stack decentralization
 
@@ -42,33 +40,27 @@ Consumers will be able to query this diverse set of Indexers by paying for their
 
 - **- Delegators** put GRT at stake on behalf of an Indexer in order to earn a portion of indexer rewards and fees, without having to personally run a Graph Node. They are financially motivated.
 
-
 # Nerve is proud to be a Wave 3 grant recipient
 
-We're super excited that we've received a $7.5K grant from **The Graph**! 
+We're super excited that we've received a \$7.5K grant from **The Graph**!
 We express our deepest appreciation to the ecosystem & the team for supporting our work.
 
 Grant applicants came from Portugal, Canada, Japan, Korea, Poland, the US and more. Each applicant was assessed based on the project’s expected impact, community feedback, relative significance and urgency in the ecosystem.
 
-
 Read all about the [Wave 3 grants here.](https://thegraph.com/blog/wave-three-funding)
-
-
 
 # Future Grantees - Wave 4
 
 The power of **The Graph community** keeps getting stronger. Whether you’re an Indexer, Delegator, Curator, subgraph developer, or community builder - all roles have proven to be crucial in building the decentralized web.
 
-We strongly encourage you, that if you have ideas for Wave 4 to [apply for a grant](https://thegraph.typeform.com/applynow) - we`re in this together! 
-
+We strongly encourage you, that if you have ideas for Wave 4 to [apply for a grant](https://thegraph.typeform.com/applynow) - we`re in this together!
 
 # The road to a trusted, decentralized future
-
 
 Decentralisation is the process of distributing or dispersing functions, powers, people or things away from a central location or authority.
 We believe that the internet of the future is open, decentralised, permissionless and censorship-resistant. That's now 100% possible.
 
-Applications that enables a decentralized, trustless and borderless system which does not rely on anyone as a trusted intermediary - that is the essence of this whole technology. 
+Applications that enables a decentralized, trustless and borderless system which does not rely on anyone as a trusted intermediary - that is the essence of this whole technology.
 
 Whats really exciting is the possibility to fundamentally changing the way we allocate trust. Engage and collaborate on a global level.
 
@@ -81,9 +73,9 @@ The mainstream is all about trustless interactions brought by blockchain technol
 - We are thrilled to have the opportunity to be part of this epochal paradigm shift.
 - A vibrant decentralized future is about to arrive - join us!
 
-
 # Get involved
-We strongly encourage you to learn about **The Graph**. You can start here and get a good overview: 
+
+We strongly encourage you to learn about **The Graph**. You can start here and get a good overview:
 https://medium.com/graphprotocol/introducing-the-graph-4a281b28203e
 
 For those of you who are really interested and want a detailed introduction, we recommend this article:

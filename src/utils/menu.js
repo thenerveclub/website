@@ -3,15 +3,12 @@ const menu = [
     name: 'App',
     sublinks: [
       { name: 'App Store ↗', link: 'https://apps.apple.com/de/app/nerve-global/id1500517863' },
-      { name: 'Play Store ↗', link: 'https://play.google.com/store/apps/details?id=com.academy.nerve&hl=en&gl=US' },
+      { name: 'Play Store ↗', link: 'https://play.google.com/store/apps/details?id=com.academy.nerve&hl=en&gl=US' }
     ]
   },
   {
     name: 'Seasons',
-    sublinks: [
-      { name: 'Closed Beta', 
-      link: '/seasons' },
-    ]
+    sublinks: [{ name: 'Closed Beta', link: '/seasons' }]
   },
   {
     name: 'Docs',
@@ -46,7 +43,7 @@ const menu = [
       {
         name: 'Blog',
         link: '/blog'
-      },
+      }
     ]
   }
 ]

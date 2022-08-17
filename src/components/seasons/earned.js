@@ -1,4 +1,4 @@
-import * as React from "react";
+import * as React from 'react'
 import BigNumber from 'bignumber.js'
 
 const TopPlayerEarned = `
@@ -9,48 +9,48 @@ const TopPlayerEarned = `
     earned
   }
 }
-`;
+`
 
 export default function TopEarned() {
-  const tpe = useTPE();
-  const matic = usePrice();
+  const tpe = useTPE()
+  const matic = usePrice()
 
   return (
     <div>
-      <ul style={{ listStyle: "none" }}>
-        {tpe.map((tpe) => (
-          <li key={tpe.id}>${((tpe.earned/1.e+18)*matic).toFixed(2)}</li>
+      <ul style={{ listStyle: 'none' }}>
+        {tpe.map(tpe => (
+          <li key={tpe.earned}>${((tpe.earned / 1e18) * matic).toFixed(2)}</li>
         ))}
       </ul>
-</div>
-  );
+    </div>
+  )
 }
 
 function useTPE() {
-  const [tpe, setTPE] = React.useState([]);
+  const [tpe, setTPE] = React.useState([])
 
   React.useEffect(() => {
-    fetch("https://api.thegraph.com/subgraphs/name/nerveglobal/nerveglobal", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
+    fetch('https://api.thegraph.com/subgraphs/name/nerveglobal/nerveglobal', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ query: TopPlayerEarned })
     })
-      .then((response) => response.json())
-      .then((data) => setTPE(data.data.userDashStats));
-  }, []);
+      .then(response => response.json())
+      .then(data => setTPE(data.data.userDashStats))
+  }, [])
 
-  return tpe;
+  return tpe
 }
 
 function usePrice() {
-  const [maticPrice, setPrice] = React.useState([]);
+  const [maticPrice, setPrice] = React.useState([])
 
-  React.useEffect( async () => {
-    const maticPrice = await fetch(`https://api.coingecko.com/api/v3/simple/price?ids=matic-network&vs_currencies=usd`,)
+  React.useEffect(async () => {
+    const maticPrice = await fetch(`https://api.coingecko.com/api/v3/simple/price?ids=matic-network&vs_currencies=usd`)
     const priceUst = await maticPrice.json()
-    const matic = new BigNumber(priceUst["matic-network"].usd)
-    setPrice(new BigNumber(matic));
-  }, []);
+    const matic = new BigNumber(priceUst['matic-network'].usd)
+    setPrice(new BigNumber(matic))
+  }, [])
 
-  return maticPrice;
+  return maticPrice
 }

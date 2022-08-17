@@ -7,14 +7,13 @@ import Github from '../images/github.inline.svg'
 import Discord from '../images/discord.inline.svg'
 import Linkedin from '../images/linkedin.inline.svg'
 
-
 const StyledFooter = styled.footer`
   max-width: auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
   color: ${({ theme }) => theme.textColor};
-  padding:30px 50px 25px 50px;
+  padding: 30px 50px 25px 50px;
 
   @media (max-width: 1155px) {
     display: block;
@@ -88,26 +87,26 @@ const Footer = () => {
       <p style={{ margin: 0 }}> {new Date().getFullYear()} Nerve Global Community</p>
 
       <StyledSocialRow>
-            <a target="_blank" rel="noreferrer" href="https://twitter.com/nerveglobal_">
-              <StyledTwitter />
-            </a>
-            <a target="_blank" rel="noreferrer" href="https://github.com/nerveglobal">
-              <StyledGithub />
-            </a>
-            <a target="_blank" rel="noreferrer" href="https://discord.gg/Xuh5enTNB6">
-              <StyledDiscord />
-            </a>
-            <a target="_blank" rel="noreferrer" href="https://www.linkedin.com/company/nerveglobal/">
-              <StyledLinkedIn />
-            </a>
-          </StyledSocialRow>
+        <a target="_blank" rel="noreferrer" href="https://twitter.com/nerveglobal_">
+          <StyledTwitter />
+        </a>
+        <a target="_blank" rel="noreferrer" href="https://github.com/nerveglobal">
+          <StyledGithub />
+        </a>
+        <a target="_blank" rel="noreferrer" href="https://discord.gg/Xuh5enTNB6">
+          <StyledDiscord />
+        </a>
+        <a target="_blank" rel="noreferrer" href="https://www.linkedin.com/company/nerveglobal/">
+          <StyledLinkedIn />
+        </a>
+      </StyledSocialRow>
 
       <StyledFooterLinkSection>
         <StyledFooterLink to="/privacy-policy">Privacy Policy</StyledFooterLink>
         <StyledFooterLink to="/disclaimer" style={{ marginRight: '12px' }}>
           Disclaimer
         </StyledFooterLink>
-  {/*
+        {/*
   <StyledFooterLink to="/terms-of-service">Terms of Service</StyledFooterLink>
   */}
       </StyledFooterLinkSection>

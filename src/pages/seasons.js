@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 
 import Layout from '../layouts'
@@ -13,13 +13,10 @@ import TopSpenderName from '../components/seasons/topSpenderName'
 import TopSpenderSocials from '../components/seasons/topSpenderSocials'
 import Spent from '../components/seasons/spent'
 
-
-
 const StyledAbout = styled.div`
   display: grid;
   padding: 0 2rem;
   padding-top: 2rem;
-
 
   @media (max-width: 960px) {
     flex-direction: column;
@@ -35,7 +32,7 @@ const Title = styled.h1`
   pointer-events: none;
   white-space: wrap;
   overflow-wrap: normal;
-  
+
   @media (max-width: 960px) {
     margin-top: 2.5rem;
     margin-bottom: 4rem;
@@ -87,7 +84,6 @@ const StyledBodyIntern = styled.div`
   margin: 0 auto 0 auto;
 `
 
-
 const StyledItemRow = styled.nav`
   display: flex;
   align-items: center;
@@ -95,7 +91,6 @@ const StyledItemRow = styled.nav`
   flex-direction: column;
 
   @media (min-width: 960px) {
-   
   }
 `
 
@@ -108,7 +103,6 @@ const StyledItemRowIntern = styled.nav`
   width: 95%;
   margin: 1rem auto 0 auto;
 
-  
   @media (max-width: 960px) {
     width: 100%;
     font-size: 12px;
@@ -117,7 +111,7 @@ const StyledItemRowIntern = styled.nav`
       margin-top: 1px;
       margin-bottom: 1px;
     }
-    
+
     & > *:not(:first-of-type) {
       margin-top: 0;
       align-items: right;
@@ -132,7 +126,6 @@ const StyledCard = styled.div`
   border-radius: 24px;
   box-shadow: ${({ theme }) => theme.shadows.huge};
 `
-
 
 const StyledButton = styled.h1`
   padding: 0.25rem 0.75rem;
@@ -218,84 +211,84 @@ const GrantsCard = styled(StyledCard)`
   align-items: center;
   justify-content: center;
   margin: 0 auto 5rem auto;
-  
+
   @media (max-width: 960px) {
     width: 100%;
   }
 `
 
 const Seasons = props => {
-
   return (
-  <Layout path={props.location.pathname}>
-    <SEO title="Seasons" path={props.location.pathname} />
+    <Layout path={props.location.pathname}>
+      <SEO title="Seasons" path={props.location.pathname} />
       <StyledAbout>
         <span style={{ marginTop: '5rem' }}>
-          <Title style={{ fontFamily: "True" }}>
-          CLOSED BETA SEASON
-          </Title>
+          <Title style={{ fontFamily: 'True' }}>CLOSED BETA SEASON</Title>
         </span>
       </StyledAbout>
       <StyledBody>
-      <StyledBodyIntern>
-        <SectionHeaderMobile style={{ 
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          width: '100%',}}>
+        <StyledBodyIntern>
+          <SectionHeaderMobile
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              width: '100%'
+            }}
+          >
             <StyledButton>Top Earners</StyledButton>
-        </SectionHeaderMobile>
+          </SectionHeaderMobile>
           <TopEarners />
-          </StyledBodyIntern>
-          <StyledBodyIntern>
-          <SectionHeaderMobile style={{ 
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          width: '100%',}}>
+        </StyledBodyIntern>
+        <StyledBodyIntern>
+          <SectionHeaderMobile
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              width: '100%'
+            }}
+          >
             <StyledButton>Top Spenders</StyledButton>
-        </SectionHeaderMobile>
+          </SectionHeaderMobile>
           <TopSpenders />
-          </StyledBodyIntern>
+        </StyledBodyIntern>
       </StyledBody>
       <BG />
-  </Layout>
+    </Layout>
   )
 }
 
 export default Seasons
 
-
-
 const TopEarners = () => {
   return (
-  <StyledSection>
-    <StyledItemRow>
-      <GrantsCard>
+    <StyledSection>
+      <StyledItemRow>
+        <GrantsCard>
           <StyledItemRowIntern>
-            <TopEarnerName/>
-            <TopEarnerSocials/>
-            <Earned/>
+            <TopEarnerName />
+            <TopEarnerSocials />
+            <Earned />
           </StyledItemRowIntern>
-      </GrantsCard>   
-    </StyledItemRow>
-  </StyledSection>
+        </GrantsCard>
+      </StyledItemRow>
+    </StyledSection>
   )
 }
 
-
 const TopSpenders = () => {
   return (
-  <StyledSection>
-    <StyledItemRow>
-      <GrantsCard>
-        <StyledItemRowIntern>
-          <TopSpenderName/>
-          <TopSpenderSocials/>
-          <Spent/>
-        </StyledItemRowIntern>
-      </GrantsCard>
-    </StyledItemRow>
-  </StyledSection>
+    <StyledSection>
+      <StyledItemRow>
+        <GrantsCard>
+          <StyledItemRowIntern>
+            <TopSpenderName />
+            <TopSpenderSocials />
+            <Spent />
+          </StyledItemRowIntern>
+        </GrantsCard>
+      </StyledItemRow>
+    </StyledSection>
   )
 }

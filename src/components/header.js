@@ -274,9 +274,7 @@ const Header = () => {
           }}
         >
           <StyledUni />
-          <StyledBodySubText style={{ fontFamily: "True", fontWeight: 200 }}>
-            Nerve Global
-          </StyledBodySubText>
+          <StyledBodySubText style={{ fontFamily: 'True', fontWeight: 200 }}>Nerve Global</StyledBodySubText>
         </StyledHomeLink>
       </StyledNavTitleWrapper>
       <MenuToggle ref={button} open={isMenuOpen} onClick={() => updateIsMenuOpen(!isMenuOpen)}>
@@ -287,10 +285,10 @@ const Header = () => {
           return <Menu key={item.name} data={item} />
         })}
 
-          <StyledButton type="button" onClick={toggleDarkMode}>
-            {darkMode ? <Sun size={20} /> : <Moon size={20} />}
-          </StyledButton>
-          {/*{props.path !== undefined && (
+        <StyledButton type="button" onClick={toggleDarkMode}>
+          {darkMode ? <Sun size={20} /> : <Moon size={20} />}
+        </StyledButton>
+        {/*{props.path !== undefined && (
           <StyledTradeLink
             style={{
               background: `linear-gradient(128.17deg, #BD00FF -14.78%, #FF1F8A 110.05%)`,

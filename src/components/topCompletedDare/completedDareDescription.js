@@ -1,4 +1,4 @@
-import * as React from "react";
+import * as React from 'react'
 
 const TopCompletedDare = `
 {
@@ -7,34 +7,34 @@ const TopCompletedDare = `
       description
   }
 }
-`;
+`
 
 export default function CompletedDareDescription() {
-  const tcd = useTCD();
+  const tcd = useTCD()
 
   return (
     <div>
       <ul>
-        {tcd.map((tcd) => (
-          <li key={tcd.id}>&apos;{tcd.description}&apos;</li>
+        {tcd.map(tcd => (
+          <li key={tcd.description}>&apos;{tcd.description}&apos;</li>
         ))}
       </ul>
     </div>
-  );
+  )
 }
 
 function useTCD() {
-  const [tcd, setTCD] = React.useState([]);
+  const [tcd, setTCD] = React.useState([])
 
   React.useEffect(() => {
-    fetch("https://api.thegraph.com/subgraphs/name/nerveglobal/nerveglobal", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
+    fetch('https://api.thegraph.com/subgraphs/name/nerveglobal/nerveglobal', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ query: TopCompletedDare })
     })
-      .then((response) => response.json())
-      .then((data) => setTCD(data.data.tasks));
-  }, []);
+      .then(response => response.json())
+      .then(data => setTCD(data.data.tasks))
+  }, [])
 
-  return tcd;
+  return tcd
 }
