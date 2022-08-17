@@ -238,7 +238,6 @@ const Seasons = props => {
           >
             <StyledButton>Top Earners</StyledButton>
           </SectionHeaderMobile>
-          <TopEarners />
         </StyledBodyIntern>
         <StyledBodyIntern>
           <SectionHeaderMobile
@@ -251,7 +250,6 @@ const Seasons = props => {
           >
             <StyledButton>Top Spenders</StyledButton>
           </SectionHeaderMobile>
-          <TopSpenders />
         </StyledBodyIntern>
       </StyledBody>
       <BG />
