@@ -238,6 +238,7 @@ const Seasons = props => {
           >
             <StyledButton>Top Earners</StyledButton>
           </SectionHeaderMobile>
+          <TopEarners />
         </StyledBodyIntern>
         <StyledBodyIntern>
           <SectionHeaderMobile
@@ -250,6 +251,7 @@ const Seasons = props => {
           >
             <StyledButton>Top Spenders</StyledButton>
           </SectionHeaderMobile>
+          <TopSpenders />
         </StyledBodyIntern>
       </StyledBody>
       <BG />
@@ -261,6 +263,7 @@ export default Seasons
 
 const TopEarners = () => {
   return (
+    <>
     <StyledSection>
       <StyledItemRow>
         <GrantsCard>
@@ -272,11 +275,13 @@ const TopEarners = () => {
         </GrantsCard>
       </StyledItemRow>
     </StyledSection>
+    </>
   )
 }
 
 const TopSpenders = () => {
   return (
+    <>
     <StyledSection>
       <StyledItemRow>
         <GrantsCard>
@@ -288,5 +293,6 @@ const TopSpenders = () => {
         </GrantsCard>
       </StyledItemRow>
     </StyledSection>
+    </>
   )
 }
