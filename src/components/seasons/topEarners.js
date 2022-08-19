@@ -11,11 +11,13 @@ const StyledSection = styled.section`
   margin-top: 1rem;
 
   @media (max-width: 960px) {
-    margin-top: 1rem;
+    margin: 1rem auto 0 auto;
+    width: 100%;
   }
 
   @media (max-width: 640px) {
-    margin-top: 1rem;
+    margin: 1rem auto 0 auto;
+    width: 100%;
   }
 `
 
@@ -24,8 +26,10 @@ const StyledItemRow = styled.nav`
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  margin: 0 auto 0 auto;
 
-  @media (min-width: 960px) {
+  @media (max-width: 960px) {
+    width: 100%;
   }
 `
 
@@ -45,6 +49,7 @@ const GrantsCard = styled(StyledCard)`
 
   @media (max-width: 960px) {
     width: 100%;
+    margin: 0 auto 5rem auto;
   }
 `
 
