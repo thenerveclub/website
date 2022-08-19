@@ -42,7 +42,7 @@ const StyledCard = styled.div`
 `
 
 const GrantsCard = styled(StyledCard)`
-  width: 750px;
+  width: 1000px;
   align-items: center;
   justify-content: center;
   margin: 0 auto 5rem auto;

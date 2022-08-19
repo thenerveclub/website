@@ -39,27 +39,7 @@ const Title = styled.h1`
 const StyledBody = styled.div`
   position: relative;
   display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  padding: 2.5rem;
-  border-bottom: 1px solid ${({ theme }) => theme.buttonBorder};
-  border-bottom: 1px solid;
-  border-image: linear-gradient(var(--angle), aqua, aqua, magenta, magenta) 1;
-	
-	animation: 15s rotate linear infinite;
-}
-
-@keyframes rotate {
-	to {
-		--angle: 360deg;
-	}
-}
-
-@property --angle {
-  syntax: '<angle>';
-  initial-value: 0deg;
-  inherits: false;
-}
+  flex-direction: column;
 
   @media (max-width: 960px) {
     padding: 1rem;
@@ -74,38 +54,27 @@ const StyledBody = styled.div`
   }
 `
 
-const StyledBodyIntern = styled.div`
-  position: relative;
-  margin: 0 auto 0 auto;
-`
-
 const StyledButton = styled.h1`
-  padding: 0.25rem 0.75rem;
+  padding: 0.25rem 1rem;
   background-color: ${({ theme }) => theme.textColor};
+  display: inline-block;
   font-weight: 600;
   font-size: 18px;
   text-align: center;
-  margin: 0 auto 0 auto;
+  margin: 3rem 1rem 0 1rem;
   width: 10rem;
   border: 1px solid transparent;
-  box-shadow: ${({ theme }) => theme.shadows.small};
-  background: ${({ theme, open, showBG }) => (showBG && !open ? theme.backgroundColor : 'none')};
-	border-bottom: 1px solid ${({ theme }) => theme.buttonBorder};
+  background: none;
   border-image: linear-gradient(var(--angle), aqua, aqua, magenta, magenta) 1;
 	
 	animation: 15s rotate linear infinite;
+  cursor: pointer;
 }
 
 @keyframes rotate {
 	to {
 		--angle: 360deg;
 	}
-}
-
-@property --angle {
-  syntax: '<angle>';
-  initial-value: 0deg;
-  inherits: false;
 }
 
   transition: background-color 0.25s ease;
@@ -113,19 +82,20 @@ const StyledButton = styled.h1`
 
   @media (max-width: 960px) {
     margin: 0 0.5rem 1rem 0.5rem;
-    font-size: 16px;
-    width: auto;
+    font-size: 12px;
+    width: 6rem;
   }
-
   @media (max-width: 640px) {
     margin: 0 0.5rem 1rem 0.5rem;
-    font-size: 16px;
-    width: auto;
+    font-size: 12px;
+    width: 6rem;
   }
 `
 
 const SectionHeaderMobile = styled.h1`
-  width: 100%;
+display: flex;
+alignItems: center;
+justifyContent: center;
 
   @media (max-width: 960px) {
     margin: 2rem 0 0 0;
