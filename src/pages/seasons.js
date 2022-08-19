@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 
 import BG from '../components/bg'
@@ -145,6 +145,8 @@ const SectionHeaderMobile = styled.h1`
 `
 
 const Seasons = props => {
+  const [active, setActive] = useState('TopEarners')
+
   return (
     <Layout path={props.location.pathname}>
       <SEO title="Seasons" path={props.location.pathname} />
@@ -154,32 +156,23 @@ const Seasons = props => {
         </span>
       </StyledAbout>
       <StyledBody>
-        <StyledBodyIntern>
-          <SectionHeaderMobile
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              width: '100%'
-            }}
-          >
-            <StyledButton>Top Earners</StyledButton>
-          </SectionHeaderMobile>
-          <TopEarners />
-        </StyledBodyIntern>
-        <StyledBodyIntern>
-          <SectionHeaderMobile
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              width: '100%'
-            }}
-          >
-            <StyledButton>Top Spenders</StyledButton>
-          </SectionHeaderMobile>
-          <TopSpenders />
-        </StyledBodyIntern>
+        <SectionHeaderMobile
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            width: '100%'
+          }}
+        >
+          <nav>
+            <StyledButton onClick={() => setActive('TopEarners')}>Top Earners</StyledButton>
+            <StyledButton onClick={() => setActive('TopSpenders')}>Top Spenders</StyledButton>
+          </nav>
+        </SectionHeaderMobile>
+        <div>
+          {active === 'TopEarners' && <TopEarners props={props} />}
+          {active === 'TopSpenders' && <TopSpenders props={props} />}
+        </div>
       </StyledBody>
       <BG />
     </Layout>
