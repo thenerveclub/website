@@ -153,34 +153,7 @@ const Seasons = props => {
           <Title style={{ fontFamily: 'True' }}>CLOSED BETA SEASON</Title>
         </span>
       </StyledAbout>
-      <StyledBody>
-        <StyledBodyIntern>
-          <SectionHeaderMobile
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              width: '100%'
-            }}
-          >
-            <StyledButton>Top Earners</StyledButton>
-          </SectionHeaderMobile>
-          <TopEarners />
-        </StyledBodyIntern>
-        <StyledBodyIntern>
-          <SectionHeaderMobile
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              width: '100%'
-            }}
-          >
-            <StyledButton>Top Spenders</StyledButton>
-          </SectionHeaderMobile>
-          <TopSpenders />
-        </StyledBodyIntern>
-      </StyledBody>
+
       <BG />
     </Layout>
   )

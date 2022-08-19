@@ -533,6 +533,8 @@ const StyledButtonTop = styled.a`
 `
 
 const IndexPage = props => {
+  const [active, setActive] = useState('Player')
+
   return (
     <Layout path={props.location.pathname}>
       <SEO title="Home" path={props.location.pathname} description={'Do. You. Dare?'} />
@@ -657,6 +659,24 @@ const IndexPage = props => {
         >
           <span>{'How to Play'}</span>
         </SectionHeader>
+
+        <SectionHeaderMobile
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            width: '100%'
+          }}
+        >
+          <nav>
+            <StyledButton onClick={() => setActive('Player')}>Player</StyledButton>
+            <StyledButton onClick={() => setActive('Watcher')}>Watcher</StyledButton>
+          </nav>
+        </SectionHeaderMobile>
+        <div>
+          {active === 'Player' && <Player props={props} />}
+          {active === 'Watcher' && <Watcher props={props} />}
+        </div>
 
         <SectionHeader
           style={{
