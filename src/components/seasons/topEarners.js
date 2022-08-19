@@ -81,6 +81,7 @@ const TopEarners = () => {
           <GrantsCard>
             <StyledItemRowIntern>
               <TopEarnerName />
+              <Earned />
             </StyledItemRowIntern>
           </GrantsCard>
         </StyledItemRow>
