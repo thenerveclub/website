@@ -448,11 +448,11 @@ const HideSmall = styled.span`
 `
 
 const StyledButton = styled.h1`
-  padding: 0.25rem 0.75rem;
+  padding: 0.25rem 1rem;
   background-color: ${({ theme }) => theme.textColor};
   display: inline-block;
   font-weight: 600;
-  font-size: 20px;
+  font-size: 18px;
   text-align: center;
   margin: 3rem 1rem 0 1rem;
   width: 10rem;
@@ -474,14 +474,14 @@ const StyledButton = styled.h1`
   }
 
   @media (max-width: 960px) {
-    margin: 3rem 0.5rem 1rem 0.5rem;
+    margin: 0 0.5rem 3rem 0.5rem;
     font-size: 16px;
-    width: 6rem;
+    width: 7.5rem;
   }
   @media (max-width: 640px) {
-    margin: 3rem 0.5rem 1rem 0.5rem;
+    margin: 0 0.5rem 3rem 0.5rem;
     font-size: 16px;
-    width: 6rem;
+    width: 7.5rem;
   }
 `
 
@@ -534,6 +534,7 @@ const StyledButtonTop = styled.a`
 
 const IndexPage = props => {
   const [active, setActive] = useState('Player')
+  const [activeDare, setActiveDare] = useState('TopActiveDare')
 
   return (
     <Layout path={props.location.pathname}>
@@ -690,7 +691,24 @@ const IndexPage = props => {
         >
           <span>{'Spotlight'}</span>
         </SectionHeader>
-        <Spotlight props={props} />
+
+        <SectionHeaderMobile
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            width: '100%'
+          }}
+        >
+          <nav>
+            <StyledButton onClick={() => setActiveDare('TopActiveDare')}>Active</StyledButton>
+            <StyledButton onClick={() => setActiveDare('TopCompletedDare')}>Completed</StyledButton>
+          </nav>
+        </SectionHeaderMobile>
+        <div>
+          {activeDare === 'TopActiveDare' && <TopActiveDare props={props} />}
+          {activeDare === 'TopCompletedDare' && <TopCompletedDare props={props} />}
+        </div>
 
         <SectionHeader
           style={{
@@ -880,11 +898,11 @@ const GrantsCard = styled(StyledCard)`
   width: 750px;
   align-items: center;
   justify-content: center;
+  margin: 0 auto 5rem auto;
 
   @media (max-width: 960px) {
     width: 100%;
-    margin-top: 2rem;
-    margin-bottom: 1rem;
+    margin: 0 auto 5rem auto;
   }
 `
 
@@ -917,7 +935,6 @@ const GrantCard = styled(StyledC)`
 
 const StyledItemRowIntern = styled.nav`
   display: flex;
-  flex: 1;
   flex-direction: row;
   font-size: 20px;
   font-weight: 500;
@@ -932,9 +949,12 @@ const StyledItemRowIntern = styled.nav`
 
   @media (max-width: 960px) {
     font-size: 16px;
+    justify-content: space-between;
+    width: 100%;
+    margin: 0 auto 0 auto;
 
     p {
-      font-size: 14px;
+      font-size: 12px;
     }
 
     & > * {
@@ -1164,14 +1184,12 @@ const DeveloperSection = () => {
   )
 }
 
-const Spotlight = () => {
+const TopActiveDare = () => {
   return (
     <>
-      <StyledSection style={{ marginRight: 'auto', marginLeft: 'auto' }}>
+      <StyledSection style={{ margin: '2rem auto 0 auto' }}>
         <StyledItemRow>
           <GrantsCard>
-            <StyledBodySubTitle style={{ fontSize: '1.125rem' }}>Top Active Dare</StyledBodySubTitle>
-
             <StyledItemRowIntern style={{ fontSize: '16px' }}>
               <ActiveDaredUser />
               <ActiveDareProof />
@@ -1187,14 +1205,22 @@ const Spotlight = () => {
             </StyledItemRowIntern>
 
             <StyledItemRowIntern>
-              <p>Time</p>
+              <p>Time & Votes</p>
               <p>Participants & Value</p>
             </StyledItemRowIntern>
           </GrantsCard>
+        </StyledItemRow>
+      </StyledSection>
+    </>
+  )
+}
 
+const TopCompletedDare = () => {
+  return (
+    <>
+      <StyledSection style={{ margin: '2rem auto 0 auto' }}>
+        <StyledItemRow>
           <GrantsCard>
-            <StyledBodySubTitle style={{ fontSize: '1.125rem' }}>Top Completed Dare</StyledBodySubTitle>
-
             <StyledItemRowIntern style={{ fontSize: '16px' }}>
               <CompletedDaredUser />
               <CompletedDareProof />
@@ -1210,7 +1236,7 @@ const Spotlight = () => {
             </StyledItemRowIntern>
 
             <StyledItemRowIntern>
-              <p>Time</p>
+              <p>Time & Votes</p>
               <p>Participants & Value</p>
             </StyledItemRowIntern>
           </GrantsCard>

@@ -1,5 +1,37 @@
 import React from 'react'
-import { EndTask } from './activeDareEndTask'
+import styled from 'styled-components'
+import ActiveDareVotes from './activeDareVotes'
+
+const StyledItemRowIntern = styled.nav`
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  width: 100%;
+
+  p {
+    width: 30px;
+    font-size: 50px;
+  }
+
+  @media (max-width: 960px) {
+    font-size: 16px;
+
+    p {
+      width: 20px;
+      font-size: 20px;
+    }
+  }
+`
+
+const Text = styled.nav`
+  width: 30px;
+  font-size: 20px;
+
+  @media (max-width: 960px) {
+    width: 25px;
+    font-size: 16px;
+  }
+`
 
 export default function Countdown() {
   const countdown = () => {
@@ -39,7 +71,7 @@ export default function Countdown() {
   setInterval(countdown, 1000)
 
   return (
-    <div className="countdown">
+    <StyledItemRowIntern className="countdown">
       <a className="container-day">
         <a className="day"></a>
         <a>:</a>
@@ -53,8 +85,9 @@ export default function Countdown() {
         <a>:</a>
       </a>
       <a className="container-second">
-        <a className="second"></a>
+        <Text className="second"></Text>
       </a>
-    </div>
+      <ActiveDareVotes />
+    </StyledItemRowIntern>
   )
 }
