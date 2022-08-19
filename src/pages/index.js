@@ -29,7 +29,6 @@ import ActiveDareAmount from '../components/topActiveDare/activeDareAmount'
 import ActiveDareDescription from '../components/topActiveDare/activeDareDescription'
 import ActiveDaredUser from '../components/topActiveDare/activeDaredUser'
 import ActiveDareProof from '../components/topActiveDare/activeDareProof'
-import Countdown from '../components/topActiveDare/countdownTimer'
 
 import CompletedDareAmount from '../components/topCompletedDare/completedDareAmount'
 import CompletedDareDescription from '../components/topCompletedDare/completedDareDescription'
@@ -1191,7 +1190,6 @@ const Spotlight = () => {
             </StyledItemRowIntern>
 
             <StyledItemRowIntern style={{ marginBottom: '-1.5rem' }}>
-              <Countdown />
               <ActiveDareAmount />
             </StyledItemRowIntern>
 
