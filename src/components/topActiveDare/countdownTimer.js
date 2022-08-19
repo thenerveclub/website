@@ -40,21 +40,21 @@ export default function Countdown() {
 
   return (
     <div className="countdown">
-      <div className="container-day">
+      <a className="container-day">
         <a className="day"></a>
         <a>:</a>
-      </div>
-      <div className="container-hour">
+      </a>
+      <a className="container-hour">
         <a className="hour"></a>
         <a>:</a>
-      </div>
-      <div className="container-minute">
+      </a>
+      <a className="container-minute">
         <a className="minute"></a>
         <a>:</a>
-      </div>
-      <div className="container-second">
+      </a>
+      <a className="container-second">
         <a className="second"></a>
-      </div>
+      </a>
     </div>
   )
 }

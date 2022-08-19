@@ -29,6 +29,7 @@ import ActiveDareAmount from '../components/topActiveDare/activeDareAmount'
 import ActiveDareDescription from '../components/topActiveDare/activeDareDescription'
 import ActiveDaredUser from '../components/topActiveDare/activeDaredUser'
 import ActiveDareProof from '../components/topActiveDare/activeDareProof'
+import Countdown from '../components/topActiveDare/countdownTimer'
 
 import CompletedDareAmount from '../components/topCompletedDare/completedDareAmount'
 import CompletedDareDescription from '../components/topCompletedDare/completedDareDescription'
@@ -687,6 +688,20 @@ const IndexPage = props => {
             fontFamily: 'True'
           }}
         >
+          <span>{'Spotlight'}</span>
+        </SectionHeader>
+        <Spotlight props={props} />
+
+        <SectionHeader
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            width: '100%',
+            padding: '2rem 0 0 0',
+            fontFamily: 'True'
+          }}
+        >
           <span>{'Decentralized Wallet'}</span>
         </SectionHeader>
         <EcosystemSection props={props} />
@@ -1167,6 +1182,7 @@ const Spotlight = () => {
             </StyledItemRowIntern>
 
             <StyledItemRowIntern style={{ marginBottom: '-1.5rem' }}>
+              <Countdown />
               <ActiveDareAmount />
             </StyledItemRowIntern>
 
