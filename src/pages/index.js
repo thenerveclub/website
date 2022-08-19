@@ -449,18 +449,14 @@ const HideSmall = styled.span`
 const StyledButton = styled.h1`
   padding: 0.25rem 0.75rem;
   background-color: ${({ theme }) => theme.textColor};
-  text-decoration: none;
   display: inline-block;
   font-weight: 600;
   font-size: 20px;
   text-align: center;
   margin: 3rem 1rem 0 1rem;
   width: 10rem;
-  white-space: nowrap;
   border: 1px solid transparent;
-  box-shadow: ${({ theme }) => theme.shadows.small};
-  background: ${({ theme, open, showBG }) => (showBG && !open ? theme.backgroundColor : 'none')};
-	border-bottom: 1px solid ${({ theme }) => theme.buttonBorder};
+  background: none;
   border-image: linear-gradient(var(--angle), aqua, aqua, magenta, magenta) 1;
 	
 	animation: 15s rotate linear infinite;
@@ -473,14 +469,9 @@ const StyledButton = styled.h1`
 	}
 }
 
-@property --angle {
-  syntax: '<angle>';
-  initial-value: 0deg;
-  inherits: false;
-}
-
   transition: background-color 0.25s ease;
   }
+
   @media (max-width: 960px) {
     margin: 3rem 0.5rem 1rem 0.5rem;
     font-size: 16px;
