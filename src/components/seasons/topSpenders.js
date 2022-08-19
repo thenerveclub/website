@@ -82,6 +82,7 @@ const TopSpenders = () => {
             <StyledItemRowIntern>
               <TopSpenderName />
               <TopSpenderSocials />
+              <Spent />
             </StyledItemRowIntern>
           </GrantsCard>
         </StyledItemRow>

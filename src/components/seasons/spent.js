@@ -1,4 +1,3 @@
-import BigNumber from 'bignumber.js'
 import * as React from 'react'
 
 const TopPlayerSpent = `
@@ -45,11 +44,14 @@ function useTPS() {
 function usePrice() {
   const [maticPrice, setPrice] = React.useState([])
 
-  React.useEffect(async () => {
-    const maticPrice = await fetch(`https://api.coingecko.com/api/v3/simple/price?ids=matic-network&vs_currencies=usd`)
-    const priceUst = await maticPrice.json()
-    const matic = new BigNumber(priceUst['matic-network'].usd)
-    setPrice(new BigNumber(matic))
+  React.useEffect(() => {
+    fetch('https://api.coingecko.com/api/v3/simple/price?ids=matic-network&vs_currencies=usd', {
+      method: 'GET',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify()
+    })
+      .then(response => response.json())
+      .then(data => setPrice(data['matic-network'].usd))
   }, [])
 
   return maticPrice
