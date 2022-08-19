@@ -3,10 +3,33 @@ import styled from 'styled-components'
 
 const Positive = styled.div`
   color: green;
+  margin-left: 5px;
 `
 
 const Negative = styled.div`
   color: red;
+  margin-left: 5px;
+`
+
+const StyledItemRowIntern = styled.nav`
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  width: 100%;
+
+  p {
+    width: 30px;
+    font-size: 50px;
+  }
+
+  @media (max-width: 960px) {
+    font-size: 16px;
+
+    p {
+      width: 20px;
+      font-size: 20px;
+    }
+  }
 `
 
 const TopCompletedDare = `
@@ -27,13 +50,13 @@ export default function ActiveDareAmount() {
       <ul>
         {tcd.map(tcd => (
           <li key={tcd.positiveVotes}>
-            <a>
+            <StyledItemRowIntern>
               {tcd.positiveVotes - tcd.negativeVotes > 0 ? (
-                <Positive>Finished ({tcd.positiveVotes - tcd.negativeVotes})</Positive>
+                <Positive>({tcd.positiveVotes - tcd.negativeVotes})</Positive>
               ) : (
-                <Negative>Finished ({tcd.positiveVotes - tcd.negativeVotes})</Negative>
+                <Negative>({tcd.positiveVotes - tcd.negativeVotes})</Negative>
               )}
-            </a>
+            </StyledItemRowIntern>
           </li>
         ))}
       </ul>

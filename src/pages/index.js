@@ -969,6 +969,26 @@ const StyledItemRowIntern = styled.nav`
   }
 `
 
+const StyledItemRowInternIntern = styled.nav`
+  display: flex;
+  flex: 1;
+  width: 100%;
+
+  p {
+    font-size: 12px;
+  }
+
+  @media (max-width: 960px) {
+    font-size: 16px;
+    width: 100%;
+    margin: 0 auto 0 auto;
+
+    p {
+      font-size: 12px;
+    }
+  }
+`
+
 const EcosystemSection = () => {
   return (
     <StyledSection style={{ marginRight: 'auto', marginLeft: 'auto' }}>
@@ -1232,7 +1252,10 @@ const TopCompletedDare = () => {
             </StyledItemRowIntern>
 
             <StyledItemRowIntern style={{ marginBottom: '-1.5rem' }}>
-              <CompletedDareVotes />
+              <StyledItemRowInternIntern>
+                Finished
+                <CompletedDareVotes />
+              </StyledItemRowInternIntern>
               <CompletedDareAmount />
             </StyledItemRowIntern>
 
