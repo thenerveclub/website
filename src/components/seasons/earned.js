@@ -19,7 +19,9 @@ export default function TopEarned() {
     <div>
       <ul style={{ listStyle: 'none' }}>
         {tpe.map(tpe => (
-          <li key={tpe.earned}>${((tpe.earned / 1e18) * matic).toFixed(2)}</li>
+          <li key={tpe.earned}>
+            <a>${((tpe.earned / 1e18) * matic).toFixed(2)}</a>
+          </li>
         ))}
       </ul>
     </div>
