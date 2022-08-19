@@ -2,10 +2,10 @@ import { Link } from 'gatsby'
 import React from 'react'
 import styled from 'styled-components'
 
-import Twitter from '../images/twitter.inline.svg'
-import Github from '../images/github.inline.svg'
 import Discord from '../images/discord.inline.svg'
+import Github from '../images/github.inline.svg'
 import Linkedin from '../images/linkedin.inline.svg'
+import Twitter from '../images/twitter.inline.svg'
 
 const StyledFooter = styled.footer`
   max-width: auto;

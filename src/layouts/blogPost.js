@@ -1,12 +1,12 @@
+import { graphql, Link, useStaticQuery } from 'gatsby'
 import React from 'react'
-import Layout from '.'
-import styled from 'styled-components'
 import Moment from 'react-moment'
-import { graphql, useStaticQuery, Link } from 'gatsby'
+import styled from 'styled-components'
+import Layout from '.'
 
-import SEO from '../components/seo'
-import BG from '../components/bg'
 import Img from 'gatsby-image'
+import BG from '../components/bg'
+import SEO from '../components/seo'
 
 import TableofContents from '../components/toc'
 
@@ -309,7 +309,7 @@ const Blog = props => {
       <BG />
       <SEO
         title={props.pageContext.frontmatter.title}
-        site={'Uniswap Blog'}
+        site={'Nerve Global Blog'}
         description={props.pageContext.frontmatter.previewText}
         path={props.location.pathname}
       />

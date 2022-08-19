@@ -1,11 +1,11 @@
-import React from 'react'
-import { useStaticQuery, graphql, Link } from 'gatsby'
-import styled from 'styled-components'
+import { graphql, Link, useStaticQuery } from 'gatsby'
 import Img from 'gatsby-image'
+import React from 'react'
+import styled from 'styled-components'
 
-import Layout from '../layouts'
 import BG from '../components/bg'
 import SEO from '../components/seo'
+import Layout from '../layouts'
 
 const StyledBody = styled.div`
   position: relative;

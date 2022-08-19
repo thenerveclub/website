@@ -1,13 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import Layout from '../layouts'
-import SEO from '../components/seo'
 import BG from '../components/bg'
+import SEO from '../components/seo'
+import Layout from '../layouts'
 
 import TopEarners from '../components/seasons/topEarners'
 import TopSpenders from '../components/seasons/topSpenders'
-
 
 const StyledAbout = styled.div`
   display: grid;

@@ -1,16 +1,15 @@
-import { Link } from 'gatsby'
-import PropTypes from 'prop-types'
-import React, { useState, useRef, useEffect, useLayoutEffect } from 'react'
 import { useMediaQuery } from '@react-hook/media-query'
-import { useStaticQuery, graphql } from 'gatsby'
+import { graphql, Link, useStaticQuery } from 'gatsby'
+import PropTypes from 'prop-types'
+import React, { useEffect, useLayoutEffect, useRef, useState } from 'react'
 import styled from 'styled-components'
 import Menu from './menu'
 
-import Uni from '../images/uni.inline.svg'
 import MenuIcon from '../images/menu.inline.svg'
+import Uni from '../images/uni.inline.svg'
 import CloseIcon from '../images/x.inline.svg'
 
-import { Sun, Moon } from 'react-feather'
+import { Moon, Sun } from 'react-feather'
 import { useDarkMode } from '../contexts/Application'
 
 import useDocumentScrollThrottled from '../utils/useDocumentScrollThrottled'

@@ -1,7 +1,7 @@
 /* Completed useDocumentScrollThrottled utility function */
 
-import { useEffect, useState } from 'react'
 import { throttle } from 'lodash'
+import { useEffect, useState } from 'react'
 
 function useDocumentScrollThrottled(callback) {
   const [, setScrollPosition] = useState(0)

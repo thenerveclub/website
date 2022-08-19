@@ -1,5 +1,5 @@
-import * as React from 'react'
 import BigNumber from 'bignumber.js'
+import * as React from 'react'
 
 const GlobalEarned = `
   {

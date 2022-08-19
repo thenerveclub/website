@@ -3,9 +3,9 @@ import styled from 'styled-components'
 import Glimmer from '../../images/glimmer_center.svg'
 import GlimmerGray from '../../images/glimmer_gray.svg'
 
-import Users from './users'
 import Dares from './dares'
 import Earned from './earned'
+import Users from './users'
 
 const StyledSectionFlex = styled.div`
   display: flex;

@@ -18,7 +18,12 @@ export default function ActiveDaredUser() {
       <ul>
         {tad.map(tad => (
           <li key={tad.id}>
-            <a key={tad.target} target="_blank" rel="noreferrer" href={'https://app.nerveglobal.com/#' + tad.recipientName}>
+            <a
+              key={tad.target}
+              target="_blank"
+              rel="noreferrer"
+              href={'https://app.nerveglobal.com/#' + tad.recipientName}
+            >
               {tad.recipientName}↗
             </a>
           </li>

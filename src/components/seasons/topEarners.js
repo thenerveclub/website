@@ -1,22 +1,22 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import Earned from './earned'
 import TopEarnerName from './topEarnerName'
 import TopEarnerSocials from './topEarnerSocials'
-import Earned from './earned'
 
 const StyledSection = styled.section`
-display: flex;
-flex-direction: column;
-margin-top: 1rem;
-
-@media (max-width: 960px) {
+  display: flex;
+  flex-direction: column;
   margin-top: 1rem;
-}
 
-@media (max-width: 640px) {
-  margin-top: 1rem;
-}
+  @media (max-width: 960px) {
+    margin-top: 1rem;
+  }
+
+  @media (max-width: 640px) {
+    margin-top: 1rem;
+  }
 `
 
 const StyledItemRow = styled.nav`
@@ -74,8 +74,8 @@ const StyledItemRowIntern = styled.nav`
 `
 
 const TopEarners = () => {
-    return (
-      <>
+  return (
+    <>
       <StyledSection>
         <StyledItemRow>
           <GrantsCard>
@@ -87,7 +87,7 @@ const TopEarners = () => {
           </GrantsCard>
         </StyledItemRow>
       </StyledSection>
-      </>
-    )
-  }
-  export default TopEarners
+    </>
+  )
+}
+export default TopEarners

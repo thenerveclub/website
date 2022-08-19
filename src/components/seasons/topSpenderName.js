@@ -19,7 +19,12 @@ export default function EarnerName() {
       <ul style={{ listStyle: 'decimal' }}>
         {tsn.map(tsn => (
           <li key={tsn.id}>
-            <a key={tsn.userName} target="_blank" rel="noreferrer" href={'https://app.nerveglobal.com/#' + tsn.userName}>
+            <a
+              key={tsn.userName}
+              target="_blank"
+              rel="noreferrer"
+              href={'https://app.nerveglobal.com/#' + tsn.userName}
+            >
               {tsn.userName}↗
             </a>
           </li>

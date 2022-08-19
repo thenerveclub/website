@@ -17,7 +17,12 @@ export default function CompletedDaredUser() {
       <ul>
         {tcd.map(tcd => (
           <li key={tcd.id}>
-            <a key={tcd.recipientName} target="_blank" rel="noreferrer" href={'https://app.nerveglobal.com/#' + tcd.recipientName}>
+            <a
+              key={tcd.recipientName}
+              target="_blank"
+              rel="noreferrer"
+              href={'https://app.nerveglobal.com/#' + tcd.recipientName}
+            >
               {tcd.recipientName}↗
             </a>
           </li>

@@ -1,39 +1,39 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
-import True from '../styles/fontTrue.css'
-import Layout from '../layouts'
-import SEO from '../components/seo'
 import BG from '../components/bg'
-import ProtocolData from '../components/platformStats/protocolData'
 import { Button } from '../components/button'
+import ProtocolData from '../components/platformStats/protocolData'
+import SEO from '../components/seo'
+import Layout from '../layouts'
+import True from '../styles/fontTrue.css'
 
-import Twitter from '../images/twitter.inline.svg'
-import Github from '../images/github.inline.svg'
-import Discord from '../images/discord.inline.svg'
-import Linkedin from '../images/linkedin.inline.svg'
 import AppsImage from '../images/apps.jpg'
 import appstore from '../images/appstore.svg'
+import Discord from '../images/discord.inline.svg'
+import Github from '../images/github.inline.svg'
 import google from '../images/google.svg'
 import kitty from '../images/kitty.png'
+import Linkedin from '../images/linkedin.inline.svg'
+import Twitter from '../images/twitter.inline.svg'
 
-import global from '../images/GLOBAL.png'
-import dashboard from '../images/DASHBOARD.png'
 import create from '../images/CREATE.png'
+import dashboard from '../images/DASHBOARD.png'
+import global from '../images/GLOBAL.png'
+import claimPlayer from '../images/PLAYER.png'
 import prove from '../images/PROVE.png'
 import vote from '../images/VOTE.png'
 import wallet from '../images/WALLET.png'
-import claimPlayer from '../images/PLAYER.png'
 import claimWatcher from '../images/WATCHER.png'
 
+import ActiveDareAmount from '../components/topActiveDare/activeDareAmount'
 import ActiveDareDescription from '../components/topActiveDare/activeDareDescription'
 import ActiveDaredUser from '../components/topActiveDare/activeDaredUser'
-import ActiveDareAmount from '../components/topActiveDare/activeDareAmount'
 import ActiveDareProof from '../components/topActiveDare/activeDareProof'
 import Countdown from '../components/topActiveDare/countdownTimer'
 
+import CompletedDareAmount from '../components/topCompletedDare/completedDareAmount'
 import CompletedDareDescription from '../components/topCompletedDare/completedDareDescription'
 import CompletedDaredUser from '../components/topCompletedDare/completedDaredUser'
-import CompletedDareAmount from '../components/topCompletedDare/completedDareAmount'
 import CompletedDareProof from '../components/topCompletedDare/completedDareProof'
 
 const StyledAbout = styled.div`
@@ -567,9 +567,7 @@ const IndexPage = props => {
             <span style={{ fontFamily: 'True', fontWeight: 200 }}>NERVE GLOBAL</span>
           </StyledBodyTitle>
           <StyledBodySubT>
-            {
-              'Nerve is an infrastructure that facilitates peer-to-peer transactions and crowdfunding of dares, entirely on-chain.'
-            }
+            {'Nerve Global is a game of dares.  Watchers pay to watch and players play to earn.'}
           </StyledBodySubT>
           <StyledSocialRow>
             {/*

@@ -1,15 +1,15 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import Layout from '../layouts'
-import SEO from '../components/seo'
 import BG from '../components/bg'
+import SEO from '../components/seo'
+import Layout from '../layouts'
 
-import Twitter from '../images/twitter.inline.svg'
-import Github from '../images/github.inline.svg'
 import Discord from '../images/discord.inline.svg'
+import Github from '../images/github.inline.svg'
 import Linkedin from '../images/linkedin.inline.svg'
 import Telegram from '../images/telegram.inline.svg'
+import Twitter from '../images/twitter.inline.svg'
 
 const StyledAbout = styled.div`
   display: grid;

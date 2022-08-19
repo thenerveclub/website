@@ -1,5 +1,5 @@
-import * as React from 'react'
 import BigNumber from 'bignumber.js'
+import * as React from 'react'
 
 const timestamp = Math.floor(Date.now() / 1000)
 const TopActiveDare = `

@@ -1,22 +1,22 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import Spent from './spent'
 import TopSpenderName from './topSpenderName'
 import TopSpenderSocials from './topSpenderSocials'
-import Spent from './spent'
 
 const StyledSection = styled.section`
-display: flex;
-flex-direction: column;
-margin-top: 1rem;
-
-@media (max-width: 960px) {
+  display: flex;
+  flex-direction: column;
   margin-top: 1rem;
-}
 
-@media (max-width: 640px) {
-  margin-top: 1rem;
-}
+  @media (max-width: 960px) {
+    margin-top: 1rem;
+  }
+
+  @media (max-width: 640px) {
+    margin-top: 1rem;
+  }
 `
 
 const StyledItemRow = styled.nav`
@@ -74,8 +74,8 @@ const StyledItemRowIntern = styled.nav`
 `
 
 const TopSpenders = () => {
-    return (
-      <>
+  return (
+    <>
       <StyledSection>
         <StyledItemRow>
           <GrantsCard>
@@ -87,7 +87,7 @@ const TopSpenders = () => {
           </GrantsCard>
         </StyledItemRow>
       </StyledSection>
-      </>
-    )
-  }
-  export default TopSpenders
+    </>
+  )
+}
+export default TopSpenders

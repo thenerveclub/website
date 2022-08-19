@@ -1,11 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import uni from '../images/uni.svg'
-import AppsImage from '../images/apps.png'
-import Layout from '../layouts'
-import SEO from '../components/seo'
 import BG from '../components/bg'
+import SEO from '../components/seo'
+import AppsImage from '../images/apps.png'
+import uni from '../images/uni.svg'
+import Layout from '../layouts'
 
 import { TabRight } from '../components/tabRight'
 import Distribution from '../images/distribution.png'

@@ -2,10 +2,10 @@ import React from 'react'
 import styled from 'styled-components'
 
 import Instagram from '../../images/instagram.inline.svg'
-import Twitter from '../../images/twitter.inline.svg'
 import TikTok from '../../images/tiktok.inline.svg'
-import Youtube from '../../images/youtube.inline.svg'
 import Twitch from '../../images/twitch.inline.svg'
+import Twitter from '../../images/twitter.inline.svg'
+import Youtube from '../../images/youtube.inline.svg'
 
 const StyledInstagram = styled(Instagram)`
   path {
