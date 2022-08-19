@@ -459,18 +459,8 @@ const StyledButton = styled.h1`
   background: none;
   border-image: linear-gradient(var(--angle), aqua, aqua, magenta, magenta) 1;
 	
-	animation: 15s rotate linear infinite;
   cursor: pointer;
 }
-
-@keyframes rotate {
-	to {
-		--angle: 360deg;
-	}
-}
-
-  transition: background-color 0.25s ease;
-  }
 
   @media (max-width: 960px) {
     margin: 3rem 0.5rem 1rem 0.5rem;
