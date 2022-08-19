@@ -35,6 +35,7 @@ import CompletedDareAmount from '../components/topCompletedDare/completedDareAmo
 import CompletedDareDescription from '../components/topCompletedDare/completedDareDescription'
 import CompletedDaredUser from '../components/topCompletedDare/completedDaredUser'
 import CompletedDareProof from '../components/topCompletedDare/completedDareProof'
+import CompletedDareVotes from '../components/topCompletedDare/completedDareVotes'
 
 const StyledAbout = styled.div`
   display: grid;
@@ -1231,7 +1232,7 @@ const TopCompletedDare = () => {
             </StyledItemRowIntern>
 
             <StyledItemRowIntern style={{ marginBottom: '-1.5rem' }}>
-              Finished
+              <CompletedDareVotes />
               <CompletedDareAmount />
             </StyledItemRowIntern>
 

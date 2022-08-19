@@ -9,10 +9,9 @@ const Negative = styled.div`
   color: red;
 `
 
-const timestamp = Math.floor(Date.now() / 1000)
-const TopActiveDare = `
+const TopCompletedDare = `
 {
-  tasks(where: { endTask_gt:"${timestamp}", finished: false }, orderBy:amount, orderDirection:desc, first: 1) 
+  tasks(where: { finished: true },orderBy:amount, orderDirection:desc, first: 1) 
   {
     positiveVotes
     negativeVotes
@@ -21,18 +20,18 @@ const TopActiveDare = `
 `
 
 export default function ActiveDareAmount() {
-  const tad = useTAD()
+  const tcd = useTCD()
 
   return (
     <div>
       <ul>
-        {tad.map(tad => (
-          <li key={tad.positiveVotes}>
+        {tcd.map(tcd => (
+          <li key={tcd.positiveVotes}>
             <a>
-              {tad.positiveVotes - tad.negativeVotes > 0 ? (
-                <Positive>({tad.positiveVotes - tad.negativeVotes})</Positive>
+              {tcd.positiveVotes - tcd.negativeVotes > 0 ? (
+                <Positive>Finished ({tcd.positiveVotes - tcd.negativeVotes})</Positive>
               ) : (
-                <Negative>({tad.positiveVotes - tad.negativeVotes})</Negative>
+                <Negative>Finished ({tcd.positiveVotes - tcd.negativeVotes})</Negative>
               )}
             </a>
           </li>
@@ -42,18 +41,18 @@ export default function ActiveDareAmount() {
   )
 }
 
-function useTAD() {
-  const [tad, setTAD] = React.useState([])
+function useTCD() {
+  const [tcd, setTCD] = React.useState([])
 
   React.useEffect(() => {
     fetch('https://api.thegraph.com/subgraphs/name/nerveglobal/nerveglobal', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ query: TopActiveDare })
+      body: JSON.stringify({ query: TopCompletedDare })
     })
       .then(response => response.json())
-      .then(data => setTAD(data.data.tasks))
+      .then(data => setTCD(data.data.tasks))
   }, [])
 
-  return tad
+  return tcd
 }
