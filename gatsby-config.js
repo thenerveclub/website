@@ -27,7 +27,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-canonical-urls`,
       options: {
-        siteUrl: `https://nerveglobal.com`
+        siteUrl: `https://nerveglobal.com/`
       }
     },
     {
@@ -180,6 +180,6 @@ module.exports = {
         ]
       }
     },
-    'gatsby-plugin-eslint',
+    'gatsby-plugin-eslint'
   ]
 }
