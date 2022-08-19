@@ -2,7 +2,7 @@ import * as React from 'react'
 import styled from 'styled-components'
 
 const Positive = styled.div`
-  color: white;
+  color: green;
 `
 
 const Negative = styled.div`
