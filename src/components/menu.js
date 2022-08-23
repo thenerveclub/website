@@ -20,28 +20,26 @@ const StyledMenu = styled.button`
   text-align: left;
   list-style: none;
   color: ${({ theme }) => theme.textColor};
-
-
-  /* padding-right: 2rem; */
   background: none;
+
   @media (max-width: 960px) {
     font-size: 1.5rem;
     width: 100%;
     flex-direction: column;
     align-items: flex-start;
     padding: 0;
-    /* height: 100%; */
   }
 
   :hover {
     color: ${({ theme }) => theme.colors.grey7};
+
     @media (max-width: 960px) {
       color: ${({ theme }) => theme.textColor};
     }
   }
   :focus {
     outline: none;
-    /* color: ${({ theme }) => theme.colors.link}; */
+
     @media (max-width: 960px) {
       color: ${({ theme }) => theme.textColor};
     }
@@ -120,6 +118,7 @@ const StyledMenuTitle = styled.span`
   }
 
   @media (max-width: 960px) {
+    color: #00f2fc;
     margin-bottom: 1rem;
     user-select: none;
     :hover nav,
@@ -142,6 +141,7 @@ const StyledMenuItem = styled.span`
     color: ${({ theme }) => theme.colors.grey7};
     border-radius: 8px;
   }
+
   @media (max-width: 960px) {
   }
 `
@@ -175,8 +175,10 @@ const StyledTitle = styled.p`
   padding: 0.125rem 0.5rem 0px 0.5rem;
   color: ${({ theme }) => theme.colors.grey9};
   width: fit-content;
+
   @media (max-width: 960px) {
     padding: 0;
+    font-size: 16px;
   }
 `
 

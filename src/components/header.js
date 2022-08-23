@@ -20,7 +20,7 @@ const StyledHeader = styled.header`
   justify-content: space-between;
   align-items: center;
   box-sizing: border-box;
-  padding: 1rem;
+  padding: 0.5rem;
   width: 100%;
   z-index: 3;
   position: sticky;
@@ -44,9 +44,10 @@ const StyledHeader = styled.header`
   inherits: false;
 }
 
-  transition: background-color 0.25s ease;
+  transition: background-color 3s ease;
+
   @media (max-width: 960px) {
-    padding: 1rem 1.25rem;
+    padding: 0.5rem 1rem;
     height: ${({ open }) => (open ? '100vh' : '100%')};
   }
 `
@@ -57,7 +58,8 @@ const StyledNav = styled.nav`
   align-items: center;
   justify-content: flex-end;
   width: 100%;
-  transition: right 0.25s ease;
+  transition: right 1s ease;
+
   @media (max-width: 960px) {
     position: fixed;
     top: 0px;
@@ -65,7 +67,7 @@ const StyledNav = styled.nav`
     align-items: flex-start;
     flex-wrap: wrap;
     -webkit-overflow-scrolling: touch;
-    background-color: ${({ theme }) => theme.colors.grey1};
+    background-color: ${({ theme }) => theme.backgroundColor};
     width: 100%;
     height: 100%;
     z-index: 999;
@@ -149,6 +151,7 @@ const MenuToggle = styled.button`
   :focus {
     outline: none;
   }
+
   @media (max-width: 960px) {
     display: initial;
     position: ${({ open }) => (open ? 'fixed' : 'relative')};
@@ -193,6 +196,7 @@ const StyledBodySubText = styled.h3`
   color: ${({ theme }) => theme.textColor};
   font-weight: 500;
   margin: 1rem 1rem 1rem 1rem;
+
   @media (max-width: 640px) {
     text-align: left;
   }

@@ -560,7 +560,7 @@ const IndexPage = props => {
             <span style={{ fontFamily: 'True', fontWeight: 200 }}>NERVE GLOBAL</span>
           </StyledBodyTitle>
           <StyledBodySubT>
-            {'Nerve Global is a game of dares.  Watchers pay to watch and players play to earn.'}
+            {'Nerve Global is a game of dares.  Watchers pay to watch - Players play to earn.'}
           </StyledBodySubT>
           <StyledSocialRow>
             {/*

@@ -17,8 +17,6 @@ const TopActiveDare = `
 export default function ActiveDareEndTask() {
   const tad = useTAD()
 
-  tad.map(tad => (EndTask = tad.endTask))
-
   return (
     <div>
       <ul>

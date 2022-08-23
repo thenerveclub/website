@@ -130,7 +130,7 @@ const StyledTwitch = styled(Twitch)`
 const StyledTwitchHidden = styled(Twitch)`
   visibility: hidden;
 
-  margin-left: -10rem;
+  margin-left: 1.5rem;
   width: 20px;
   height: 20px;
 

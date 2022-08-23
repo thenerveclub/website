@@ -35,7 +35,7 @@ const Text = styled.nav`
 
 export default function Countdown() {
   const countdown = () => {
-    const countDate = Math.floor(1663264400 * 1000)
+    const countDate = Math.floor(1661341506 * 1000)
     const now = new Date().getTime()
     const gap = countDate - now
 
@@ -48,19 +48,6 @@ export default function Countdown() {
     const textHour = Math.floor((gap % day) / hour)
     const textMinute = Math.floor((gap % hour) / minute)
     const textSecond = Math.floor((gap % minute) / second)
-
-    if (textDay == null || undefined) {
-      textDay == 0
-    }
-    if (textHour == null || undefined) {
-      textHour == 0
-    }
-    if (textMinute == null || undefined) {
-      textMinute == 0
-    }
-    if (textSecond == null || undefined) {
-      textSecond == 0
-    }
 
     document.querySelector('.day').innerText = textDay
     document.querySelector('.hour').innerText = textHour
