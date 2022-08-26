@@ -35,7 +35,7 @@ const Text = styled.nav`
 
 export default function Countdown() {
   const countdown = () => {
-    const countDate = Math.floor(1661341506 * 1000)
+    const countDate = Math.floor(1663264400 * 1000)
     const now = new Date().getTime()
     const gap = countDate - now
 

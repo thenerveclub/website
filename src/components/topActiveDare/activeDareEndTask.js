@@ -16,6 +16,7 @@ const TopActiveDare = `
 
 export default function ActiveDareEndTask() {
   const tad = useTAD()
+  console.log('hi', tad.endTask)
 
   return (
     <div>
