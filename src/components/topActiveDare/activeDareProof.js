@@ -92,26 +92,26 @@ export default function ActiveDareProof() {
         {tad.map(tad => (
           <li key={tad.proofLink}>
             <a target="_blank" rel="noreferrer" href={tad.proofLink}>
-              {tad.proofLink.includes('instagram') ? <StyledInstagram /> : <a></a>}
+              {tad.proofLink.includes('instagram') ? <StyledInstagram /> : ''}
             </a>
 
             <a target="_blank" rel="noreferrer" href={tad.proofLink}>
-              {tad.proofLink.includes('twitter') ? <StyledTwitter /> : <a></a>}
+              {tad.proofLink.includes('twitter') ? <StyledTwitter /> : ''}
             </a>
 
             <a target="_blank" rel="noreferrer" href={tad.proofLink}>
-              {tad.proofLink.includes('tiktok') ? <StyledTikTok /> : <a></a>}
+              {tad.proofLink.includes('tiktok') ? <StyledTikTok /> : ''}
             </a>
 
             <a target="_blank" rel="noreferrer" href={tad.proofLink}>
-              {tad.proofLink.includes('youtube') ? <StyledYoutube /> : <a></a>}
+              {tad.proofLink.includes('youtube') ? <StyledYoutube /> : ''}
             </a>
 
             <a target="_blank" rel="noreferrer" href={tad.proofLink}>
-              {tad.proofLink.includes('twitch') ? <StyledTwitch /> : <a></a>}
+              {tad.proofLink.includes('twitch') ? <StyledTwitch /> : ''}
             </a>
 
-            <a>{tad.proofLink.includes('') ? <a style={{ color: '#FFFFFF' }}>Proof: Outstanding</a> : <a></a>}</a>
+            <a>{tad.proofLink.includes('') ? <a style={{ color: '#FFFFFF' }}>Proof: Outstanding</a> : ''}</a>
           </li>
         ))}
       </ul>

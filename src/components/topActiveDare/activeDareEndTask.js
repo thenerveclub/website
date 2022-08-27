@@ -1,5 +1,37 @@
-import BigNumber from 'bignumber.js'
-import * as React from 'react'
+import React from 'react'
+import styled from 'styled-components'
+import ActiveDareVotes from './activeDareVotes'
+
+const StyledItemRowIntern = styled.nav`
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  width: 100%;
+
+  p {
+    width: 30px;
+    font-size: 50px;
+  }
+
+  @media (max-width: 960px) {
+    font-size: 16px;
+
+    p {
+      width: 20px;
+      font-size: 20px;
+    }
+  }
+`
+
+const Text = styled.nav`
+  width: 30px;
+  font-size: 20px;
+
+  @media (max-width: 960px) {
+    width: 25px;
+    font-size: 16px;
+  }
+`
 
 var EndTask = 0
 export { EndTask }
@@ -16,16 +48,53 @@ const TopActiveDare = `
 
 export default function ActiveDareEndTask() {
   const tad = useTAD()
-  console.log('hi', tad.endTask)
+
+  {
+    tad.map(tad => (EndTask = tad.endTask))
+  }
+
+  const countdown = () => {
+    const countDate = Math.floor(EndTask * 1000)
+    const now = new Date().getTime()
+    const gap = countDate - now
+
+    const second = 1000
+    const minute = second * 60
+    const hour = minute * 60
+    const day = hour * 24
+
+    const textDay = Math.floor(gap / day)
+    const textHour = Math.floor((gap % day) / hour)
+    const textMinute = Math.floor((gap % hour) / minute)
+    const textSecond = Math.floor((gap % minute) / second)
+
+    document.querySelector('.day').innerText = textDay
+    document.querySelector('.hour').innerText = textHour
+    document.querySelector('.minute').innerText = textMinute
+    document.querySelector('.second').innerText = textSecond
+  }
+
+  setInterval(countdown, 1000)
 
   return (
-    <div>
-      <ul>
-        {tad.map(tad => (
-          <li key={tad.endTask}>{tad.endTask}</li>
-        ))}
-      </ul>
-    </div>
+    <StyledItemRowIntern className="countdown">
+      <a className="container-day">
+        <a className="day"></a>
+        <a>:</a>
+      </a>
+      <a className="container-hour">
+        <a className="hour"></a>
+        <a>:</a>
+      </a>
+      <a className="container-minute">
+        <a className="minute"></a>
+        <a>:</a>
+      </a>
+      <a className="container-second">
+        <Text className="second"></Text>
+      </a>
+      <ActiveDareVotes />
+    </StyledItemRowIntern>
   )
 }
 
@@ -43,17 +112,4 @@ function useTAD() {
   }, [])
 
   return tad
-}
-
-function usePrice() {
-  const [maticPrice, setPrice] = React.useState([])
-
-  React.useEffect(async () => {
-    const maticPrice = await fetch(`https://api.coingecko.com/api/v3/simple/price?ids=matic-network&vs_currencies=usd`)
-    const priceUst = await maticPrice.json()
-    const matic = new BigNumber(priceUst['matic-network'].usd)
-    setPrice(new BigNumber(matic))
-  }, [])
-
-  return maticPrice
 }
