@@ -78,7 +78,6 @@ const TopActiveDare = `
   tasks(where: { endTask_gt:"${timestamp}", finished: false }, orderBy:amount, orderDirection:desc, first: 1) 
   {
     proofLink
-    endTask
   }
 }
 `

@@ -70,7 +70,7 @@ const BigNumbers = styled(StyledSectionFlex)`
     font-size: 25px;
 
     p {
-      font-size: 14px;
+      font-size: 16px;
       font-weight: 300;
     }
   }

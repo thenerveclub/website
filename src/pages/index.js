@@ -25,11 +25,15 @@ import vote from '../images/VOTE.png'
 import wallet from '../images/WALLET.png'
 import claimWatcher from '../images/WATCHER.png'
 
+import PoweredBy from '../components/poweredBy'
+
 import ActiveDareAmount from '../components/topActiveDare/activeDareAmount'
 import ActiveDareDescription from '../components/topActiveDare/activeDareDescription'
 import ActiveDaredUser from '../components/topActiveDare/activeDaredUser'
 import Countdown from '../components/topActiveDare/activeDareEndTask'
 import ActiveDareProof from '../components/topActiveDare/activeDareProof'
+
+import AD from '../components/topActiveDare/activeDares'
 
 import CompletedDareAmount from '../components/topCompletedDare/completedDareAmount'
 import CompletedDareDescription from '../components/topCompletedDare/completedDareDescription'
@@ -619,6 +623,20 @@ const IndexPage = props => {
             </p>
           </GrantCard>
         </HideSmall>
+
+        <SectionHeader
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            width: '100%',
+            padding: '5rem 0 0 0',
+            fontFamily: 'True'
+          }}
+        >
+          <span>{'Powered By'}</span>
+        </SectionHeader>
+        <PoweredBy />
 
         <SectionHeader
           style={{
@@ -1231,6 +1249,16 @@ const TopActiveDare = () => {
             </StyledItemRowIntern>
           </GrantsCard>
         </StyledItemRow>
+      </StyledSection>
+    </>
+  )
+}
+
+const TAD = () => {
+  return (
+    <>
+      <StyledSection style={{ margin: '2rem auto 0 auto' }}>
+        <AD />
       </StyledSection>
     </>
   )

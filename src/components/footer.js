@@ -74,7 +74,7 @@ const StyledSocialRow = styled.nav`
   }
   @media (max-width: 640px) {
     margin-top: 0.5rem;
-  `
+`
 
 const StyledFooterLink = styled(Link)`
   margin-right: 12px;
