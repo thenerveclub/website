@@ -134,19 +134,19 @@ const PoweredBy = () => {
     <StyledFooter>
       <p>Powered by</p>
       <StyledSocialRow>
-        <a target="_blank" rel="noreferrer" href="https://twitter.com/nerveglobal_">
+        <a target="_blank" rel="noreferrer" href="https://openai.com">
           <StyledOpenAi />
           <p style={{ textAlign: 'center' }}>OpenAI</p>
         </a>
-        <a target="_blank" rel="noreferrer" href="https://github.com/nerveglobal">
+        <a target="_blank" rel="noreferrer" href="https://www.unrealengine.com">
           <StyledUnrealEngine />
           <p style={{ textAlign: 'center' }}>Unreal Engine</p>
         </a>
-        <a target="_blank" rel="noreferrer" href="https://github.com/nerveglobal">
+        <a target="_blank" rel="noreferrer" href="https://polygon.technology">
           <StyledPolygon />
           <p style={{ textAlign: 'center' }}>Polygon</p>
         </a>
-        <a target="_blank" rel="noreferrer" href="https://discord.gg/Xuh5enTNB6">
+        <a target="_blank" rel="noreferrer" href="https://www.google.com/maps/about/#!/">
           <StyledGoogleMaps />
           <p style={{ textAlign: 'center' }}>Google Maps</p>
         </a>
