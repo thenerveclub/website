@@ -116,19 +116,14 @@ const StyledTitle = styled.div`
   justify-content: flex-end;
   will-change: transform;
   align-items: flex-start;
-  height: 15vh;
-
-  @media (max-width: 1024px) {
-    height: 60vh;
-  }
+  height: 23vh;
 
   @media (max-width: 640px) {
-    height: 60vh;
-    margin-bottom: 5rem;
+    height: 70vh;
   }
 
   @media (max-width: 440px) {
-    height: 60vh;
+    height: 70vh;
   }
 `
 
@@ -159,14 +154,6 @@ const StyledBodyTitle = styled.h1`
     font-weight: 500;
     text-align: center;
     font-size: 32px;
-  }
-
-  @media (max-width: 440px) {
-    display: none;
-    visibility: hidden;
-    font-weight: 500;
-    text-align: center;
-    font-size: 37px;
   }
 `
 
@@ -247,6 +234,13 @@ const StyledBodySubT = styled.h2`
   width: 800px;
   font-size: 20px;
   white-space: pre-line @media (max-width: 960px) {
+    text-align: center;
+    margin: 0 auto 0 auto;
+    width: 300px;
+    font-size: 20px;
+  }
+
+  @media (max-width: 960px) {
     text-align: center;
     margin: 0 auto 0 auto;
     width: 300px;
@@ -537,6 +531,10 @@ const StyledButtonTop = styled.a`
   }
 `
 
+const StyledTradeLink = styled.a`
+  width: 100%;
+`
+
 const IndexPage = props => {
   const [active, setActive] = useState('Player')
   const [activeDare, setActiveDare] = useState('TopActiveDare')
@@ -563,25 +561,26 @@ const IndexPage = props => {
           <StyledBodyTitle>
             <span style={{ fontFamily: 'True', fontWeight: 200 }}>NERVE GLOBAL</span>
           </StyledBodyTitle>
-          <StyledBodySubT>
-            {'Nerve Global is a game of dares.  Watchers pay to watch - Players play to earn.'}
-          </StyledBodySubT>
+          <StyledBodySubT>{'A game of dares.  Watchers pay to watch - Players play to earn.'}</StyledBodySubT>
+          {/*
           <StyledSocialRow>
-            {/*
-          <StyledTradeLink
-            target="_blank"
-            href="https://apps.apple.com/de/app/nerve-global/id1500517863">
-            <img style={{ maxWidth: "20rem" }} src={appstore} width="143%" />
-          </StyledTradeLink>
-            
-          <StyledTradeLink
-            target="_blank"
-            href="https://play.google.com/store/apps/details?id=com.academy.nerve&hl=en&gl=US">
-            <img style={{ maxWidth: "20rem" }} src={google} width="140%" />
-          </StyledTradeLink>
-          */}
+            <StyledTradeLink target="_blank" href="https://apps.apple.com/de/app/nerve-global/id1500517863">
+              <img style={{ maxWidth: '20rem' }} src={appstore} width="143%" />
+            </StyledTradeLink>
+
+            <StyledTradeLink
+              target="_blank"
+              href="https://play.google.com/store/apps/details?id=com.academy.nerve&hl=en&gl=US"
+            >
+              <img style={{ maxWidth: '20rem' }} src={google} width="140%" />
+            </StyledTradeLink>
           </StyledSocialRow>
+  */}
           <StyledSocialRow style={{ marginTop: '3rem' }}>
+            <PoweredBy />
+          </StyledSocialRow>
+
+          <StyledSocialRow style={{ marginTop: '1rem' }}>
             <a target="_blank" rel="noreferrer" href="https://twitter.com/nerveglobal_">
               <StyledTwitter />
             </a>
@@ -623,20 +622,6 @@ const IndexPage = props => {
             </p>
           </GrantCard>
         </HideSmall>
-
-        <SectionHeader
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            width: '100%',
-            padding: '5rem 0 0 0',
-            fontFamily: 'True'
-          }}
-        >
-          <span>{'Powered By'}</span>
-        </SectionHeader>
-        <PoweredBy />
 
         <SectionHeader
           style={{

@@ -40,17 +40,31 @@ const StyledBody = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
+  padding: 2.5rem;
+  border-bottom: 1px solid ${({ theme }) => theme.buttonBorder};
+  border-bottom: 1px solid;
+  border-image: linear-gradient(var(--angle), aqua, aqua, magenta, magenta) 1;
+	
+	animation: 15s rotate linear infinite;
+}
+
+@keyframes rotate {
+	to {
+		--angle: 360deg;
+	}
+}
+
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
 
   @media (max-width: 960px) {
+    margin-bottom: 0;
     padding: 1rem;
     padding-bottom: 8rem;
-    flex-direction: column;
-  }
-
-  @media (max-width: 640px) {
-    padding: 1rem;
-    padding-bottom: 8rem;
-    flex-direction: column;
   }
 `
 
