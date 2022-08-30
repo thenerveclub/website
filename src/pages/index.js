@@ -561,7 +561,7 @@ const IndexPage = props => {
           <StyledBodyTitle>
             <span style={{ fontFamily: 'True', fontWeight: 200 }}>NERVE GLOBAL</span>
           </StyledBodyTitle>
-          <StyledBodySubT>{'A game of dares.  Watchers pay to watch - Players play to earn.'}</StyledBodySubT>
+          <StyledBodySubT>{'A game of dares.  Watchers pay to watch - Players play to win.'}</StyledBodySubT>
           {/*
           <StyledSocialRow>
             <StyledTradeLink target="_blank" href="https://apps.apple.com/de/app/nerve-global/id1500517863">
