@@ -82,36 +82,38 @@ const StyledCard = styled.div`
 `
 
 const GrantsCard = styled(StyledCard)`
-  width: 650px;
+  width: 500px;
   align-items: center;
   justify-content: center;
-  margin: 0 auto 5rem auto;
+  margin: 0 auto 0 auto;
 
   @media (max-width: 960px) {
     width: 100%;
-    margin: 0 auto 5rem auto;
+    margin: 0 auto 0 auto;
   }
 `
 
-const timestamp = Math.floor(Date.now() / 1000)
-const TopActiveDare = `
-{
-  tasks(where: { endTask_gt:"${timestamp}", finished: false }, orderBy:amount, orderDirection:desc, first: 3) 
-  {
-   description
-   recipientName
-   endTask
-   proofLink
-   positiveVotes
-   negativeVotes
-   amount
-   participants
-  }
-}
+const Positive = styled.div`
+  color: green;
+  align-items: left;
+  text-align: left;
+  display: flex;
+  margin-left: 5px;
+  flex: 1;
+`
+
+const Negative = styled.div`
+  color: red;
+  align-items: left;
+  text-align: left;
+  display: flex;
+  margin-left: 5px;
+  flex: 1;
 `
 
 const StyledItemRowIntern = styled.nav`
   display: flex;
+  flex: 1;
   flex-direction: row;
   font-size: 20px;
   font-weight: 500;
@@ -122,6 +124,10 @@ const StyledItemRowIntern = styled.nav`
   p {
     font-size: 12px;
     justify-content: space-between;
+  }
+
+  a {
+    font-size: 18px;
   }
 
   @media (max-width: 960px) {
@@ -168,16 +174,43 @@ const StyledItemRow = styled.nav`
 `
 
 const StyledSection = styled.section`
-  display: flex;
-  margin: 5rem auto 0 auto;
+  display: grid;
+  align-items: center;
+  margin: 0 auto 0 auto;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 2em;
+`
+
+// Countdown
+const Text = styled.nav`
+  width: 30px;
+  font-size: 20px;
 
   @media (max-width: 960px) {
-    margin-top: 1rem;
+    width: 25px;
+    font-size: 16px;
   }
+`
 
-  @media (max-width: 640px) {
-    margin-top: 1rem;
+var EndTask = 0
+export { EndTask }
+
+//Query
+const timestamp = Math.floor(Date.now() / 1000)
+const TopActiveDare = `
+{
+  tasks(where: { endTask_gt:"${timestamp}", finished: false }, orderBy:amount, orderDirection:desc, first: 10) 
+  {
+   description
+   recipientName
+   endTask
+   proofLink
+   positiveVotes
+   negativeVotes
+   amount
+   participants
   }
+}
 `
 
 export default function ActiveDareAmount() {
@@ -185,13 +218,13 @@ export default function ActiveDareAmount() {
   const matic = usePrice()
 
   return (
-    <StyledSection style={{ margin: '2rem auto 0 auto' }}>
+    <StyledSection>
       {tad.map(tad => (
         <li style={{ listStyle: 'none' }} key={tad.participants}>
           <StyledItemRow>
             <GrantsCard>
               <StyledItemRowIntern style={{ fontSize: '16px' }}>
-                {tad.recipientName}
+                <a>{tad.recipientName}</a>
                 <a target="_blank" rel="noreferrer" href={tad.proofLink}>
                   {tad.proofLink.includes('instagram') ? <StyledInstagram /> : ''}
                 </a>
@@ -211,14 +244,20 @@ export default function ActiveDareAmount() {
                 <a target="_blank" rel="noreferrer" href={tad.proofLink}>
                   {tad.proofLink.includes('twitch') ? <StyledTwitch /> : ''}
                 </a>
-
-                <a>{tad.proofLink.includes('') ? <a style={{ color: '#FFFFFF' }}>Proof: Outstanding</a> : ''}</a>
               </StyledItemRowIntern>
 
               <StyledItemRowIntern>{tad.description}</StyledItemRowIntern>
 
-              <StyledItemRowIntern style={{ marginBottom: '-1.5rem' }}>
-                ({tad.participants}) ${((tad.amount / 1e18) * matic).toFixed(2)}
+              <StyledItemRowIntern style={{ marginBottom: '-0.25rem' }}>
+                <a>
+                  {tad.endTask}
+                  {tad.positiveVotes - tad.negativeVotes > 0 ? (
+                    <Positive>({tad.positiveVotes - tad.negativeVotes})</Positive>
+                  ) : (
+                    <Negative>({tad.positiveVotes - tad.negativeVotes})</Negative>
+                  )}
+                  ({tad.participants}) ${((tad.amount / 1e18) * matic).toFixed(2)}
+                </a>
               </StyledItemRowIntern>
 
               <StyledItemRowIntern>

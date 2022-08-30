@@ -5,8 +5,9 @@ import GoogleMaps from '../images/googlemaps.inline.svg'
 import OpenAI from '../images/openai.inline.svg'
 import UnrealEngine from '../images/unrealengine.inline.svg'
 
+import Alchemy from '../images/alchemy.inline.svg'
+import Graph from '../images/graph.inline.svg'
 import Polygon from '../images/polygon.inline.svg'
-import PolygonLogo from '../images/polygonlogo.inline.svg'
 
 const StyledOpenAi = styled(OpenAI)`
   display: flex;
@@ -62,7 +63,35 @@ const StyledGoogleMaps = styled(GoogleMaps)`
   }
 `
 
-const StyledPolygon = styled(PolygonLogo)`
+const StyledPolygon = styled(Polygon)`
+  display: flex;
+  margin: 0 auto 0.25rem auto;
+  align-items: center;
+
+  width: 40px;
+  height: 40px;
+
+  @media (max-width: 960px) {
+    width: 35px;
+    height: 35px;
+  }
+`
+
+const StyledAlchemy = styled(Alchemy)`
+  display: flex;
+  margin: 0 auto 0.25rem auto;
+  align-items: center;
+
+  width: 40px;
+  height: 40px;
+
+  @media (max-width: 960px) {
+    width: 35px;
+    height: 35px;
+  }
+`
+
+const StyledGraph = styled(Graph)`
   display: flex;
   margin: 0 auto 0.25rem auto;
   align-items: center;
@@ -124,7 +153,7 @@ const StyledSocialRow = styled.nav`
     }
 
     & > *:not(:first-of-type) {
-      margin-left: 2rem;
+      margin-left: 1.5rem;
     }
   }
 `
@@ -149,6 +178,14 @@ const PoweredBy = () => {
         <a target="_blank" rel="noreferrer" href="https://www.google.com/maps/about/#!/">
           <StyledGoogleMaps />
           <p style={{ textAlign: 'center' }}>Google Maps</p>
+        </a>
+        <a target="_blank" rel="noreferrer" href="https://www.alchemy.com">
+          <StyledAlchemy />
+          <p style={{ textAlign: 'center' }}>Alchemy</p>
+        </a>
+        <a target="_blank" rel="noreferrer" href="https://thegraph.com">
+          <StyledGraph />
+          <p style={{ textAlign: 'center' }}>The Graph</p>
         </a>
       </StyledSocialRow>
     </StyledFooter>
