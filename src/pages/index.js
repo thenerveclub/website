@@ -312,10 +312,11 @@ const StyledSectionTitleGradient = styled.h3`
 const StyledSocialRow = styled.nav`
   display: flex;
   flex-direction: row;
-  margin-top: 1rem;
+  margin-top: 0;
+
   & > *:not(:first-of-type) {
     margin-top: 0;
-    margin-left: 16px;
+    margin-left: 25px;
   }
 
   @media (max-width: 960px) {
@@ -331,11 +332,46 @@ const StyledSocialRow = styled.nav`
     align-items: center;
     font-size: 32px;
   }
+`
 
-  @media (max-width: 440px) {
-    font-weight: 500;
+const StyledSocialRowButtons = styled.nav`
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  align-items: left;
+
+  & > *:not(:first-of-type) {
+    margin-left: 20px;
+
+  @media (max-width: 960px) {
+    margin: 0 auto 0 auto;
     align-items: center;
-    font-size: 37px;
+
+    & > *:not(:first-of-type) {
+      margin-left: 15px;
+  }
+
+  @media (max-width: 640px) {
+    margin: 0 auto 0 auto;
+    align-items: center;
+
+    & > *:not(:first-of-type) {
+      margin-left: 15px;
+  }
+`
+
+const StyledSocialRowL = styled.nav`
+  display: none;
+  visibility: hidden;
+
+  @media (max-width: 960px) {
+    display: flex;
+    flex-direction: row;
+    margin-top: -3rem;
+
+  & > *:not(:first-of-type) {
+    margin-top: 0;
+    margin-left: 16px;
   }
 `
 
@@ -532,7 +568,15 @@ const StyledButtonTop = styled.a`
 `
 
 const StyledTradeLink = styled.a`
-  width: 100%;
+  width: 12rem;
+  align-items: left;
+
+  @media (max-width: 960px) {
+    width: 100%;
+    margin: 0 auto 0 auto;
+    align-items: center;
+    justify-content: center;
+  }
 `
 
 const IndexPage = props => {
@@ -562,20 +606,18 @@ const IndexPage = props => {
             <span style={{ fontFamily: 'True', fontWeight: 200 }}>NERVE GLOBAL</span>
           </StyledBodyTitle>
           <StyledBodySubT>{'A game of dares.  Watchers pay to watch - Players play to win.'}</StyledBodySubT>
-          {/*
-          <StyledSocialRow>
+          <StyledSocialRowButtons>
             <StyledTradeLink target="_blank" href="https://apps.apple.com/de/app/nerve-global/id1500517863">
-              <img style={{ maxWidth: '20rem' }} src={appstore} width="143%" />
+              <img src={appstore} width="100%" />
             </StyledTradeLink>
 
             <StyledTradeLink
               target="_blank"
               href="https://play.google.com/store/apps/details?id=com.academy.nerve&hl=en&gl=US"
             >
-              <img style={{ maxWidth: '20rem' }} src={google} width="140%" />
+              <img src={google} width="100%" />
             </StyledTradeLink>
-          </StyledSocialRow>
-  */}
+          </StyledSocialRowButtons>
           <StyledSocialRow style={{ marginTop: '3rem' }}>
             <PoweredBy />
           </StyledSocialRow>
@@ -747,39 +789,21 @@ const IndexPage = props => {
             <StyledSectionTitle>
               Discover a new form of crowdfunding, live streaming and community interaction - download now!
             </StyledSectionTitle>
-            <HideSmall>
-              <StyledSocialRow>
-                {/*}
+              <StyledSocialRowButtons>
           <StyledTradeLink
             target="_blank"
             href="https://apps.apple.com/de/app/nerve-global/id1500517863">
-            <img style={{ maxWidth: "20rem" }} src={appstore} width="143%" />
+            <img src={appstore} width="100%" />
           </StyledTradeLink>
           
           <StyledTradeLink
             target="_blank"
             href="https://play.google.com/store/apps/details?id=com.academy.nerve&hl=en&gl=US">
-            <img style={{ marginTop: '1rem', maxWidth: "20rem" }} src={google} width="140%" />
+            <img src={google} width="100%" />
           </StyledTradeLink>
-          */}
-              </StyledSocialRow>
-            </HideSmall>
+              </StyledSocialRowButtons>
           </StyledItemRow>
         </StyledSection>
-        {/*
-      <StyledSocialRowL>
-          <StyledTradeLink
-            target="_blank"
-            href="https://apps.apple.com/de/app/nerve-global/id1500517863">
-            <img style={{ maxWidth: "20rem" }} src={appstore} width="143%" />
-          </StyledTradeLink>
-          <StyledTradeLink
-            target="_blank"
-            href="https://play.google.com/store/apps/details?id=com.academy.nerve&hl=en&gl=US">
-            <img style={{ maxWidth: "20rem" }} src={google} width="140%" />
-          </StyledTradeLink>
-          </StyledSocialRowL>
-        */}
       </StyledBody>
       <BG />
     </Layout>

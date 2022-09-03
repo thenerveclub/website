@@ -107,7 +107,7 @@ const StyledGraph = styled(Graph)`
 
 const StyledFooter = styled.footer`
   display: flex;
-  margin: 1rem auto 0 auto;
+  margin: 0 auto 0 auto;
   flex-direction: column;
   justify-content: space-between;
   align-items: left;
@@ -132,7 +132,7 @@ const StyledSocialRow = styled.nav`
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin: o auto 0 auto;
+  margin: 0 auto 0 auto;
 
   p {
     font-size: 14px;
