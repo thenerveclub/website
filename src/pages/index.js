@@ -187,7 +187,7 @@ const StyledBodySubM = styled.h2`
     display: block;
     visibility: visible;
     width: 100%;
-    margin: 3rem auto -5rem auto;
+    margin: 3rem auto -7.5rem auto;
     padding: 1rem;
     font-weight: 500;
     text-align: center;
@@ -340,14 +340,14 @@ const StyledSocialRowButtons = styled.nav`
   }
 
   @media (max-width: 960px) {
-    margin: 1rem auto 2rem auto;
+    margin: 1rem auto 1rem auto;
     font-weight: 500;
     align-items: center;
     font-size: 32px;
   }
 
   @media (max-width: 640px) {
-    margin: 1rem auto 2rem auto;
+    margin: 1rem auto 1rem auto;
     font-weight: 500;
     align-items: center;
     font-size: 32px;
