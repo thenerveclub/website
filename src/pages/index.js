@@ -198,7 +198,7 @@ const StyledBodySubM = styled.h2`
     display: block;
     visibility: visible;
     width: 100%;
-    margin: 3rem auto -3rem auto;
+    margin: 3rem auto -5rem auto;
     padding: 1rem;
     font-weight: 500;
     text-align: center;
