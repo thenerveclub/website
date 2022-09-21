@@ -51,11 +51,7 @@ const StyledAbout = styled.div`
   padding-top: 2rem;
 
   @media (max-width: 960px) {
-    flex-direction: column;
-    grid-template-columns: 1fr;
-    margin-top: 0rem;
-    margin-bottom: 5rem;
-    padding-top: 1rem;
+    display: none;
   }
 `
 
@@ -106,7 +102,6 @@ const StyledBody = styled.div`
   @media (max-width: 960px) {
     margin-bottom: 0;
     padding: 1rem;
-    padding-bottom: 8rem;
   }
 `
 
@@ -138,22 +133,10 @@ const StyledBodyTitle = styled.h1`
 
   @media (max-width: 960px) {
     display: none;
-    visibility: hidden;
-    width: 100%;
-    margin: 2rem auto 0 auto;
-    font-weight: 500;
-    text-align: center;
-    font-size: 32px;
   }
 
   @media (max-width: 640px) {
     display: none;
-    visibility: hidden;
-    width: 100%;
-    margin: 2rem auto 0 auto;
-    font-weight: 500;
-    text-align: center;
-    font-size: 32px;
   }
 `
 
@@ -204,41 +187,28 @@ const StyledBodySubM = styled.h2`
     display: block;
     visibility: visible;
     width: 100%;
-    margin: 0 auto -10rem auto;
+    margin: 3rem auto -5rem auto;
+    padding: 1rem;
     font-weight: 500;
     text-align: center;
-    font-size: 50px;
+    font-size: 40px;
   }
 
   @media (max-width: 640px) {
     display: block;
     visibility: visible;
     width: 100%;
-    margin: 0 auto -10rem auto;
+    margin: 3rem auto -5rem auto;
+    padding: 1rem;
     font-weight: 500;
     text-align: center;
-    font-size: 50px;
-  }
-
-  @media (max-width: 440px) {
-    display: block;
-    visibility: visible;
-    margin: -2rem auto -10rem auto;
-    font-weight: 500;
-    text-align: center;
-    font-size: 50px;
+    font-size: 40px;
   }
 `
 
 const StyledBodySubT = styled.h2`
   width: 800px;
   font-size: 20px;
-  white-space: pre-line @media (max-width: 960px) {
-    text-align: center;
-    margin: 0 auto 0 auto;
-    width: 300px;
-    font-size: 20px;
-  }
 
   @media (max-width: 960px) {
     text-align: center;
@@ -262,14 +232,14 @@ const StyledSectionTitle = styled.h3`
 
   @media (max-width: 960px) {
     width: vw;
-    margin: 0 auto 0 auto;
+    margin: 3rem auto 5rem auto;
     font-size: 20px;
     text-align: center;
   }
 
   @media (max-width: 640px) {
     max-width: vw;
-    margin: 0 auto 0 auto;
+    margin: 3rem auto 5rem auto;
     font-size: 20px;
     text-align: center;
   }
@@ -312,7 +282,7 @@ const StyledSectionTitleGradient = styled.h3`
 const StyledSocialRow = styled.nav`
   display: flex;
   flex-direction: row;
-  margin-top: 0;
+  margin-top: 3rem;
 
   & > *:not(:first-of-type) {
     margin-top: 0;
@@ -320,14 +290,39 @@ const StyledSocialRow = styled.nav`
   }
 
   @media (max-width: 960px) {
-    margin: 2rem auto 2rem auto;
+    margin: 2rem auto 1rem auto;
     font-weight: 500;
     align-items: center;
     font-size: 32px;
   }
 
   @media (max-width: 640px) {
-    margin: 2rem auto 2rem auto;
+    margin: 2rem auto 1rem auto;
+    font-weight: 500;
+    align-items: center;
+    font-size: 32px;
+  }
+`
+
+const StyledSocialRowSM = styled.nav`
+  display: flex;
+  flex-direction: row;
+  margin-top: 1rem;
+
+  & > *:not(:first-of-type) {
+    margin-top: 0;
+    margin-left: 25px;
+  }
+
+  @media (max-width: 960px) {
+    margin: 0 auto 2rem auto;
+    font-weight: 500;
+    align-items: center;
+    font-size: 32px;
+  }
+
+  @media (max-width: 640px) {
+    margin: 0 auto 2rem auto;
     font-weight: 500;
     align-items: center;
     font-size: 32px;
@@ -336,27 +331,26 @@ const StyledSocialRow = styled.nav`
 
 const StyledSocialRowButtons = styled.nav`
   display: flex;
-  flex: 1;
   flex-direction: row;
-  align-items: left;
+  margin-top: 0;
 
   & > *:not(:first-of-type) {
-    margin-left: 20px;
+    margin-top: 0;
+    margin-left: 15px;
+  }
 
   @media (max-width: 960px) {
-    margin: 0 auto 0 auto;
+    margin: 1rem auto 2rem auto;
+    font-weight: 500;
     align-items: center;
-
-    & > *:not(:first-of-type) {
-      margin-left: 15px;
+    font-size: 32px;
   }
 
   @media (max-width: 640px) {
-    margin: 0 auto 0 auto;
+    margin: 1rem auto 2rem auto;
+    font-weight: 500;
     align-items: center;
-
-    & > *:not(:first-of-type) {
-      margin-left: 15px;
+    font-size: 32px;
   }
 `
 
@@ -438,6 +432,11 @@ const StyledTwitter = styled(Twitter)`
   }
   width: 24px;
   height: 24px;
+
+  @media (max-width: 960px) {
+    width: 20px;
+    height: 20px;
+  }
 `
 
 const StyledDiscord = styled(Discord)`
@@ -446,6 +445,11 @@ const StyledDiscord = styled(Discord)`
   }
   width: 24px;
   height: 24px;
+
+  @media (max-width: 960px) {
+    width: 20px;
+    height: 20px;
+  }
 `
 
 const StyledGithub = styled(Github)`
@@ -454,6 +458,11 @@ const StyledGithub = styled(Github)`
   }
   width: 24px;
   height: 24px;
+
+  @media (max-width: 960px) {
+    width: 20px;
+    height: 20px;
+  }
 `
 
 const StyledLinkedIn = styled(Linkedin)`
@@ -462,6 +471,11 @@ const StyledLinkedIn = styled(Linkedin)`
   }
   width: 24px;
   height: 24px;
+
+  @media (max-width: 960px) {
+    width: 20px;
+    height: 20px;
+  }
 `
 
 const StyledCard = styled.div`
@@ -588,11 +602,7 @@ const IndexPage = props => {
       <SEO title="Home" path={props.location.pathname} description={'Do. You. Dare?'} />
 
       <StyledAbout>
-        <span>
-          <HideSmall>
-            <Title>Do You Dare ?</Title>
-          </HideSmall>
-        </span>
+        <Title>Do You Dare ?</Title>
       </StyledAbout>
 
       <StyledBody>
@@ -618,11 +628,12 @@ const IndexPage = props => {
               <img src={google} width="100%" />
             </StyledTradeLink>
           </StyledSocialRowButtons>
-          <StyledSocialRow style={{ marginTop: '3rem' }}>
+
+          <StyledSocialRow>
             <PoweredBy />
           </StyledSocialRow>
 
-          <StyledSocialRow style={{ marginTop: '1rem' }}>
+          <StyledSocialRowSM>
             <a target="_blank" rel="noreferrer" href="https://twitter.com/nerveglobal_">
               <StyledTwitter />
             </a>
@@ -635,7 +646,7 @@ const IndexPage = props => {
             <a target="_blank" rel="noreferrer" href="https://www.linkedin.com/company/nerveglobal/">
               <StyledLinkedIn />
             </a>
-          </StyledSocialRow>
+          </StyledSocialRowSM>
         </StyledTitle>
 
         <HideSmall>
@@ -845,7 +856,7 @@ const SectionHeader = styled.h1`
     margin-top: 0rem;
 
   @media (max-width: 640px) {
-    font-size: 2rem;
+    font-size: 1.75rem;
     margin-top: 0rem;
 `
 

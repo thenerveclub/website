@@ -132,7 +132,7 @@ const StyledSocialRow = styled.nav`
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin: 0 auto 0 auto;
+  margin: -1rem auto 0 auto;
 
   p {
     font-size: 14px;
