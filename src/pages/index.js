@@ -673,13 +673,14 @@ const IndexPage = props => {
             flexDirection: 'column',
             width: '100%',
             padding: '5.5rem 0 2rem 0',
-            fontFamily: 'True'
+            fontFamily: 'True',
+            textTransform: 'uppercase'
           }}
         >
           <span>{'Platform Stats'}</span>
         </SectionHeader>
         <SectionHeaderSmall>
-          <span>{'(Closed Beta)'}</span>
+          <span>{'(Open Beta)'}</span>
         </SectionHeaderSmall>
 
         <div
@@ -701,7 +702,56 @@ const IndexPage = props => {
             justifyContent: 'center',
             width: '100%',
             padding: '2rem 0 0 0',
-            fontFamily: 'True'
+            fontFamily: 'True',
+            textTransform: 'uppercase'
+          }}
+        >
+          <span>{'Spotlight'}</span>
+        </SectionHeader>
+
+        <SectionHeaderMobile
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            width: '100%'
+          }}
+        >
+          <nav>
+            <StyledButton onClick={() => setActiveDare('TopActiveDare')}>Active</StyledButton>
+            <StyledButton onClick={() => setActiveDare('TopCompletedDare')}>Completed</StyledButton>
+          </nav>
+        </SectionHeaderMobile>
+        <div>
+          {activeDare === 'TopActiveDare' && <TopActiveDare props={props} />}
+          {activeDare === 'TopCompletedDare' && <TopCompletedDare props={props} />}
+        </div>
+
+        {/*
+        <SectionHeader
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            width: '100%',
+            padding: '2rem 0 0 0',
+            fontFamily: 'True',
+            textTransform: 'uppercase'
+          }}
+        >
+          <span>{'Our Ambassadors'}</span>
+        </SectionHeader>
+        */}
+
+        <SectionHeader
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            width: '100%',
+            padding: '2rem 0 0 0',
+            fontFamily: 'True',
+            textTransform: 'uppercase'
           }}
         >
           <span>{'How to Play'}</span>
@@ -732,38 +782,8 @@ const IndexPage = props => {
             justifyContent: 'center',
             width: '100%',
             padding: '2rem 0 0 0',
-            fontFamily: 'True'
-          }}
-        >
-          <span>{'Spotlight'}</span>
-        </SectionHeader>
-
-        <SectionHeaderMobile
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            width: '100%'
-          }}
-        >
-          <nav>
-            <StyledButton onClick={() => setActiveDare('TopActiveDare')}>Active</StyledButton>
-            <StyledButton onClick={() => setActiveDare('TopCompletedDare')}>Completed</StyledButton>
-          </nav>
-        </SectionHeaderMobile>
-        <div>
-          {activeDare === 'TopActiveDare' && <TopActiveDare props={props} />}
-          {activeDare === 'TopCompletedDare' && <TopCompletedDare props={props} />}
-        </div>
-
-        <SectionHeader
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            width: '100%',
-            padding: '2rem 0 0 0',
-            fontFamily: 'True'
+            fontFamily: 'True',
+            textTransform: 'uppercase'
           }}
         >
           <span>{'Decentralized Wallet'}</span>
@@ -777,7 +797,8 @@ const IndexPage = props => {
             justifyContent: 'center',
             width: '100%',
             padding: '0 0 0 0',
-            fontFamily: 'True'
+            fontFamily: 'True',
+            textTransform: 'uppercase'
           }}
         >
           <span>{'Governance & More'}</span>
@@ -789,19 +810,18 @@ const IndexPage = props => {
             <StyledSectionTitle>
               Discover a new form of crowdfunding, live streaming and community interaction - download now!
             </StyledSectionTitle>
-              <StyledSocialRowButtons>
-          <StyledTradeLink
-            target="_blank"
-            href="https://apps.apple.com/de/app/nerve-global/id1500517863">
-            <img src={appstore} width="100%" />
-          </StyledTradeLink>
-          
-          <StyledTradeLink
-            target="_blank"
-            href="https://play.google.com/store/apps/details?id=com.academy.nerve&hl=en&gl=US">
-            <img src={google} width="100%" />
-          </StyledTradeLink>
-              </StyledSocialRowButtons>
+            <StyledSocialRowButtons>
+              <StyledTradeLink target="_blank" href="https://apps.apple.com/de/app/nerve-global/id1500517863">
+                <img src={appstore} width="100%" />
+              </StyledTradeLink>
+
+              <StyledTradeLink
+                target="_blank"
+                href="https://play.google.com/store/apps/details?id=com.academy.nerve&hl=en&gl=US"
+              >
+                <img src={google} width="100%" />
+              </StyledTradeLink>
+            </StyledSocialRowButtons>
           </StyledItemRow>
         </StyledSection>
       </StyledBody>
