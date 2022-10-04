@@ -34,12 +34,7 @@ import Countdown from '../components/topActiveDare/activeDareEndTask'
 import ActiveDareProof from '../components/topActiveDare/activeDareProof'
 
 import AD from '../components/topActiveDare/activeDares'
-
-import CompletedDareAmount from '../components/topCompletedDare/completedDareAmount'
-import CompletedDareDescription from '../components/topCompletedDare/completedDareDescription'
-import CompletedDaredUser from '../components/topCompletedDare/completedDaredUser'
-import CompletedDareProof from '../components/topCompletedDare/completedDareProof'
-import CompletedDareVotes from '../components/topCompletedDare/completedDareVotes'
+import TopCompletedDare from '../components/topCompletedDare/completedDares'
 
 const StyledAbout = styled.div`
   display: grid;
@@ -730,12 +725,12 @@ const IndexPage = props => {
         >
           <nav>
             <StyledButton onClick={() => setActiveDare('TopActiveDare')}>Active</StyledButton>
-            <StyledButton onClick={() => setActiveDare('TopCompletedDare')}>Completed</StyledButton>
+            <StyledButton onClick={() => setActiveDare('TopCompletedDares')}>Completed</StyledButton>
           </nav>
         </SectionHeaderMobile>
         <div>
           {activeDare === 'TopActiveDare' && <TopActiveDare props={props} />}
-          {activeDare === 'TopCompletedDare' && <TopCompletedDare props={props} />}
+          {activeDare === 'TopCompletedDares' && <TopCompletedDares props={props} />}
         </div>
 
         {/*
@@ -1304,35 +1299,11 @@ const TAD = () => {
   )
 }
 
-const TopCompletedDare = () => {
+const TopCompletedDares = () => {
   return (
     <>
       <StyledSection style={{ margin: '2rem auto 0 auto' }}>
-        <StyledItemRow>
-          <GrantsCard>
-            <StyledItemRowIntern style={{ fontSize: '16px' }}>
-              <CompletedDaredUser />
-              <CompletedDareProof />
-            </StyledItemRowIntern>
-
-            <StyledItemRowIntern>
-              <CompletedDareDescription />
-            </StyledItemRowIntern>
-
-            <StyledItemRowIntern style={{ marginBottom: '-1.5rem' }}>
-              <StyledItemRowInternIntern>
-                Finished
-                <CompletedDareVotes />
-              </StyledItemRowInternIntern>
-              <CompletedDareAmount />
-            </StyledItemRowIntern>
-
-            <StyledItemRowIntern>
-              <p>Time & Votes</p>
-              <p>Participants & Value</p>
-            </StyledItemRowIntern>
-          </GrantsCard>
-        </StyledItemRow>
+        <TopCompletedDare />
       </StyledSection>
     </>
   )

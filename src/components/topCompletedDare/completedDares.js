@@ -18,6 +18,10 @@ const StyledInstagram = styled(Instagram)`
 
   :hover {
     transform: rotate(-10deg);
+    transition: 0.5s;
+    path {
+      fill: #e1306c;
+    }
   }
 `
 
@@ -31,6 +35,11 @@ const StyledTwitter = styled(Twitter)`
 
   :hover {
     transform: rotate(-10deg);
+    transition: 0.5s;
+    path {
+      transition: 0.5s;
+      fill: #1da1f2;
+    }
   }
 `
 
@@ -44,6 +53,11 @@ const StyledTikTok = styled(TikTok)`
 
   :hover {
     transform: rotate(-10deg);
+    transition: 0.5s;
+    path {
+      transition: 0.5s;
+      fill: #00f2ea;
+    }
   }
 `
 
@@ -57,6 +71,11 @@ const StyledYoutube = styled(Youtube)`
 
   :hover {
     transform: rotate(-10deg);
+    transition: 0.5s;
+    path {
+      transition: 0.5s;
+      fill: #ff0000;
+    }
   }
 `
 
@@ -70,6 +89,11 @@ const StyledTwitch = styled(Twitch)`
 
   :hover {
     transform: rotate(-10deg);
+    transition: 0.5s;
+    path {
+      transition: 0.5s;
+      fill: #6441a5;
+    }
   }
 `
 
@@ -83,8 +107,7 @@ const StyledCard = styled.div`
 
 const GrantsCard = styled(StyledCard)`
   width: 500px;
-  align-items: center;
-  justify-content: center;
+  height: 215px;
   margin: 0 auto 0 auto;
 
   @media (max-width: 960px) {
@@ -111,11 +134,57 @@ const Negative = styled.div`
   flex: 1;
 `
 
-const StyledItemRowIntern = styled.nav`
+const StyledItemRowSocials = styled.nav`
   display: flex;
   flex: 1;
   flex-direction: row;
-  font-size: 20px;
+  font-size: 16px;
+  font-weight: 500;
+  justify-content: space-between;
+  width: 100%;
+  margin: -0.5rem auto 0.75rem auto;
+
+  p {
+    font-size: 12px;
+    justify-content: space-between;
+  }
+
+  a {
+    font-size: 16px;
+
+    :hover {
+      transition: 0.5s;
+      color: #00f2fc;
+    }
+  }
+
+  @media (max-width: 960px) {
+    font-size: 16px;
+    justify-content: space-between;
+    width: 100%;
+    margin: 0 auto 0 auto;
+
+    p {
+      font-size: 12px;
+    }
+
+    & > * {
+      margin-top: 1px;
+      margin-bottom: 1px;
+    }
+    & > *:not(:first-of-type) {
+      margin-top: 0;
+      align-items: right;
+    }
+  }
+`
+
+const StyledItemRowDescription = styled.nav`
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  height: 80px;
+  font-size: 18px;
   font-weight: 500;
   justify-content: space-between;
   width: 100%;
@@ -151,24 +220,57 @@ const StyledItemRowIntern = styled.nav`
   }
 `
 
-const StyledItemRow = styled.nav`
+const StyledItemRowIntern = styled.nav`
   display: flex;
+  flex: 1;
   flex-direction: row;
+  font-size: 16px;
+  font-weight: 500;
+  justify-content: space-between;
+  width: 100%;
   margin: 0 auto 0 auto;
 
-  & > *:not(:first-of-type) {
-    margin-left: 12px;
+  p {
+    font-size: 12px;
+    justify-content: space-between;
+  }
+
+  a {
+    font-size: 16px;
+    color: green;
   }
 
   @media (max-width: 960px) {
-    flex-direction: column;
+    font-size: 16px;
+    justify-content: space-between;
+    width: 100%;
+    margin: 0 auto 0 auto;
+
+    p {
+      font-size: 12px;
+    }
+
     & > * {
       margin-top: 1px;
       margin-bottom: 1px;
     }
     & > *:not(:first-of-type) {
       margin-top: 0;
-      margin-left: 0;
+      align-items: right;
+    }
+  }
+`
+
+const StyledItemRow = styled.nav`
+  display: flex;
+  flex-direction: row;
+  margin: 0 auto 0 auto;
+
+  @media (max-width: 960px) {
+    flex-direction: column;
+    & > * {
+      margin-top: 1px;
+      margin-bottom: 1px;
     }
   }
 `
@@ -181,25 +283,14 @@ const StyledSection = styled.section`
   grid-gap: 2em;
 `
 
-// Countdown
-const Text = styled.nav`
-  width: 30px;
-  font-size: 20px;
-
-  @media (max-width: 960px) {
-    width: 25px;
-    font-size: 16px;
-  }
-`
-
 var EndTask = 0
 export { EndTask }
 
 //Query
 const timestamp = Math.floor(Date.now() / 1000)
-const TopActiveDare = `
+const TopCompletedDare = `
 {
-  tasks(where: { endTask_gt:"${timestamp}", finished: false }, orderBy:amount, orderDirection:desc, first: 10) 
+  tasks(where: {  endTask_lt:"${timestamp}", positiveVotes_gte: "1", negativeVotes_lte: "0", proofLink_contains: "https" }, orderBy:amount, orderDirection:desc, first: 6) 
   {
    description
    recipientName
@@ -214,92 +305,50 @@ const TopActiveDare = `
 `
 
 export default function ActiveDareAmount() {
-  const tad = useTAD()
+  const tcd = useTCD()
   const matic = usePrice()
-
-  const countdown = () => {
-    {
-      tad.map(tad => (EndTask = tad.endTask))
-      console.log('ENDTASKCOUNTDOWN', EndTask)
-    }
-
-    const countDate = Math.floor(EndTask * 1000)
-    const now = new Date().getTime()
-    const gap = countDate - now
-
-    const second = 1000
-    const minute = second * 60
-    const hour = minute * 60
-    const day = hour * 24
-
-    const textDay = Math.floor(gap / day)
-    const textHour = Math.floor((gap % day) / hour)
-    const textMinute = Math.floor((gap % hour) / minute)
-    const textSecond = Math.floor((gap % minute) / second)
-
-    document.querySelector('.day').innerText = textDay
-    document.querySelector('.hour').innerText = textHour
-    document.querySelector('.minute').innerText = textMinute
-    document.querySelector('.second').innerText = textSecond
-  }
-
-  setInterval(countdown, 1000)
 
   return (
     <StyledSection>
-      {tad.map(tad => (
-        <li style={{ listStyle: 'none' }} key={tad.participants}>
+      {tcd.map(tcd => (
+        <li style={{ listStyle: 'none' }} key={tcd.participants}>
           <StyledItemRow>
             <GrantsCard>
-              <StyledItemRowIntern style={{ fontSize: '16px' }}>
-                <a>{tad.recipientName}</a>
-                <a target="_blank" rel="noreferrer" href={tad.proofLink}>
-                  {tad.proofLink.includes('instagram') ? <StyledInstagram /> : ''}
+              <StyledItemRowSocials style={{ fontSize: '16px' }}>
+                <a
+                  key={tcd.recipientName}
+                  target="_blank"
+                  rel="noreferrer"
+                  href={'https://app.nerveglobal.com/#' + tcd.recipientName}
+                >
+                  {tcd.recipientName}↗
                 </a>
 
-                <a target="_blank" rel="noreferrer" href={tad.proofLink}>
-                  {tad.proofLink.includes('twitter') ? <StyledTwitter /> : ''}
-                </a>
-
-                <a target="_blank" rel="noreferrer" href={tad.proofLink}>
-                  {tad.proofLink.includes('tiktok') ? <StyledTikTok /> : ''}
-                </a>
-
-                <a target="_blank" rel="noreferrer" href={tad.proofLink}>
-                  {tad.proofLink.includes('youtube') ? <StyledYoutube /> : ''}
-                </a>
-
-                <a target="_blank" rel="noreferrer" href={tad.proofLink}>
-                  {tad.proofLink.includes('twitch') ? <StyledTwitch /> : ''}
-                </a>
-              </StyledItemRowIntern>
-
-              <StyledItemRowIntern>{tad.description}</StyledItemRowIntern>
-
-              <StyledItemRowIntern style={{ marginBottom: '-0.25rem' }}>
-                <a className="countdown">
-                  <a className="container-day">
-                    <a className="day"></a>
-                    <a>:</a>
-                  </a>
-                  <a className="container-hour">
-                    <a className="hour"></a>
-                    <a>:</a>
-                  </a>
-                  <a className="container-minute">
-                    <a className="minute"></a>
-                    <a>:</a>
-                  </a>
-                  <a className="container-second">
-                    <Text className="second"></Text>
-                  </a>
-                  {tad.positiveVotes - tad.negativeVotes > 0 ? (
-                    <Positive>({tad.positiveVotes - tad.negativeVotes})</Positive>
+                <a target="_blank" rel="noreferrer" href={tcd.proofLink}>
+                  {tcd.proofLink.includes('instagram') ? (
+                    <StyledInstagram />
+                  ) : tcd.proofLink.includes('tiktok') ? (
+                    <StyledTikTok />
+                  ) : tcd.proofLink.includes('youtube') ? (
+                    <StyledYoutube />
+                  ) : tcd.proofLink.includes('twitch') ? (
+                    <StyledTwitch />
                   ) : (
-                    <Negative>({tad.positiveVotes - tad.negativeVotes})</Negative>
+                    ''
                   )}
-                  ({tad.participants}) ${((tad.amount / 1e18) * matic).toFixed(2)}
                 </a>
+              </StyledItemRowSocials>
+
+              <StyledItemRowDescription>{tcd.description}</StyledItemRowDescription>
+
+              <StyledItemRowIntern>
+                <a>Success</a>
+                {tcd.positiveVotes - tcd.negativeVotes > 0 ? (
+                  <Positive>({tcd.positiveVotes - tcd.negativeVotes})</Positive>
+                ) : (
+                  <Negative>({tcd.positiveVotes - tcd.negativeVotes})</Negative>
+                )}
+                ({tcd.participants}) ${((tcd.amount / 1e18) * matic).toFixed(2)}
               </StyledItemRowIntern>
 
               <StyledItemRowIntern>
@@ -314,20 +363,20 @@ export default function ActiveDareAmount() {
   )
 }
 
-function useTAD() {
-  const [tad, setTAD] = React.useState([])
+function useTCD() {
+  const [tcd, setTCD] = React.useState([])
 
   React.useEffect(() => {
     fetch('https://api.thegraph.com/subgraphs/name/nerveglobal/nerveglobal', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ query: TopActiveDare })
+      body: JSON.stringify({ query: TopCompletedDare })
     })
       .then(response => response.json())
-      .then(data => setTAD(data.data.tasks))
+      .then(data => setTCD(data.data.tasks))
   }, [])
 
-  return tad
+  return tcd
 }
 
 function usePrice() {
