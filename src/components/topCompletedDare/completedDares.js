@@ -281,6 +281,14 @@ const StyledSection = styled.section`
   margin: 0 auto 0 auto;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 2em;
+
+  @media (max-width: 960px) {
+    display: grid;
+    align-items: center;
+    margin: 0 auto 0 auto;
+    grid-template-columns: 1fr;
+    grid-gap: 2em;
+  }
 `
 
 var EndTask = 0
