@@ -33,7 +33,7 @@ import ActiveDaredUser from '../components/topActiveDare/activeDaredUser'
 import Countdown from '../components/topActiveDare/activeDareEndTask'
 import ActiveDareProof from '../components/topActiveDare/activeDareProof'
 
-import AD from '../components/topActiveDare/activeDares'
+import TopActiveDare from '../components/topActiveDare/activeDares'
 import TopCompletedDare from '../components/topCompletedDare/completedDares'
 
 const StyledAbout = styled.div`
@@ -590,7 +590,7 @@ const StyledTradeLink = styled.a`
 
 const IndexPage = props => {
   const [active, setActive] = useState('Player')
-  const [activeDare, setActiveDare] = useState('TopActiveDare')
+  const [activeDare, setActiveDare] = useState('TopActiveDares')
 
   return (
     <Layout path={props.location.pathname}>
@@ -671,6 +671,30 @@ const IndexPage = props => {
           </GrantCard>
         </HideSmall>
 
+        <SectionHeaderSmallGiveaway>
+          <span>{'Click To'}</span>
+        </SectionHeaderSmallGiveaway>
+        <SectionHeaderGiveaway
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            flexDirection: 'column',
+            width: '100%',
+            padding: '5.5rem 0 2rem 0',
+            fontFamily: 'True',
+            textTransform: 'uppercase'
+          }}
+        >
+          <a className="e-widget no-button" href="https://gleam.io/dbFyW/nerve-global-launch-giveaway" rel="nofollow">
+            Enter Giveaway
+          </a>
+          <script type="text/javascript" src="https://widget.gleamjs.io/e.js" async="true"></script>
+        </SectionHeaderGiveaway>
+        <SectionHeaderSmallGiveawaySmall>
+          <span style={{ marginTop: '5rem' }}>{'5 x 50 MATIC Worth 250 USD'}</span>
+        </SectionHeaderSmallGiveawaySmall>
+
         <SectionHeader
           style={{
             display: 'flex',
@@ -724,12 +748,12 @@ const IndexPage = props => {
           }}
         >
           <nav>
-            <StyledButton onClick={() => setActiveDare('TopActiveDare')}>Active</StyledButton>
+            <StyledButton onClick={() => setActiveDare('TopActiveDares')}>Active</StyledButton>
             <StyledButton onClick={() => setActiveDare('TopCompletedDares')}>Completed</StyledButton>
           </nav>
         </SectionHeaderMobile>
         <div>
-          {activeDare === 'TopActiveDare' && <TopActiveDare props={props} />}
+          {activeDare === 'TopActiveDares' && <TopActiveDares props={props} />}
           {activeDare === 'TopCompletedDares' && <TopCompletedDares props={props} />}
         </div>
 
@@ -855,6 +879,47 @@ const SectionHeader = styled.h1`
     margin-top: 0rem;
 `
 
+const SectionHeaderGiveaway = styled.h1`
+  font-size: 5rem;
+  font-weight: 500;
+  margin-top: 7.5rem;
+  margin-bottom: -2rem;
+  white-space: wrap;
+  overflow-wrap: normal;
+
+  background-image: linear-gradient(
+    -225deg,
+    #de0ccf 0%,
+    #00f2fc 29%,
+    #0ffa43 67%,
+    #e80c52 100%
+  );
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  background-clip: text;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 2s linear infinite;
+  display: inline-block;
+}
+
+@keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
+}
+
+  @media (max-width: 960px) {
+    font-size: 3.5rem;
+    margin-top: 0rem;
+
+  @media (max-width: 640px) {
+    font-size: 2.25rem;
+    margin-top: 0rem;
+`
+
 const SectionHeaderSmall = styled.h1`
   text-align: center;
   font-size: 2rem;
@@ -872,6 +937,42 @@ const SectionHeaderSmall = styled.h1`
   @media (max-width: 640px) {
     font-size: 1rem;
     margin-top: 0rem;
+`
+
+const SectionHeaderSmallGiveaway = styled.h1`
+  text-align: center;
+  font-size: 2.5rem;
+  font-family: True;
+  font-weight: 500;
+  margin: 7.5rem auto -11rem auto;
+  white-space: wrap;
+  overflow-wrap: normal;
+
+  @media (max-width: 960px) {
+    font-size: 1.5rem;
+    margin: 5rem auto -4rem auto;
+
+  @media (max-width: 640px) {
+    font-size: 1.5rem;
+    margin: 5rem auto -4rem auto;
+`
+
+const SectionHeaderSmallGiveawaySmall = styled.h1`
+  text-align: center;
+  font-size: 1.5rem;
+  font-family: True;
+  font-weight: 500;
+  margin: 2rem auto 0 auto;
+  white-space: wrap;
+  overflow-wrap: normal;
+
+  @media (max-width: 960px) {
+    font-size: 1rem;
+    margin: 1.5rem auto 2rem auto;
+
+  @media (max-width: 640px) {
+    font-size: 1rem;
+    margin: 1.5rem auto 2rem auto;
 `
 
 const SectionHeaderMobile = styled.h1`
@@ -1258,7 +1359,7 @@ const DeveloperSection = () => {
   )
 }
 
-const TopActiveDare = () => {
+const TopActiveDaressss = () => {
   return (
     <>
       <StyledSection style={{ margin: '2rem auto 0 auto' }}>
@@ -1289,11 +1390,11 @@ const TopActiveDare = () => {
   )
 }
 
-const TAD = () => {
+const TopActiveDares = () => {
   return (
     <>
       <StyledSection style={{ margin: '2rem auto 0 auto' }}>
-        <AD />
+        <TopActiveDare />
       </StyledSection>
     </>
   )

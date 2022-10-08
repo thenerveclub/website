@@ -291,9 +291,6 @@ const StyledSection = styled.section`
   }
 `
 
-var EndTask = 0
-export { EndTask }
-
 //Query
 const timestamp = Math.floor(Date.now() / 1000)
 const TopCompletedDare = `
