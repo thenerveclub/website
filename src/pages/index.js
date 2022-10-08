@@ -686,10 +686,9 @@ const IndexPage = props => {
             textTransform: 'uppercase'
           }}
         >
-          <a className="e-widget no-button" href="https://gleam.io/dbFyW/nerve-global-launch-giveaway" rel="nofollow">
+          <a target="_blank" rel="noreferrer" href="https://gleam.io/dbFyW/nerve-global-launch-giveaway">
             Enter Giveaway
           </a>
-          <script type="text/javascript" src="https://widget.gleamjs.io/e.js" async="true"></script>
         </SectionHeaderGiveaway>
         <SectionHeaderSmallGiveawaySmall>
           <span style={{ marginTop: '5rem' }}>{'5 x 50 MATIC Worth 250 USD'}</span>
