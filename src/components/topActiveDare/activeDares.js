@@ -297,7 +297,7 @@ export { EndTask }
 const timestamp = Math.floor(Date.now() / 1000)
 const TopActiveDare = `
 {
-  tasks(where: { endTask_gt:"${timestamp}", finished: false }, orderBy:amount, orderDirection:desc, first: 10) 
+  tasks(where: { endTask_gt:"${timestamp}", finished: false }, orderBy:amount, orderDirection:desc, first: 6) 
   {
    description
    recipientName
