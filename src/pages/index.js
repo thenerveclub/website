@@ -671,29 +671,6 @@ const IndexPage = props => {
           </GrantCard>
         </HideSmall>
 
-        <SectionHeaderSmallGiveaway>
-          <span>{'Click To'}</span>
-        </SectionHeaderSmallGiveaway>
-        <SectionHeaderGiveaway
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            flexDirection: 'column',
-            width: '100%',
-            padding: '5.5rem 0 2rem 0',
-            fontFamily: 'True',
-            textTransform: 'uppercase'
-          }}
-        >
-          <a target="_blank" rel="noreferrer" href="https://gleam.io/dbFyW/nerve-global-launch-giveaway">
-            Enter Giveaway
-          </a>
-        </SectionHeaderGiveaway>
-        <SectionHeaderSmallGiveawaySmall>
-          <span style={{ marginTop: '5rem' }}>{'5 x 50 MATIC Worth 250 USD'}</span>
-        </SectionHeaderSmallGiveawaySmall>
-
         <SectionHeader
           style={{
             display: 'flex',

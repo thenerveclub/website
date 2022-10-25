@@ -278,8 +278,26 @@ const StyledSection = styled.section`
   display: grid;
   align-items: center;
   margin: 0 auto 0 auto;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(6, 1fr);
   grid-gap: 2em;
+
+  li {
+    grid-column: span 2;
+  }
+
+  li:last-child:nth-child(3n - 1) {
+    grid-column-end: -2;
+  }
+
+  li:nth-last-child(2):nth-child(3n + 1) {
+    grid-column-end: 4;
+  }
+
+  /* Dealing with single orphan */
+
+  li:last-child:nth-child(3n - 2) {
+    grid-column-end: 5;
+  }
 
   @media (max-width: 960px) {
     display: grid;
