@@ -258,8 +258,7 @@ const People = props => {
       <StyledBody>
         <StyledSectionHeader style={{ fontFamily: 'True' }}>{'TEAM'}</StyledSectionHeader>
         <StyledItemRow style={{ alignItems: 'center', justifyContent: 'center', padding: '2rem 10rem 6rem 10rem' }}>
-          <GrantsCard style={{ minHeight: '10rem', minWidth: '20rem' }}>
-            {/*<img style={{ marginLeft: "5rem" }} src={phil} width="35%" />*/}
+          {/* <GrantsCard style={{ minHeight: '10rem', minWidth: '20rem' }}>
             <StyledBodySubTitle>Kurt Uhler</StyledBodySubTitle>
             <StyledSocialRow>
               <a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/kurt-uhler/">
@@ -269,7 +268,7 @@ const People = props => {
                 <StyledTelegram />
               </a>
             </StyledSocialRow>
-          </GrantsCard>
+          </GrantsCard> */}
           <GrantsCard style={{ minHeight: '10rem', minWidth: '20rem' }}>
             {/*<img style={{ marginLeft: "5rem" }} src={christoph} width="35%" />*/}
             <StyledBodySubTitle>Christoph Könekamp</StyledBodySubTitle>
