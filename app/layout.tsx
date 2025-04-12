@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import Footer from './Footer';
+// import Footer from './Footer';
 import './globals.css';
 import Header from './Header';
 
@@ -86,9 +86,9 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
 				</main>
 
 				{/* Fixed Footer */}
-				<footer className="bottom-0 left-0 w-full z-20">
+				{/* <footer className="bottom-0 left-0 w-full z-20">
 					<Footer />
-				</footer>
+				</footer> */}
 			</body>
 		</html>
 	);
