@@ -10,7 +10,7 @@ const nextConfig: NextConfig = {
 					key: 'Content-Security-Policy',
 					value: [
 						// "default-src 'self';",
-						"connect-src 'self' https://region1.google-analytics.com https://www.google-analytics.com;",
+						"connect-src 'self' https://region1.google-analytics.com https://www.google-analytics.com https://fonts.googleapis.com;",
 						"img-src 'self' data:;",
 						"style-src 'self' 'unsafe-inline';",
 						"font-src 'self';",

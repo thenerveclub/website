@@ -1,4 +1,4 @@
-# Nerve Global – Founded in 2019.
+# Nerve Global GmbH – Founded in 2019
 
 ## About
 
@@ -23,8 +23,14 @@ If you want to run the website locally, follow these steps:
 4. Start the local server (instructions will depend on your setup)
 5. Open in your browser at `http://localhost:PORT`
 
+## Contact
+
+For more information or inquiries:
+
+- Email: business@nerveglobal.com
+
 ## License
 
-© Nerve Global. All rights reserved.
+© 2025 Nerve Global GmbH. All rights reserved.
 
-Built and maintained by the Nerve Global team.
+Built and maintained by the Nerve Global GmbH team.

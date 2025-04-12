@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import { Unbounded } from 'next/font/google';
 import Footer from './Footer';
 import './globals.css';
 import Header from './Header';
@@ -68,23 +67,23 @@ export const metadata: Metadata = {
 	},
 };
 
-const unbounded = Unbounded({
-	weight: ['200', '300', '400', '500', '600', '700', '800', '900'],
-	subsets: ['latin'],
-});
-
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
 	return (
 		<html lang="en">
 			<head></head>
-			<body className={`antialiased min-h-screen relative bg-cover bg-center bg-no-repeat ${unbounded.className}`}>
+			<body className="antialiased min-h-screen relative bg-cover bg-center bg-no-repeat">
 				{/* Fixed Header */}
 				<header className="fixed top-0 left-0 w-full z-20 h-auto bg-transparent">
 					<Header />
 				</header>
 
 				{/* Main content area */}
-				<main className="w-[80%] m-auto pt-[100px] z-20">{children}</main>
+				<main
+					// className="w-[80%] m-auto pt-[100px] z-20"
+					className="min-h-screen overflow-hidden bg-[radial-gradient(circle_at_center,_#627eea_-250%,_#000000_50%)] bg-no-repeat bg-fixed bg-black"
+				>
+					{children}
+				</main>
 
 				{/* Fixed Footer */}
 				<footer className="bottom-0 left-0 w-full z-20">

@@ -17,15 +17,18 @@ export default function Landing() {
 
 	return (
 		<div
-			className="min-h-screen flex justify-center items-center p-0"
-			style={{ minHeight: windowSize.height > 800 ? 'calc(100vh - 248px)' : 'calc(100vh - 260px)' }}
+			className="font-baskervville min-h-screen flex justify-center items-center p-0"
+			style={{ minHeight: windowSize.height > 800 ? 'calc(100vh - 0px)' : 'calc(100vh - 260px)' }}
 		>
-			<div
-				className={`flex flex-col items-center space-y-8 max-w-full text-center text-4xl font-bold text-[#D3D3D3] relative ${
-					windowSize.height > 800 || windowSize.height < 645 ? 'mt-0' : 'mt-5'
-				}`}
-			>
-				Nerve Global
+			<div className="flex flex-col items-center justify-center w-[80%] cursor-default text-center sm:w-[95%]">
+				<h1 className="text-4xl xl:text-6xl xxl:text-8xl font-light uppercase text-transparent bg-[linear-gradient(350.21deg,_white_-13.99%,_rgba(255,255,255,0)_136.74%)] bg-clip-text [-webkit-background-clip:text]">
+					Nerve Global
+				</h1>
+				<p className="text-xl xl:text-4xl xxl:text-6xl font-light uppercase text-transparent bg-[linear-gradient(350.21deg,_white_-13.99%,_rgba(255,255,255,0)_136.74%)] bg-clip-text [-webkit-background-clip:text] no-underline mt-4 sm:text-[1.5rem]">
+					We exclusively work on unique ideas in the emerging
+					<br />
+					sector of blockchain technology.
+				</p>
 			</div>
 		</div>
 	);
