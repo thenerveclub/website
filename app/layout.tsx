@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 		default: 'Nerve Global',
 		template: '%s | Nerve Global',
 	},
-	description: 'Building Web3 Infrastructure for the Open Internet',
+	description: 'True to Web3.',
 	keywords: [
 		'Nerve Global',
 		'Web3',
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
 	creator: 'Nerve Global',
 	openGraph: {
 		title: 'Nerve Global',
-		description: 'Building Web3 Infrastructure for the Open Internet',
+		description: 'True to Web3.',
 		url: 'https://nerveglobal.com',
 		siteName: 'Nerve Global',
 		images: [
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
 	twitter: {
 		card: 'summary_large_image',
 		title: 'Nerve Global',
-		description: 'Building Web3 Infrastructure for the Open Internet',
+		description: 'True to Web3.',
 		images: ['https://nerveglobal.com/og.png'],
 		creator: '@Nerve_Global',
 	},
