@@ -21,7 +21,7 @@ export default function Landing() {
 			style={{ minHeight: windowSize.height > 800 ? 'calc(100vh - 0px)' : 'calc(100vh - 260px)' }}
 		>
 			<div className="flex flex-col items-center justify-center w-[80%] cursor-default text-center sm:w-[95%]">
-				<h1 className="text-4xl xl:text-6xl xxl:text-8xl font-light uppercase text-transparent bg-[linear-gradient(350.21deg,_white_-13.99%,_rgba(255,255,255,0)_136.74%)] bg-clip-text [-webkit-background-clip:text]">
+				<h1 className="text-4xl xl:text-7xl xxl:text-8xl font-light uppercase text-transparent bg-[linear-gradient(350.21deg,_white_-13.99%,_rgba(255,255,255,0)_136.74%)] bg-clip-text [-webkit-background-clip:text] mb-10">
 					Nerve Global
 				</h1>
 				<p className="text-xl xl:text-4xl xxl:text-6xl font-light uppercase text-transparent bg-[linear-gradient(350.21deg,_white_-13.99%,_rgba(255,255,255,0)_136.74%)] bg-clip-text [-webkit-background-clip:text] no-underline mt-4 sm:text-[1.5rem]">
