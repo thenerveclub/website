@@ -1,7 +1,0 @@
-/* stylelint-disable font-family-no-missing-generic-family-keyword */
-@font-face {
-  font-family: 'True';
-  src: url(fonts/TrueLies.ttf) format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
