@@ -22,7 +22,7 @@ const nextConfig: NextConfig = {
 	],
 	images: {
 		formats: ['image/avif', 'image/webp'],
-		domains: ['nerveglobal.com', 'thenerveclub.com', 'thenerve.club'],
+		domains: ['nerveglobal.com', 'thenerveclub.com', 'thenerve.club', 'nerve.club', 'the.nerve.club'],
 	},
 };
 
